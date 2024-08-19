@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2581dc46b91a2f746946a2a1af29bd44, type: 3}
+  m_Name: SceneDataContainer
+  m_EditorClassIdentifier: 
+  foldoutImportGUI: 1
+  documentId: 1GS47imhjWOAhQZjBWpA8CjbTpbD2P4P4urbmjwMNUQ4
+  selectedTogglesIds:
+  - Scenes
+  foldoutSerializationGUI: 0
+  serializationOutputPath: ../../Configs
+  serializationFileName: Configs.v0.1
+  serializationFormat: 0
+  sceneContent:
+    Scenes:
+    - ScenarioNo: 1
+      SceneType: 1
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 2
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 2
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Have you seen my little Whiskers?
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 2
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: I think he got lost in the park.
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 3
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Have you seen my little Whiskers? I think he got lost in the
+        park.
+      NarrationText: 
+      QuestionText: How do you think Mrs. Thompson is feeling?
+      Option1: Mrs. Thompson is feeling distressed.
+      Option2: Mrs. Thompson is feeling loving.
+      Option3: Mrs. Thompson is feeling surprised.
+      Option4: Mrs. Thompson is feeling annoyed.
+    - ScenarioNo: 1
+      SceneType: 4
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Mrs Thompson\u2019s feelings. 0 represents
+        the lowest intensity and 10 represents the highest intensity"
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 2
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: I'm very worried!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 5
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Mrs. Thompson? Rate between\u2019extremely
+        calm\u2019 and \u2018extremely stressed\u2019."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 2
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Someone, help me!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+    - ScenarioNo: 1
+      SceneType: 3
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You have a test tomorrow. What will you do?
+      Option1: I will look for Whiskers immediately.
+      Option2: I will give Mrs. Thompson a hug and reassure her that Whiskers will
+        find its way back home.
+      Option3: I will give Mrs Thompson the number of a cat adoption centre where
+        I am volunteering.
+      Option4: I will not get involved; instead, maybe I should get some ice cream
+        for myself?
+    - ScenarioNo: 1
+      SceneType: 6
+      DialogueBox: 1
+      NarrationBox: 1
+      DialogueText: "Oh dearie dear! Let\u2019s go home now, little Whiskers."
+      NarrationText: Whiskers found his way back to Mrs. Thompson!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
