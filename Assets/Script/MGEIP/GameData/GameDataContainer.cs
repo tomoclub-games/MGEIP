@@ -1,4 +1,5 @@
-﻿using MGEIP.GameData.ScenarioData;
+﻿using MGEIP.Characters;
+using MGEIP.GameData.ScenarioData;
 using MGEIP.GameData.SceneData;
 using UnityEngine;
 
@@ -8,9 +9,13 @@ namespace MGEIP.GameData
     public class GameDataContainer : ScriptableObject
     {
         [SerializeField] private ScenarioDataContainer scenarioDataContainer;
+        [SerializeField] private ScenarioArtDataContainer scenarioArtDataContainer;
         [SerializeField] private SceneDataContainer sceneDataContainer;
+        [SerializeField] private CharacterArtContainer characterArtDataContainer;
 
         public ScenarioDataContainer ScenarioDataContainer => scenarioDataContainer;
+        public ScenarioArtDataContainer ScenarioArtDataContainer => scenarioArtDataContainer;
         public SceneDataContainer SceneDataContainer => sceneDataContainer;
+        public CharacterArtContainer CharacterArtDataContainer => characterArtDataContainer;
     }
 }

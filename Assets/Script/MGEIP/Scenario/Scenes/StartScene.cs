@@ -1,5 +1,8 @@
-﻿using MGEIP.Service;
+﻿using MGEIP.Characters;
+using MGEIP.GameData.SceneData;
+using MGEIP.Service;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MGEIP.Scenario.Scenes
 {
@@ -10,27 +13,92 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private GameService gameService;
 
         [SerializeField] private string scenarioName;
+        [SerializeField] private bool isNarrationBoxActive;
+        [SerializeField] private string narrationText;
 
-        public override void ExitScene()
-        {
-            throw new System.NotImplementedException();
-        }
+        private GameUIService GameUIService => gameService.GameUIService;
+        private SceneData sceneData;
+
+        private CharacterArtContainer CharacterArtContainer => gameService.GameDataContainer.CharacterArtDataContainer;
 
         public override void EnterScene()
         {
-            throw new System.NotImplementedException();
+            StartCurrentStartScene();
         }
 
-        public void InitializeStartScene(int scenarioNo, Scenario scenario, GameService gameService)
+        public void StartCurrentStartScene()
+        {
+            GameUIService.SetStartSceneUIGameobjectActive(true);
+            GameUIService.GetCharacterUI().SetZoomOutCharacterActive(true);
+            GameUIService.GetCharacterUI().SetZoomOutMainCharacterActive(true);
+            StartSceneInfo();
+            SetCharacterArt();
+
+            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
+            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
+        }
+
+        public void SetCharacterArt()
+        {
+            foreach(CharacterArt characterArt in CharacterArtContainer.characterArts)
+            {
+                if(characterArt.scenarioNo == scenarioNo && characterArt.sceneNo == sceneData.SceneNo)
+                {
+                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.sprite = characterArt.mainCharacterSprite;
+                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.pivot = characterArt.GetMainCharacterPivotVector();
+                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchorMax = characterArt.GetMainCharacterPivotVector();
+                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchorMin = characterArt.GetMainCharacterPivotVector();
+
+                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchoredPosition = characterArt.GetMainCharacterPivotVector();
+                }
+            }
+        }
+
+        public void InitializeStartScene(int scenarioNo, string scenarioName, SceneData sceneData, Scenario scenario, GameService gameService)
         {
             this.scenarioNo = scenarioNo;
+            this.scenarioName = scenarioName;
+            this.sceneData = sceneData;
             this.scenario = scenario;
             this.gameService = gameService;
+
+            SetStartSceneInfo();
         }
 
-        public void SetStartSceneInfo(string scenarioName)
+        public void SetStartSceneInfo()
         {
-            this.scenarioName = scenarioName;
+            isNarrationBoxActive = sceneData.NarrationBox;
+            narrationText = sceneData.NarrationText;
+        }
+
+        public void StartSceneInfo()
+        {
+            GameUIService.SetScenarioNameText(this.scenarioName);
+
+            if (isNarrationBoxActive)
+            {
+                GameUIService.SetStartSceneNarrationBoxActive(true);
+                GameUIService.SetStartSceneNarrationText(narrationText);
+            }
+        }
+
+        public void SetStartSceneButtons(Button playButton)
+        {
+            playButton.onClick.AddListener(ExitScene);
+        }
+
+        public void CompleteStartScene()
+        {
+            GameUIService.GetCharacterUI().ResetCharacterUI();
+
+            GameUIService.SetStartSceneNarrationBoxActive(false);
+            GameUIService.SetStartSceneUIGameobjectActive(false);
+        }
+
+        public override void ExitScene()
+        {
+            CompleteStartScene();
+            scenario.IncreamentCurrentScene();
         }
     }
 }

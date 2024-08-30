@@ -23,9 +23,30 @@ MonoBehaviour:
   sceneContent:
     Scenes:
     - ScenarioNo: 1
+      SceneNo: 1
       SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 0
-      NarrationBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: On the way back from school, you meet Mrs. Thompson.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
+    - ScenarioNo: 1
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
       DialogueText: 
       NarrationText: 
       QuestionText: 
@@ -33,19 +54,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 3
       SceneType: 2
-      DialogueBox: 0
-      NarrationBox: 0
-      DialogueText: 
-      NarrationText: 
-      QuestionText: 
-      Option1: 
-      Option2: 
-      Option3: 
-      Option4: 
-    - ScenarioNo: 1
-      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
       DialogueText: Have you seen my little Whiskers?
@@ -55,8 +71,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 4
       SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
       DialogueText: I think he got lost in the park.
@@ -66,8 +88,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 5
       SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
       DialogueText: Have you seen my little Whiskers? I think he got lost in the
@@ -78,8 +106,14 @@ MonoBehaviour:
       Option2: Mrs. Thompson is feeling loving.
       Option3: Mrs. Thompson is feeling surprised.
       Option4: Mrs. Thompson is feeling annoyed.
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 6
       SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 0
       NarrationBox: 0
       DialogueText: 
@@ -90,8 +124,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 7
       SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
       DialogueText: I'm very worried!
@@ -101,8 +141,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 8
       SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 0
       NarrationBox: 0
       DialogueText: 
@@ -113,8 +159,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 9
       SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
       DialogueText: Someone, help me!
@@ -124,8 +176,14 @@ MonoBehaviour:
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
+      SceneNo: 10
       SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 0
       NarrationBox: 0
       DialogueText: 
@@ -138,14 +196,2002 @@ MonoBehaviour:
         I am volunteering.
       Option4: I will not get involved; instead, maybe I should get some ice cream
         for myself?
+      SceneBG: 1_bg
+      SceneFG: 1_fg
     - ScenarioNo: 1
-      SceneType: 6
+      SceneNo: 11
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
       DialogueBox: 1
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: "Oh dearie dear! Let\u2019s go home now, little Whiskers."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
+    - ScenarioNo: 1
+      SceneNo: 12
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
       NarrationText: Whiskers found his way back to Mrs. Thompson!
       QuestionText: 
       Option1: 
       Option2: 
       Option3: 
       Option4: 
+      SceneBG: 1_bg
+      SceneFG: 1_fg
+    - ScenarioNo: 2
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You are almost at the movies and you spot a tourist.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 3
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think the tourist is feeling?
+      Option1: The tourist is feeling worried.
+      Option2: The tourist is feeling sad.
+      Option3: The tourist is feeling fulfilled.
+      Option4: The tourist is feeling enthusiastic.
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 4
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of the tourist\u2019s feelings. 1 represents
+        the lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 5
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 6
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 7
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing the tourist?. Rate between \u2018extremely
+        calm\u2019 and \u2018extremely stressed\u2019."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 8
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 9
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You are heading for a movie. What will you do?
+      Option1: I will spend some time helping the tourist first.
+      Option2: I will direct him to the tourist assistance centre nearby.
+      Option3: I will ask him to download the new tourist app I have designed.
+      Option4: He will figure it out, and I will decide if I can sneak in some shopping
+        before the movie.
+      SceneBG: 2_1_bg
+      SceneFG: 2_1_fg
+    - ScenarioNo: 2
+      SceneNo: 10
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: He eventually found the place he was looking for!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 2_2_bg
+      SceneFG: 2_2_fg
+    - ScenarioNo: 3
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You are heading to a party and see Alexi cleaning at the beach.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 3
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Alexi is feeling?
+      Option1: Alexi is feeling happy.
+      Option2: Alexi is feeling tired.
+      Option3: Alexi is feeling comfy.
+      Option4: Alexi is feeling scared.
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 4
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Alexi\u2019s feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 5
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 6
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: This turtle is injured!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 8
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Alexi? Rate between \u2018extremely
+        happy\u2019 and \u2018extremely sad\u2019."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 10
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You have plans to meet at Ahmed's house soon for their birthday
+        party. What will you do now?
+      Option1: I will spend some time helping Alexi first.
+      Option2: I will suggest Alexi take a break and offer them some water to drink.
+      Option3: "I will ask Alexi to join me at Ahmed\u2019s birthday party."
+      Option4: I will let Alexi figure it out and continue with my plans.
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 3
+      SceneNo: 11
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: The turtle was rescued!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 3_bg
+      SceneFG: 3_fg
+    - ScenarioNo: 4
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You meet a fellow hiker on your way up the hill.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 2
+      ZoomCharacter: 0
+      EnableSideChar: 1
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "Hey, Taylor! We\u2019ll meet you at the top."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 1
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "Hey! How\u2019d you get up there? That\u2019s a tough hike."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 5
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 1
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: My friends are way ahead of me...
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 6
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 1
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "...but that\u2019s only because I\u2019m letting them take the
+        lead for once."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 7
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Taylor is feeling?
+      Option1: Taylor is feeling envious.
+      Option2: Taylor is feeling excited.
+      Option3: Taylor is feeling carefree.
+      Option4: Taylor is feeling troubled.
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 8
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Taylor\u2019s feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_1_bg
+      SceneFG: 4_1_fg
+    - ScenarioNo: 4
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 10
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 11
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 12
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you feel on seeing everyone celebrating?
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 13
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: 'As Taylor starts unpacking the picnic, he realises he forgot
+        to bring utensils. '
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 14
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You are exhausted from the hike. What will you do?
+      Option1: I will go back down the trail alone to get the utensils from the car
+        while the others rested.
+      Option2: I will ask a couple of the hikers to accompany me down the trail to
+        get the utensils from the car.
+      Option3: I will suggest that a few of the hikers go back down to get the utensils
+        from the car.
+      Option4: I will wait for someone else to come up with a solution.
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
+      SceneNo: 15
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: With or without the utensils, everyone had a great time!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 5
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You are attending a concert with your friends.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: Jacques is performing at a community concert.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: He goes heavy on the strings and they snap! The tune is messy
+        and the audience boo in disbelief!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I\u2019m sorry - I messed up!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 5
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Jacques is feeling?
+      Option1: Jacques is feeling embarrassed.
+      Option2: Jaques is feeling joyful.
+      Option3: Jacques is feeling calm.
+      Option4: Jacques is feeling bored.
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 6
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Jacques\u2019 feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Music is my whole life!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 8
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Even when I mess up, I'll never give up my dream!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 10
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Jacques? Rate between \u201Cextremely
+        carefree\u201D and \u201Cextremely sentimental"
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 11
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 12
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 13
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 14
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You were thinking of exploring the food stalls nearby. What will
+        you do?
+      Option1: I will give Jacques my jacket to cover up his wet shirt and personally
+        take charge of cleaning up the spill.
+      Option2: I will assist the others in cleaning up the spill.
+      Option3: I will encourage the guest to be more careful and offer some help.
+      Option4: I will head out to explore the food stalls and wait for someone else
+        to handle it.
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 5
+      SceneNo: 15
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: Jacques laughs it off!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 5_bg
+      SceneFG: 5_fg
+    - ScenarioNo: 6
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: On your way to the grocery store, you greet Mrs. Gowri.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 5
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Ms. Gowri is feeling?
+      Option1: Ms Gowri is feeling lonely.
+      Option2: Ms Gowri is feeling calm.
+      Option3: Ms Gowri is feeling cheerful.
+      Option4: Ms Gowri is feeling panicky.
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 6
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Ms Gowri\u2019s feelings. 1 represents
+        the lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 8
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Ms. Gowri? Rate between \u201Cextremely
+        peaceful\u201D to \u201Cextremely upset\u201D."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: When Roger was around, watering the plants was his job!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 10
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You have some important errands to run soon. What will you do?
+      Option1: I will help her water the plants and ask her to rest on her chair
+        while we chat.
+      Option2: I will offer to water her plants with her a few times a week.
+      Option3: I will offer to water the plants if she could make some warm tea for
+        me in return.
+      Option4: I will appreciate her healthy plants and continue on my way.
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 6
+      SceneNo: 11
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: 'Ms. Gowri fondly remembers her husband as she waters the plants
+        he loved. '
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 6_bg
+      SceneFG: 6_fg
+    - ScenarioNo: 7
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: On your way to the plant store, you see a group of gardeners.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 5
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Josefa is feeling?
+      Option1: Josefa is feeling humiliated.
+      Option2: Josefa is feeling excited.
+      Option3: Josefa is feeling repulsed.
+      Option4: Josefa is feeling restful.
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 6
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Josefa\u2019s feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Oh no, no, no! This is a total and absolute disaster!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 8
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I don\u2019t deserve to garden ever again!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 9
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Josefa? Rate between \u201Cextremely
+        encouraged\u201D and \u201Cextremely discouraged\u201D."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 10
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I\u2019m a failure."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 11
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You have your own gardening to complete before the sun sets.
+        What will you do?
+      Option1: I will offer to help clean up the soil immediately.
+      Option2: I will assist in cleaning up the soil.
+      Option3: I will suggest they be more careful and offer some help.
+      Option4: I will let them handle it and continue with my task.
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 7
+      SceneNo: 12
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: With a little help from friends, Josefa has started gardening
+        again!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 7_bg
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You are at the community park and spot a group of teens.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 0
+      SceneNo: 5
+      SceneType: 2
+      CharacterType: 2
+      ZoomCharacter: 0
+      EnableSideChar: 1
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: It was a good idea to hang out at the basketball court. Are you
+        having fun?
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 6
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "Yeah, I\u2019m having loads of fun..."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 8
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Mercedes is feeling?
+      Option1: Mercedes is feeling lonely.
+      Option2: Mercedes is feeling worried.
+      Option3: Mercedes is feeling brave.
+      Option4: Mercedes is feeling lively.
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 9
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Mercedes\u2019 feelings. 1 represents
+        the lowest intensity and 10 represents the highest intensity"
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 10
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: They always do this! It ruins my mood.
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 11
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel on seeing Mercedes? Rate between \u201Cextremely
+        relaxed\u201D and \u201Cextremely upset"
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 12
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 13
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You have your own practice to attend soon. What will you do?
+      Option1: I will ditch practice to spend more time till Mercedes feels better.
+      Option2: I will stay and comfort Mercedes for a while before heading to practice.
+      Option3: I will suggest Mercedes talk to someone else and then go for the practice.
+      Option4: I will leave Mercedes to handle it and go for the practice.
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 8
+      SceneNo: 14
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: 'Mercedes decides to go home and ready a cozy book instead. '
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: A discussion erupts at the movies with your friends.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "C\u2019mon, guys, this movie is so cool!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "It\u2019s ok if you haven\u2019t seen the first 3 films."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I\u2019ll fill you guys in on the story."
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 5
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 6
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How is Max feeling?
+      Option1: Max is feeling disappointed
+      Option2: Max is feeling restful
+      Option3: Max is feeling enthusiastic
+      Option4: Max is feeling restless.
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 7
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Max\u2019s feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 8
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I can\u2019t believe my friends just left me all alone here!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "I\u2019m never watching movies again!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 10
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel seeing Max? Rate between \u201Cextremely carefree\u201D
+        and \u201Cextremely concerned\u201D."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 11
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 12
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: The movie you came to watch is going to start soon, but Max still
+        seems to be in a very angry mood. What will you do?
+      Option1: I will leave the movie with my friends and ask Max to watch the Sci-fi
+        movie with me.
+      Option2: I will try to help Max calm down and make him feel better before heading
+        back to my movie.
+      Option3: I will suggest Max talk to someone and watch his movie with someone
+        else.
+      Option4: I will leave Max and hurry back to my movie.
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 9
+      SceneNo: 13
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: Max realises he'd rather spend time with his friends, so he
+        joins them!
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 9_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 1
+      SceneType: 1
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: You are at the museum and overhear a conversation.
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 2
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: Let's keep the display simple and minimalistic!
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 3
+      SceneType: 2
+      CharacterType: 2
+      ZoomCharacter: 0
+      EnableSideChar: 1
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: No! The setup has to be vibrant and colorful! Not boring and
+        drab.
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 4
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: 'Jimin and Hans notice you approach, and they begin to whisper. '
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 5
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: How do you think Jimin was feeling when you approached?
+      Option1: Jimin is feeling annoyed.
+      Option2: Jimin is feeling exhausted.
+      Option3: Jimin is feeling grateful.
+      Option4: Jimin is feeling proud.
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 6
+      SceneType: 4
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "Rate the intensity of Jimin\u2019s feelings. 1 represents the
+        lowest intensity and 10 represents the highest intensity."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 7
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 1
+      NarrationBox: 0
+      DialogueText: "Your art isn\u2019t even the star of the show!"
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 8
+      SceneType: 5
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: "How do you feel seeing Jimin? Rate between \u201Cextremely serene\u201D
+        and \u201Cextremely tensed\u201D."
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 9
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 10
+      SceneType: 3
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: You were planning to check out the other exhibitions at the museum,
+        but you see Jimin still upset. What will you do?
+      Option1: I will drop the exhibition tour and stay with Jimin and offer support.
+      Option2: I will comfort Jimin for a bit before leaving to explore the museum.
+      Option3: "I will suggest Jimin talk to Hans. Then I\u2019d explore the museum."
+      Option4: I will leave Jimin to handle it himself and explore the museum.
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 11
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: 'The two friends hug it out. '
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 
+    - ScenarioNo: 10
+      SceneNo: 12
+      SceneType: 6
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: On discussing their approach, they decide to add colours to
+        the minimalist display
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 10_bg
+      SceneFG: 

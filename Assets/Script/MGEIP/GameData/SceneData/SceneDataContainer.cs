@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MGEIP.GameData.SceneData
 {
-    [CreateAssetMenu(fileName = "SceneDataContainer", menuName = "MGEIP Spreadsheet Container/ SceneData", order = 2)]
+    [CreateAssetMenu(fileName = "SceneDataContainer", menuName = "MGEIP Spreadsheet Container/ SceneData", order = 4)]
     public class SceneDataContainer : SpreadsheetsContainerBase
     {
         [SpreadsheetContent]
@@ -24,7 +24,11 @@ namespace MGEIP.GameData.SceneData
     public class SceneData
     {
         public int ScenarioNo;
+        public int SceneNo;
         public SceneType SceneType;
+        public CharacterType CharacterType;
+        public bool ZoomCharacter;
+        public bool EnableSideChar;
         public bool DialogueBox;
         public bool NarrationBox;
         public string DialogueText;
@@ -34,5 +38,7 @@ namespace MGEIP.GameData.SceneData
         public string Option2;
         public string Option3;
         public string Option4;
+        public string SceneBG;
+        public string SceneFG;
     }
 }

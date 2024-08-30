@@ -1,41 +1,48 @@
-﻿using MGEIP.Service;
-using System.Collections;
-using UnityEngine;
+﻿using MGEIP.GameData.SceneData;
+using MGEIP.Service;
 
 namespace MGEIP.Scenario.Scenes
 {
-    public class AESliderQuestionScene : Scene
+    public class AESliderQuestionScene : QuestionScene
     {
-        [SerializeField] private int scenarioNo;
-        [SerializeField] private Scenario scenario;
-        [SerializeField] private GameService gameService;
-
-        [SerializeField] private bool isDialogueBoxActive;
-        [SerializeField] private string dialogueText;
-        [SerializeField] private string questionText;
-
         public override void EnterScene()
         {
-            throw new System.NotImplementedException();
+            base.EnterScene();
+            StartCurrentAESliderQuestionScene();
         }
 
-        public override void ExitScene()
+        public void StartCurrentAESliderQuestionScene()
         {
-            throw new System.NotImplementedException();
+            GameUIService.SetSliderPanelActive(true);
+            GameUIService.AELabelGameobject.SetActive(true);
+            AESliderQuestionSceneInfo();
         }
 
-        public void InitializeAESliderQuestionScene(int scenarioNo, Scenario scenario, GameService gameService)
+        public void SetAESliderQuestionSceneInfo()
         {
-            this.scenarioNo = scenarioNo;
-            this.scenario = scenario;
-            this.gameService = gameService;
+            characterType = sceneData.CharacterType;
+            isDialogueBoxActive = sceneData.DialogueBox;
+            dialogueText = sceneData.DialogueText;
+            questionText = sceneData.QuestionText;
         }
 
-        public void SetAESliderQuestionSceneInfo(bool isDialogueBoxActive, string dialogueText, string questionText)
+        public void AESliderQuestionSceneInfo()
         {
-            this.isDialogueBoxActive = isDialogueBoxActive;
-            this.dialogueText = dialogueText;
-            this.questionText = questionText;
+            if (characterType == CharacterType.Main && isDialogueBoxActive)
+            {
+                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueText(dialogueText);
+                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(true);
+            }
+
+            GameUIService.SetQuestionText(questionText);
+        }
+
+        public override void CompleteQuestionScene()
+        {
+            base.CompleteQuestionScene();
+            GameUIService.SetSliderPanelActive(false);
+            GameUIService.AELabelGameobject.SetActive(false);
+            GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(false);
         }
     }
 }

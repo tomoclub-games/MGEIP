@@ -9,6 +9,7 @@ namespace MGEIP.Service
     {
         [SerializeField] private GameDataContainer gameDataContainer;
         [SerializeField] private ScenarioManager scenarioManager;
+        [SerializeField] private GameUIService gameUIService;
 
         public StartScene startScenePrefab;
         public StoryScene storyScenePrefab;
@@ -19,10 +20,12 @@ namespace MGEIP.Service
 
         public GameDataContainer GameDataContainer => gameDataContainer;
         public ScenarioManager ScenarioManager => scenarioManager;
+        public GameUIService GameUIService => gameUIService;
 
         private void Start()
         {
-            ScenarioManager?.InitializeScenarioManager(this);
+            ScenarioManager.InitializeScenarioManager(this);
+            GameUIService.GetCharacterUI().ResetCharacterUI();
         }
     }
 }

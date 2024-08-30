@@ -1,18 +1,11 @@
-﻿using MGEIP.Service;
-using System.Collections;
+﻿using MGEIP.GameData.SceneData;
+using MGEIP.Service;
+using System.Linq;
 using UnityEngine;
-
 namespace MGEIP.Scenario.Scenes
 {
-    public class MCQQuestionScene : Scene
+    public class MCQQuestionScene : QuestionScene
     {
-        [SerializeField] private int scenarioNo;
-        [SerializeField] private Scenario scenario;
-        [SerializeField] private GameService gameService;
-
-        [SerializeField] private bool isDialogueBoxActive;
-        [SerializeField] private string dialogueText;
-        [SerializeField] private string questionText;
         [SerializeField] private string optionText1;
         [SerializeField] private string optionText2;
         [SerializeField] private string optionText3;
@@ -20,30 +13,54 @@ namespace MGEIP.Scenario.Scenes
 
         public override void EnterScene()
         {
-            throw new System.NotImplementedException();
+            base.EnterScene();
+            StartCurrentMCQQuestionScene();
         }
 
-        public override void ExitScene()
+        public void StartCurrentMCQQuestionScene()
         {
-            throw new System.NotImplementedException();
+            GameUIService.SetOptionPanelActive(true);
+            MCQQuestionSceneInfo();
         }
 
-        public void InitializeMCQQuestionScene(int scenarioNo, Scenario scenario, GameService gameService)
+        public void SetMCQQuestionSceneInfo()
         {
-            this.scenarioNo = scenarioNo;
-            this.scenario = scenario;
-            this.gameService = gameService;
+            characterType = sceneData.CharacterType;
+            isDialogueBoxActive = sceneData.DialogueBox;  
+            dialogueText = sceneData.DialogueText; 
+            questionText = sceneData.QuestionText; 
+            optionText1 = sceneData.Option1; 
+            optionText2 = sceneData.Option2; 
+            optionText3 = sceneData.Option3; 
+            optionText4 = sceneData.Option4; 
         }
 
-        public void SetMCQQuestionSceneInfo(bool isDialogueBoxActive, string dialogueText, string questionText, string option1, string option2, string option3, string option4)
+        public void MCQQuestionSceneInfo()
         {
-            this.isDialogueBoxActive = isDialogueBoxActive;
-            this.dialogueText = dialogueText;
-            this.questionText = questionText;
-            this.optionText1 = option1;
-            this.optionText2 = option2;
-            this.optionText3 = option3;
-            this.optionText4 = option4;
+            if (characterType == CharacterType.Main && isDialogueBoxActive)
+            {
+                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueText(dialogueText);
+                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(true);
+            }
+
+            GameUIService.SetQuestionText(questionText);
+            SetOptionText();
+        }
+
+        private void SetOptionText()
+        {
+            string[] stringOptions = new string[] { optionText1, optionText2, optionText3, optionText4 };
+            string[] shuffledOptions = stringOptions.OrderBy(x => Random.value).ToArray();
+
+            GameUIService.SetOptionText(shuffledOptions);
+        }
+
+        public override void CompleteQuestionScene()
+        {
+            base.CompleteQuestionScene();
+
+            GameUIService.SetOptionPanelActive(false);
+            GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(false);
         }
     }
 }

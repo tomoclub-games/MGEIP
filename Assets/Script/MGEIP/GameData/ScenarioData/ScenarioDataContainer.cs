@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MGEIP.GameData.ScenarioData
 {
-    [CreateAssetMenu(fileName = "ScenarioDataContainer", menuName = "MGEIP Spreadsheet Container/ ScenarioData", order = 1)]
+    [CreateAssetMenu(fileName = "ScenarioDataContainer", menuName = "MGEIP Spreadsheet Container/ ScenarioData", order = 2)]
     public class ScenarioDataContainer : SpreadsheetsContainerBase
     {
         [SpreadsheetContent]

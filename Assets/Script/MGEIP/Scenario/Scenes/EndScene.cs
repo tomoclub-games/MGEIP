@@ -1,7 +1,7 @@
-﻿using MGEIP.Scenario.Scenes;
+﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
-using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MGEIP.Scenario.Scenes
 {
@@ -11,34 +11,66 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private Scenario scenario;
         [SerializeField] private GameService gameService;
 
-        [SerializeField] private bool isDialogueBoxActive;
         [SerializeField] private bool isNarrationBoxActive;
-        [SerializeField] private string dialogueText;
         [SerializeField] private string narrationText;
+
+        private GameUIService GameUIService => gameService.GameUIService;
+        private SceneData sceneData;
 
         public override void EnterScene()
         {
-            throw new System.NotImplementedException();
+            StartCurrentEndScene();
+        }
+
+        public void StartCurrentEndScene()
+        {
+            GameUIService.SetEndStoryUIGameobjectActive(true);
+            EndSceneInfo();
+
+            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
+            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
+        }
+
+        public void InitializeEndScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        {
+            this.scenarioNo = scenarioNo;
+            this.sceneData = sceneData;
+            this.scenario = scenario;
+            this.gameService = gameService;
+
+            SetEndSceneInfo();
+        }
+
+        public void SetEndSceneInfo()
+        {
+            isNarrationBoxActive = sceneData.NarrationBox;
+            narrationText = sceneData.NarrationText;
+        }
+
+        public void EndSceneInfo()
+        {
+            if (isNarrationBoxActive)
+            {
+                GameUIService.SetEndSceneNarrationBoxActive(true);
+                GameUIService.SetEndSceneNarrationText(narrationText);
+            }
+        }
+
+        public void SetEndSceneButtons(Button nextButton)
+        {
+            nextButton.onClick.AddListener(ExitScene);
+        }
+
+        public void CompleteEndScene()
+        {
+            GameUIService.SetEndSceneNarrationBoxActive(false);
+            GameUIService.SetEndStoryUIGameobjectActive(false);
         }
 
         public override void ExitScene()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void InitializeEndScene(int scenarioNo, Scenario scenario, GameService gameService)
-        {
-            this.scenarioNo = scenarioNo;
-            this.scenario = scenario;
-            this.gameService = gameService;
-        }
-
-        public void SetEndSceneInfo(bool isDialogueBoxActive, bool isNarrationBoxActive, string dialogueText, string narrationText)
-        {
-            this.isDialogueBoxActive = isDialogueBoxActive;
-            this.isNarrationBoxActive = isNarrationBoxActive;
-            this.dialogueText = dialogueText;
-            this.narrationText = narrationText;
+            CompleteEndScene();
+            scenario.IncreamentCurrentScene();
         }
     }
 }

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6786e2a578ff76f42be3dd1e7a902f83, type: 3}
+  m_Name: ScenarioArtDataContainer
+  m_EditorClassIdentifier: 
+  ScenarioArt:
+  - scenarioNo: 1
+    minAnchorValue: {x: 0.228, y: 0.761}
+    maxAnchorValue: {x: 0.407, y: 0.993}
+    scenarioIconSprite: {fileID: 21300000, guid: b84e86f9b4ed81d4eba50ca6f5c1a28b, type: 3}
+  - scenarioNo: 2
+    minAnchorValue: {x: 0.423, y: 0.257}
+    maxAnchorValue: {x: 0.615, y: 0.509}
+    scenarioIconSprite: {fileID: 21300000, guid: a8fac9d8a191e754baccdf18a290050f, type: 3}
+  - scenarioNo: 3
+    minAnchorValue: {x: 0.202, y: 0.088}
+    maxAnchorValue: {x: 0.367, y: 0.392}
+    scenarioIconSprite: {fileID: 21300000, guid: 45d570516f81e2448b8bfa58670af3cd, type: 3}
+  - scenarioNo: 4
+    minAnchorValue: {x: 0.744, y: 0.672}
+    maxAnchorValue: {x: 0.892, y: 0.915}
+    scenarioIconSprite: {fileID: 21300000, guid: 52ea5c22286231b40a7254e98549f886, type: 3}
+  - scenarioNo: 5
+    minAnchorValue: {x: 0.09, y: 0.542}
+    maxAnchorValue: {x: 0.215, y: 0.751}
+    scenarioIconSprite: {fileID: 21300000, guid: dd4c33b3c2c8f104e85a6fcab1d9c484, type: 3}
+  - scenarioNo: 6
+    minAnchorValue: {x: 0.32, y: 0.538}
+    maxAnchorValue: {x: 0.423, y: 0.717}
+    scenarioIconSprite: {fileID: 21300000, guid: de0c78e9afe00f744b7e3d6b75834231, type: 3}
+  - scenarioNo: 7
+    minAnchorValue: {x: 0.657, y: 0.492}
+    maxAnchorValue: {x: 0.774, y: 0.663}
+    scenarioIconSprite: {fileID: 21300000, guid: f83155824141b1047bddf399073cda3a, type: 3}
+  - scenarioNo: 8
+    minAnchorValue: {x: 0.801, y: 0.311}
+    maxAnchorValue: {x: 0.887, y: 0.46}
+    scenarioIconSprite: {fileID: 21300000, guid: 8cdaa1d349ba16642802b222059b9656, type: 3}
+  - scenarioNo: 9
+    minAnchorValue: {x: 0.481, y: 0.69}
+    maxAnchorValue: {x: 0.626, y: 0.877}
+    scenarioIconSprite: {fileID: 21300000, guid: 54fc14536754317499b7915a6be1a85f, type: 3}
+  - scenarioNo: 10
+    minAnchorValue: {x: 0.601, y: 0.129}
+    maxAnchorValue: {x: 0.764, y: 0.354}
+    scenarioIconSprite: {fileID: 21300000, guid: ddfe04612f5e87c4286304e63a3ada0a, type: 3}
