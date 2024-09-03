@@ -26,9 +26,6 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetEndStoryUIGameobjectActive(true);
             EndSceneInfo();
-
-            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
-            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
         }
 
         public void InitializeEndScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -49,11 +46,9 @@ namespace MGEIP.Scenario.Scenes
 
         public void EndSceneInfo()
         {
-            if (isNarrationBoxActive)
-            {
-                GameUIService.SetEndSceneNarrationBoxActive(true);
-                GameUIService.SetEndSceneNarrationText(narrationText);
-            }
+
+            GameUIService.SetEndSceneNarrationBoxActive(isNarrationBoxActive);
+            GameUIService.SetEndSceneNarrationText(narrationText);
         }
 
         public void SetEndSceneButtons(Button nextButton)

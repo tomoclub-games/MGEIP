@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MGEIP.Scenario.Scenes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,117 +8,51 @@ namespace MGEIP.Characters
     [CreateAssetMenu(fileName = "CharacterArtDataContainer", menuName = "MGEIP Spreadsheet Container/ CharacterArtData", order = 5)]
     public class CharacterArtContainer : ScriptableObject
     {
+        public List<Character> characters;
+    }
+
+    [Serializable]
+    public class Character
+    {
+        public int ScenarioNo;
         public List<CharacterArt> characterArts;
+
+        public List<Scene> scenes;
+
     }
 
     [Serializable]
     public class CharacterArt
     {
-        public int scenarioNo;
         public int sceneNo;
-        public Sprite mainCharacterSprite;
-        public Sprite sideCharacterSprite;
 
-        public PivotPosition mainCharacterPivot;
-        public PivotPosition sideCharacterPivot;
+        [SerializeField] private Sprite mainCharacterSprite;
+        [SerializeField] private Sprite sideCharacterSprite;
+
+        [SerializeField] private Vector2 mainCharacterPosition;
+        [SerializeField] private Vector2 sideCharacterPosition;
 
         public Vector2 mainCharacterSize;
         public Vector2 sideCharacterSize;
 
-        public Vector2 GetMainCharacterPivotVector()
+        public Sprite GetMainCharacterSprite()
         {
-            return GetPivotVector(mainCharacterPivot);
+            if (mainCharacterSprite != null)
+                return mainCharacterSprite;
+            return null;
         }
 
-        // Method to get the actual pivot Vector2 for the side character
-        public Vector2 GetSideCharacterPivotVector()
+        public Sprite GetSideCharacterSprite()
         {
-            return GetPivotVector(sideCharacterPivot);
+            if (sideCharacterSprite != null)
+                return sideCharacterSprite;
+            return null;
         }
 
-        // Utility function to map the enum to the Vector2 pivot
-        private Vector2 GetPivotVector(PivotPosition pivot)
-        {
-            switch (pivot)
-            {
-                case PivotPosition.Center:
-                    return new Vector2(0.5f, 0.5f);
-                case PivotPosition.Left:
-                    return new Vector2(0, 0.5f);
-                case PivotPosition.Right:
-                    return new Vector2(1, 0.5f);
-                case PivotPosition.TopLeft:
-                    return new Vector2(0, 1);
-                case PivotPosition.TopRight:
-                    return new Vector2(1, 1);
-                case PivotPosition.BottomLeft:
-                    return new Vector2(0, 0);
-                case PivotPosition.BottomRight:
-                    return new Vector2(1, 0);
-                default:
-                    return new Vector2(0.5f, 0.5f); // Default to center
-            }
-        }
+        public Vector2 GetMainCharacterPositionVector() => new Vector2(mainCharacterPosition.x, mainCharacterPosition.y);
+
+        public Vector2 GetSideCharacterPositionVector() => new Vector2(sideCharacterPosition.x, sideCharacterPosition.y);
     }
 
-    [Serializable]
-    public class CharacterArtByScene
-    {
-        public int scenarioNo;
-        public int sceneNo;
-        public Sprite mainCharacterSprite;
-        public Sprite sideCharacterSprite;
-
-        public PivotPosition mainCharacterPivot;
-        public PivotPosition sideCharacterPivot;
-
-        public Vector2 mainCharacterSize;
-        public Vector2 sideCharacterSize;
-
-        public Vector2 GetMainCharacterPivotVector()
-        {
-            return GetPivotVector(mainCharacterPivot);
-        }
-
-        // Method to get the actual pivot Vector2 for the side character
-        public Vector2 GetSideCharacterPivotVector()
-        {
-            return GetPivotVector(sideCharacterPivot);
-        }
-
-        // Utility function to map the enum to the Vector2 pivot
-        private Vector2 GetPivotVector(PivotPosition pivot)
-        {
-            switch (pivot)
-            {
-                case PivotPosition.Center:
-                    return new Vector2(0.5f, 0.5f);
-                case PivotPosition.Left:
-                    return new Vector2(0, 0.5f);
-                case PivotPosition.Right:
-                    return new Vector2(1, 0.5f);
-                case PivotPosition.TopLeft:
-                    return new Vector2(0, 1);
-                case PivotPosition.TopRight:
-                    return new Vector2(1, 1);
-                case PivotPosition.BottomLeft:
-                    return new Vector2(0, 0);
-                case PivotPosition.BottomRight:
-                    return new Vector2(1, 0);
-                default:
-                    return new Vector2(0.5f, 0.5f); // Default to center
-            }
-        }
-    }
-
-    public enum PivotPosition
-    {
-        Center,
-        Left,
-        Right,
-        TopLeft,
-        TopRight,
-        BottomLeft,
-        BottomRight
-    }
+    
 }

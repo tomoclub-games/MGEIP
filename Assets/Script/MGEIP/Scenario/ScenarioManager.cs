@@ -98,6 +98,7 @@ namespace MGEIP.Scenario
         private void CreateScenario(ScenarioData scenarioData)
         {
             Scenario scenario = Instantiate<Scenario>(scenarioPrefab);
+            scenario.gameObject.name = "Scenario" + scenarioData.ScenarioNo;
             scenario.SetScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName, gameService);
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);

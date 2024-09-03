@@ -46,7 +46,7 @@ MonoBehaviour:
       ZoomCharacter: 0
       EnableSideChar: 0
       DialogueBox: 0
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: 
       NarrationText: 
       QuestionText: 
@@ -114,9 +114,10 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Have you seen my little Whiskers? I think he got lost in the
+        park.
       NarrationText: 
       QuestionText: "Rate the intensity of Mrs Thompson\u2019s feelings. 0 represents
         the lowest intensity and 10 represents the highest intensity"
@@ -149,9 +150,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: I'm very worried!
       NarrationText: 
       QuestionText: "How do you feel on seeing Mrs. Thompson? Rate between\u2019extremely
         calm\u2019 and \u2018extremely stressed\u2019."
@@ -184,9 +185,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Someone, help me!
       NarrationText: 
       QuestionText: You have a test tomorrow. What will you do?
       Option1: I will look for Whiskers immediately.
@@ -516,8 +517,8 @@ MonoBehaviour:
       EnableSideChar: 0
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
-      NarrationText: This turtle is injured!
+      DialogueText: This turtle is injured!
+      NarrationText: 
       QuestionText: 
       Option1: 
       Option2: 
@@ -531,9 +532,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: This turtle is injured!
       NarrationText: 
       QuestionText: "How do you feel on seeing Alexi? Rate between \u2018extremely
         happy\u2019 and \u2018extremely sad\u2019."
@@ -721,7 +722,7 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 1
+      DialogueBox: 0
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
@@ -769,23 +770,6 @@ MonoBehaviour:
       SceneFG: 4_2_fg
     - ScenarioNo: 4
       SceneNo: 11
-      SceneType: 2
-      CharacterType: 1
-      ZoomCharacter: 0
-      EnableSideChar: 0
-      DialogueBox: 0
-      NarrationBox: 0
-      DialogueText: 
-      NarrationText: 
-      QuestionText: 
-      Option1: 
-      Option2: 
-      Option3: 
-      Option4: 
-      SceneBG: 4_2_bg
-      SceneFG: 4_2_fg
-    - ScenarioNo: 4
-      SceneNo: 12
       SceneType: 5
       CharacterType: 1
       ZoomCharacter: 0
@@ -802,6 +786,23 @@ MonoBehaviour:
       SceneBG: 4_2_bg
       SceneFG: 4_2_fg
     - ScenarioNo: 4
+      SceneNo: 12
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 1
+      DialogueText: 
+      NarrationText: As Taylor starts unpacking the picnic, he realises...
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 4_2_bg
+      SceneFG: 4_2_fg
+    - ScenarioNo: 4
       SceneNo: 13
       SceneType: 2
       CharacterType: 1
@@ -810,15 +811,14 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: 'As Taylor starts unpacking the picnic, he realises he forgot
-        to bring utensils. '
+      NarrationText: '...he forgot to bring utensils. '
       QuestionText: 
       Option1: 
       Option2: 
       Option3: 
       Option4: 
-      SceneBG: 4_2_bg
-      SceneFG: 4_2_fg
+      SceneBG: 
+      SceneFG: 
     - ScenarioNo: 4
       SceneNo: 14
       SceneType: 3
@@ -931,9 +931,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: "I\u2019m sorry - I messed up!"
       NarrationText: 
       QuestionText: How do you think Jacques is feeling?
       Option1: Jacques is feeling embarrassed.
@@ -948,9 +948,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: "I\u2019m sorry - I messed up!"
       NarrationText: 
       QuestionText: "Rate the intensity of Jacques\u2019 feelings. 1 represents the
         lowest intensity and 10 represents the highest intensity."
@@ -1239,6 +1239,23 @@ MonoBehaviour:
       SceneFG: 6_fg
     - ScenarioNo: 6
       SceneNo: 8
+      SceneType: 2
+      CharacterType: 1
+      ZoomCharacter: 0
+      EnableSideChar: 0
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      SceneBG: 
+      SceneFG: 
+    - ScenarioNo: 6
+      SceneNo: 9
       SceneType: 5
       CharacterType: 1
       ZoomCharacter: 0
@@ -1256,7 +1273,7 @@ MonoBehaviour:
       SceneBG: 6_bg
       SceneFG: 6_fg
     - ScenarioNo: 6
-      SceneNo: 9
+      SceneNo: 10
       SceneType: 2
       CharacterType: 1
       ZoomCharacter: 0
@@ -1273,7 +1290,7 @@ MonoBehaviour:
       SceneBG: 6_bg
       SceneFG: 6_fg
     - ScenarioNo: 6
-      SceneNo: 10
+      SceneNo: 11
       SceneType: 3
       CharacterType: 1
       ZoomCharacter: 0
@@ -1292,7 +1309,7 @@ MonoBehaviour:
       SceneBG: 6_bg
       SceneFG: 6_fg
     - ScenarioNo: 6
-      SceneNo: 11
+      SceneNo: 12
       SceneType: 6
       CharacterType: 1
       ZoomCharacter: 0
@@ -1452,9 +1469,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: "I don\u2019t deserve to garden ever again!"
       NarrationText: 
       QuestionText: "How do you feel on seeing Josefa? Rate between \u201Cextremely
         encouraged\u201D and \u201Cextremely discouraged\u201D."
@@ -1487,9 +1504,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: "I\u2019m a failure."
       NarrationText: 
       QuestionText: You have your own gardening to complete before the sun sets.
         What will you do?
@@ -1695,9 +1712,9 @@ MonoBehaviour:
       CharacterType: 1
       ZoomCharacter: 0
       EnableSideChar: 0
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: They always do this! It ruins my mood.
       NarrationText: 
       QuestionText: "How do you feel on seeing Mercedes? Rate between \u201Cextremely
         relaxed\u201D and \u201Cextremely upset"

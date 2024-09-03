@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +12,13 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private Scenario scenario;
         [SerializeField] private GameService gameService;
 
-        [SerializeField] private CharacterType characterType;
-        [SerializeField] private bool isCharacterZoomActive;
-        [SerializeField] private bool isSideCharacterEnable;
         [SerializeField] private bool isDialogueBoxActive;
         [SerializeField] private bool isNarrationBoxActive;
-        [SerializeField] private string dialogueText;
+        [SerializeField] private string dialogue;
         [SerializeField] private string narrationText;
+
+        [SerializeField] private GameObject dialogueBox;
+        [SerializeField] private TextMeshProUGUI dialogueText;
 
         private GameUIService GameUIService => gameService.GameUIService;
         private SceneData sceneData;
@@ -41,70 +42,23 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetStartStoryUIGameobjectActive(true);
             StorySceneInfo();
-
-            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
-            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
         }
 
         public void SetStorySceneInfo()
         {
-            characterType = sceneData.CharacterType;
-            isCharacterZoomActive = sceneData.ZoomCharacter;
-            isSideCharacterEnable = sceneData.EnableSideChar;
             isDialogueBoxActive = sceneData.DialogueBox;
             isNarrationBoxActive = sceneData.NarrationBox;
-            dialogueText = sceneData.DialogueText;
+            dialogue = sceneData.DialogueText;
             narrationText = sceneData.NarrationText;
         }
 
         public void StorySceneInfo()
         {
-            if (isNarrationBoxActive)
-            {
-                GameUIService.SetStorySceneNarrationBoxActive(true);
-                GameUIService.SetStorySceneNarrationText(narrationText);
-            }
+            GameUIService.SetStorySceneNarrationBoxActive(isNarrationBoxActive);
+            GameUIService.SetStorySceneNarrationText(narrationText);
 
-            if (isCharacterZoomActive)
-            {
-                if (characterType == CharacterType.Main && isDialogueBoxActive)
-                {
-                    GameUIService.GetCharacterUI().SetZoomInMainCharDialogueText(dialogueText);
-                    GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(true);
-                }
-                GameUIService.GetCharacterUI().SetZoomInMainCharacterActive(true);
-
-                if (isSideCharacterEnable)
-                {
-                    if (characterType == CharacterType.Side && isDialogueBoxActive)
-                    {
-                        GameUIService.GetCharacterUI().SetZoomInSideCharDialogueText(dialogueText);
-                        GameUIService.GetCharacterUI().SetZoomInSideCharDialogueBoxActive(true);
-                    }
-                    GameUIService.GetCharacterUI().SetZoomInSideCharacterActive(true);
-                }
-                GameUIService.GetCharacterUI().SetZoomInCharacterActive(true);
-            }
-            else
-            {
-                if (characterType == CharacterType.Main && isDialogueBoxActive)
-                {
-                    GameUIService.GetCharacterUI().SetZoomOutMainCharDialogueText(dialogueText);
-                    GameUIService.GetCharacterUI().SetZoomOutMainCharDialogueBoxActive(true);
-                }
-                GameUIService.GetCharacterUI().SetZoomOutMainCharacterActive(true);
-
-                if (isSideCharacterEnable)
-                {
-                    if (characterType == CharacterType.Side && isDialogueBoxActive)
-                    {
-                        GameUIService.GetCharacterUI().SetZoomOutSideCharDialogueText(dialogueText);
-                        GameUIService.GetCharacterUI().SetZoomOutSideCharDialogueBoxActive(true);
-                    }
-                    GameUIService.GetCharacterUI().SetZoomOutSideCharacterActive(true);
-                }
-                GameUIService.GetCharacterUI().SetZoomOutCharacterActive(true);
-            }
+            dialogueBox.SetActive(isDialogueBoxActive);
+            dialogueText.SetText(dialogue);
         }
 
         public void SetStorySceneButtons(Button nextButton)
@@ -114,8 +68,6 @@ namespace MGEIP.Scenario.Scenes
 
         public void CompleteStoryScene()
         {
-            GameUIService.GetCharacterUI().ResetCharacterUI();
-
             GameUIService.SetStorySceneNarrationBoxActive(false);
             GameUIService.SetStartStoryUIGameobjectActive(false);
         }

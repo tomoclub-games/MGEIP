@@ -22,17 +22,14 @@ namespace MGEIP.Scenario.Scenes
         public void SetCESliderQuestionSceneInfo()
         {
             isDialogueBoxActive = sceneData.DialogueBox;
-            dialogueText = sceneData.DialogueText;
+            dialogue = sceneData.DialogueText;
             questionText = sceneData.QuestionText;
         }
 
         public void CESliderQuestionSceneInfo()
         {
-            if (characterType == CharacterType.Main && isDialogueBoxActive)
-            {
-                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueText(dialogueText);
-                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(true);
-            }
+            dialogueBox.SetActive(isDialogueBoxActive);
+            dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
         }

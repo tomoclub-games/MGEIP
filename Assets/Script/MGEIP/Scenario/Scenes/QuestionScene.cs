@@ -1,5 +1,7 @@
-﻿using MGEIP.GameData.SceneData;
+﻿using MGEIP.Characters;
+using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +13,12 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] protected Scenario scenario;
         [SerializeField] protected GameService gameService;
 
-        [SerializeField] protected CharacterType characterType;
         [SerializeField] protected bool isDialogueBoxActive;
-        [SerializeField] protected string dialogueText;
+        [SerializeField] protected string dialogue;
         [SerializeField] protected string questionText;
+
+        [SerializeField] protected GameObject dialogueBox;
+        [SerializeField] protected TextMeshProUGUI dialogueText;
 
         protected GameUIService GameUIService => gameService.GameUIService;
         protected SceneData sceneData;
@@ -22,11 +26,6 @@ namespace MGEIP.Scenario.Scenes
         public override void EnterScene()
         {
             GameUIService.SetQuestionSceneUIActive(true);
-            GameUIService.GetCharacterUI().SetZoomInCharacterActive(true);
-            GameUIService.GetCharacterUI().SetZoomInMainCharacterActive(true);
-
-            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
-            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
         }
 
         public void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -45,7 +44,6 @@ namespace MGEIP.Scenario.Scenes
         public virtual void CompleteQuestionScene()
         {
             GameUIService.SetQuestionSceneUIActive(false);
-            GameUIService.GetCharacterUI().ResetCharacterUI();
         }
 
         public override void ExitScene()

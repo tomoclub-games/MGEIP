@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using MGEIP.GameData.SceneData;
+using UnityEngine;
 
 namespace MGEIP.Scenario.Scenes
 {
-    public abstract class Scene : MonoBehaviour
+    public class Scene : MonoBehaviour
     {
-        public abstract void EnterScene();
-        public abstract void ExitScene();
+        public SceneType SceneType;
+        public virtual void EnterScene() { }
+        public virtual void ExitScene() { }
     }
 }

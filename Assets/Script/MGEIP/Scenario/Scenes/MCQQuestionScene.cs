@@ -1,6 +1,7 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 namespace MGEIP.Scenario.Scenes
 {
@@ -25,9 +26,8 @@ namespace MGEIP.Scenario.Scenes
 
         public void SetMCQQuestionSceneInfo()
         {
-            characterType = sceneData.CharacterType;
             isDialogueBoxActive = sceneData.DialogueBox;  
-            dialogueText = sceneData.DialogueText; 
+            dialogue = sceneData.DialogueText; 
             questionText = sceneData.QuestionText; 
             optionText1 = sceneData.Option1; 
             optionText2 = sceneData.Option2; 
@@ -37,11 +37,8 @@ namespace MGEIP.Scenario.Scenes
 
         public void MCQQuestionSceneInfo()
         {
-            if (characterType == CharacterType.Main && isDialogueBoxActive)
-            {
-                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueText(dialogueText);
-                GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(true);
-            }
+            dialogueBox.SetActive(isDialogueBoxActive);
+            dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
             SetOptionText();

@@ -29,6 +29,9 @@ namespace MGEIP.Characters
         [SerializeField] private TextMeshProUGUI zoomInSideCharDialogueText;
 
         public Image ZoomOutMainCharacter => zoomOutMainCharacter;
+        public Image ZoomOutSideCharacter => zoomOutSideCharacter;
+        public Image ZoomInMainCharacter => zoomInMainCharacter;
+        public Image ZoomInSideCharacter => zoomInSideCharacter;
 
         public void ResetCharacterUI()
         {

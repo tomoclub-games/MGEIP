@@ -1,5 +1,4 @@
-﻿using MGEIP.Characters;
-using MGEIP.GameData.SceneData;
+﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +18,6 @@ namespace MGEIP.Scenario.Scenes
         private GameUIService GameUIService => gameService.GameUIService;
         private SceneData sceneData;
 
-        private CharacterArtContainer CharacterArtContainer => gameService.GameDataContainer.CharacterArtDataContainer;
-
         public override void EnterScene()
         {
             StartCurrentStartScene();
@@ -29,29 +26,7 @@ namespace MGEIP.Scenario.Scenes
         public void StartCurrentStartScene()
         {
             GameUIService.SetStartSceneUIGameobjectActive(true);
-            GameUIService.GetCharacterUI().SetZoomOutCharacterActive(true);
-            GameUIService.GetCharacterUI().SetZoomOutMainCharacterActive(true);
             StartSceneInfo();
-            SetCharacterArt();
-
-            GameUIService.SetScenarioBackgroundSprite(sceneData.SceneBG);
-            GameUIService.SetScenarioForegroundSprite(sceneData.SceneFG);
-        }
-
-        public void SetCharacterArt()
-        {
-            foreach(CharacterArt characterArt in CharacterArtContainer.characterArts)
-            {
-                if(characterArt.scenarioNo == scenarioNo && characterArt.sceneNo == sceneData.SceneNo)
-                {
-                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.sprite = characterArt.mainCharacterSprite;
-                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.pivot = characterArt.GetMainCharacterPivotVector();
-                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchorMax = characterArt.GetMainCharacterPivotVector();
-                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchorMin = characterArt.GetMainCharacterPivotVector();
-
-                    GameUIService.GetCharacterUI().ZoomOutMainCharacter.rectTransform.anchoredPosition = characterArt.GetMainCharacterPivotVector();
-                }
-            }
         }
 
         public void InitializeStartScene(int scenarioNo, string scenarioName, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -89,8 +64,6 @@ namespace MGEIP.Scenario.Scenes
 
         public void CompleteStartScene()
         {
-            GameUIService.GetCharacterUI().ResetCharacterUI();
-
             GameUIService.SetStartSceneNarrationBoxActive(false);
             GameUIService.SetStartSceneUIGameobjectActive(false);
         }

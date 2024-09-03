@@ -12,10 +12,13 @@ namespace MGEIP.GameData
         [SerializeField] private ScenarioArtDataContainer scenarioArtDataContainer;
         [SerializeField] private SceneDataContainer sceneDataContainer;
         [SerializeField] private CharacterArtContainer characterArtDataContainer;
+        [SerializeField] private ResourceContainer scenarioResourceContainer;
 
         public ScenarioDataContainer ScenarioDataContainer => scenarioDataContainer;
         public ScenarioArtDataContainer ScenarioArtDataContainer => scenarioArtDataContainer;
         public SceneDataContainer SceneDataContainer => sceneDataContainer;
         public CharacterArtContainer CharacterArtDataContainer => characterArtDataContainer;
+
+        public ResourceContainer ScenarioResourceContainer => scenarioResourceContainer;
     }
 }

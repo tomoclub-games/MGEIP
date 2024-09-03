@@ -1,9 +1,11 @@
-﻿using MGEIP.GameData.ScenarioData;
+﻿using MGEIP.Characters;
+using MGEIP.GameData.ScenarioData;
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +35,8 @@ namespace MGEIP.Scenario
         public Button ScenarioButton => scenarioButton;
         public Button ScenarioPlayButton => scenarioPlayButton;
         public ScenarioArtDataContainer ScenarioArtDataContainer => gameService.GameDataContainer.ScenarioArtDataContainer;
+        public ResourceContainer ScenarioResourceContainer => gameService.GameDataContainer.ScenarioResourceContainer;
+
         public SceneDataContainer SceneDataContainer => gameService.GameDataContainer.SceneDataContainer;
         private GameUIService GameUIService => gameService.GameUIService;
 
@@ -59,58 +63,127 @@ namespace MGEIP.Scenario
 
         public void CreateScene()
         {
-            foreach (SceneData sceneData in SceneDataContainer.SceneContent.Scenes)
+            List<SceneData> sceneDataList = new List<SceneData>();
+            List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
+
+            foreach(SceneData sceneData in SceneDataContainer.SceneContent.Scenes)
             {
                 if(sceneData.ScenarioNo == scenarioNo)
+                    sceneDataList.Add(sceneData);
+            }
+
+            scenePrefabList = ScenarioResourceContainer.SceneContainer[scenarioNo - 1].ScenePrefab;
+
+            foreach(SceneData sceneData in sceneDataList)
+            {
+                foreach(ScenePrefab scenePrefab in scenePrefabList)
                 {
-                    if (sceneData.SceneType == SceneType.StartScene)
+                    if(sceneData.SceneNo == scenePrefab.sceneNo)
                     {
-                        StartScene startScene = Instantiate<StartScene>(gameService.startScenePrefab);
-                        startScene.InitializeStartScene(scenarioNo, scenarioName, sceneData, this, gameService);
-                        startScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(startScene);
-                    }
-                    else if (sceneData.SceneType == SceneType.StoryScene)
-                    {
-                        StoryScene storyScene = Instantiate<StoryScene>(gameService.storyScenePrefab);
-                        storyScene.InitializeStoryScene(scenarioNo, sceneData, this, gameService);
-                        storyScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(storyScene);
-                    }
-                    else if (sceneData.SceneType == SceneType.MCQQuestion)
-                    {
-                        MCQQuestionScene mcqQuestionScene = Instantiate<MCQQuestionScene>(gameService.mcqQuestionScenePrefab);
-                        mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                        mcqQuestionScene.SetMCQQuestionSceneInfo();
-                        mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(mcqQuestionScene);
-                    }
-                    else if (sceneData.SceneType == SceneType.CESliderQuestion)
-                    {
-                        CESliderQuestionScene ceSliderQuestionScene = Instantiate<CESliderQuestionScene>(gameService.ceSliderQuestionScenePrefab);
-                        ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                        ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
-                        ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(ceSliderQuestionScene);
-                    }
-                    else if (sceneData.SceneType == SceneType.AESliderQuestion)
-                    {
-                        AESliderQuestionScene aeSliderQuestionScene = Instantiate<AESliderQuestionScene>(gameService.aeSliderQuestionScenePrefab);
-                        aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                        aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
-                        aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(aeSliderQuestionScene);
-                    }
-                    else if (sceneData.SceneType == SceneType.EndScene)
-                    {
-                        EndScene endScene = Instantiate<EndScene>(gameService.endScenePrefab);
-                        endScene.InitializeEndScene(scenarioNo, sceneData, this, gameService);
-                        endScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                        scenes.Add(endScene);
+                        Scene scene = Instantiate(scenePrefab.scene);
+                        scene.gameObject.SetActive(false);
+                        if (scene.SceneType == SceneType.StartScene)
+                        {
+                            StartScene startScene = scene.GetComponent<StartScene>();
+                            startScene.InitializeStartScene(ScenarioNo, scenarioName, sceneData, this, gameService);
+                            startScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(startScene);
+                        }
+                        else if (scene.SceneType == SceneType.StoryScene)
+                        {
+                            StoryScene storyScene = scene.GetComponent<StoryScene>();
+                            storyScene.InitializeStoryScene(scenarioNo, sceneData, this, gameService);
+                            storyScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(storyScene);
+                        }
+                        else if (sceneData.SceneType == SceneType.MCQQuestion)
+                        {
+                            MCQQuestionScene mcqQuestionScene = scene.GetComponent<MCQQuestionScene>();
+                            mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            mcqQuestionScene.SetMCQQuestionSceneInfo();
+                            mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(mcqQuestionScene);
+                        }
+                        else if (sceneData.SceneType == SceneType.CESliderQuestion)
+                        {
+                            CESliderQuestionScene ceSliderQuestionScene = scene.GetComponent<CESliderQuestionScene>();
+                            ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
+                            ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(ceSliderQuestionScene);
+                        }
+                        else if (sceneData.SceneType == SceneType.AESliderQuestion)
+                        {
+                            AESliderQuestionScene aeSliderQuestionScene = scene.GetComponent<AESliderQuestionScene>();
+                            aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
+                            aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(aeSliderQuestionScene);
+                        }
+                        else if (sceneData.SceneType == SceneType.EndScene)
+                        {
+                            EndScene endScene = scene.GetComponent<EndScene>();
+                            endScene.InitializeEndScene(scenarioNo, sceneData, this, gameService);
+                            endScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(endScene);
+                        }
+
                     }
                 }
             }
         }
+
+        /*public void extra()
+        {
+            if (sceneData.ScenarioNo == scenarioNo)
+            {
+                if (sceneData.SceneType == SceneType.StartScene)
+                {
+                    StartScene startScene = Instantiate<StartScene>(gameService.startScenePrefab);
+                    startScene.InitializeStartScene(scenarioNo, scenarioName, sceneData, this, gameService);
+                    startScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(startScene);
+                }
+                else if (sceneData.SceneType == SceneType.StoryScene)
+                {
+                    StoryScene storyScene = Instantiate<StoryScene>(gameService.storyScenePrefab);
+                    storyScene.InitializeStoryScene(scenarioNo, sceneData, this, gameService);
+                    storyScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(storyScene);
+                }
+                else if (sceneData.SceneType == SceneType.MCQQuestion)
+                {
+                    MCQQuestionScene mcqQuestionScene = Instantiate<MCQQuestionScene>(gameService.mcqQuestionScenePrefab);
+                    mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                    mcqQuestionScene.SetMCQQuestionSceneInfo();
+                    mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(mcqQuestionScene);
+                }
+                else if (sceneData.SceneType == SceneType.CESliderQuestion)
+                {
+                    CESliderQuestionScene ceSliderQuestionScene = Instantiate<CESliderQuestionScene>(gameService.ceSliderQuestionScenePrefab);
+                    ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                    ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
+                    ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(ceSliderQuestionScene);
+                }
+                else if (sceneData.SceneType == SceneType.AESliderQuestion)
+                {
+                    AESliderQuestionScene aeSliderQuestionScene = Instantiate<AESliderQuestionScene>(gameService.aeSliderQuestionScenePrefab);
+                    aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                    aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
+                    aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(aeSliderQuestionScene);
+                }
+                else if (sceneData.SceneType == SceneType.EndScene)
+                {
+                    EndScene endScene = Instantiate<EndScene>(gameService.endScenePrefab);
+                    endScene.InitializeEndScene(scenarioNo, sceneData, this, gameService);
+                    endScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                    scenes.Add(endScene);
+                }
+            }
+        }*/
 
         public void IncreamentCurrentScene()
         {
@@ -129,6 +202,7 @@ namespace MGEIP.Scenario
             }
             else
             {
+                scenes[currentSceneIndex].gameObject.SetActive(false);
                 SetSceneStatus(currentSceneIndex + 1);
             }
         }
@@ -137,6 +211,7 @@ namespace MGEIP.Scenario
         {
             currentSceneIndex = index;
             SetUIForScene(scenes[currentSceneIndex]);
+            scenes[currentSceneIndex].gameObject.SetActive(true);
             scenes[currentSceneIndex].EnterScene();
         }
 
