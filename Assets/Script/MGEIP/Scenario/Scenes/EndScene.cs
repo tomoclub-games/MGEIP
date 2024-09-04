@@ -46,7 +46,6 @@ namespace MGEIP.Scenario.Scenes
 
         public void EndSceneInfo()
         {
-
             GameUIService.SetEndSceneNarrationBoxActive(isNarrationBoxActive);
             GameUIService.SetEndSceneNarrationText(narrationText);
         }

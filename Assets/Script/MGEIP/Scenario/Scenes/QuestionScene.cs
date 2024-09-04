@@ -1,5 +1,4 @@
-﻿using MGEIP.Characters;
-using MGEIP.GameData.SceneData;
+﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using TMPro;
 using UnityEngine;

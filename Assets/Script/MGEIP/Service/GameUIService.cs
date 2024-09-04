@@ -1,7 +1,6 @@
-﻿using MGEIP.Characters;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MGEIP.Service
@@ -12,9 +11,7 @@ namespace MGEIP.Service
         public GameObject sceneHolder;
         public GameObject MapUI;
         public Sprite tickSprite;
-        [SerializeField] private SpriteRenderer scenarioBackgroundSprite;
-        [SerializeField] private SpriteRenderer scenarioForegroundSprite;
-        [SerializeField] private SpriteAtlas scenarioBackgroundAtlas;
+        [SerializeField] private Button gameEndButton;
 
         [Header("Start Scene Components")]
         [SerializeField] private GameObject startSceneUIGameobject;
@@ -51,37 +48,11 @@ namespace MGEIP.Service
         [SerializeField] private TextMeshProUGUI endSceneNarrationText;
         [SerializeField] private Button endSceneEndButton;
 
-        [Header("Character Components")]
-        [SerializeField] private CharacterUI characterUI;
-
         #region Scenario Methods
-
-        public void SetScenarioBackgroundSprite(string spriteName)
-        {
-            if(spriteName == null)
-                scenarioBackgroundSprite.gameObject.SetActive(false);
-            else
-                scenarioBackgroundSprite.sprite = GetScenarioBackgroundSprite(spriteName);
-        }
-
-        public void SetScenarioForegroundSprite(string spriteName)
-        {
-            if(spriteName == null)
-                scenarioForegroundSprite.gameObject.SetActive(false);
-            else
-                scenarioForegroundSprite.sprite = GetScenarioBackgroundSprite(spriteName);
-        }
-
-        public Sprite GetScenarioBackgroundSprite(string spiteName)
-        {
-            if(spiteName != null)
-                return scenarioBackgroundAtlas.GetSprite(spiteName);
-            return null;
-        }
+        public Button GetGameEndButton => gameEndButton;
         #endregion
 
         #region Start Scene Methods
-
         public Button StartScenePlayButton => startScenePlayButton;
 
         public void SetStartSceneUIGameobjectActive(bool active)
@@ -180,11 +151,6 @@ namespace MGEIP.Service
         {
             endSceneNarrationText.SetText(EndSceneNarration);
         }
-        #endregion
-
-        #region Character Methods
-        public CharacterUI GetCharacterUI() => characterUI;
-
         #endregion
     }
 }

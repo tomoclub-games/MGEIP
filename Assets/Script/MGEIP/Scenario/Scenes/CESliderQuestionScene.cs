@@ -1,8 +1,4 @@
-﻿using MGEIP.GameData.SceneData;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace MGEIP.Scenario.Scenes
+﻿namespace MGEIP.Scenario.Scenes
 {
     public class CESliderQuestionScene : QuestionScene
     {
@@ -39,7 +35,6 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
             GameUIService.SetSliderPanelActive(false);
             GameUIService.CELabelGameobject.SetActive(false);
-            GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(false);
         }
     }
 }

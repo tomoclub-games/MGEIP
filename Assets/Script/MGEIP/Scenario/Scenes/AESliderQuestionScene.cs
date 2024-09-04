@@ -1,5 +1,4 @@
-﻿using MGEIP.GameData.SceneData;
-using MGEIP.Service;
+﻿using MGEIP.Service;
 
 namespace MGEIP.Scenario.Scenes
 {
@@ -38,7 +37,6 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
             GameUIService.SetSliderPanelActive(false);
             GameUIService.AELabelGameobject.SetActive(false);
-            GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(false);
         }
     }
 }

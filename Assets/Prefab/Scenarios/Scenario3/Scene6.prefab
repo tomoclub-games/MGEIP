@@ -94,7 +94,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2728115404976360418, guid: a63154b403b1e9f489ecc55a61fe47c9, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene6
       objectReference: {fileID: 0}
     - target: {fileID: 3987695215711577284, guid: a63154b403b1e9f489ecc55a61fe47c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,7 +177,8 @@ PrefabInstance:
       value: 4.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 661359066694828242, guid: a63154b403b1e9f489ecc55a61fe47c9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7303796366569628128, guid: a63154b403b1e9f489ecc55a61fe47c9, type: 3}
       insertIndex: -1

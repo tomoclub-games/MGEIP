@@ -1,11 +1,9 @@
-﻿using MGEIP.Characters;
-using MGEIP.GameData.ScenarioData;
+﻿using MGEIP.GameData.ScenarioData;
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +25,8 @@ namespace MGEIP.Scenario
 
         [SerializeField] private GameService gameService;
         [SerializeField] private List<Scene> scenes = new();
+
+        public bool isScenarioCompleted = false;
 
         public int ScenarioNo => scenarioNo;
         public GameObject ScenarioInfo => scenarioInfo; 
@@ -133,58 +133,6 @@ namespace MGEIP.Scenario
             }
         }
 
-        /*public void extra()
-        {
-            if (sceneData.ScenarioNo == scenarioNo)
-            {
-                if (sceneData.SceneType == SceneType.StartScene)
-                {
-                    StartScene startScene = Instantiate<StartScene>(gameService.startScenePrefab);
-                    startScene.InitializeStartScene(scenarioNo, scenarioName, sceneData, this, gameService);
-                    startScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(startScene);
-                }
-                else if (sceneData.SceneType == SceneType.StoryScene)
-                {
-                    StoryScene storyScene = Instantiate<StoryScene>(gameService.storyScenePrefab);
-                    storyScene.InitializeStoryScene(scenarioNo, sceneData, this, gameService);
-                    storyScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(storyScene);
-                }
-                else if (sceneData.SceneType == SceneType.MCQQuestion)
-                {
-                    MCQQuestionScene mcqQuestionScene = Instantiate<MCQQuestionScene>(gameService.mcqQuestionScenePrefab);
-                    mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                    mcqQuestionScene.SetMCQQuestionSceneInfo();
-                    mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(mcqQuestionScene);
-                }
-                else if (sceneData.SceneType == SceneType.CESliderQuestion)
-                {
-                    CESliderQuestionScene ceSliderQuestionScene = Instantiate<CESliderQuestionScene>(gameService.ceSliderQuestionScenePrefab);
-                    ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                    ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
-                    ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(ceSliderQuestionScene);
-                }
-                else if (sceneData.SceneType == SceneType.AESliderQuestion)
-                {
-                    AESliderQuestionScene aeSliderQuestionScene = Instantiate<AESliderQuestionScene>(gameService.aeSliderQuestionScenePrefab);
-                    aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
-                    aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
-                    aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(aeSliderQuestionScene);
-                }
-                else if (sceneData.SceneType == SceneType.EndScene)
-                {
-                    EndScene endScene = Instantiate<EndScene>(gameService.endScenePrefab);
-                    endScene.InitializeEndScene(scenarioNo, sceneData, this, gameService);
-                    endScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
-                    scenes.Add(endScene);
-                }
-            }
-        }*/
-
         public void IncreamentCurrentScene()
         {
             if (currentSceneIndex + 1 == scenes.Count)
@@ -194,6 +142,7 @@ namespace MGEIP.Scenario
                     GameObject.Destroy(scenes[i].gameObject);
                 }
                 scenes.Clear();
+                isScenarioCompleted = true;
                 scenarioIndicatorImage.sprite = GameUIService.tickSprite;
                 scenarioIndicator.SetActive(true);
                 scenarioInfo.SetActive(false);

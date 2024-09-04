@@ -1,7 +1,7 @@
 ﻿using MGEIP.GameData;
 using MGEIP.Scenario;
-using MGEIP.Scenario.Scenes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MGEIP.Service
 {
@@ -11,13 +11,6 @@ namespace MGEIP.Service
         [SerializeField] private ScenarioManager scenarioManager;
         [SerializeField] private GameUIService gameUIService;
 
-        public StartScene startScenePrefab;
-        public StoryScene storyScenePrefab;
-        public EndScene endScenePrefab;
-        public MCQQuestionScene mcqQuestionScenePrefab;
-        public AESliderQuestionScene aeSliderQuestionScenePrefab;
-        public CESliderQuestionScene ceSliderQuestionScenePrefab;
-
         public GameDataContainer GameDataContainer => gameDataContainer;
         public ScenarioManager ScenarioManager => scenarioManager;
         public GameUIService GameUIService => gameUIService;
@@ -25,7 +18,13 @@ namespace MGEIP.Service
         private void Start()
         {
             ScenarioManager.InitializeScenarioManager(this);
-            GameUIService.GetCharacterUI().ResetCharacterUI();
+            GameUIService.GetGameEndButton.gameObject.SetActive(false);
+            GameUIService.GetGameEndButton.onClick.AddListener(OnGameEndButtonClick);
+        }
+
+        private void OnGameEndButtonClick()
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }

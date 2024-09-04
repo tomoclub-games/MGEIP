@@ -8,9 +8,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324137413567318404, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_fontSize
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_margin.w
+      value: 0.825785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_margin.x
+      value: 0.19665271
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_margin.y
+      value: 0.32243192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_margin.z
+      value: 0.20720088
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785432717666597008, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072820886242856206, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3189712805667733523, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene7
       objectReference: {fileID: 0}
     - target: {fileID: 3189712805667733523, guid: c59fc8e4c34717d43b3baff3422ad9fc, type: 3}
       propertyPath: m_IsActive

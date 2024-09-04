@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321214077014388006, guid: 826a90535a6d45c409eea980b6277105, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492131315843014715, guid: 826a90535a6d45c409eea980b6277105, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3552997119677727268, guid: 826a90535a6d45c409eea980b6277105, type: 3}
       propertyPath: m_Sprite
@@ -63,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 3552997119677727268, guid: 826a90535a6d45c409eea980b6277105, type: 3}
       propertyPath: m_SortingLayerID
       value: 102016891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210397898715636913, guid: 826a90535a6d45c409eea980b6277105, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

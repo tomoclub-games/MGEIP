@@ -50,12 +50,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373816993038893649, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580833784730062668, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580833784730062668, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580833784730062668, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580833784730062668, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580833784730062668, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_fontSize
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_margin.w
+      value: 0.6781411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_margin.x
+      value: -0.17136651
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_margin.y
+      value: 0.262226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_margin.z
+      value: -0.16534555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869906370743581394, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3462118554489990483, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 106a2f59cea0ea1439975a61b7bb5987, type: 3}
+      objectReference: {fileID: 21300000, guid: 91c963634671b1942a76ec6120817a7a, type: 3}
+    - target: {fileID: 4263629986234469318, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6021521464429275219, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -79,6 +127,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3910661311298121704, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
+    - {fileID: 4603082710864218465, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237bb3a1416e71b4ca9dba0645b7dad1, type: 3}

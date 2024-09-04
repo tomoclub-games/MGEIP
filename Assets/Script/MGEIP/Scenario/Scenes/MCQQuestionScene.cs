@@ -1,7 +1,5 @@
-﻿using MGEIP.GameData.SceneData;
-using MGEIP.Service;
+﻿using MGEIP.Service;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 namespace MGEIP.Scenario.Scenes
 {
@@ -57,7 +55,6 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
 
             GameUIService.SetOptionPanelActive(false);
-            GameUIService.GetCharacterUI().SetZoomInMainCharDialogueBoxActive(false);
         }
     }
 }

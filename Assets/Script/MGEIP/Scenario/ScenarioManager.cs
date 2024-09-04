@@ -1,15 +1,14 @@
 ﻿using MGEIP.GameData.ScenarioData;
 using MGEIP.Service;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace MGEIP.Scenario
 {
     public class ScenarioManager : MonoBehaviour
     {
         [SerializeField] private List<Scenario> scenarios;
-        [SerializeField] private List<Button> scenarioButtons;
         [SerializeField] private Scenario scenarioPrefab;
         [SerializeField] private GameObject scenarioHolder;
 
@@ -62,6 +61,11 @@ namespace MGEIP.Scenario
                 {
                     DisableSelectedScenario();
                 }
+            }
+
+            if (scenarios.All(scenario => scenario.isScenarioCompleted))
+            {
+                gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
             }
         }
 
