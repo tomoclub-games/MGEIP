@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3179686792760457627, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
       propertyPath: m_Name
-      value: MCQ QuestionScene Variant
+      value: Scene11
       objectReference: {fileID: 0}
     - target: {fileID: 3179686792760457627, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590861653138062055, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4722918356398091194, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -30,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4722918356398091194, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.74
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4722918356398091194, guid: 37e3b8423d785bf458d6641a3368a9f0, type: 3}
       propertyPath: m_LocalPosition.y

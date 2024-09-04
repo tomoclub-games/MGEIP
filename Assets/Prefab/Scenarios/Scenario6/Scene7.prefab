@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bed94fb2d193d1f4e836458b8877e580, type: 3}
+    - target: {fileID: 592240122903494181, guid: fd4b5518c624beb40b231c920fe9caeb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3108366086768546087, guid: fd4b5518c624beb40b231c920fe9caeb, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene7
       objectReference: {fileID: 0}
     - target: {fileID: 3108366086768546087, guid: fd4b5518c624beb40b231c920fe9caeb, type: 3}
       propertyPath: m_IsActive
@@ -117,7 +121,8 @@ PrefabInstance:
       value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1438316790383954775, guid: fd4b5518c624beb40b231c920fe9caeb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4b5518c624beb40b231c920fe9caeb, type: 3}
