@@ -51,7 +51,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void StartGame()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1);
         }
     }
 }

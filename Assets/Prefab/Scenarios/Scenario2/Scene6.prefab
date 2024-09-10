@@ -77,17 +77,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3593967378134959921}
     m_Modifications:
+    - target: {fileID: 1713428297317578411, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2213645343693681009, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_Name
       value: Paper Fall
       objectReference: {fileID: 0}
     - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2756764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2756764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2756764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.73
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.38
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_LocalPosition.z
@@ -120,6 +136,18 @@ PrefabInstance:
     - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597351474160879818, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597351474160879818, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 102016891
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864979673430032371, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: endValueV3.y
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
