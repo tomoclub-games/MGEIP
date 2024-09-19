@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1bd88662545fe3a48ad5db21de2dbd9a
+guid: b754a3fa9f5fa1c4abca143b05e89d78
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,43 +106,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: people_sheet_0
+      name: LED light(470X690)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1952
-        width: 2000
-        height: 488
+        y: 690
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e17b7c3c5951c5c4d93de7b65e052694
-      internalID: 989002759
+      spriteID: 2a1769b359f2c1c42855827e923dcd4d
+      internalID: 394079428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_1
+      name: LED light(470X690)_1
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1952
-        width: 2000
-        height: 488
+        x: 470
+        y: 690
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a65b68211aee31419ffbd5182953be9
-      internalID: -1497904431
+      spriteID: a8433c25c4322e940b1082e1dc6b1db9
+      internalID: -944435645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_2
+      name: LED light(470X690)_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1464
-        width: 2000
-        height: 488
+        x: 940
+        y: 690
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ffb94694a5cec542a46cb8694659e86
-      internalID: 913255722
+      spriteID: 5c778fb1430009b4183994e63e6d3d26
+      internalID: 1795048339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_3
+      name: LED light(470X690)_3
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1464
-        width: 2000
-        height: 488
+        x: 1410
+        y: 690
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4581e274b8f3d794aac9e3c80738d19a
-      internalID: -831844507
+      spriteID: 6db7925b929f14348905244d565a098e
+      internalID: -1417243502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_4
+      name: LED light(470X690)_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 976
-        width: 2000
-        height: 488
+        x: 1880
+        y: 690
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,83 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 907f015b4491682409c15b049852b1dd
-      internalID: 587051776
+      spriteID: 1463f9990a73604419a287dc242cadd4
+      internalID: 2110618106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_5
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 976
-        width: 2000
-        height: 488
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82842816e511cfa4daf3f266c265af5a
-      internalID: -1583772165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: people_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 488
-        width: 2000
-        height: 488
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 086b93c45e7215242b520d3a9bd3db11
-      internalID: 1508316878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: people_sheet_7
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 488
-        width: 2000
-        height: 488
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ade3423ee8071e47b9543a99d603b44
-      internalID: -941901981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: people_sheet_8
+      name: LED light(470X690)_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 488
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 726c6c2dbccfd0f40bf21a4b0c57e520
-      internalID: -1029003904
+      spriteID: 70e6c3f8e139adf4bb5eedacbe7fe63e
+      internalID: -6793959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: people_sheet_9
+      name: LED light(470X690)_6
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 470
         y: 0
-        width: 2000
-        height: 488
+        width: 470
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,8 +250,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d64ad9ef1ae4f240bb77d082b11ae7b
-      internalID: -1613496260
+      spriteID: 9323e68cba3e8b24b9586270146e2622
+      internalID: 1060061896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LED light(470X690)_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 0
+        width: 470
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0449295ed8249c74a84705f6acfdf5e3
+      internalID: -781704115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LED light(470X690)_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 0
+        width: 470
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c719b0020837a4cb5a6ce0d8748bd8
+      internalID: 629202289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LED light(470X690)_9
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 0
+        width: 470
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76efe7602bb0b34cad47abf5dff90cf
+      internalID: 1062703754
       vertices: []
       indices: 
       edges: []
@@ -356,16 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      people_sheet_0: 989002759
-      people_sheet_1: -1497904431
-      people_sheet_2: 913255722
-      people_sheet_3: -831844507
-      people_sheet_4: 587051776
-      people_sheet_5: -1583772165
-      people_sheet_6: 1508316878
-      people_sheet_7: -941901981
-      people_sheet_8: -1029003904
-      people_sheet_9: -1613496260
+      LED light(470X690)_0: 394079428
+      LED light(470X690)_1: -944435645
+      LED light(470X690)_2: 1795048339
+      LED light(470X690)_3: -1417243502
+      LED light(470X690)_4: 2110618106
+      LED light(470X690)_5: -6793959
+      LED light(470X690)_6: 1060061896
+      LED light(470X690)_7: -781704115
+      LED light(470X690)_8: 629202289
+      LED light(470X690)_9: 1062703754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

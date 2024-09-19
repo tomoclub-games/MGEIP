@@ -10,10 +10,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 952522987229487838, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene9
       objectReference: {fileID: 0}
     - target: {fileID: 952522987229487838, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130796092438723353, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2284204303639203320, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
@@ -58,7 +62,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2399426507419394753, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513710906410675259, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513710906410675259, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.6704445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434460714890413406, guid: 549bf0fbfa7b64c47a0977ebf3d32b0e, type: 3}
+      propertyPath: m_text
+      value: How could you say that?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

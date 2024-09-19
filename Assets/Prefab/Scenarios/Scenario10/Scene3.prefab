@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2068429251674524536, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 5.6255
       objectReference: {fileID: 0}
     - target: {fileID: 2068429251674524536, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2.7
+      value: 3.7972
       objectReference: {fileID: 0}
     - target: {fileID: 2068429251674524536, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,19 +26,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2068429251674524536, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4
+      value: -4.534922
       objectReference: {fileID: 0}
     - target: {fileID: 2068429251674524536, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.72
+      value: 4.8936224
       objectReference: {fileID: 0}
     - target: {fileID: 2400337915178993053, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_Name
       value: Scene3
       objectReference: {fileID: 0}
     - target: {fileID: 2577986499360709722, guid: 2ec067edd47529443824c74085240c9c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.3073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577986499360709722, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577986499360709722, guid: 2ec067edd47529443824c74085240c9c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.1536
       objectReference: {fileID: 0}
     - target: {fileID: 3730286400726444731, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -93,8 +101,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8447758857092964893, guid: 2ec067edd47529443824c74085240c9c, type: 3}
+      propertyPath: m_text
+      value: No! The setup has to be vibrant and colorful! Not boring and drab.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447758857092964893, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_fontSize
-      value: 0.35
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8447758857092964893, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_margin.w
@@ -114,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8447758857092964893, guid: 2ec067edd47529443824c74085240c9c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.35
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

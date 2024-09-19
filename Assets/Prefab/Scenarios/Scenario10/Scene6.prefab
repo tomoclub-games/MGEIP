@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6511760819149416365, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6807378319199197410, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -122,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856877523387224469, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Name
-      value: CESlider QuestionScene Variant
+      value: Scene6
       objectReference: {fileID: 0}
     - target: {fileID: 6856877523387224469, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_IsActive
@@ -139,10 +143,18 @@ PrefabInstance:
     - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5d3578c839002c540b9e4f57c86c6944, type: 3}
+      objectReference: {fileID: 21300000, guid: 6cf63323d19540f48a5d823ceb3bb795, type: 3}
     - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805908980677388672, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805908980677388672, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8524781862388245700, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalScale.x
@@ -158,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524781862388245700, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.56
+      value: -0.30999994
       objectReference: {fileID: 0}
     - target: {fileID: 8524781862388245700, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalPosition.y

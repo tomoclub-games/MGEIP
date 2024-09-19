@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 664767882585097509, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene4
+      objectReference: {fileID: 0}
+    - target: {fileID: 842407668928896226, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.7024
+      objectReference: {fileID: 0}
+    - target: {fileID: 842407668928896226, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0439
       objectReference: {fileID: 0}
     - target: {fileID: 1995851062643436035, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51,6 +59,26 @@ PrefabInstance:
     - target: {fileID: 1995851062643436035, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801747486215883712, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.0076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801747486215883712, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.7051
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801747486215883712, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801747486215883712, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.3476
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722321372964987557, guid: 1ad648f88a0952642a2e61c0340f69af, type: 3}
+      propertyPath: m_text
+      value: We'll discuss this later.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
