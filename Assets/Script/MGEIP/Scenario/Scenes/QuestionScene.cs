@@ -13,7 +13,9 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] protected GameService gameService;
 
         [SerializeField] protected bool isDialogueBoxActive;
+        [SerializeField] protected bool isNarrationBoxActive;
         [SerializeField] protected string dialogue;
+        [SerializeField] protected string narrationText;
         [SerializeField] protected string questionText;
 
         [SerializeField] protected GameObject dialogueBox;
@@ -42,6 +44,7 @@ namespace MGEIP.Scenario.Scenes
 
         public virtual void CompleteQuestionScene()
         {
+            GameUIService.SetQuestionSceneNarrationBoxActive(false);
             GameUIService.SetQuestionSceneUIActive(false);
         }
 

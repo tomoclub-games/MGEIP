@@ -27,6 +27,8 @@ namespace MGEIP.Service
         [SerializeField] private Button storySceneNextButton;
 
         [Header("Question Scene Components")]
+        [SerializeField] private GameObject questionSceneNarrationBoxGameobject;
+        [SerializeField] private TextMeshProUGUI questionSceneNarrationText;
         [SerializeField] private GameObject questionSceneUIGameobject;
         [SerializeField] private TextMeshProUGUI questionText;
         [SerializeField] private Button questionSceneConfirmButton;
@@ -130,6 +132,16 @@ namespace MGEIP.Service
         public void SetQuestionText(string question)
         {
             questionText.SetText(question);
+        }
+
+        public void SetQuestionSceneNarrationBoxActive(bool active)
+        {
+            questionSceneNarrationBoxGameobject.SetActive(active);
+        }
+
+        public void SetQuestionSceneNarrationText(string questionSceneNarration)
+        {
+            questionSceneNarrationText.SetText(questionSceneNarration);
         }
         #endregion
 

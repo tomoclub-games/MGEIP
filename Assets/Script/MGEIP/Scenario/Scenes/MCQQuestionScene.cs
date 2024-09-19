@@ -26,6 +26,8 @@ namespace MGEIP.Scenario.Scenes
         {
             isDialogueBoxActive = sceneData.DialogueBox;  
             dialogue = sceneData.DialogueText; 
+            isNarrationBoxActive = sceneData.NarrationBox;
+            narrationText = sceneData.NarrationText;
             questionText = sceneData.QuestionText; 
             optionText1 = sceneData.Option1; 
             optionText2 = sceneData.Option2; 
@@ -35,6 +37,9 @@ namespace MGEIP.Scenario.Scenes
 
         public void MCQQuestionSceneInfo()
         {
+            GameUIService.SetQuestionSceneNarrationBoxActive(isNarrationBoxActive);
+            GameUIService.SetQuestionSceneNarrationText(narrationText);
+
             dialogueBox.SetActive(isDialogueBoxActive);
             dialogueText.SetText(dialogue);
 
