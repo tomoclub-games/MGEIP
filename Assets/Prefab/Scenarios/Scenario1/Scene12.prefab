@@ -102,6 +102,22 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3.1222
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.0294
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.0611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.63528
+      objectReference: {fileID: 0}
     - target: {fileID: 8224530306682779613, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -145,6 +161,18 @@ PrefabInstance:
     - target: {fileID: 8468543022119395656, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: SceneType
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_text
+      value: Let's go home now, Whiskers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSize
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3512179567375222828, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.09
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4466347860132456080, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_IsActive
@@ -55,6 +55,30 @@ PrefabInstance:
     - target: {fileID: 4597321489808267841, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178123707397320459, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.1914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178123707397320459, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3.8817
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.5231
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Size.x
@@ -123,6 +147,18 @@ PrefabInstance:
     - target: {fileID: 8468543022119395656, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: SceneType
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_text
+      value: Oh, I see it now! Phew!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSize
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

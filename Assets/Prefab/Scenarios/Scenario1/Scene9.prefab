@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4480622460081204880, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 7792689507071847348, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,6 +295,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8380598928866655249, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
+      propertyPath: m_text
+      value: Someone, help me!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380598928866655249, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
+      propertyPath: m_fontSize
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380598928866655249, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_margin.w
       value: 0.28187722
       objectReference: {fileID: 0}
@@ -310,21 +318,25 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 0.09484035
       objectReference: {fileID: 0}
+    - target: {fileID: 8380598928866655249, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.17
+      objectReference: {fileID: 0}
     - target: {fileID: 8669108562794973583, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1.7
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8669108562794973583, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.1
+      value: 0.9378
       objectReference: {fileID: 0}
     - target: {fileID: 8669108562794973583, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.6
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 8669108562794973583, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5
+      value: 1.9257
       objectReference: {fileID: 0}
     - target: {fileID: 9128274158655767698, guid: d466bb9d2850ebf42ba13fc91f1415f1, type: 3}
       propertyPath: m_Name

@@ -141,8 +141,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2223915310243214762, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1.5181
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223915310243214762, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2285780588446880057, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.x
@@ -158,11 +162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285780588446880057, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2285780588446880057, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 3037618411045460887, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_Size.x
@@ -218,19 +222,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4500406075757641290, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4500406075757641290, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.12
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 4500406075757641290, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.92
+      value: 2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003326307460545510, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_text
+      value: This turtle is hurt!
       objectReference: {fileID: 0}
     - target: {fileID: 5003326307460545510, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_fontSize
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5003326307460545510, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_margin.w
@@ -250,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5003326307460545510, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7654728626768142825, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalPosition.x
