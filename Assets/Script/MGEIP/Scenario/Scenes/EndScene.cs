@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +12,13 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private Scenario scenario;
         [SerializeField] private GameService gameService;
 
+        [SerializeField] private bool isDialogueBoxActive;
         [SerializeField] private bool isNarrationBoxActive;
+        [SerializeField] private string dialogue;
         [SerializeField] private string narrationText;
+
+        [SerializeField] private GameObject dialogueBox;
+        [SerializeField] private TextMeshProUGUI dialogueText;
 
         private GameUIService GameUIService => gameService.GameUIService;
         private SceneData sceneData;
@@ -40,7 +46,9 @@ namespace MGEIP.Scenario.Scenes
 
         public void SetEndSceneInfo()
         {
+            isDialogueBoxActive = sceneData.DialogueBox;
             isNarrationBoxActive = sceneData.NarrationBox;
+            dialogue = sceneData.DialogueText;
             narrationText = sceneData.NarrationText;
         }
 
@@ -48,6 +56,9 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetEndSceneNarrationBoxActive(isNarrationBoxActive);
             GameUIService.SetEndSceneNarrationText(narrationText);
+
+            dialogueBox.SetActive(isDialogueBoxActive);
+            dialogueText.SetText(dialogue);
         }
 
         public void SetEndSceneButtons(Button nextButton)
