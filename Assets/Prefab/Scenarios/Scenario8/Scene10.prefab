@@ -121,6 +121,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c46bd3eae15c35c4cb94bb3501f7714d, type: 3}
     - target: {fileID: 6801829236281319802, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.3286
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801829236281319802, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -166,11 +170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8124415342469064176, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 3.7459
       objectReference: {fileID: 0}
     - target: {fileID: 8124415342469064176, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3
+      value: 2.8094
       objectReference: {fileID: 0}
     - target: {fileID: 8124415342469064176, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_LocalScale.x
@@ -178,7 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8124415342469064176, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.03
+      value: 3.903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124415342469064176, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.6126
       objectReference: {fileID: 0}
     - target: {fileID: 8529606588613601517, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_Name
@@ -189,8 +197,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8988264192330338414, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
+      propertyPath: m_text
+      value: They always do this! It ruins my mood.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988264192330338414, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_fontSize
-      value: 0.35
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 8988264192330338414, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_margin.w
@@ -210,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988264192330338414, guid: 06a8a2424248e6b43a936a71487dc156, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.35
+      value: 0.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

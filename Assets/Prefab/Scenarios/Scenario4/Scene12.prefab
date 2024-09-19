@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ca485cfa4a06931409554150abd72f8b, type: 3}
+    - target: {fileID: 750703867048009516, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2472681356109780667, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
       propertyPath: m_Name
       value: Scene12
@@ -397,6 +401,18 @@ PrefabInstance:
     - target: {fileID: 2472681356109780667, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643685698990283686, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643685698990283686, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.3541427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643685698990283686, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.8463736
       objectReference: {fileID: 0}
     - target: {fileID: 3520600763347237277, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,6 +493,10 @@ PrefabInstance:
     - target: {fileID: 7120402182191414457, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618582262316076852, guid: fa3b7821c7a73e04c8f5b57c292409f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

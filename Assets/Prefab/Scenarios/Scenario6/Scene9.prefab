@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526653988186910835, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5445
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526653988186910835, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5445
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526653988186910835, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5445
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526653988186910835, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526653988186910835, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.59
+      objectReference: {fileID: 0}
     - target: {fileID: 2285780588446880057, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0248823
@@ -46,19 +66,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3964358717498163587, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.216548
+      value: 1.8789583
       objectReference: {fileID: 0}
     - target: {fileID: 3964358717498163587, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.216548
+      value: 1.8789583
       objectReference: {fileID: 0}
     - target: {fileID: 3964358717498163587, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.216548
+      value: 1.8789583
       objectReference: {fileID: 0}
     - target: {fileID: 3964358717498163587, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 5.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964358717498163587, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 3998488121303174430, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_Sprite
@@ -150,11 +174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825347838758699374, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_Name
-      value: AESlider QuestionScene Variant
+      value: Scene9
       objectReference: {fileID: 0}
     - target: {fileID: 8825347838758699374, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214440912468857928, guid: 7fddb0eea63cdd644aa86911c96185e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

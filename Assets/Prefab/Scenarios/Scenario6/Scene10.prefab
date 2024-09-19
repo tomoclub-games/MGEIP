@@ -12,6 +12,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 679b37d9086e7cc44bd6f6f1fe33b7b2, type: 3}
+    - target: {fileID: 243693687998573636, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594853952814009041, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -2.696
+      objectReference: {fileID: 0}
+    - target: {fileID: 594853952814009041, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594853952814009041, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594853952814009041, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.4765
+      objectReference: {fileID: 0}
     - target: {fileID: 2168431960108474385, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -29,16 +49,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 789430660b22ef947a324a213e8e2ae7, type: 3}
     - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.9427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3.707
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
       propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.83
+      value: 3.3913002
       objectReference: {fileID: 0}
     - target: {fileID: 2781557258348613211, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.02
+      value: -0.08349991
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069503907964910533, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_text
+      value: When Roger was around, watering the plants was his job!
       objectReference: {fileID: 0}
     - target: {fileID: 3069503907964910533, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
       propertyPath: m_margin.w
@@ -116,6 +152,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.27
       objectReference: {fileID: 0}
+    - target: {fileID: 7750964922719066825, guid: 56c15dae50eae7248a11855d61aa426c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -159,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7985309886777044238, guid: 23c6601c48822794ebaebe5bf40f8021, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.93
+      value: -3.93
       objectReference: {fileID: 0}
     - target: {fileID: 7985309886777044238, guid: 23c6601c48822794ebaebe5bf40f8021, type: 3}
       propertyPath: m_LocalPosition.z

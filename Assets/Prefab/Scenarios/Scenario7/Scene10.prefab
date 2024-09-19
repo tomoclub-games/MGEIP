@@ -310,6 +310,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237282668208441843, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_text
+      value: "I\u2019m a failure."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237282668208441843, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_fontSize
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237282668208441843, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524666470950993005, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.9317
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524666470950993005, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1.9745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524666470950993005, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.9414737
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524666470950993005, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.8706717
+      objectReference: {fileID: 0}
     - target: {fileID: 6659905908426961264, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
       propertyPath: m_Name
       value: Scene10
@@ -317,6 +345,18 @@ PrefabInstance:
     - target: {fileID: 6659905908426961264, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383185193252387047, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.3148
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383185193252387047, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.7524
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383185193252387047, guid: cd22950eca0c7e44ab68dbab90b0a1c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0322
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

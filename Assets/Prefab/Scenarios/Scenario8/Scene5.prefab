@@ -61,8 +61,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3878710088827187347, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
+      propertyPath: m_text
+      value: It was a good idea to hang out at the basketball court. Are you having
+        fun?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878710088827187347, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_fontSize
-      value: 0.25
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3878710088827187347, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_margin.w
@@ -82,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878710088827187347, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.25
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3898111248484748465, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_LocalScale.x
@@ -106,11 +111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4166093927942194445, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3
+      value: 2.7161
       objectReference: {fileID: 0}
     - target: {fileID: 4166093927942194445, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2
+      value: 1.8107
       objectReference: {fileID: 0}
     - target: {fileID: 4166093927942194445, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_LocalScale.x
@@ -118,15 +123,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4166093927942194445, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.5
+      value: -3.2313
       objectReference: {fileID: 0}
     - target: {fileID: 4166093927942194445, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.19
+      value: 4.2079
       objectReference: {fileID: 0}
     - target: {fileID: 4553149048417617936, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_Name
       value: Scene5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420066968803053983, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9200979894389957138, guid: 0d9a3c7c2c6539d44a7e0ac56dbe6d64, type: 3}
       propertyPath: m_LocalScale.x

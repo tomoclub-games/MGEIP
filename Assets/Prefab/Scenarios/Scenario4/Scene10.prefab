@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird Flying (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7530891391702982258, guid: a6f3c9980ff767944b7b6013fa128b31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8447461340695126123, guid: a6f3c9980ff767944b7b6013fa128b31, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.3789
@@ -277,6 +281,10 @@ PrefabInstance:
     - target: {fileID: 1379022703945603705, guid: 5682abde9b32607439d9ac85a2ab0577, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794980710189332304, guid: 5682abde9b32607439d9ac85a2ab0577, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3288648183134618845, guid: 5682abde9b32607439d9ac85a2ab0577, type: 3}
       propertyPath: m_LocalScale.x

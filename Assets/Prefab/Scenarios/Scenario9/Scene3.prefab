@@ -18,23 +18,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2660182345054871873, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3.5
+      value: 2.7347
       objectReference: {fileID: 0}
     - target: {fileID: 2660182345054871873, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2.2
+      value: 1.719
       objectReference: {fileID: 0}
     - target: {fileID: 2660182345054871873, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.13
+      value: 2.7474
       objectReference: {fileID: 0}
     - target: {fileID: 2660182345054871873, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.06
+      value: 4.081749
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948133326129353951, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
+      propertyPath: m_text
+      value: "It\u2019s ok if you haven\u2019t seen the first 3 films."
       objectReference: {fileID: 0}
     - target: {fileID: 2948133326129353951, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_fontSize
-      value: 0.35
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2948133326129353951, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_margin.w
@@ -54,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2948133326129353951, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.35
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 3495127702222766970, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -110,7 +114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6632318307983448314, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.16
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632318307983448314, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7100592845047006814, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_LocalScale.x
@@ -131,6 +139,14 @@ PrefabInstance:
     - target: {fileID: 7100592845047006814, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479795111801423766, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479795111801423766, guid: 2a17f8eae93fbf24894308e66302cdc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

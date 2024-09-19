@@ -20,9 +20,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2416584073074101146, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780785866617084802, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -1.8156
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780785866617084802, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.036299944
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294084651432082711, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6056860523503464770, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7607262698150826387, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
       propertyPath: m_Sprite
@@ -30,7 +46,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: cb3af6439ae78904099c44eab4abdf79, type: 3}
     - target: {fileID: 7666095017586610709, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819243427460767496, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.915079
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819243427460767496, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.7105498
       objectReference: {fileID: 0}
     - target: {fileID: 8712325522887294259, guid: 74db09be15f0d9f41842640cc412436f, type: 3}
       propertyPath: m_LocalPosition.x

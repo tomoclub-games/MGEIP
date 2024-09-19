@@ -50,20 +50,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5906404758984374607, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene7
       objectReference: {fileID: 0}
     - target: {fileID: 5906404758984374607, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6275549893248398418, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275549893248398418, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.996575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275549893248398418, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.09
+      value: 5.0540137
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562933764574609868, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_text
+      value: Music is my whole life!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562933764574609868, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_fontSize
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562933764574609868, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 8281256495096534605, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 85633930912e01641a4a5176d2df8307, type: 3}
+    - target: {fileID: 8776513411077877976, guid: b42bc3719d2b16049b615192c1c9da9d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

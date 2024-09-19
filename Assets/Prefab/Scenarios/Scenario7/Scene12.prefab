@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 562824686395037509, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Name
-      value: EndScene Variant
+      value: Scene12
       objectReference: {fileID: 0}
     - target: {fileID: 562824686395037509, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_IsActive
@@ -32,13 +32,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1272807894833569557, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3512179567375222828, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 3512179567375222828, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: -1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316082332609379873, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4597321489808267841, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Sprite
@@ -47,6 +55,34 @@ PrefabInstance:
     - target: {fileID: 4597321489808267841, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178123707397320459, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1.0414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178123707397320459, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.4497
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178123707397320459, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2249
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5.757
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3.7421
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.8786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Size.x
@@ -115,6 +151,19 @@ PrefabInstance:
     - target: {fileID: 8468543022119395656, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: SceneType
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_text
+      value: Thank you all for your support. I guess even gardeners have their clumsy
+        days!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSize
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062868771226039781, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3588936145972799960, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917689691047279040, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.3069
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917689691047279040, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.9722
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917689691047279040, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0101
+      objectReference: {fileID: 0}
     - target: {fileID: 7543386331900174193, guid: af87102977b878c4d906212b732de117, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,9 +64,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8126625017610995924, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_text
+      value: "Hey! How do I get up there? That\u2019s a tough hike."
+      objectReference: {fileID: 0}
     - target: {fileID: 8801274799496245335, guid: af87102977b878c4d906212b732de117, type: 3}
       propertyPath: m_Name
-      value: StoryScene Variant
+      value: Scene4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990469609013198154, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.0177617
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990469609013198154, guid: af87102977b878c4d906212b732de117, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.7456658
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

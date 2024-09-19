@@ -10,6 +10,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71334926662292140, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633653657824213100, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633653657824213100, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -1.813
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633653657824213100, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633653657824213100, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633653657824213100, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128929123618168569, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3178206348899671773, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
@@ -52,6 +76,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3779556198982715768, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_text
+      value: Oh no... I can't believe this. I forgot to bring utensils!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779556198982715768, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_fontSize
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779556198982715768, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 9.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 6.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.168
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066939900770991334, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.97
+      objectReference: {fileID: 0}
     - target: {fileID: 4422896765101306493, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -59,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 4508196683740230139, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
       propertyPath: m_Name
       value: Scene13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652442346049209693, guid: bee04fdc7124d3948a5e3832ae174ad1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
