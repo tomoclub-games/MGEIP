@@ -37,9 +37,10 @@ namespace MGEIP.Scenario.Scenes
             this.gameService = gameService;
         }
 
-        public virtual void SetQuestionButton(Button questionConfirmButton)
+        public virtual void SetQuestionButton(Button questionConfirmButton, Button questionPrevButton)
         {
             questionConfirmButton.onClick.AddListener(ExitScene);
+            questionPrevButton.onClick.AddListener(ExitToPrevScene);
         }
 
         public virtual void CompleteQuestionScene()
@@ -52,6 +53,12 @@ namespace MGEIP.Scenario.Scenes
         {
             CompleteQuestionScene();
             scenario.IncreamentCurrentScene();
+        }
+
+        public void ExitToPrevScene()
+        {
+            CompleteQuestionScene();
+            scenario.DecrementCurrentScene();
         }
     }
 }

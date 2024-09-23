@@ -61,9 +61,10 @@ namespace MGEIP.Scenario.Scenes
             dialogueText.SetText(dialogue);
         }
 
-        public void SetStorySceneButtons(Button nextButton)
+        public void SetStorySceneButtons(Button nextButton, Button prevButton)
         {
             nextButton.onClick.AddListener(ExitScene);
+            prevButton.onClick.AddListener(ExitToPrevScene);
         }
 
         public void CompleteStoryScene()
@@ -76,6 +77,12 @@ namespace MGEIP.Scenario.Scenes
         {
             CompleteStoryScene();
             scenario.IncreamentCurrentScene();
+        }
+
+        public void ExitToPrevScene()
+        {
+            CompleteStoryScene();
+            scenario.DecrementCurrentScene();
         }
     }
 }

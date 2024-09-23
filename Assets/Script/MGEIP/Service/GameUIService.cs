@@ -25,6 +25,7 @@ namespace MGEIP.Service
         [SerializeField] private GameObject storySceneNarrationBoxGameobject;
         [SerializeField] private TextMeshProUGUI storySceneNarrationText;
         [SerializeField] private Button storySceneNextButton;
+        [SerializeField] private Button storyScenePrevButton;
 
         [Header("Question Scene Components")]
         [SerializeField] private GameObject questionSceneNarrationBoxGameobject;
@@ -32,6 +33,7 @@ namespace MGEIP.Service
         [SerializeField] private GameObject questionSceneUIGameobject;
         [SerializeField] private TextMeshProUGUI questionText;
         [SerializeField] private Button questionSceneConfirmButton;
+        [SerializeField] private Button questionScenePrevButton;
 
         [Header("Options Components")]
         [SerializeField] private GameObject optionPanelGameobject;
@@ -49,6 +51,7 @@ namespace MGEIP.Service
         [SerializeField] private GameObject endSceneNarrationBoxGameobject;
         [SerializeField] private TextMeshProUGUI endSceneNarrationText;
         [SerializeField] private Button endSceneEndButton;
+        [SerializeField] private Button endScenePrevButton;
 
         #region Scenario Methods
         public Button GetGameEndButton => gameEndButton;
@@ -81,6 +84,7 @@ namespace MGEIP.Service
         #region Story Scene Methods
 
         public Button StorySceneNextButton => storySceneNextButton;
+        public Button StoryScenePrevButton => storyScenePrevButton;
 
         public void SetStartStoryUIGameobjectActive(bool active)
         {
@@ -105,6 +109,7 @@ namespace MGEIP.Service
         public Slider AnswerSlider => answerSlider;
         public Button[] OptionButton => optionButton;
         public Button QuestionSceneConfirmButton => questionSceneConfirmButton;
+        public Button QuestionScenePrevButton => questionScenePrevButton;
 
         public void SetOptionText(string[] text)
         {
@@ -148,6 +153,7 @@ namespace MGEIP.Service
         #region End Scene Methods
 
         public Button EndSceneEndButton => endSceneEndButton;
+        public Button EndScenePrevButton => endScenePrevButton;
 
         public void SetEndStoryUIGameobjectActive(bool active)
         {

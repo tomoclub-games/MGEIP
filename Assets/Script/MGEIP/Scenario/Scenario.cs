@@ -156,6 +156,19 @@ namespace MGEIP.Scenario
             }
         }
 
+        public void DecrementCurrentScene()
+        {
+            if (currentSceneIndex == 0)
+            {
+                return;
+            }
+            else
+            {
+                scenes[currentSceneIndex].gameObject.SetActive(false);
+                SetSceneStatus(currentSceneIndex - 1);
+            }
+        }
+
         public void SetSceneStatus(int index)
         {
             currentSceneIndex = index;
@@ -199,7 +212,8 @@ namespace MGEIP.Scenario
             Button storySceneNextButton = GameUIService.StorySceneNextButton;
 
             storySceneNextButton.onClick.RemoveAllListeners();
-            scene.GetComponent<StoryScene>().SetStorySceneButtons(storySceneNextButton);
+            GameUIService.StoryScenePrevButton.onClick.RemoveAllListeners();
+            scene.GetComponent<StoryScene>().SetStorySceneButtons(storySceneNextButton, GameUIService.StoryScenePrevButton);
         }
 
         private void SetUIForQuestion(Scene scene)
@@ -207,7 +221,8 @@ namespace MGEIP.Scenario
             Button QuestionConfirmButton = GameUIService.QuestionSceneConfirmButton;
             
             QuestionConfirmButton.onClick.RemoveAllListeners();
-            scene.GetComponent<QuestionScene>().SetQuestionButton(QuestionConfirmButton);
+            GameUIService.QuestionScenePrevButton.onClick.RemoveAllListeners();
+            scene.GetComponent<QuestionScene>().SetQuestionButton(QuestionConfirmButton, GameUIService.QuestionScenePrevButton);
         }
 
         private void SetUIForEndScene(Scene scene)
@@ -215,7 +230,8 @@ namespace MGEIP.Scenario
             Button endSceneEndButton = GameUIService.EndSceneEndButton;
 
             endSceneEndButton.onClick.RemoveAllListeners();
-            scene.GetComponent<EndScene>().SetEndSceneButtons(endSceneEndButton);
+            GameUIService.EndScenePrevButton.onClick.RemoveAllListeners();
+            scene.GetComponent<EndScene>().SetEndSceneButtons(endSceneEndButton, GameUIService.EndScenePrevButton);
         }
     }
 }
