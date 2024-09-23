@@ -120,6 +120,13 @@ namespace MGEIP.Scenario
                             aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(aeSliderQuestionScene);
                         }
+                        else if (sceneData.SceneType == SceneType.PhotoCapture)
+                        {
+                            PhotoCaptureScene photoCaptureScene = scene.GetComponent<PhotoCaptureScene>();
+                            photoCaptureScene.InitializePhotoCaptureScene(scenarioNo, sceneData, this, gameService);
+                            photoCaptureScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
+                            scenes.Add(photoCaptureScene);
+                        }
                         else if (sceneData.SceneType == SceneType.EndScene)
                         {
                             EndScene endScene = scene.GetComponent<EndScene>();
@@ -142,11 +149,16 @@ namespace MGEIP.Scenario
                     GameObject.Destroy(scenes[i].gameObject);
                 }
                 scenes.Clear();
+
+                // Disabled scenario locking for testing
+                /*
                 isScenarioCompleted = true;
                 scenarioIndicatorImage.sprite = GameUIService.tickSprite;
                 scenarioIndicator.SetActive(true);
                 scenarioInfo.SetActive(false);
                 scenarioButton.enabled = false;
+                */
+
                 GameUIService.MapUI.SetActive(true);
             }
             else
@@ -191,7 +203,11 @@ namespace MGEIP.Scenario
             else if (scene.GetComponent<QuestionScene>() != null)
             {
                 SetUIForQuestion(scene);
-                
+
+            }
+            else if (scene.GetComponent<PhotoCaptureScene>() != null)
+            {
+                SetUIForPhotoCaptureScene(scene);
             }
             else if (scene.GetComponent<EndScene>() != null)
             {
@@ -223,6 +239,13 @@ namespace MGEIP.Scenario
             QuestionConfirmButton.onClick.RemoveAllListeners();
             GameUIService.QuestionScenePrevButton.onClick.RemoveAllListeners();
             scene.GetComponent<QuestionScene>().SetQuestionButton(QuestionConfirmButton, GameUIService.QuestionScenePrevButton);
+        }
+
+        private void SetUIForPhotoCaptureScene(Scene scene)
+        {
+            GameUIService.PhotoCaptureSceneNextButton.onClick.RemoveAllListeners();
+            GameUIService.PhotoCaptureScenePrevButton.onClick.RemoveAllListeners();
+            scene.GetComponent<PhotoCaptureScene>().SetPhotoCaptureSceneButtons(GameUIService.PhotoCaptureSceneNextButton, GameUIService.PhotoCaptureScenePrevButton);
         }
 
         private void SetUIForEndScene(Scene scene)

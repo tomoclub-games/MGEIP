@@ -46,6 +46,13 @@ namespace MGEIP.Service
         [SerializeField] private GameObject ceLabelGameobject;
         [SerializeField] private GameObject aeLabelGameobject;
 
+        [Header("Photo Capture Scene Components")]
+        [SerializeField] private GameObject photoCaptureSceneUIGameobject;
+        [SerializeField] private Button photoCaptureSceneNextButton;
+        [SerializeField] private Button photoCaptureScenePrevButton;
+        [SerializeField] private GameObject photoCaptureSceneNarrationBoxGameobject;
+        [SerializeField] private TextMeshProUGUI photoCaptureSceneNarrationText;
+
         [Header("End Scene Components")]
         [SerializeField] private GameObject endSceneUIGameobject;
         [SerializeField] private GameObject endSceneNarrationBoxGameobject;
@@ -148,6 +155,28 @@ namespace MGEIP.Service
         {
             questionSceneNarrationText.SetText(questionSceneNarration);
         }
+        #endregion
+
+        #region Photo Capture Scene Methods
+
+        public Button PhotoCaptureSceneNextButton => photoCaptureSceneNextButton;
+        public Button PhotoCaptureScenePrevButton => photoCaptureScenePrevButton;
+
+        public void SetPhotoCaptureUIGameobjectActive(bool active)
+        {
+            photoCaptureSceneUIGameobject.SetActive(active);
+        }
+
+        public void SetPhotoCaptureNarrationBoxActive(bool active)
+        {
+            photoCaptureSceneNarrationBoxGameobject.SetActive(active);
+        }
+
+        public void SetPhotoCaptureNarrationText(string storySceneNarration)
+        {
+            photoCaptureSceneNarrationText.SetText(storySceneNarration);
+        }
+
         #endregion
 
         #region End Scene Methods

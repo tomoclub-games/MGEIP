@@ -16,7 +16,7 @@ namespace MGEIP.GameData.SceneData
     [Serializable]
     public class SceneContent
     {
-        [SpreadsheetPage("Scenes")]
+        [SpreadsheetPage("Sheet6")]
         public List<SceneData> Scenes;
     }
 

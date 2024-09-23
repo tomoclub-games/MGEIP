@@ -9,5 +9,6 @@
         CESliderQuestion,
         AESliderQuestion,
         EndScene,
+        PhotoCapture
     }
 }
