@@ -69,6 +69,8 @@ namespace MGEIP.Scenario.Scenes
 
             GameUIService.SetQuestionText(questionText);
             SetOptionText();
+
+            GameUIService.OnMCQOptionSelect += OptionSelect;
         }
 
         private void SetOptionText()
@@ -84,6 +86,13 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
 
             GameUIService.SetOptionPanelActive(false);
+
+            GameUIService.OnMCQOptionSelect -= OptionSelect;
+        }
+
+        private void OptionSelect(int _optionNo)
+        {
+            multipleChoiceQuestion.selectedAnswer = multipleChoiceQuestion.options[_optionNo];
         }
     }
 }

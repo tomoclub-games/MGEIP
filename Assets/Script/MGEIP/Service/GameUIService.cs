@@ -83,12 +83,26 @@ namespace MGEIP.Service
 
         public UnityAction<int> OnScenarioStart;
 
+        #region Button events
+
+        public UnityAction<int> OnMCQOptionSelect;
+        public UnityAction<int> OnSliderAnswerSelect;
+
+        #endregion
+
         private void Awake()
         {
+            for (int i = 0; i < 4; i++)
+            {
+                int buttonIndex = i;
+                optionButton[i].onClick.AddListener(() => OnMCQOptionSelect?.Invoke(buttonIndex));
+            }
+
             answerSlider.onValueChanged.AddListener((value) =>
             {
                 int selectedValue = (int)value;
                 UpdateSliderLabelImage(selectedValue);
+                OnSliderAnswerSelect?.Invoke((int)value);
             });
 
             scenarioInfoCloseButton.onClick.AddListener(ScenarioInfoCloseButtonClick);
@@ -97,15 +111,15 @@ namespace MGEIP.Service
 
         private void OnDestroy()
         {
+            for (int i = 0; i < 4; i++)
+            {
+                optionButton[i].onClick.RemoveAllListeners();
+            }
+
             answerSlider.onValueChanged.RemoveAllListeners();
 
             scenarioInfoCloseButton.onClick.RemoveAllListeners();
             scenarioInfoStartButton.onClick.RemoveAllListeners();
-        }
-
-        private void Start()
-        {
-            UpdateSliderLabelImage((int)answerSlider.value);
         }
 
         #region Scenario Methods
@@ -168,7 +182,7 @@ namespace MGEIP.Service
 
         public void SetOptionText(string[] text)
         {
-            for(int i = 0; i < optionButtonText.Length; i++)
+            for (int i = 0; i < optionButtonText.Length; i++)
             {
                 optionButtonText[i].SetText(text[i]);
             }

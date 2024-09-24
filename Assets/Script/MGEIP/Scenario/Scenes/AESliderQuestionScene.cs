@@ -52,6 +52,8 @@ namespace MGEIP.Scenario.Scenes
             dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
+
+            GameUIService.OnSliderAnswerSelect += SliderSelect;
         }
 
         public override void CompleteQuestionScene()
@@ -59,6 +61,13 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
             GameUIService.SetSliderPanelActive(false);
             GameUIService.AELabelGameobject.SetActive(false);
+
+            GameUIService.OnSliderAnswerSelect -= SliderSelect;
+        }
+
+        private void SliderSelect(int _selectedAnswer)
+        {
+            sliderQuestion.selectedAnswer = _selectedAnswer;
         }
     }
 }
