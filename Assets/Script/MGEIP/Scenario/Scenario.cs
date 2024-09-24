@@ -2,6 +2,7 @@
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
+using MGIEP.Data;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -166,6 +167,9 @@ namespace MGEIP.Scenario
                 scenarioInfo.SetActive(false);
                 scenarioButton.enabled = false;
                 */
+
+                // Printing Scenario Info
+                gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].PrintScenarioInfo();
 
                 GameUIService.MapUI.SetActive(true);
             }

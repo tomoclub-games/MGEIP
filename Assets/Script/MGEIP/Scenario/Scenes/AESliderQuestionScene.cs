@@ -1,9 +1,14 @@
-﻿using MGEIP.Service;
+﻿using MGEIP.GameData.SceneData;
+using MGEIP.Service;
+using MGIEP.Data;
 
 namespace MGEIP.Scenario.Scenes
 {
     public class AESliderQuestionScene : QuestionScene
     {
+        private SliderQuestion sliderQuestion;
+        private int questionNo;
+
         public override void EnterScene()
         {
             base.EnterScene();
@@ -15,6 +20,18 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetSliderPanelActive(true);
             GameUIService.AELabelGameobject.SetActive(true);
             AESliderQuestionSceneInfo();
+        }
+
+        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        {
+            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService);
+
+            sliderQuestion = new SliderQuestion();
+            sliderQuestion.sceneNo = sceneData.SceneNo;
+            sliderQuestion.questionText = sceneData.QuestionText;
+
+            gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Add(sliderQuestion);
+            questionNo = gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count;
         }
 
         public void SetAESliderQuestionSceneInfo()

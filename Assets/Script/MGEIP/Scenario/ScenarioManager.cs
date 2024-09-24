@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.ScenarioData;
 using MGEIP.Service;
+using MGIEP.Data;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -125,6 +126,9 @@ namespace MGEIP.Scenario
             scenario.SetScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName, gameService);
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
+
+            ScenarioInfo scenarioInfo = new ScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName);
+            gameService.DataHandler.MGIEPData.scenarioList.Add(scenarioInfo);
         }
 
         public void SetCurrentScenario(int scenarioIndex)

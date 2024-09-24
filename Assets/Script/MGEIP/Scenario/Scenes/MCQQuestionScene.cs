@@ -1,4 +1,7 @@
-﻿using MGEIP.Service;
+﻿using MGEIP.GameData.ScenarioData;
+using MGEIP.GameData.SceneData;
+using MGEIP.Service;
+using MGIEP.Data;
 using System.Linq;
 using UnityEngine;
 namespace MGEIP.Scenario.Scenes
@@ -10,6 +13,9 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private string optionText3;
         [SerializeField] private string optionText4;
 
+        private MultipleChoiceQuestion multipleChoiceQuestion;
+        private int questionNo;
+
         public override void EnterScene()
         {
             base.EnterScene();
@@ -20,6 +26,24 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetOptionPanelActive(true);
             MCQQuestionSceneInfo();
+        }
+
+        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        {
+            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService);
+
+            multipleChoiceQuestion = new MultipleChoiceQuestion();
+
+            multipleChoiceQuestion.sceneNo = sceneData.SceneNo;
+            multipleChoiceQuestion.questionText = sceneData.QuestionText;
+
+            multipleChoiceQuestion.options.Add(sceneData.Option1);
+            multipleChoiceQuestion.options.Add(sceneData.Option2);
+            multipleChoiceQuestion.options.Add(sceneData.Option3);
+            multipleChoiceQuestion.options.Add(sceneData.Option4);
+
+            gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Add(multipleChoiceQuestion);
+            questionNo = gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count;
         }
 
         public void SetMCQQuestionSceneInfo()

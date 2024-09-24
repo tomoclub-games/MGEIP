@@ -29,7 +29,7 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetQuestionSceneUIActive(true);
         }
 
-        public void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
         {
             this.scenarioNo = scenarioNo;
             this.sceneData = sceneData;
