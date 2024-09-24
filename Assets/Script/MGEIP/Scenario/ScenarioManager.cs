@@ -17,6 +17,7 @@ namespace MGEIP.Scenario
         [SerializeField] private int currentScenarioIndex;
 
         private int selectedScenarioIndex = -1;
+        private int completedScenarios;
         private GameService gameService;
         public ScenarioDataContainer ScenariosDataContainer => gameService.GameDataContainer.ScenarioDataContainer;
 
@@ -28,7 +29,7 @@ namespace MGEIP.Scenario
 
             for (int i = 0; i < scenarioData.Count; i++)
             {
-                CreateScenario(scenarioData[i]);  
+                CreateScenario(scenarioData[i]);
             }
 
             for (int i = 0; i < scenarioButtons.Count; i++)
@@ -74,7 +75,6 @@ namespace MGEIP.Scenario
                     DisableSelectedScenario();
                 }
             }
-            */
 
             if (scenarios.All(scenario => scenario.isScenarioCompleted))
             {
@@ -123,7 +123,7 @@ namespace MGEIP.Scenario
         {
             Scenario scenario = Instantiate<Scenario>(scenarioPrefab);
             scenario.gameObject.name = "Scenario" + scenarioData.ScenarioNo;
-            scenario.SetScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName, gameService);
+            scenario.SetScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName, gameService, this);
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
 
@@ -144,6 +144,17 @@ namespace MGEIP.Scenario
             else
             {
                 Debug.LogError("Invalid Scenario index");
+            }
+        }
+
+        public void SetCurrentScenarioComplete(int scenarioIndex)
+        {
+            completedScenarios++;
+
+            if (completedScenarios == scenarios.Count)
+            {
+                gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
+                gameService.DataHandler.MGIEPData.PrintMGIEPData();
             }
         }
     }

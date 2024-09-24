@@ -28,6 +28,8 @@ namespace MGEIP.Scenario
         [SerializeField] private GameService gameService;
         [SerializeField] private List<Scene> scenes = new();
 
+        private ScenarioManager scenarioManager;
+
         private string emotionKeyword;
 
         public bool isScenarioCompleted = false;
@@ -47,11 +49,12 @@ namespace MGEIP.Scenario
         public SceneDataContainer SceneDataContainer => gameService.GameDataContainer.SceneDataContainer;
         private GameUIService GameUIService => gameService.GameUIService;
 
-        public void SetScenarioInfo(int scenarioNo, string scenarioName, GameService gameService)
+        public void SetScenarioInfo(int scenarioNo, string scenarioName, GameService gameService, ScenarioManager scenarioManager)
         {
             this.scenarioNo = scenarioNo;
             this.scenarioName = scenarioName;
             this.gameService = gameService;
+            this.scenarioManager = scenarioManager;
 
             /*
             scenarioInfo.SetActive(false);
@@ -75,19 +78,19 @@ namespace MGEIP.Scenario
             List<SceneData> sceneDataList = new List<SceneData>();
             List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
 
-            foreach(SceneData sceneData in SceneDataContainer.SceneContent.Scenes)
+            foreach (SceneData sceneData in SceneDataContainer.SceneContent.Scenes)
             {
-                if(sceneData.ScenarioNo == scenarioNo)
+                if (sceneData.ScenarioNo == scenarioNo)
                     sceneDataList.Add(sceneData);
             }
 
             scenePrefabList = ScenarioResourceContainer.SceneContainer[scenarioNo - 1].ScenePrefab;
 
-            foreach(SceneData sceneData in sceneDataList)
+            foreach (SceneData sceneData in sceneDataList)
             {
-                foreach(ScenePrefab scenePrefab in scenePrefabList)
+                foreach (ScenePrefab scenePrefab in scenePrefabList)
                 {
-                    if(sceneData.SceneNo == scenePrefab.sceneNo)
+                    if (sceneData.SceneNo == scenePrefab.sceneNo)
                     {
                         Scene scene = Instantiate(scenePrefab.scene);
                         scene.gameObject.SetActive(false);
@@ -168,7 +171,8 @@ namespace MGEIP.Scenario
                 scenarioButton.enabled = false;
                 */
 
-                // Printing Scenario Info
+                scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
+
                 gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].PrintScenarioInfo();
 
                 GameUIService.MapUI.SetActive(true);
@@ -206,7 +210,7 @@ namespace MGEIP.Scenario
             if (scene.GetComponent<StartScene>() != null)
             {
                 SetUIForStartScene(scene);
-                
+
             }
             else if (scene.GetComponent<StoryScene>() != null)
             {
@@ -247,7 +251,7 @@ namespace MGEIP.Scenario
         private void SetUIForQuestion(Scene scene)
         {
             Button QuestionConfirmButton = GameUIService.QuestionSceneConfirmButton;
-            
+
             QuestionConfirmButton.onClick.RemoveAllListeners();
             GameUIService.QuestionScenePrevButton.onClick.RemoveAllListeners();
             scene.GetComponent<QuestionScene>().SetQuestionButton(QuestionConfirmButton, GameUIService.QuestionScenePrevButton);

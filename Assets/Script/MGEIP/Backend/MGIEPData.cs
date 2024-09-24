@@ -15,6 +15,15 @@ namespace MGIEP.Data
             playerName = _playerName;
             scenarioList = new List<ScenarioInfo>();
         }
+
+        public void PrintMGIEPData()
+        {
+            Debug.Log("Player Name : " + playerName);
+            foreach (ScenarioInfo scenarioInfo in scenarioList)
+            {
+                scenarioInfo.PrintScenarioInfo();
+            }
+        }
     }
 
     [Serializable]
