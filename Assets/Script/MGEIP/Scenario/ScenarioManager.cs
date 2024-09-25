@@ -2,7 +2,6 @@
 using MGEIP.Service;
 using MGIEP.Data;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace MGEIP.Scenario
@@ -155,6 +154,7 @@ namespace MGEIP.Scenario
             {
                 gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
                 gameService.DataHandler.MGIEPData.PrintMGIEPData();
+                gameService.DataHandler.GetJsonObject();
             }
         }
     }

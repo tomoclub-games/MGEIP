@@ -29,8 +29,8 @@ namespace MGIEP.Data
     [Serializable]
     public class ScenarioInfo
     {
-        int scenarioNo;
-        string scenarioTitle;
+        public int scenarioNo;
+        public string scenarioTitle;
         public List<Question> questions;
 
         public ScenarioInfo(int _scenarioNo, string _scenarioTitle)

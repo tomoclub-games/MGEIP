@@ -1,4 +1,5 @@
 using MGEIP.Service;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace MGIEP.Data
@@ -16,6 +17,13 @@ namespace MGIEP.Data
 
             string playerName = "Guest" + Random.Range(1, 1000);
             mgiepData = new MGIEPData(playerName);
+        }
+
+        [ContextMenu("Print Json Object")]
+        public void GetJsonObject()
+        {
+            string jsonData = JsonConvert.SerializeObject(mgiepData);
+            Debug.Log(jsonData);
         }
     }
 }
