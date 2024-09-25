@@ -15,6 +15,7 @@ namespace MGEIP.Scenario.Scenes
 
         private MultipleChoiceQuestion multipleChoiceQuestion;
         private int questionNo;
+        private string[] shuffledOptions;
 
         public override void EnterScene()
         {
@@ -76,7 +77,7 @@ namespace MGEIP.Scenario.Scenes
         private void SetOptionText()
         {
             string[] stringOptions = new string[] { optionText1, optionText2, optionText3, optionText4 };
-            string[] shuffledOptions = stringOptions.OrderBy(x => Random.value).ToArray();
+            shuffledOptions = stringOptions.OrderBy(x => Random.value).ToArray();
 
             GameUIService.SetOptionText(shuffledOptions);
         }
@@ -92,7 +93,7 @@ namespace MGEIP.Scenario.Scenes
 
         private void OptionSelect(int _optionNo)
         {
-            multipleChoiceQuestion.selectedAnswer = multipleChoiceQuestion.options[_optionNo];
+            multipleChoiceQuestion.selectedAnswer = shuffledOptions[_optionNo];
         }
     }
 }

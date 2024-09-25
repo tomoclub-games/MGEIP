@@ -203,6 +203,11 @@ namespace MGEIP.Service
             sliderPanelGameobject.SetActive(active);
         }
 
+        public void SetSliderToDefault()
+        {
+            answerSlider.value = (answerSlider.maxValue - answerSlider.minValue) / 2;
+        }
+
         public void SetQuestionText(string question)
         {
             questionText.SetText(question);

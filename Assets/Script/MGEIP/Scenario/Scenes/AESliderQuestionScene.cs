@@ -52,6 +52,7 @@ namespace MGEIP.Scenario.Scenes
             dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
+            GameUIService.SetSliderToDefault();
 
             GameUIService.OnSliderAnswerSelect += SliderSelect;
         }
