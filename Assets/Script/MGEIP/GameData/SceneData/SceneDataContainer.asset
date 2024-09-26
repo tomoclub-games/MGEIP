@@ -29,7 +29,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: While looking for human interest stories for your local newspaper,
-        you encounter Mrs. Thompson on the sidewalk after school.
+        you encounter Mrs. Thompson at the park.
       QuestionText: 
       Option1: 
       Option2: 
@@ -41,7 +41,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: Mrs. Thompson paces anxiously, clutching her bag.
+      NarrationText: Mrs. Thompson paces anxiously clutching her bag.
       QuestionText: 
       Option1: 
       Option2: 
@@ -51,9 +51,9 @@ MonoBehaviour:
       SceneNo: 3
       SceneType: 2
       DialogueBox: 1
-      NarrationBox: 0
-      DialogueText: Have you seen my little Whiskers?
-      NarrationText: 
+      NarrationBox: 1
+      DialogueText: Have you seen my cat, little Whiskers?!
+      NarrationText: Mrs. Thompson's voice wavers as she looks around.
       QuestionText: 
       Option1: 
       Option2: 
@@ -63,9 +63,9 @@ MonoBehaviour:
       SceneNo: 4
       SceneType: 2
       DialogueBox: 1
-      NarrationBox: 1
-      DialogueText: I think he got lost in the park.
-      NarrationText: Mrs. Thompson's voice wavers as she looks around.
+      NarrationBox: 0
+      DialogueText: I think he got lost in the park...
+      NarrationText: 
       QuestionText: 
       Option1: 
       Option2: 
@@ -74,9 +74,10 @@ MonoBehaviour:
     - ScenarioNo: 1
       SceneNo: 5
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Have you seen my little Whiskers? I think he got lost in the
+        park.
       NarrationText: 
       QuestionText: How do you think Mrs. Thompson is feeling?
       Option1: Mrs. Thompson is feeling distressed.
@@ -127,7 +128,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Someone, help me!
-      NarrationText: Mrs. Thompson calls out again, her hands trembling.
+      NarrationText: Mrs. Thompson looks around, her hands trembling.
       QuestionText: 
       Option1: 
       Option2: 
@@ -141,7 +142,7 @@ MonoBehaviour:
       DialogueText: Someone, help me!
       NarrationText: 
       QuestionText: You have to be somewhere pronto. What will you do?
-      Option1: I will look for Whiskers immediately.
+      Option1: I will ditch my plans and look for Whiskers immediately.
       Option2: I will give Mrs. Thompson a hug and reassure her that Whiskers will
         find its way back home.
       Option3: I will give Mrs Thompson the number of a cat adoption centre where
@@ -206,9 +207,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Excuse me, can anyone help?
-      NarrationText: The tourist looks between their map and street signs, clearly
-        confused.
+      DialogueText: This can't be right. Nothing looks familiar...
+      NarrationText: The tourist looks at their map and around, clearly confused.
       QuestionText: 
       Option1: 
       Option2: 
@@ -217,9 +217,9 @@ MonoBehaviour:
     - ScenarioNo: 2
       SceneNo: 3
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
       QuestionText: How do you think the tourist is feeling?
       Option1: The tourist is feeling worried.
@@ -231,7 +231,7 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Excuse me, can anyone help?
+      DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
       QuestionText: Rate the intensity of <emotion> the tourist is feeling. 1 represents
         the lowest intensity and 10 represents the highest intensity.
@@ -242,9 +242,9 @@ MonoBehaviour:
     - ScenarioNo: 2
       SceneNo: 5
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Ugh!!
       NarrationText: The tourist is looking at everyone who walks past, hoping for
         assistance.
       QuestionText: 
@@ -257,7 +257,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: This can't be right. Nothing looks familiar...
+      DialogueText: Excuse me, can anyone help?
       NarrationText: The tourist's frustration grows as they struggle to orient themselves.
       QuestionText: 
       Option1: 
@@ -269,7 +269,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: This can't be right. Nothing looks familiar...
+      DialogueText: Ugh, someone help me!!
       NarrationText: 
       QuestionText: How do you feel on seeing the tourist? Rate between 'extremely
         calm' and 'extremely stressed'.
@@ -283,8 +283,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: The tourist crumples the map in frustration, then tries to smooth
-        it out again.
+      NarrationText: The tourist rips the map in frustration.
       QuestionText: 
       Option1: 
       Option2: 
@@ -296,21 +295,20 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You are heading for a movie. What will you do?
-      QuestionText: I will spend some time helping the tourist first.
+      NarrationText: 
+      QuestionText: You are late for a movie. What will you do?
       Option1: I will direct him to the tourist assistance centre nearby.
       Option2: I will ask him to download the new tourist app I have designed.
       Option3: He will figure it out, and I will decide if I can sneak in some shopping
         before the movie.
-      Option4: 
+      Option4: I will spend some time helping the tourist first.
     - ScenarioNo: 2
       SceneNo: 10
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Is that... yes, I think I see it now!
-      NarrationText: Following your chosen action, the tourist's eyes light up as
-        they spot a familiar landmark.
+      NarrationText: The tourist's eyes light up as they spot a familiar landmark.
       QuestionText: 
       Option1: 
       Option2: 
@@ -363,7 +361,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Every piece of trash gone is a victory!
-      NarrationText: Alexi picks up litter, whistling as he works.
+      NarrationText: Alexi picks up litter, reassuring himself as he works.
       QuestionText: 
       Option1: 
       Option2: 
@@ -372,9 +370,9 @@ MonoBehaviour:
     - ScenarioNo: 3
       SceneNo: 3
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Every piece of trash gone is a victory!
       NarrationText: 
       QuestionText: How do you think Alexi is feeling?
       Option1: Alexi is feeling happy.
@@ -399,8 +397,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Hey there! Want to join? The more, the merrier!
-      NarrationText: Alexi waves, gesturing to his cleaning supplies.
+      DialogueText: Oh no, poor turtle!
+      NarrationText: Alexi spots a turtle tangled in plastic waste.
       QuestionText: 
       Option1: 
       Option2: 
@@ -411,8 +409,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Wow, look at how much we've done already!
-      NarrationText: Alexi surveys the cleaner shoreline with pride.
+      DialogueText: I got you, I got you...
+      NarrationText: Alexi promptly moves to help the turle.
       QuestionText: 
       Option1: 
       Option2: 
@@ -423,8 +421,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: This turtle is hurt!
-      NarrationText: Alexi kneels beside an injured turtle on the beach.
+      DialogueText: This poor turtle is scared...and hurt!
+      NarrationText: Alexi picks up the injured turtle and examines closely.
       QuestionText: 
       Option1: 
       Option2: 
@@ -435,7 +433,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: This turtle is hurt!
+      DialogueText: This poor turtle is scared...and hurt!
       NarrationText: 
       QuestionText: How do you feel on seeing Alexi? Rate between 'extremely happy'
         and 'extremely sad'.
@@ -448,7 +446,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: We need to help it. Can someone call a wildlife rescue?
+      DialogueText: Someone call a wildlife rescue...
       NarrationText: Alexi looks around, seeking assistance for the turtle.
       QuestionText: 
       Option1: 
@@ -461,20 +459,20 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You have plans to meet at Ahmed's house soon for their birthday
-        party. What will you do now?
-      QuestionText: I will spend some time helping Alexi first.
-      Option1: I will suggest Alexi take a break and offer them some water to drink.
-      Option2: I will ask Alexi to join me at Ahmed's birthday party.
-      Option3: I will let Alexi figure it out and continue with my plans.
-      Option4: 
+      NarrationText: 
+      QuestionText: You have meet at Ahmed's house soon for a birthday party. What
+        will you do now?
+      Option1: I will spend some time helping Alexi first.
+      Option2: I will suggest Alexi take a break and offer them some water to drink.
+      Option3: I will ask Alexi to join me at Ahmed's birthday party.
+      Option4: I will let Alexi figure it out and continue with my plans.
     - ScenarioNo: 3
       SceneNo: 11
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: It's moving! Look at it go!
-      NarrationText: The turtle slowly makes its way back to the ocean.
+      DialogueText: Ah, I will set you free!
+      NarrationText: Alexi untangles the turtle.
       QuestionText: 
       Option1: 
       Option2: 
@@ -486,9 +484,8 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: This is why keeping our beaches clean is so important.
-      NarrationText: Alexi beams with joy as the turtle disappears into the waves.
-        You realize this moment captures the essence of community and environmental
-        care.
+      NarrationText: Alexi beams with joy as the turtle walks to the waters. You
+        realize this moment captures the essence of community and environmental care.
       QuestionText: 
       Option1: 
       Option2: 
@@ -536,9 +533,9 @@ MonoBehaviour:
     - ScenarioNo: 4
       SceneNo: 3
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: This isn't a race...
       NarrationText: Taylor pants heavily, struggling with the steep incline.
       QuestionText: 
       Option1: 
@@ -550,8 +547,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Hey! How'd you get up there? That's a tough hike.
-      NarrationText: Taylor wipes sweat from his brow, looking up at the others.
+      DialogueText: Phew... It is a tough hike!
+      NarrationText: Taylor is sweating while catching his breath.
       QuestionText: 
       Option1: 
       Option2: 
@@ -562,9 +559,9 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: My friends are way ahead of me, but that's only because I'm letting
-        them take the lead for once.
-      NarrationText: Taylor forces a laugh, adjusting his backpack.
+      DialogueText: My friends are ahead of me, but that's only because I'm letting
+        them take the lead.
+      NarrationText: Taylor smirks and prepares to continue the hike.
       QuestionText: 
       Option1: 
       Option2: 
@@ -573,9 +570,10 @@ MonoBehaviour:
     - ScenarioNo: 4
       SceneNo: 6
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: My friends are ahead of me, but that's only because I'm letting
+        them take the lead.
       NarrationText: 
       QuestionText: How do you think Taylor is feeling?
       Option1: Taylor is feeling envious.
@@ -587,8 +585,8 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: My friends are way ahead of me, but that's only because I'm letting
-        them take the lead for once.
+      DialogueText: My friends are ahead of me, but that's only because I'm letting
+        them take the lead.
       NarrationText: 
       QuestionText: Rate the intensity of <emotion> Taylor is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
@@ -599,10 +597,10 @@ MonoBehaviour:
     - ScenarioNo: 4
       SceneNo: 8
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: Taylor finally reaches the summit, breathing heavily.
+      DialogueText: That was...easy!
+      NarrationText: Taylor finally reaches the summit, sweating and breathing heavily.
       QuestionText: 
       Option1: 
       Option2: 
@@ -613,8 +611,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Surprise, everyone! I brought a picnic for us.
-      NarrationText: Taylor pulls out a picnic basket from his backpack.
+      DialogueText: I am top of the world!
+      NarrationText: Taylor screams on the top of his voice.
       QuestionText: 
       Option1: 
       Option2: 
@@ -625,7 +623,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Surprise, everyone! I brought a picnic for us.
+      DialogueText: I am top of the world!
       NarrationText: 
       QuestionText: How do you feel on seeing everyone celebrating? Rate between
         'extremely indifferent' and 'extremely joyful'.
@@ -638,8 +636,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Oh no... I can't believe this. I forgot to bring utensils!
-      NarrationText: Taylor's face reddens as he realizes his mistake.
+      DialogueText: Surprise, everyone! I brought a picnic for us.
+      NarrationText: 'Taylor''s searches his backpack for the surprise in his backpack. '
       QuestionText: 
       Option1: 
       Option2: 
@@ -648,25 +646,25 @@ MonoBehaviour:
     - ScenarioNo: 4
       SceneNo: 12
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: You are exhausted from the hike. What will you do?
-      QuestionText: I will go back down the trail alone to get the utensils from
-        the car while the others rest.
-      Option1: I will ask a couple of the hikers to accompany me down the trail to
-        get the utensils from the car.
-      Option2: I will suggest that a few of the hikers go back down to get the utensils
-        from the car.
-      Option3: I will wait for someone else to come up with a solution.
-      Option4: 
+      DialogueText: Oh no... I must have dropped the tiffin box when I stopped for
+        water!
+      NarrationText: Oh no, I must have dropped the picnic box when I stopped for
+        water!
+      QuestionText: You are exhausted from the hike too. What will you do?
+      Option1: I will go back down the trail alone to find the picnic while they
+        rest.
+      Option2: I will offer to accompany them down the trail to find the picnic.
+      Option3: I will suggest that they figure it out.
+      Option4: I will mind my business and let them decide.
     - ScenarioNo: 4
       SceneNo: 13
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: This turned out great after all!
-      NarrationText: The group enjoys the picnic, with or without utensils.
+      DialogueText: So silly, but this turned out great after all!
+      NarrationText: The group shrugs and enjoys the moment even without the picnic.
       QuestionText: 
       Option1: 
       Option2: 
@@ -715,9 +713,9 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 2
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Hustle...respect...love...
       NarrationText: Jacques is performing on stage with intensity.
       QuestionText: 
       Option1: 
@@ -727,9 +725,9 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 3
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Somehow...oh snap!
       NarrationText: Suddenly, a guitar string snaps. The audience murmurs.
       QuestionText: 
       Option1: 
@@ -741,7 +739,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: I'm sorry - I messed up!
+      DialogueText: My bad, I struck the string too hard!
       NarrationText: Jacques speaks into the microphone, his voice shaky.
       QuestionText: 
       Option1: 
@@ -751,9 +749,9 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 5
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: So sorry, I messed up!
       NarrationText: 
       QuestionText: How do you think Jacques is feeling?
       Option1: Jacques is feeling embarrassed.
@@ -765,7 +763,7 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: I'm sorry - I messed up!
+      DialogueText: So sorry, I messed up!
       NarrationText: 
       QuestionText: Rate the intensity of <emotion> Jacques is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
@@ -778,8 +776,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Music is my whole life!
-      NarrationText: Jacques takes a deep breath before continuing.
+      DialogueText: Music is my whole life, let's do this!
+      NarrationText: Jacques takes a deep breath and sings without the guitar.
       QuestionText: 
       Option1: 
       Option2: 
@@ -790,7 +788,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Even when I mess up, I'll never give up my dream!
+      DialogueText: Hustle...respect...love...somehow...keep me going on...
       NarrationText: The audience begins to clap encouragingly.
       QuestionText: 
       Option1: 
@@ -800,9 +798,9 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 9
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Thank you!
       NarrationText: Jacques finishes his performance to applause.
       QuestionText: 
       Option1: 
@@ -814,7 +812,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Even when I mess up, I'll never give up my dream!
+      DialogueText: I fall, but I'll never give up!
       NarrationText: 
       QuestionText: How do you feel on seeing Jacques? Rate between extremely carefree
         and extremely sentimental.
@@ -825,11 +823,10 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 11
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: Backstage, a stagehand accidentally bumps into Jacques, spilling
-        water on his shirt.
+      DialogueText: Thank you, everyone for the love!
+      NarrationText: The applause continues and a stagehand brings Jacques water.
       QuestionText: 
       Option1: 
       Option2: 
@@ -838,10 +835,11 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 12
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Oh no, not again...
-      NarrationText: Jacques looks down at his wet shirt, dismayed.
+      DialogueText: Hahaha, ummmm, not again...
+      NarrationText: She accidentally trips on wire, spilling water on his shirt.
+        Jacques looks shocked.
       QuestionText: 
       Option1: 
       Option2: 
@@ -853,22 +851,22 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You were thinking of exploring the food stalls nearby. What
-        will you do?
-      QuestionText: I will give Jacques my jacket to cover up his wet shirt and personally
+      NarrationText: 
+      QuestionText: You were eargerly waiting to explore the food stalls nearby.
+        What will you do?
+      Option1: I will give Jacques my jacket to cover up his wet shirt and personally
         take charge of cleaning up the spill.
-      Option1: I will assist the others in cleaning up the spill.
-      Option2: I will encourage the guest to be more careful and offer some help.
-      Option3: I will head out to explore the food stalls and wait for someone else
-        to handle it.
-      Option4: 
+      Option2: I will assist the others in cleaning up the spill.
+      Option3: I will encourage the guest to be more careful and offer some help.
+      Option4: I will head out to explore the food stalls and let someone else handle
+        it.
     - ScenarioNo: 5
       SceneNo: 14
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Well, I guess that's showbiz!
-      NarrationText: Jacques manages a smile despite the evening's mishaps.
+      DialogueText: It's alright, don't worry.
+      NarrationText: Jacques cleans up and smiles despite the evening's mishaps.
       QuestionText: 
       Option1: 
       Option2: 
@@ -894,7 +892,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Mind if I get a shot for our local paper's culture section?
       NarrationText: You prepare to capture this moment of artistic resilience. Click
-        to take a photo of Jacques smiling backstage after his performance.
+        to take a photo of Jacques smiling after his performance.
       QuestionText: 
       Option1: 
       Option2: 
@@ -916,9 +914,9 @@ MonoBehaviour:
     - ScenarioNo: 6
       SceneNo: 2
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Hello, dear.
       NarrationText: Mrs. Gowri sits alone, looking at the empty chair beside her.
       QuestionText: 
       Option1: 
@@ -928,9 +926,9 @@ MonoBehaviour:
     - ScenarioNo: 6
       SceneNo: 3
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: How I wish...sigh!
       NarrationText: She sighs deeply, her gaze fixed on the distance.
       QuestionText: 
       Option1: 
@@ -942,7 +940,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Oh, hello dear. Lovely day, isn't it?
+      DialogueText: Good day to have a visitor!
       NarrationText: Mrs. Gowri attempts a smile as she notices you.
       QuestionText: 
       Option1: 
@@ -952,9 +950,9 @@ MonoBehaviour:
     - ScenarioNo: 6
       SceneNo: 5
       SceneType: 3
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Good day to have a visitor!
       NarrationText: 
       QuestionText: How do you think Ms. Gowri is feeling?
       Option1: Ms Gowri is feeling lonely.
@@ -966,7 +964,7 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Oh, hello dear. Lovely day, isn't it?
+      DialogueText: Good day to have a visitor!
       NarrationText: 
       QuestionText: Rate the intensity of <emotion> Ms Gowri is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
@@ -977,9 +975,9 @@ MonoBehaviour:
     - ScenarioNo: 6
       SceneNo: 7
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Roger... my late husband and porch partner!
       NarrationText: Mrs. Gowri takes out a photograph from her pocket.
       QuestionText: 
       Option1: 
@@ -1016,7 +1014,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: When Roger was around, watering the plants was his job!
+      DialogueText: When Roger was around, he took good care of all the plants.
       NarrationText: Mrs. Gowri stands up and picks up a watering can.
       QuestionText: 
       Option1: 
@@ -1029,20 +1027,20 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You have some important errands to run soon. What will you do?
-      QuestionText: I will help her water the plants and ask her to rest on her chair
+      NarrationText: 
+      QuestionText: You have some important errands to run soon. What will you do?
+      Option1: I will help her water the plants and ask her to rest on her chair
         while we chat.
-      Option1: I will offer to water some of the plants while chatting with her.
-      Option2: I will offer to water the plants if she could make some warm tea for
+      Option2: I will offer to water some of the plants while chatting with her.
+      Option3: I will offer to water the plants if she could make some warm tea for
         me in return.
-      Option3: I will appreciate her healthy plants and continue on my way.
-      Option4: 
+      Option4: I will appreciate her healthy plants and continue on my way.
     - ScenarioNo: 6
       SceneNo: 12
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Thank you for keeping me company, dear.
       NarrationText: Mrs. Gowri waters the plants, her movements slow but purposeful.
       QuestionText: 
       Option1: 
@@ -1054,8 +1052,7 @@ MonoBehaviour:
       SceneType: 6
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: These plants were Roger's pride and joy. Thank you for helping
-        me care for them.
+      DialogueText: Come by again soon!
       NarrationText: Mrs. Gowri's gentle smile reflects the warmth of cherished memories
         and the comfort of companionship.
       QuestionText: 
@@ -1068,7 +1065,7 @@ MonoBehaviour:
       SceneType: 7
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Would you mind if I took a photo for our community spotlight?
+      DialogueText: Would you mind if I took a photo?
       NarrationText: You prepare to capture this poignant moment. Click to take a
         photo of Mrs. Gowri tending to her plants.
       QuestionText: 
@@ -1094,8 +1091,8 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Ah la la la, gardering day...
-      NarrationText: Josefa carries three large potted plants, struggling with their
-        weight.
+      NarrationText: Josefa carries three large potted plants, gleeing at the risky
+        adventure.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1116,10 +1113,11 @@ MonoBehaviour:
     - ScenarioNo: 7
       SceneNo: 4
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: So careless, sigh!
-      NarrationText: Other gardeners turn to look. Some giggle and point.
+      DialogueText: Why, why did I have to carry three pots!
+      NarrationText: Other gardeners seem unbothered, but there are some giggles
+        and laughs.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1141,11 +1139,11 @@ MonoBehaviour:
       SceneNo: 6
       SceneType: 4
       DialogueBox: 0
-      NarrationBox: 1
-      DialogueText: 
-      NarrationText: Rate the intensity of <emotion> Josefa is feelings. 1 represents
+      NarrationBox: 0
+      DialogueText: So careless, sigh!
+      NarrationText: 
+      QuestionText: Rate the intensity of <emotion> Josefa is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
-      QuestionText: 
       Option1: 
       Option2: 
       Option3: 
@@ -1167,7 +1165,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: I don't deserve to garden ever again!
+      DialogueText: I don't deserve it.
       NarrationText: Josefa tries to gather the scattered plants with shaking hands.
       QuestionText: 
       Option1: 
@@ -1179,7 +1177,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: I don't deserve to garden ever again!
+      DialogueText: I shouldn't be allowed here...ever again!
       NarrationText: 
       QuestionText: How do you feel on seeing Josefa? Rate between extremely encouraged
         and extremely discouraged.
@@ -1205,20 +1203,19 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You have your own gardening to complete before the sun sets.
-        What will you do?
-      QuestionText: I will offer to help clean up the soil immediately.
-      Option1: I will assist in cleaning up the soil.
-      Option2: I will suggest they be more careful and offer some help.
-      Option3: I will let them handle it and continue with my task.
-      Option4: 
+      NarrationText: 
+      QuestionText: You have to run errands. What will you do?
+      Option1: I will offer to help clean up the soil immediately.
+      Option2: I will assist in cleaning up the soil.
+      Option3: I will suggest they be more careful and offer some help.
+      Option4: I will let them handle it and continue with my task.
     - ScenarioNo: 7
       SceneNo: 12
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: With some help, Josefa begins to clean up and replant.
+      DialogueText: Quick... and careful.
+      NarrationText: With some dedication, Josefa begins to clean up and replant.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1229,10 +1226,8 @@ MonoBehaviour:
       SceneType: 6
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Thank you all for your support. I guess even gardeners have their
-        clumsy days!
-      NarrationText: Josefa manages a small smile, embodying resilience in the face
-        of setbacks.
+      DialogueText: I guess, we all have our clumsy days.
+      NarrationText: Her arrangement of plants is simply beautiful!
       QuestionText: 
       Option1: 
       Option2: 
@@ -1243,9 +1238,9 @@ MonoBehaviour:
       SceneType: 7
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: May I take a photo for our community garden feature?
-      NarrationText: You prepare to capture this moment of community support. Click
-        to take a photo of Josefa and others working together to restore the garden.
+      DialogueText: May I take a photo of our community garden and the gardners?
+      NarrationText: You prepare to capture this moment. Click to take a photo of
+        Josefa and others working together to restore the garden.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1269,7 +1264,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Ummm, hear me out...
       NarrationText: Mercedes tries to join the conversation but gets talked over
         by her friends.
       QuestionText: 
@@ -1282,8 +1277,8 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: Mercedes steps back from the group, crossing her arms.
+      DialogueText: Something very interesting happened...
+      NarrationText: 
       QuestionText: 
       Option1: 
       Option2: 
@@ -1295,7 +1290,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: Rakesh notices Mercedes standing apart from the group.
+      NarrationText: Mercedes steps away, crossing her arms. Rakesh takes notice.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1331,7 +1326,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: ...not!
       NarrationText: Mercedes turns away from the group, staring at the ground.
       QuestionText: 
       Option1: 
@@ -1343,7 +1338,7 @@ MonoBehaviour:
       SceneType: 3
       DialogueBox: 0
       NarrationBox: 0
-      DialogueText: 
+      DialogueText: Yeah, I'm having loads of fun...not!
       NarrationText: 
       QuestionText: How do you think Mercedes is feeling?
       Option1: Mercedes is feeling lonely.
@@ -1355,10 +1350,10 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: Rate the intensity of <emotion> Mercedes is feelings. 1 represents
+      DialogueText: Yeah, I'm having loads of fun...not!
+      NarrationText: 
+      QuestionText: Rate the intensity of <emotion> Mercedes is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
-      QuestionText: 
       Option1: 
       Option2: 
       Option3: 
@@ -1393,7 +1388,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: I will go home and read my new novels!
       NarrationText: Mercedes starts to walk away from the basketball court.
       QuestionText: 
       Option1: 
@@ -1406,21 +1401,19 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: You have your own practice to attend soon. What will you do?
-      QuestionText: I will ditch practice to spend more time till Mercedes feels
-        better.
-      Option1: I will comfort Mercedes for a while before heading to practice.
-      Option2: I will suggest Mercedes talk to someone else and then go for the practice.
-      Option3: I will leave Mercedes to handle it and go for the practice.
-      Option4: 
+      NarrationText: 
+      QuestionText: You have your own practice to attend soon. What will you do?
+      Option1: I will ditch practice to spend more time till Mercedes feels better.
+      Option2: I will comfort Mercedes for a while before heading to practice.
+      Option3: I will suggest Mercedes talk to someone else and then go for the practice.
+      Option4: I will leave Mercedes to handle it and go for the practice.
     - ScenarioNo: 8
       SceneNo: 14
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
-      NarrationText: Mercedes considers her options, looking between her friends
-        and the exit.
+      DialogueText: Maybe I'm should invite them over, they love books!
+      NarrationText: Mercedes thinks on her feet and got an idea.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1429,11 +1422,10 @@ MonoBehaviour:
     - ScenarioNo: 8
       SceneNo: 15
       SceneType: 6
-      DialogueBox: 1
+      DialogueBox: 0
       NarrationBox: 1
-      DialogueText: Maybe I'm better off on my own for now.
-      NarrationText: Mercedes decides to leave, her expression a mix of sadness and
-        determination.
+      DialogueText: 
+      NarrationText: Mercedes invites tthem over to her place to hangout.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1482,7 +1474,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: It's ok if you haven't seen the first 3 films.
+      DialogueText: It's ok if you haven't seen the previous films.
       NarrationText: Max's friends exchange skeptical glances.
       QuestionText: 
       Option1: 
@@ -1507,7 +1499,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Sorry, Max. We're going to watch the action movie instead.
-      NarrationText: Max's friends start walking towards a different theater.
+      NarrationText: Max's friends start walking away.
       QuestionText: 
       Option1: 
       Option2: 
@@ -1529,11 +1521,11 @@ MonoBehaviour:
       SceneNo: 7
       SceneType: 4
       DialogueBox: 0
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: 
-      NarrationText: Rate the intensity of <emotion> Max is feelings. 1 represents
+      NarrationText: 
+      QuestionText: Rate the intensity of <emotion> Max is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
-      QuestionText: 
       Option1: 
       Option2: 
       Option3: 
@@ -1578,9 +1570,9 @@ MonoBehaviour:
     - ScenarioNo: 9
       SceneNo: 11
       SceneType: 2
-      DialogueBox: 0
+      DialogueBox: 1
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Such a bummer...
       NarrationText: Max stands outside the theater, looking between the two movie
         posters.
       QuestionText: 
@@ -1594,22 +1586,22 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: The movie you came to watch is going to start soon, but Max
-        still seems to be in a very angry mood. What will you do?
-      QuestionText: I will leave the movie with my friends and ask Max to watch the
-        Sci-fi movie with me.
-      Option1: I will try to help Max calm down and make him feel better before heading
+      NarrationText: 
+      QuestionText: The movie you came to watch is going to start soon. What will
+        you do?
+      Option1: I will leave the movie with my friends and ask Max to watch the Sci-fi
+        movie with me.
+      Option2: I will try to help Max calm down and make him feel better before heading
         back to my movie.
-      Option2: I will suggest Max talk to someone and watch his movie with someone
+      Option3: I will suggest Max talk to someone and watch his movie with someone
         else.
-      Option3: I will leave Max and hurry back to my movie.
-      Option4: 
+      Option4: I will leave Max and hurry back to my movie.
     - ScenarioNo: 9
       SceneNo: 13
       SceneType: 2
       DialogueBox: 0
       NarrationBox: 1
-      DialogueText: 
+      DialogueText: Maybe, I'm over reacting!
       NarrationText: Max takes a deep breath and looks at his friends' retreating
         figures.
       QuestionText: 
@@ -1687,7 +1679,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: We'll discuss this later.
+      DialogueText: We discussed this already.
       NarrationText: Jimin and Hans notice you approach, and they begin to whisper.
       QuestionText: 
       Option1: 
@@ -1710,11 +1702,11 @@ MonoBehaviour:
       SceneNo: 6
       SceneType: 4
       DialogueBox: 0
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: 
-      NarrationText: Rate the intensity of <emotion> Jimin's feelings. 1 represents
+      NarrationText: 
+      QuestionText: Rate the intensity of <emotion> Jimin's feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
-      QuestionText: 
       Option1: 
       Option2: 
       Option3: 
@@ -1760,16 +1752,15 @@ MonoBehaviour:
       SceneNo: 10
       SceneType: 3
       DialogueBox: 0
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: 
-      NarrationText: You were planning to check out the other exhibitions at the
-        museum, but you see Jimin still upset. What will you do?
-      QuestionText: I will drop the exhibition tour and stay with Jimin and offer
-        support.
-      Option1: I will comfort Jimin for a bit before leaving to explore the museum.
-      Option2: I will suggest Jimin talk to Hans. Then I'd explore the museum.
-      Option3: I will leave Jimin to handle it himself and explore the museum.
-      Option4: 
+      NarrationText: 
+      QuestionText: You were planning to check out the other exhibitions at the museum,
+        but you see Jimin still upset. What will you do?
+      Option1: I will drop the exhibition tour and stay with Jimin and offer support.
+      Option2: I will comfort Jimin for a bit before leaving to explore the museum.
+      Option3: I will suggest Jimin talk to Hans. Then I'd explore the museum.
+      Option4: I will leave Jimin to handle it himself and explore the museum.
     - ScenarioNo: 10
       SceneNo: 11
       SceneType: 2
