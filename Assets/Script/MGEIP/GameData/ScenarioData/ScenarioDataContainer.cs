@@ -25,5 +25,6 @@ namespace MGEIP.GameData.ScenarioData
     {
         public int ScenarioNo;
         public string ScenarioName;
+        public string Description;
     }
 }

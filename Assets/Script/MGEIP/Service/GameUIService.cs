@@ -1,6 +1,8 @@
-﻿using TMPro;
+﻿using DG.Tweening;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -66,6 +68,21 @@ namespace MGEIP.Service
         [SerializeField] private Sprite selectedSliderLabelSprite;
         [SerializeField] private Sprite deselectedSliderLabelSprite;
 
+        [Header("Scenario Info Panel")]
+        [SerializeField] private GameObject scenarioInfoPanel;
+        [SerializeField] private TMP_Text scenarioInfoName;
+        [SerializeField] private TMP_Text scenarioInfoDesc;
+        [SerializeField] private GameObject[] scenarioInfoImages;
+        [SerializeField] private Button scenarioInfoCloseButton;
+        [SerializeField] private Button scenarioInfoStartButton;
+        [SerializeField] private GameObject scenarioInfoBeforeGO;
+        [SerializeField] private GameObject scenarioInfoAfterGO;
+        [SerializeField] private Image scenarioInfoLoadingBarFill;
+
+        private int currentScenarioInfoIndex = 0;
+
+        public UnityAction<int> OnScenarioStart;
+
         private void Awake()
         {
             answerSlider.onValueChanged.AddListener((value) =>
@@ -73,11 +90,17 @@ namespace MGEIP.Service
                 int selectedValue = (int)value;
                 UpdateSliderLabelImage(selectedValue);
             });
+
+            scenarioInfoCloseButton.onClick.AddListener(ScenarioInfoCloseButtonClick);
+            scenarioInfoStartButton.onClick.AddListener(ScenarioPlayButtonClick);
         }
 
         private void OnDestroy()
         {
             answerSlider.onValueChanged.RemoveAllListeners();
+
+            scenarioInfoCloseButton.onClick.RemoveAllListeners();
+            scenarioInfoStartButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -234,6 +257,42 @@ namespace MGEIP.Service
         {
             endSceneNarrationText.SetText(EndSceneNarration);
         }
+        #endregion
+
+        #region Scenario Info Methods
+
+        public void EnableScenarioInfo(int _scenarioNo, string _scenarioName, string _scenarioDescription)
+        {
+            scenarioInfoName.text = _scenarioName;
+            scenarioInfoDesc.text = _scenarioDescription;
+
+            foreach (GameObject go in scenarioInfoImages)
+            {
+                go.SetActive(false);
+            }
+            scenarioInfoImages[_scenarioNo - 1].SetActive(true);
+
+            currentScenarioInfoIndex = _scenarioNo;
+
+            scenarioInfoPanel.SetActive(true);
+            scenarioInfoBeforeGO.SetActive(true);
+            scenarioInfoAfterGO.SetActive(false);
+        }
+
+        public void ScenarioInfoCloseButtonClick()
+        {
+            scenarioInfoPanel.SetActive(false);
+        }
+
+        public void ScenarioPlayButtonClick()
+        {
+            scenarioInfoBeforeGO.SetActive(false);
+            scenarioInfoAfterGO.SetActive(true);
+
+            scenarioInfoLoadingBarFill.fillAmount = 0;
+            scenarioInfoLoadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => { OnScenarioStart?.Invoke(currentScenarioInfoIndex); scenarioInfoPanel.SetActive(false); });
+        }
+
         #endregion
     }
 }

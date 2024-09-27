@@ -15,25 +15,28 @@ namespace MGEIP.Scenario
         [SerializeField] private string scenarioName;
         [SerializeField] private int currentSceneIndex = 0;
 
-        [SerializeField] private RectTransform scenarioAnchor;
-        [SerializeField] private GameObject scenarioInfo;
-        [SerializeField] private GameObject scenarioIndicator;
-        [SerializeField] private Image scenarioIndicatorImage;
-        [SerializeField] private TextMeshProUGUI scenarioNameText;
-        [SerializeField] private Button scenarioButton;
-        [SerializeField] private Button scenarioPlayButton;
-
+        /*
+                [SerializeField] private RectTransform scenarioAnchor;
+                [SerializeField] private GameObject scenarioInfo;
+                [SerializeField] private GameObject scenarioIndicator;
+                [SerializeField] private Image scenarioIndicatorImage;
+                [SerializeField] private TextMeshProUGUI scenarioNameText;
+                [SerializeField] private Button scenarioButton;
+                [SerializeField] private Button scenarioPlayButton;
+        */
         [SerializeField] private GameService gameService;
         [SerializeField] private List<Scene> scenes = new();
 
         public bool isScenarioCompleted = false;
 
         public int ScenarioNo => scenarioNo;
+        /*
         public GameObject ScenarioInfo => scenarioInfo; 
         public GameObject ScenarioIndicator => scenarioIndicator;
         public Image ScenarioIndicatorImage => scenarioIndicatorImage;
         public Button ScenarioButton => scenarioButton;
         public Button ScenarioPlayButton => scenarioPlayButton;
+        */
         public ScenarioArtDataContainer ScenarioArtDataContainer => gameService.GameDataContainer.ScenarioArtDataContainer;
         public ResourceContainer ScenarioResourceContainer => gameService.GameDataContainer.ScenarioResourceContainer;
 
@@ -46,6 +49,7 @@ namespace MGEIP.Scenario
             this.scenarioName = scenarioName;
             this.gameService = gameService;
 
+            /*
             scenarioInfo.SetActive(false);
             scenarioIndicator.SetActive(true);
             scenarioNameText.SetText(scenarioName);
@@ -59,6 +63,7 @@ namespace MGEIP.Scenario
                     scenarioButton.image.sprite = scenarioArt.scenarioIconSprite;
                 }
             }
+            */
         }
 
         public void CreateScene()

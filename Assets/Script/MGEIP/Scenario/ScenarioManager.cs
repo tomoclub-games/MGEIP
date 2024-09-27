@@ -29,16 +29,21 @@ namespace MGEIP.Scenario
                 CreateScenario(scenarioData[i]);  
             }
 
+            /*
             for(int i = 0; i < scenarios.Count; i++)
             {
                 int index = i;
                 scenarios[i].ScenarioButton.onClick.AddListener(() => OnClickScenarioButton(index));
                 scenarios[i].ScenarioPlayButton.onClick.AddListener(OnScenarioPlayButtonClick);
             }
+            */
+
+            gameService.GameUIService.OnScenarioStart += OnScenarioPlayButtonClick;
         }
 
         private void Update()
         {
+            /*
             // Check for touch or mouse input
             if (Input.GetMouseButtonDown(0))
             {
@@ -62,6 +67,7 @@ namespace MGEIP.Scenario
                     DisableSelectedScenario();
                 }
             }
+            */
 
             if (scenarios.All(scenario => scenario.isScenarioCompleted))
             {
@@ -71,6 +77,7 @@ namespace MGEIP.Scenario
 
         public void DisableSelectedScenario()
         {
+            /*
             if (selectedScenarioIndex != -1)
             {
                 scenarios[selectedScenarioIndex].ScenarioIndicator.SetActive(true);
@@ -78,10 +85,12 @@ namespace MGEIP.Scenario
 
                 selectedScenarioIndex = -1;
             }
+            */
         }
 
         public void OnClickScenarioButton(int index)
         {
+            /*
             if (selectedScenarioIndex != -1 && selectedScenarioIndex != index)
             {
                 DisableSelectedScenario();
@@ -91,12 +100,16 @@ namespace MGEIP.Scenario
             scenarios[index].ScenarioInfo.SetActive(true);
 
             selectedScenarioIndex = index;
+            */
+
+            string scenarioName = ScenariosDataContainer.ScenarioContent.Scenarios[index - 1].ScenarioName;
+            string scenarioDesc = ScenariosDataContainer.ScenarioContent.Scenarios[index - 1].Description;
+            gameService.GameUIService.EnableScenarioInfo(index, scenarioName, scenarioDesc);
         }
 
-        public void OnScenarioPlayButtonClick()
+        public void OnScenarioPlayButtonClick(int _index)
         {
-            gameService.GameUIService.MapUI.SetActive(false);
-            SetCurrentScenario(selectedScenarioIndex);
+            SetCurrentScenario(_index - 1);
         }
 
         private void CreateScenario(ScenarioData scenarioData)
@@ -115,6 +128,8 @@ namespace MGEIP.Scenario
                 currentScenarioIndex = scenarioIndex;
                 scenarios[currentScenarioIndex].CreateScene();
                 scenarios[currentScenarioIndex].SetSceneStatus(0);
+
+                gameService.GameUIService.MapUI.SetActive(false);
             }
             else
             {

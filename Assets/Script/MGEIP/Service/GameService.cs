@@ -7,6 +7,8 @@ namespace MGEIP.Service
 {
     public class GameService : MonoBehaviour
     {
+        public static GameService Instance { get; private set; }
+
         [SerializeField] private GameDataContainer gameDataContainer;
         [SerializeField] private ScenarioManager scenarioManager;
         [SerializeField] private GameUIService gameUIService;
@@ -14,6 +16,12 @@ namespace MGEIP.Service
         public GameDataContainer GameDataContainer => gameDataContainer;
         public ScenarioManager ScenarioManager => scenarioManager;
         public GameUIService GameUIService => gameUIService;
+
+        private void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+        }
 
         private void Start()
         {
