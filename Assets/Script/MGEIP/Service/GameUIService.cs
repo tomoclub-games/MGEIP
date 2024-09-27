@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -34,6 +35,7 @@ namespace MGEIP.Service
         [SerializeField] private TextMeshProUGUI questionText;
         [SerializeField] private Button questionSceneConfirmButton;
         [SerializeField] private Button questionScenePrevButton;
+        [SerializeField] private Image[] sliderLabels;
 
         [Header("Options Components")]
         [SerializeField] private GameObject optionPanelGameobject;
@@ -59,6 +61,29 @@ namespace MGEIP.Service
         [SerializeField] private TextMeshProUGUI endSceneNarrationText;
         [SerializeField] private Button endSceneEndButton;
         [SerializeField] private Button endScenePrevButton;
+
+        [Header("Sprites")]
+        [SerializeField] private Sprite selectedSliderLabelSprite;
+        [SerializeField] private Sprite deselectedSliderLabelSprite;
+
+        private void Awake()
+        {
+            answerSlider.onValueChanged.AddListener((value) =>
+            {
+                int selectedValue = (int)value;
+                UpdateSliderLabelImage(selectedValue);
+            });
+        }
+
+        private void OnDestroy()
+        {
+            answerSlider.onValueChanged.RemoveAllListeners();
+        }
+
+        private void Start()
+        {
+            UpdateSliderLabelImage((int)answerSlider.value);
+        }
 
         #region Scenario Methods
         public Button GetGameEndButton => gameEndButton;
@@ -154,6 +179,17 @@ namespace MGEIP.Service
         public void SetQuestionSceneNarrationText(string questionSceneNarration)
         {
             questionSceneNarrationText.SetText(questionSceneNarration);
+        }
+
+        public void UpdateSliderLabelImage(int selectedValue)
+        {
+            for (int i = 0; i < sliderLabels.Length; i++)
+            {
+                if (i == selectedValue)
+                    sliderLabels[i].sprite = selectedSliderLabelSprite;
+                else
+                    sliderLabels[i].sprite = deselectedSliderLabelSprite;
+            }
         }
         #endregion
 
