@@ -304,6 +304,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44433756167189991, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_text
+      value: My friends are ahead of me, but that's only because I'm letting them
+        take the lead.
+      objectReference: {fileID: 0}
+    - target: {fileID: 44433756167189991, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_fontSize
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 44433756167189991, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 345353156078022057, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -392,6 +405,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6611077287515462570, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.863108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611077287515462570, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.2858837
+      objectReference: {fileID: 0}
     - target: {fileID: 6807378319199197410, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -434,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856877523387224469, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Name
-      value: Scene8
+      value: Scene7
       objectReference: {fileID: 0}
     - target: {fileID: 6856877523387224469, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Sprite

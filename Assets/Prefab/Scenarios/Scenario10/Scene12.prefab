@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1.6818
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6818
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6818
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.8845296
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.0521307
+      objectReference: {fileID: 0}
     - target: {fileID: 230953593043910944, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.90101
@@ -55,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 1272807894833569557, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452366108829079175, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3512179567375222828, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalScale.x
@@ -139,6 +163,18 @@ PrefabInstance:
     - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.3964664
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531587399642408247, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_text
+      value: I'm sorry, Jimin. I shouldn't have said that. Your art is amazing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531587399642408247, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSize
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531587399642408247, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Size.x

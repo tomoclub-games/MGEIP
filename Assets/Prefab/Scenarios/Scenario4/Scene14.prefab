@@ -156,9 +156,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 109849605096131450, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 562824686395037509, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Name
-      value: Scene15
+      value: Scene14
       objectReference: {fileID: 0}
     - target: {fileID: 562824686395037509, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_IsActive
@@ -179,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 1272807894833569557, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793875666926529802, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3115783896280149731, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Sprite
@@ -219,6 +243,14 @@ PrefabInstance:
     - target: {fileID: 5824912959610628002, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.1027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531587399642408247, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_text
+      value: Thanks for being so understanding, guys.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409054297656025692, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2088999593
       objectReference: {fileID: 0}
     - target: {fileID: 8224530306682779613, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_LocalPosition.x

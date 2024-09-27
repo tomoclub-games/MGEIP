@@ -92,6 +92,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44433756167189991, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_text
+      value: Yeah, I'm having loads of fun...not!
+      objectReference: {fileID: 0}
     - target: {fileID: 345353156078022057, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_Size.x
       value: 13.34
@@ -196,6 +200,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6611077287515462570, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.263801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611077287515462570, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.9542422
+      objectReference: {fileID: 0}
     - target: {fileID: 6807378319199197410, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -298,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524781862388245700, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.57
+      value: -2.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
