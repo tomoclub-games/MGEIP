@@ -1,6 +1,7 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using MGIEP.Data;
+using UnityEngine;
 
 namespace MGEIP.Scenario.Scenes
 {
@@ -10,6 +11,8 @@ namespace MGEIP.Scenario.Scenes
 
         private int questionNo;
         private int selectedAnswer;
+
+        private bool hasSliderMoved;
 
         public override void EnterScene()
         {
@@ -62,7 +65,14 @@ namespace MGEIP.Scenario.Scenes
                 GameUIService.SetSliderToDefault();
 
             GameUIService.OnSliderAnswerSelect += SliderSelect;
-            GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+
+            if (sliderQuestion.AnswerSelected)
+            {
+                GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+                hasSliderMoved = true;
+            }
+            else
+                hasSliderMoved = false;
         }
 
         public override void CompleteQuestionScene()
@@ -78,6 +88,12 @@ namespace MGEIP.Scenario.Scenes
         private void SliderSelect(int _selectedAnswer)
         {
             selectedAnswer = _selectedAnswer;
+
+            if (!hasSliderMoved)
+            {
+                GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+                hasSliderMoved = true;
+            }
         }
 
         private void ConfirmAnswer()

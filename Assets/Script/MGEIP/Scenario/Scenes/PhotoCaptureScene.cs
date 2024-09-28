@@ -36,6 +36,8 @@ namespace MGEIP.Scenario.Scenes
             this.gameService = gameService;
 
             SetPhotoCaptureSceneInfo();
+
+            GameUIService.OnPhotoCapture += DisableDialogue;
         }
 
         private void StartPhotoCaptureScene()
@@ -70,6 +72,8 @@ namespace MGEIP.Scenario.Scenes
         private void CompletePhotoCaptureScene()
         {
             GameUIService.SetPhotoCaptureUIGameobjectActive(false);
+
+            GameUIService.OnPhotoCapture -= DisableDialogue;
         }
 
         public override void ExitScene()
@@ -82,6 +86,11 @@ namespace MGEIP.Scenario.Scenes
         {
             CompletePhotoCaptureScene();
             scenario.DecrementCurrentScene();
+        }
+
+        private void DisableDialogue()
+        {
+            dialogueBox.SetActive(false);
         }
     }
 }

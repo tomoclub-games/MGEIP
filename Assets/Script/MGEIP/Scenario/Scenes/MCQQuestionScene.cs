@@ -23,6 +23,8 @@ namespace MGEIP.Scenario.Scenes
         private int currentAnswer;
         private int selectedAnswer;
 
+        private bool hasOptionBeenSelected;
+
         private string[] shuffledOptions;
         private string[] shuffledKeywordOptions;
 
@@ -98,7 +100,14 @@ namespace MGEIP.Scenario.Scenes
                 GameUIService.SetOptionSelected(selectedAnswer);
 
             GameUIService.OnMCQOptionSelect += OptionSelect;
-            GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+
+            if (multipleChoiceQuestion.AnswerSelected)
+            {
+                GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+                hasOptionBeenSelected = true;
+            }
+            else
+                hasOptionBeenSelected = false;
         }
 
         public override void CompleteQuestionScene()
@@ -114,6 +123,12 @@ namespace MGEIP.Scenario.Scenes
         private void OptionSelect(int _optionNo)
         {
             currentAnswer = _optionNo;
+
+            if (!hasOptionBeenSelected)
+            {
+                GameUIService.OnConfirmButtonClick += ConfirmAnswer;
+                hasOptionBeenSelected = true;
+            }
         }
 
         private void ConfirmAnswer()

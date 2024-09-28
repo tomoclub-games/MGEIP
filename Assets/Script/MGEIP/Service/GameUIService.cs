@@ -87,6 +87,7 @@ namespace MGEIP.Service
         private int currentScenarioInfoIndex = 0;
 
         public UnityAction<int> OnScenarioStart;
+        public UnityAction OnPhotoCapture;
 
         #region Button events
 
@@ -302,6 +303,7 @@ namespace MGEIP.Service
         {
             cameraUIGameObject.SetActive(false);
             postCameraUIGameObject.SetActive(true);
+            OnPhotoCapture?.Invoke();
         }
 
         public void PostCameraNextButtonClicked()
