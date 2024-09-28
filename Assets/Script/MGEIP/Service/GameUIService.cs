@@ -52,8 +52,13 @@ namespace MGEIP.Service
 
         [Header("Photo Capture Scene Components")]
         [SerializeField] private GameObject photoCaptureSceneUIGameobject;
-        [SerializeField] private Button photoCaptureSceneNextButton;
+        [SerializeField] private GameObject cameraUIGameObject;
+        [SerializeField] private GameObject postCameraUIGameObject;
+        [SerializeField] private GameObject collageUIGameObject;
         [SerializeField] private Button photoCaptureScenePrevButton;
+        [SerializeField] private Button photoCaptureShutterButton;
+        [SerializeField] private Button postCameraNextButton;
+        [SerializeField] private Button photoCaptureSceneNextButton;
         [SerializeField] private GameObject photoCaptureSceneNarrationBoxGameobject;
         [SerializeField] private TextMeshProUGUI photoCaptureSceneNarrationText;
 
@@ -100,11 +105,7 @@ namespace MGEIP.Service
                 optionButtons[i].onClick.AddListener(() => OnMCQOptionSelect?.Invoke(buttonIndex));
             }
 
-            questionSceneConfirmButton.onClick.AddListener(() =>
-            {
-                Debug.Log("Confirm clicked! Invoking event");
-                OnConfirmButtonClick?.Invoke();
-            });
+            questionSceneConfirmButton.onClick.AddListener(() => OnConfirmButtonClick?.Invoke());
 
             questionScenePrevButton.onClick.AddListener(() => OnPrevButtonClick?.Invoke());
 
@@ -117,6 +118,9 @@ namespace MGEIP.Service
 
             scenarioInfoCloseButton.onClick.AddListener(ScenarioInfoCloseButtonClick);
             scenarioInfoStartButton.onClick.AddListener(ScenarioPlayButtonClick);
+
+            photoCaptureShutterButton.onClick.AddListener(ShutterButtonClicked);
+            postCameraNextButton.onClick.AddListener(PostCameraNextButtonClicked);
         }
 
         private void OnDestroy()
@@ -133,6 +137,9 @@ namespace MGEIP.Service
 
             scenarioInfoCloseButton.onClick.RemoveAllListeners();
             scenarioInfoStartButton.onClick.RemoveAllListeners();
+
+            photoCaptureShutterButton.onClick.RemoveAllListeners();
+            postCameraNextButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -275,6 +282,10 @@ namespace MGEIP.Service
         public void SetPhotoCaptureUIGameobjectActive(bool active)
         {
             photoCaptureSceneUIGameobject.SetActive(active);
+
+            cameraUIGameObject.SetActive(true);
+            postCameraUIGameObject.SetActive(false);
+            collageUIGameObject.SetActive(false);
         }
 
         public void SetPhotoCaptureNarrationBoxActive(bool active)
@@ -285,6 +296,18 @@ namespace MGEIP.Service
         public void SetPhotoCaptureNarrationText(string storySceneNarration)
         {
             photoCaptureSceneNarrationText.SetText(storySceneNarration);
+        }
+
+        public void ShutterButtonClicked()
+        {
+            cameraUIGameObject.SetActive(false);
+            postCameraUIGameObject.SetActive(true);
+        }
+
+        public void PostCameraNextButtonClicked()
+        {
+            postCameraUIGameObject.SetActive(false);
+            collageUIGameObject.SetActive(true);
         }
 
         #endregion
