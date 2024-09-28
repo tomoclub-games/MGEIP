@@ -208,7 +208,7 @@ namespace MGEIP.Service
         {
             for (int i = 0; i < sliderLabels.Length; i++)
             {
-                if (i == selectedValue)
+                if (i == selectedValue - 1)
                     sliderLabels[i].sprite = selectedSliderLabelSprite;
                 else
                     sliderLabels[i].sprite = deselectedSliderLabelSprite;

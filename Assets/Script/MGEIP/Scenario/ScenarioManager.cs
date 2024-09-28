@@ -8,6 +8,7 @@ namespace MGEIP.Scenario
 {
     public class ScenarioManager : MonoBehaviour
     {
+        [SerializeField] private List<ScenarioButton> scenarioButtons;
         [SerializeField] private List<Scenario> scenarios;
         [SerializeField] private Scenario scenarioPrefab;
         [SerializeField] private GameObject scenarioHolder;
@@ -27,6 +28,11 @@ namespace MGEIP.Scenario
             for (int i = 0; i < scenarioData.Count; i++)
             {
                 CreateScenario(scenarioData[i]);  
+            }
+
+            for (int i = 0; i < scenarioButtons.Count; i++)
+            {
+                scenarioButtons[i].Init(this);
             }
 
             /*

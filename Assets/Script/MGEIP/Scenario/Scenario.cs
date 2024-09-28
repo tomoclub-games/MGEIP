@@ -27,9 +27,12 @@ namespace MGEIP.Scenario
         [SerializeField] private GameService gameService;
         [SerializeField] private List<Scene> scenes = new();
 
+        private string emotionKeyword;
+
         public bool isScenarioCompleted = false;
 
         public int ScenarioNo => scenarioNo;
+        public string EmotionKeyword => emotionKeyword;
         /*
         public GameObject ScenarioInfo => scenarioInfo; 
         public GameObject ScenarioIndicator => scenarioIndicator;
@@ -260,6 +263,11 @@ namespace MGEIP.Scenario
             endSceneEndButton.onClick.RemoveAllListeners();
             GameUIService.EndScenePrevButton.onClick.RemoveAllListeners();
             scene.GetComponent<EndScene>().SetEndSceneButtons(endSceneEndButton, GameUIService.EndScenePrevButton);
+        }
+
+        public void SetEmotionKeyword(string _keyword)
+        {
+            emotionKeyword = _keyword;
         }
     }
 }

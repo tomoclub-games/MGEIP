@@ -11,6 +11,13 @@ namespace MGEIP.Scenario
         [SerializeField] private int scenarioNo;
         [SerializeField] private GameObject onHoverGO;
 
+        private ScenarioManager scenarioManager;
+
+        public void Init(ScenarioManager _scenarioManager)
+        {
+            scenarioManager = _scenarioManager;
+        }
+
         private void OnMouseOver()
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -29,7 +36,7 @@ namespace MGEIP.Scenario
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            GameService.Instance.ScenarioManager.OnClickScenarioButton(scenarioNo);
+            scenarioManager.OnClickScenarioButton(scenarioNo);
         }
     }
 }
