@@ -1,9 +1,7 @@
 ﻿using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MGEIP.Service
@@ -122,6 +120,12 @@ namespace MGEIP.Service
             scenarioInfoStartButton.onClick.RemoveAllListeners();
         }
 
+        private void Start()
+        {
+            answerSlider.value = 1;
+            UpdateSliderLabelImage((int)answerSlider.value);
+        }
+
         #region Scenario Methods
         public Button GetGameEndButton => gameEndButton;
         #endregion
@@ -205,7 +209,7 @@ namespace MGEIP.Service
 
         public void SetSliderToDefault()
         {
-            answerSlider.value = (answerSlider.maxValue - answerSlider.minValue) / 2;
+            answerSlider.value = 1;
         }
 
         public void SetQuestionText(string question)

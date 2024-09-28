@@ -2,9 +2,7 @@
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
-using MGIEP.Data;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
