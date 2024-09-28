@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -249,7 +250,10 @@ namespace Assets.Script.MGEIP.Service
             beforeLoadingGO.SetActive(false);
             afterLoadingGO.SetActive(true);
 
-            LoadGameScene();
+            loadingBarFill.fillAmount = 0f;
+            loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
+
+            // StartCoroutine(LoadGameScene());
         }
 
         private void RevealAnimation()
@@ -280,18 +284,19 @@ namespace Assets.Script.MGEIP.Service
                 .SetEase(Ease.OutBack);
         }
 
-        private async void LoadGameScene()
+        private IEnumerator LoadGameScene()
         {
             var scene = SceneManager.LoadSceneAsync(1);
             scene.allowSceneActivation = false;
 
             loadingBarFill.fillAmount = 0f;
 
-            do
+            while (scene.progress < 0.9f)
             {
-                await Task.Delay(100);
-                loadingBarFill.fillAmount = scene.progress;
-            } while (scene.progress < 0.9f);
+                Debug.Log(scene.progress);
+                loadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
+                yield return null;
+            }
 
             scene.allowSceneActivation = true;
         }
