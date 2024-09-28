@@ -113,10 +113,10 @@ MonoBehaviour:
       Option3: Mrs. Thompson is feeling surprised.
       Option4: Mrs. Thompson is feeling annoyed.
       UseKeyword: 1
-      Option1Keyword: Distressed
-      Option2Keyword: Loving
-      Option3Keyword: Surprised
-      Option4Keyword: Annoyed
+      Option1Keyword: distress
+      Option2Keyword: love
+      Option3Keyword: surprise
+      Option4Keyword: annoyance
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 1
@@ -331,11 +331,11 @@ MonoBehaviour:
       Option2: The tourist is feeling sad.
       Option3: The tourist is feeling fulfilled.
       Option4: The tourist is feeling enthusiastic.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: worry
+      Option2Keyword: sadness
+      Option3Keyword: fulfillment
+      Option4Keyword: enthusiasm
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 2
@@ -415,8 +415,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Calm
+      SliderLabelHigher: Stressed
     - ScenarioNo: 2
       SceneNo: 8
       SceneType: 2
@@ -566,13 +566,13 @@ MonoBehaviour:
       QuestionText: How do you think Alexi is feeling?
       Option1: Alexi is feeling happy.
       Option2: Alexi is feeling tired.
-      Option3: Alexi is feeling comfy.
+      Option3: Alexi is feeling comfortable.
       Option4: Alexi is feeling scared.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: happiness
+      Option2Keyword: tiredness
+      Option3Keyword: comfort
+      Option4Keyword: fear
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 3
@@ -670,8 +670,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Happy
+      SliderLabelHigher: Sad
     - ScenarioNo: 3
       SceneNo: 9
       SceneType: 2
@@ -881,11 +881,11 @@ MonoBehaviour:
       Option2: Taylor is feeling excited.
       Option3: Taylor is feeling carefree.
       Option4: Taylor is feeling troubled.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: envy
+      Option2Keyword: excitement
+      Option3Keyword: carefreeness
+      Option4Keyword: trouble
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 4
@@ -965,8 +965,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Indifferent
+      SliderLabelHigher: Joyful
     - ScenarioNo: 4
       SceneNo: 11
       SceneType: 2
@@ -1157,11 +1157,11 @@ MonoBehaviour:
       Option2: Jacques is feeling joyful.
       Option3: Jacques is feeling calm.
       Option4: Jacques is feeling bored.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: embarrassment
+      Option2Keyword: joy
+      Option3Keyword: calmness
+      Option4Keyword: boredom
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 5
@@ -1259,8 +1259,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Carefree
+      SliderLabelHigher: Sentimental
     - ScenarioNo: 5
       SceneNo: 11
       SceneType: 2
@@ -1470,11 +1470,11 @@ MonoBehaviour:
       Option2: Ms Gowri is feeling calm.
       Option3: Ms Gowri is feeling cheerful.
       Option4: Ms Gowri is feeling panicky.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: loneliness
+      Option2Keyword: calmness
+      Option3Keyword: cheerfulness
+      Option4Keyword: panic
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 6
@@ -1553,8 +1553,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Peaceful
+      SliderLabelHigher: Upset
     - ScenarioNo: 6
       SceneNo: 10
       SceneType: 2
@@ -1744,11 +1744,11 @@ MonoBehaviour:
       Option2: Josefa is feeling excited.
       Option3: Josefa is feeling repulsed.
       Option4: Josefa is feeling restful.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: humiliation
+      Option2Keyword: excitement
+      Option3Keyword: repulsion
+      Option4Keyword: restfulness
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 7
@@ -1827,8 +1827,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Encouraged
+      SliderLabelHigher: Discouraged
     - ScenarioNo: 7
       SceneNo: 10
       SceneType: 2
@@ -2073,11 +2073,11 @@ MonoBehaviour:
       Option2: Mercedes is feeling worried.
       Option3: Mercedes is feeling brave.
       Option4: Mercedes is feeling lively.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: loneliness
+      Option2Keyword: worry
+      Option3Keyword: bravery
+      Option4Keyword: liveliness
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 8
@@ -2137,8 +2137,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Relaxed
+      SliderLabelHigher: Upset
     - ScenarioNo: 8
       SceneNo: 12
       SceneType: 2
@@ -2343,11 +2343,11 @@ MonoBehaviour:
       Option2: Max is feeling restful.
       Option3: Max is feeling enthusiastic.
       Option4: Max is feeling restless.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: disappointment
+      Option2Keyword: restfulness
+      Option3Keyword: enthusiasm
+      Option4Keyword: restlessness
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 9
@@ -2426,8 +2426,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Carefree
+      SliderLabelHigher: Concerned
     - ScenarioNo: 9
       SceneNo: 11
       SceneType: 2
@@ -2622,11 +2622,11 @@ MonoBehaviour:
       Option2: Jimin is feeling exhausted.
       Option3: Jimin is feeling grateful.
       Option4: Jimin is feeling proud.
-      UseKeyword: 0
-      Option1Keyword: 
-      Option2Keyword: 
-      Option3Keyword: 
-      Option4Keyword: 
+      UseKeyword: 1
+      Option1Keyword: annoyance
+      Option2Keyword: exhaustion
+      Option3Keyword: gratitude
+      Option4Keyword: pride
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 10
@@ -2686,8 +2686,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: 
-      SliderLabelHigher: 
+      SliderLabelLower: Serene
+      SliderLabelHigher: Tensed
     - ScenarioNo: 10
       SceneNo: 9
       SceneType: 2

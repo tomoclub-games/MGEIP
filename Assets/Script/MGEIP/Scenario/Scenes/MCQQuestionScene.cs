@@ -126,6 +126,8 @@ namespace MGEIP.Scenario.Scenes
                 scenario.SetEmotionKeyword(shuffledKeywordOptions[selectedAnswer]);
 
             multipleChoiceQuestion.SetAnswerSelected();
+
+            ExitScene();
         }
     }
 }

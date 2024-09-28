@@ -91,6 +91,8 @@ namespace MGEIP.Scenario.Scenes
             selectedAnswer = currentAnswer;
             sliderQuestion.selectedAnswer = selectedAnswer;
             sliderQuestion.SetAnswerSelected();
+
+            ExitScene();
         }
     }
 }

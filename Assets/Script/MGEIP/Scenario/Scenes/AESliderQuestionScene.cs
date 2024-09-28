@@ -84,6 +84,8 @@ namespace MGEIP.Scenario.Scenes
         {
             sliderQuestion.selectedAnswer = selectedAnswer;
             sliderQuestion.SetAnswerSelected();
+
+            ExitScene();
         }
     }
 }

@@ -39,7 +39,6 @@ namespace MGEIP.Scenario.Scenes
 
         public virtual void SetQuestionButton()
         {
-            GameUIService.OnConfirmButtonClick += ExitScene;
             GameUIService.OnPrevButtonClick += ExitToPrevScene;
         }
 
@@ -48,7 +47,6 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetQuestionSceneNarrationBoxActive(false);
             GameUIService.SetQuestionSceneUIActive(false);
 
-            GameUIService.OnConfirmButtonClick -= ExitScene;
             GameUIService.OnPrevButtonClick -= ExitToPrevScene;
         }
 
