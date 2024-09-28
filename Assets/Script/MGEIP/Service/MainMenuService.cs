@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -41,6 +43,16 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private GameObject afterLoadingGO;
         [SerializeField] private Image loadingBarFill;
 
+        [Header("Reveal Animation")]
+        [SerializeField] private List<GameObject> leftClouds;
+        [SerializeField] private List<GameObject> rightClouds;
+        [SerializeField] private GameObject mapGO;
+        [SerializeField] private float maxCloudDelay = 1f;
+        [SerializeField] private float cloudAnimationDuration = 1f;
+        [SerializeField] private float mapScaleDelay = 1f;
+        [SerializeField] private float mapAnimationDuration = 3f;
+        [SerializeField] private float buttonScaleDuration = 1f;
+
         private int currentStoryIndex = 0;
         private int currentTutorialIndex = 0;
 
@@ -80,6 +92,7 @@ namespace Assets.Script.MGEIP.Service
         private void Start()
         {
             ShowPanel(beginPanel);
+            RevealAnimation();
 
             storySubPanelViewed = new bool[storyPaginationCircles.Length];
             tutorialSubPanelViewed = new bool[tutorialPaginationCircles.Length];
@@ -142,13 +155,11 @@ namespace Assets.Script.MGEIP.Service
 
         private void ShowPanel(GameObject panel)
         {
-            // Hide all panels
             beginPanel.SetActive(false);
             disclaimerPanel.SetActive(false);
             storyPanel.SetActive(false);
             tutorialPanel.SetActive(false);
 
-            // Show the specified panel
             panel.SetActive(true);
         }
 
@@ -180,19 +191,15 @@ namespace Assets.Script.MGEIP.Service
 
         public void OnStorySubPanelChanged()
         {
-            // Mark the current sub-panel as viewed
             storySubPanelViewed[currentStoryIndex] = true;
 
-            // Update the pagination circles' sprites
             UpdateStoryPaginationCircles();
         }
 
         public void OnTutorialSubPanelChanged()
         {
-            // Mark the current sub-panel as viewed
             tutorialSubPanelViewed[currentTutorialIndex] = true;
 
-            // Update the pagination circles' sprites
             UpdateTutorialPaginationCircles();
         }
 
@@ -202,17 +209,14 @@ namespace Assets.Script.MGEIP.Service
             {
                 if (i == currentStoryIndex)
                 {
-                    // Set the currently viewing sprite
                     storyPaginationCircles[i].sprite = currentlyViewingCircle;
                 }
                 else if (storySubPanelViewed[i])
                 {
-                    // Set the viewed sprite
                     storyPaginationCircles[i].sprite = alreadyViewedCircle;
                 }
                 else
                 {
-                    // Set the not viewed sprite
                     storyPaginationCircles[i].sprite = notViewedCircle;
                 }
             }
@@ -224,17 +228,14 @@ namespace Assets.Script.MGEIP.Service
             {
                 if (i == currentTutorialIndex)
                 {
-                    // Set the currently viewing sprite
                     tutorialPaginationCircles[i].sprite = currentlyViewingCircle;
                 }
                 else if (tutorialSubPanelViewed[i])
                 {
-                    // Set the viewed sprite
                     tutorialPaginationCircles[i].sprite = alreadyViewedCircle;
                 }
                 else
                 {
-                    // Set the not viewed sprite
                     tutorialPaginationCircles[i].sprite = notViewedCircle;
                 }
             }
@@ -248,13 +249,51 @@ namespace Assets.Script.MGEIP.Service
             beforeLoadingGO.SetActive(false);
             afterLoadingGO.SetActive(true);
 
-            loadingBarFill.fillAmount = 0f;
-            loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => StartGame());
+            LoadGameScene();
         }
 
-        private void StartGame()
+        private void RevealAnimation()
         {
-            SceneManager.LoadSceneAsync(1);
+            startMenuNextButton.gameObject.SetActive(false);
+
+            foreach (GameObject cloud in leftClouds)
+            {
+                float randomDelay = Random.Range(0f, maxCloudDelay);
+                cloud.transform.DOMoveX(cloud.transform.position.x - 10f, cloudAnimationDuration).SetEase(Ease.InOutQuad).SetDelay(randomDelay);
+            }
+
+            foreach (GameObject cloud in rightClouds)
+            {
+                float randomDelay = Random.Range(0f, maxCloudDelay);
+                cloud.transform.DOMoveX(cloud.transform.position.x + 10f, cloudAnimationDuration).SetEase(Ease.InOutQuad).SetDelay(randomDelay);
+            }
+
+            mapGO.transform.localScale = Vector3.zero;
+            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(AnimateStartButton);
+        }
+
+        private void AnimateStartButton()
+        {
+            startMenuNextButton.gameObject.SetActive(true);
+            startMenuNextButton.transform.localScale = Vector3.zero; // Initially scale button to 0
+            startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
+                .SetEase(Ease.OutBack);
+        }
+
+        private async void LoadGameScene()
+        {
+            var scene = SceneManager.LoadSceneAsync(1);
+            scene.allowSceneActivation = false;
+
+            loadingBarFill.fillAmount = 0f;
+
+            do
+            {
+                await Task.Delay(100);
+                loadingBarFill.fillAmount = scene.progress;
+            } while (scene.progress < 0.9f);
+
+            scene.allowSceneActivation = true;
         }
     }
 }
