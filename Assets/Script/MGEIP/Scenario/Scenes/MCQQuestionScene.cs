@@ -1,5 +1,4 @@
-﻿using MGEIP.GameData.ScenarioData;
-using MGEIP.GameData.SceneData;
+﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using MGIEP.Data;
 using System.Linq;
@@ -13,9 +12,19 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] private string optionText3;
         [SerializeField] private string optionText4;
 
+        [SerializeField] private string optionKeywordText1;
+        [SerializeField] private string optionKeywordText2;
+        [SerializeField] private string optionKeywordText3;
+        [SerializeField] private string optionKeywordText4;
+
         private MultipleChoiceQuestion multipleChoiceQuestion;
+
         private int questionNo;
+        private int currentAnswer;
+        private int selectedAnswer;
+
         private string[] shuffledOptions;
+        private string[] shuffledKeywordOptions;
 
         public override void EnterScene()
         {
@@ -53,11 +62,24 @@ namespace MGEIP.Scenario.Scenes
             dialogue = sceneData.DialogueText; 
             isNarrationBoxActive = sceneData.NarrationBox;
             narrationText = sceneData.NarrationText;
-            questionText = sceneData.QuestionText; 
-            optionText1 = sceneData.Option1; 
-            optionText2 = sceneData.Option2; 
-            optionText3 = sceneData.Option3; 
-            optionText4 = sceneData.Option4; 
+            questionText = sceneData.QuestionText;
+            optionText1 = sceneData.Option1;
+            optionText2 = sceneData.Option2;
+            optionText3 = sceneData.Option3;
+            optionText4 = sceneData.Option4;
+            optionKeywordText1 = sceneData.Option1Keyword;
+            optionKeywordText2 = sceneData.Option2Keyword;
+            optionKeywordText3 = sceneData.Option3Keyword;
+            optionKeywordText4 = sceneData.Option4Keyword;
+
+            string[] stringOptions = new string[] { optionText1, optionText2, optionText3, optionText4 };
+            string[] stringKeywordOptions = new string[] { optionKeywordText1, optionKeywordText2, optionKeywordText3, optionKeywordText4 };
+
+            int[] indices = Enumerable.Range(0, stringOptions.Length).ToArray();
+            indices = indices.OrderBy(x => Random.value).ToArray();
+
+            shuffledOptions = indices.Select(i => stringOptions[i]).ToArray();
+            shuffledKeywordOptions = indices.Select(i => stringKeywordOptions[i]).ToArray();
         }
 
         public void MCQQuestionSceneInfo()
@@ -69,17 +91,14 @@ namespace MGEIP.Scenario.Scenes
             dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
-            SetOptionText();
-
-            GameUIService.OnMCQOptionSelect += OptionSelect;
-        }
-
-        private void SetOptionText()
-        {
-            string[] stringOptions = new string[] { optionText1, optionText2, optionText3, optionText4 };
-            shuffledOptions = stringOptions.OrderBy(x => Random.value).ToArray();
 
             GameUIService.SetOptionText(shuffledOptions);
+
+            if (multipleChoiceQuestion.AnswerSelected)
+                GameUIService.SetOptionSelected(selectedAnswer);
+
+            GameUIService.OnMCQOptionSelect += OptionSelect;
+            GameUIService.OnConfirmButtonClick += ConfirmAnswer;
         }
 
         public override void CompleteQuestionScene()
@@ -89,11 +108,24 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetOptionPanelActive(false);
 
             GameUIService.OnMCQOptionSelect -= OptionSelect;
+            GameUIService.OnConfirmButtonClick -= ConfirmAnswer;
         }
 
         private void OptionSelect(int _optionNo)
         {
-            multipleChoiceQuestion.selectedAnswer = shuffledOptions[_optionNo];
+            currentAnswer = _optionNo;
+        }
+
+        private void ConfirmAnswer()
+        {
+            selectedAnswer = currentAnswer;
+
+            multipleChoiceQuestion.selectedAnswer = shuffledOptions[selectedAnswer];
+
+            if (sceneData.UseKeyword)
+                scenario.SetEmotionKeyword(shuffledKeywordOptions[selectedAnswer]);
+
+            multipleChoiceQuestion.SetAnswerSelected();
         }
     }
 }

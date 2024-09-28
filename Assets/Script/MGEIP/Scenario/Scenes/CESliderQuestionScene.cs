@@ -7,7 +7,10 @@ namespace MGEIP.Scenario.Scenes
     public class CESliderQuestionScene : QuestionScene
     {
         private SliderQuestion sliderQuestion;
+
         private int questionNo;
+        private int currentAnswer;
+        private int selectedAnswer;
 
         public override void EnterScene()
         {
@@ -51,10 +54,21 @@ namespace MGEIP.Scenario.Scenes
             dialogueBox.SetActive(isDialogueBoxActive);
             dialogueText.SetText(dialogue);
 
-            GameUIService.SetQuestionText(questionText);
+            string questionTextTemp = questionText;
+            questionTextTemp = questionTextTemp.Replace("<emotion>", scenario.EmotionKeyword);
+
+            GameUIService.SetQuestionText(questionTextTemp);
             GameUIService.SetSliderToDefault();
 
+            sliderQuestion.questionText = questionTextTemp;
+
+            if (sliderQuestion.AnswerSelected)
+                GameUIService.SetSliderValue(selectedAnswer);
+            else
+                GameUIService.SetSliderToDefault();
+
             GameUIService.OnSliderAnswerSelect += SliderSelect;
+            GameUIService.OnConfirmButtonClick += ConfirmAnswer;
         }
 
         public override void CompleteQuestionScene()
@@ -64,11 +78,19 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.CELabelGameobject.SetActive(false);
 
             GameUIService.OnSliderAnswerSelect -= SliderSelect;
+            GameUIService.OnConfirmButtonClick -= ConfirmAnswer;
         }
 
         private void SliderSelect(int _selectedAnswer)
         {
-            sliderQuestion.selectedAnswer = _selectedAnswer;
+            currentAnswer = _selectedAnswer;
+        }
+
+        private void ConfirmAnswer()
+        {
+            selectedAnswer = currentAnswer;
+            sliderQuestion.selectedAnswer = selectedAnswer;
+            sliderQuestion.SetAnswerSelected();
         }
     }
 }

@@ -35,5 +35,12 @@ namespace MGEIP.GameData.SceneData
         public string Option2;
         public string Option3;
         public string Option4;
+        public bool UseKeyword;
+        public string Option1Keyword;
+        public string Option2Keyword;
+        public string Option3Keyword;
+        public string Option4Keyword;
+        public string SliderLabelLower;
+        public string SliderLabelHigher;
     }
 }

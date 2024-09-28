@@ -7,7 +7,9 @@ namespace MGEIP.Scenario.Scenes
     public class AESliderQuestionScene : QuestionScene
     {
         private SliderQuestion sliderQuestion;
+
         private int questionNo;
+        private int selectedAnswer;
 
         public override void EnterScene()
         {
@@ -52,9 +54,15 @@ namespace MGEIP.Scenario.Scenes
             dialogueText.SetText(dialogue);
 
             GameUIService.SetQuestionText(questionText);
-            GameUIService.SetSliderToDefault();
+            GameUIService.SetSliderHigherLowerLabels(sceneData.SliderLabelLower, sceneData.SliderLabelHigher);
+
+            if (sliderQuestion.AnswerSelected)
+                GameUIService.SetSliderValue(selectedAnswer);
+            else
+                GameUIService.SetSliderToDefault();
 
             GameUIService.OnSliderAnswerSelect += SliderSelect;
+            GameUIService.OnConfirmButtonClick += ConfirmAnswer;
         }
 
         public override void CompleteQuestionScene()
@@ -64,11 +72,18 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.AELabelGameobject.SetActive(false);
 
             GameUIService.OnSliderAnswerSelect -= SliderSelect;
+            GameUIService.OnConfirmButtonClick -= ConfirmAnswer;
         }
 
         private void SliderSelect(int _selectedAnswer)
         {
-            sliderQuestion.selectedAnswer = _selectedAnswer;
+            selectedAnswer = _selectedAnswer;
+        }
+
+        private void ConfirmAnswer()
+        {
+            sliderQuestion.selectedAnswer = selectedAnswer;
+            sliderQuestion.SetAnswerSelected();
         }
     }
 }

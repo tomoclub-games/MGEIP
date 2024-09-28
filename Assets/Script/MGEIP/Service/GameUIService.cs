@@ -39,7 +39,7 @@ namespace MGEIP.Service
 
         [Header("Options Components")]
         [SerializeField] private GameObject optionPanelGameobject;
-        [SerializeField] private Button[] optionButton;
+        [SerializeField] private Button[] optionButtons;
         [SerializeField] private TextMeshProUGUI[] optionButtonText;
 
         [Header("Slider Components")]
@@ -47,6 +47,8 @@ namespace MGEIP.Service
         [SerializeField] private Slider answerSlider;
         [SerializeField] private GameObject ceLabelGameobject;
         [SerializeField] private GameObject aeLabelGameobject;
+        [SerializeField] private TMP_Text aeLowerLabel;
+        [SerializeField] private TMP_Text aeHigherLabel;
 
         [Header("Photo Capture Scene Components")]
         [SerializeField] private GameObject photoCaptureSceneUIGameobject;
@@ -85,6 +87,8 @@ namespace MGEIP.Service
 
         public UnityAction<int> OnMCQOptionSelect;
         public UnityAction<int> OnSliderAnswerSelect;
+        public UnityAction OnConfirmButtonClick;
+        public UnityAction OnPrevButtonClick;
 
         #endregion
 
@@ -93,8 +97,16 @@ namespace MGEIP.Service
             for (int i = 0; i < 4; i++)
             {
                 int buttonIndex = i;
-                optionButton[i].onClick.AddListener(() => OnMCQOptionSelect?.Invoke(buttonIndex));
+                optionButtons[i].onClick.AddListener(() => OnMCQOptionSelect?.Invoke(buttonIndex));
             }
+
+            questionSceneConfirmButton.onClick.AddListener(() =>
+            {
+                Debug.Log("Confirm clicked! Invoking event");
+                OnConfirmButtonClick?.Invoke();
+            });
+
+            questionScenePrevButton.onClick.AddListener(() => OnPrevButtonClick?.Invoke());
 
             answerSlider.onValueChanged.AddListener((value) =>
             {
@@ -111,8 +123,11 @@ namespace MGEIP.Service
         {
             for (int i = 0; i < 4; i++)
             {
-                optionButton[i].onClick.RemoveAllListeners();
+                optionButtons[i].onClick.RemoveAllListeners();
             }
+
+            questionSceneConfirmButton.onClick.RemoveAllListeners();
+            questionScenePrevButton.onClick.RemoveAllListeners();
 
             answerSlider.onValueChanged.RemoveAllListeners();
 
@@ -180,9 +195,6 @@ namespace MGEIP.Service
         public GameObject CELabelGameobject => ceLabelGameobject;
         public GameObject AELabelGameobject => aeLabelGameobject;
         public Slider AnswerSlider => answerSlider;
-        public Button[] OptionButton => optionButton;
-        public Button QuestionSceneConfirmButton => questionSceneConfirmButton;
-        public Button QuestionScenePrevButton => questionScenePrevButton;
 
         public void SetOptionText(string[] text)
         {
@@ -225,6 +237,22 @@ namespace MGEIP.Service
         public void SetQuestionSceneNarrationText(string questionSceneNarration)
         {
             questionSceneNarrationText.SetText(questionSceneNarration);
+        }
+
+        public void SetSliderHigherLowerLabels(string _lower, string _higher)
+        {
+            aeLowerLabel.text = "Extremely " + _lower;
+            aeHigherLabel.text = "Extremely " + _higher;
+        }
+
+        public void SetOptionSelected(int _optionNo)
+        {
+            optionButtons[_optionNo].Select();
+        }
+
+        public void SetSliderValue(int _sliderVal)
+        {
+            answerSlider.value = _sliderVal;
         }
 
         public void UpdateSliderLabelImage(int selectedValue)

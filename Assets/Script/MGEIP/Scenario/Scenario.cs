@@ -217,7 +217,6 @@ namespace MGEIP.Scenario
             else if (scene.GetComponent<QuestionScene>() != null)
             {
                 SetUIForQuestion(scene);
-
             }
             else if (scene.GetComponent<PhotoCaptureScene>() != null)
             {
@@ -248,11 +247,7 @@ namespace MGEIP.Scenario
 
         private void SetUIForQuestion(Scene scene)
         {
-            Button QuestionConfirmButton = GameUIService.QuestionSceneConfirmButton;
-
-            QuestionConfirmButton.onClick.RemoveAllListeners();
-            GameUIService.QuestionScenePrevButton.onClick.RemoveAllListeners();
-            scene.GetComponent<QuestionScene>().SetQuestionButton(QuestionConfirmButton, GameUIService.QuestionScenePrevButton);
+            scene.GetComponent<QuestionScene>().SetQuestionButton();
         }
 
         private void SetUIForPhotoCaptureScene(Scene scene)

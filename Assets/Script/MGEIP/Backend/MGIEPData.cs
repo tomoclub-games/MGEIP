@@ -54,6 +54,14 @@ namespace MGIEP.Data
     {
         public int sceneNo;
         public string questionText;
+        protected bool answerSelected;
+
+        public bool AnswerSelected => answerSelected;
+
+        public void SetAnswerSelected()
+        {
+            answerSelected = true;
+        }
 
         public virtual void PrintQuestion()
         {
