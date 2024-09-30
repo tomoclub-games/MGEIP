@@ -48,52 +48,6 @@ namespace MGEIP.Scenario
             gameService.GameUIService.OnScenarioStart += OnScenarioPlayButtonClick;
         }
 
-        private void Update()
-        {
-            /*
-            // Check for touch or mouse input
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector2 touchPosition = Input.mousePosition;
-
-                // Check if touch is not on any scenario button
-                bool touchedOnScenarioButton = false;
-                for (int i = 0; i < scenarios.Count; i++)
-                {
-                    RectTransform buttonRect = scenarios[i].ScenarioButton.GetComponent<RectTransform>();
-                    if (RectTransformUtility.RectangleContainsScreenPoint(buttonRect, touchPosition, Camera.main))
-                    {
-                        touchedOnScenarioButton = true;
-                        break;
-                    }
-                }
-
-                // If no scenario button was touched and a scenario is selected, disable it
-                if (!touchedOnScenarioButton && selectedScenarioIndex != -1)
-                {
-                    DisableSelectedScenario();
-                }
-            }
-
-            if (scenarios.All(scenario => scenario.isScenarioCompleted))
-            {
-                gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
-            }
-        }
-
-        public void DisableSelectedScenario()
-        {
-            /*
-            if (selectedScenarioIndex != -1)
-            {
-                scenarios[selectedScenarioIndex].ScenarioIndicator.SetActive(true);
-                scenarios[selectedScenarioIndex].ScenarioInfo.SetActive(false);
-
-                selectedScenarioIndex = -1;
-            }
-            */
-        }
-
         public void OnClickScenarioButton(int index)
         {
             /*

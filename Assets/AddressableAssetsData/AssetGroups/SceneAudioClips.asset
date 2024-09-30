@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: SceneAudioClips
+  m_EditorClassIdentifier: 
+  m_GroupName: SceneAudioClips
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6465a1542dba8c843b90c39963e83be6
+  m_SerializeEntries:
+  - m_GUID: 452f06599e7747549af776c2e88acdc8
+    m_Address: Assets/AudioClips/MainMenuClips
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MainMenuAudioClips
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e810da682894214384e7e1205842048
+    m_Address: Assets/AudioClips/GameSceneClips
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameSceneAudioClips
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 96148842520188444bd7ae55c42aa41a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e177d8d3e5a2b649a7d3d890eca0901, type: 2}
+    - {fileID: 11400000, guid: 20dc5ad1788d7b944a84349392971a5b, type: 2}

@@ -2,6 +2,7 @@
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
+using MGIEP;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,6 +75,8 @@ namespace MGEIP.Scenario
 
         public void CreateScene()
         {
+            SoundManagerService.Instance.LoadAudio("ScenarioAudioClips_" + scenarioNo);
+
             List<SceneData> sceneDataList = new List<SceneData>();
             List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
 
@@ -160,6 +163,8 @@ namespace MGEIP.Scenario
                     GameObject.Destroy(scenes[i].gameObject);
                 }
                 scenes.Clear();
+
+                SoundManagerService.Instance.ReleaseAudio();
 
                 // Disabled scenario locking for testing
                 /*

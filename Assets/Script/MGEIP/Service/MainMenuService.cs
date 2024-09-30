@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
+using MGIEP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -92,6 +93,8 @@ namespace Assets.Script.MGEIP.Service
 
         private void Start()
         {
+            SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
+
             ShowPanel(beginPanel);
             RevealAnimation();
 
@@ -252,6 +255,8 @@ namespace Assets.Script.MGEIP.Service
 
             loadingBarFill.fillAmount = 0f;
             loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
+
+            SoundManagerService.Instance.ReleaseAudio();
 
             // StartCoroutine(LoadGameScene());
         }

@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData;
 using MGEIP.Scenario;
+using MGIEP;
 using MGIEP.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,10 +25,14 @@ namespace MGEIP.Service
             ScenarioManager.InitializeScenarioManager(this);
             GameUIService.GetGameEndButton.gameObject.SetActive(false);
             GameUIService.GetGameEndButton.onClick.AddListener(OnGameEndButtonClick);
+
+            SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
         }
 
         private void OnGameEndButtonClick()
         {
+            SoundManagerService.Instance.ReleaseAudio();
+
             SceneManager.LoadScene(2);
         }
     }
