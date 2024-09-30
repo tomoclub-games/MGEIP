@@ -29,6 +29,7 @@ namespace MGEIP.Scenario
         private ScenarioManager scenarioManager;
 
         private string emotionKeyword;
+        private int emotionIndex = -1;
 
         public bool isScenarioCompleted = false;
 
@@ -266,8 +267,9 @@ namespace MGEIP.Scenario
             scene.GetComponent<EndScene>().SetEndSceneButtons(endSceneEndButton, GameUIService.EndScenePrevButton);
         }
 
-        public void SetEmotionKeyword(string _keyword)
+        public void SetEmotionKeyword(int _index, string _keyword)
         {
+            emotionIndex = _index;
             emotionKeyword = _keyword;
         }
     }

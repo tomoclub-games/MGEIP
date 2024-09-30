@@ -1,21 +1,15 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using MGIEP.Data;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 namespace MGEIP.Scenario.Scenes
 {
     public class MCQQuestionScene : QuestionScene
     {
-        [SerializeField] private string optionText1;
-        [SerializeField] private string optionText2;
-        [SerializeField] private string optionText3;
-        [SerializeField] private string optionText4;
-
-        [SerializeField] private string optionKeywordText1;
-        [SerializeField] private string optionKeywordText2;
-        [SerializeField] private string optionKeywordText3;
-        [SerializeField] private string optionKeywordText4;
+        private List<string> optionTexts = new();
+        private List<string> optionKeywords = new();
 
         private MultipleChoiceQuestion multipleChoiceQuestion;
 
@@ -65,17 +59,19 @@ namespace MGEIP.Scenario.Scenes
             isNarrationBoxActive = sceneData.NarrationBox;
             narrationText = sceneData.NarrationText;
             questionText = sceneData.QuestionText;
-            optionText1 = sceneData.Option1;
-            optionText2 = sceneData.Option2;
-            optionText3 = sceneData.Option3;
-            optionText4 = sceneData.Option4;
-            optionKeywordText1 = sceneData.Option1Keyword;
-            optionKeywordText2 = sceneData.Option2Keyword;
-            optionKeywordText3 = sceneData.Option3Keyword;
-            optionKeywordText4 = sceneData.Option4Keyword;
 
-            string[] stringOptions = new string[] { optionText1, optionText2, optionText3, optionText4 };
-            string[] stringKeywordOptions = new string[] { optionKeywordText1, optionKeywordText2, optionKeywordText3, optionKeywordText4 };
+            optionTexts.Add(sceneData.Option1);
+            optionTexts.Add(sceneData.Option2);
+            optionTexts.Add(sceneData.Option3);
+            optionTexts.Add(sceneData.Option4);
+
+            optionKeywords.Add(sceneData.Option1Keyword);
+            optionKeywords.Add(sceneData.Option2Keyword);
+            optionKeywords.Add(sceneData.Option3Keyword);
+            optionKeywords.Add(sceneData.Option4Keyword);
+
+            string[] stringOptions = optionTexts.ToArray();
+            string[] stringKeywordOptions = optionKeywords.ToArray();
 
             int[] indices = Enumerable.Range(0, stringOptions.Length).ToArray();
             indices = indices.OrderBy(x => Random.value).ToArray();
@@ -138,7 +134,10 @@ namespace MGEIP.Scenario.Scenes
             multipleChoiceQuestion.selectedAnswer = shuffledOptions[selectedAnswer];
 
             if (sceneData.UseKeyword)
-                scenario.SetEmotionKeyword(shuffledKeywordOptions[selectedAnswer]);
+            {
+                int keywordIndex = optionKeywords.FindIndex(i => i == shuffledKeywordOptions[selectedAnswer]);
+                scenario.SetEmotionKeyword(keywordIndex, shuffledKeywordOptions[selectedAnswer]);
+            }
 
             multipleChoiceQuestion.SetAnswerSelected();
 
