@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AudioClipButton : MonoBehaviour
 {
     [SerializeField] private string audioClipName;
+    [SerializeField] private AudioButtonType audioButtonType;
 
     private Button button;
 
@@ -22,6 +23,15 @@ public class AudioClipButton : MonoBehaviour
 
     private void PlayAudioClip()
     {
-        SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(audioClipName);
+        if (audioButtonType == AudioButtonType.PlayClip)
+            SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(audioClipName);
+        else
+            SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
     }
+}
+
+public enum AudioButtonType
+{
+    PlayClip,
+    StopClip
 }

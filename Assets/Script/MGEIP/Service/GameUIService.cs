@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using MGIEP;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -84,6 +85,18 @@ namespace MGEIP.Service
         [SerializeField] private GameObject scenarioInfoAfterGO;
         [SerializeField] private Image scenarioInfoLoadingBarFill;
 
+        [Header("VO Buttons")]
+        [SerializeField] private Button scenarioNameVOButton;
+        [SerializeField] private Button scenarioDescVOButton;
+        [SerializeField] private Button startSceneTitleVOButton;
+        [SerializeField] private Button startSceneNarrationVOButton;
+        [SerializeField] private Button storySceneNarrationVOButton;
+        [SerializeField] private Button questionSceneNarrationVOButton;
+        [SerializeField] private Button endSceneNarrationVOButton;
+        [SerializeField] private Button photoCaptureSceneNarrationVOButton;
+        [SerializeField] private Button questionVOButton;
+        [SerializeField] private Button[] optionVOButtons;
+
         private int currentScenarioInfoIndex = 0;
 
         public UnityAction<int> OnScenarioStart;
@@ -96,6 +109,11 @@ namespace MGEIP.Service
         public UnityAction OnConfirmButtonClick;
         public UnityAction OnPrevButtonClick;
 
+        public UnityAction OnStartSceneTitleVOClick;
+        public UnityAction OnNarrationVOClick;
+        public UnityAction OnQuestionVOClick;
+        public UnityAction<int> OnOptionVOClick;
+
         #endregion
 
         private void Awake()
@@ -107,7 +125,6 @@ namespace MGEIP.Service
             }
 
             questionSceneConfirmButton.onClick.AddListener(() => OnConfirmButtonClick?.Invoke());
-
             questionScenePrevButton.onClick.AddListener(() => OnPrevButtonClick?.Invoke());
 
             answerSlider.onValueChanged.AddListener((value) =>
@@ -122,6 +139,27 @@ namespace MGEIP.Service
 
             photoCaptureShutterButton.onClick.AddListener(ShutterButtonClicked);
             postCameraNextButton.onClick.AddListener(PostCameraNextButtonClicked);
+
+            // VO Buttons
+
+            scenarioNameVOButton.onClick.AddListener(() => PlayScenarioTitleVO());
+            scenarioDescVOButton.onClick.AddListener(() => PlayScenarioDescVO());
+
+            startSceneTitleVOButton.onClick.AddListener(() => OnStartSceneTitleVOClick?.Invoke());
+
+            startSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
+            storySceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
+            questionSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
+            endSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
+            photoCaptureSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
+
+            questionVOButton.onClick.AddListener(() => OnQuestionVOClick?.Invoke());
+
+            for (int i = 0; i < 4; i++)
+            {
+                int buttonIndex = i;
+                optionVOButtons[i].onClick.AddListener(() => OnOptionVOClick?.Invoke(buttonIndex));
+            }
         }
 
         private void OnDestroy()
@@ -141,6 +179,26 @@ namespace MGEIP.Service
 
             photoCaptureShutterButton.onClick.RemoveAllListeners();
             postCameraNextButton.onClick.RemoveAllListeners();
+
+            // VO Buttons
+
+            scenarioNameVOButton.onClick.RemoveAllListeners();
+            scenarioDescVOButton.onClick.RemoveAllListeners();
+
+            startSceneTitleVOButton.onClick.RemoveAllListeners();
+
+            startSceneNarrationVOButton.onClick.RemoveAllListeners();
+            storySceneNarrationVOButton.onClick.RemoveAllListeners();
+            questionSceneNarrationVOButton.onClick.RemoveAllListeners();
+            endSceneNarrationVOButton.onClick.RemoveAllListeners();
+            photoCaptureSceneNarrationVOButton.onClick.RemoveAllListeners();
+
+            questionVOButton.onClick.RemoveAllListeners();
+
+            for (int i = 0; i < 4; i++)
+            {
+                optionVOButtons[i].onClick.RemoveAllListeners();
+            }
         }
 
         private void Start()
@@ -367,6 +425,18 @@ namespace MGEIP.Service
 
             scenarioInfoLoadingBarFill.fillAmount = 0;
             scenarioInfoLoadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => { OnScenarioStart?.Invoke(currentScenarioInfoIndex); scenarioInfoPanel.SetActive(false); });
+        }
+
+        public void PlayScenarioDescVO()
+        {
+            string scenarioDescClipName = $"sd_{currentScenarioInfoIndex}";
+            SoundManagerService.Instance.PlayVoiceOver(scenarioDescClipName);
+        }
+
+        public void PlayScenarioTitleVO()
+        {
+            string scenarioNameClip = $"sn_{currentScenarioInfoIndex}";
+            SoundManagerService.Instance.PlayVoiceOver(scenarioNameClip);
         }
 
         #endregion

@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: SceneType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3352693453564857077, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      propertyPath: dialogueVOButton
+      value: 
+      objectReference: {fileID: 8024406282019605004}
     - target: {fileID: 3476773664374831312, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_text
       value: Someone, help me!
@@ -458,6 +462,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2906814871247875957, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
   m_PrefabInstance: {fileID: 7183309172466992009}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8024406282019605004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 931215282679204229, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+  m_PrefabInstance: {fileID: 7183309172466992009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7308570775311416637
 PrefabInstance:
   m_ObjectHideFlags: 0

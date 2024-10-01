@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using MGIEP;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,20 +8,13 @@ namespace MGEIP.Scenario.Scenes
 {
     public class StartScene : Scene
     {
-        [SerializeField] private int scenarioNo;
-        [SerializeField] private Scenario scenario;
-        [SerializeField] private GameService gameService;
-
-        [SerializeField] private string scenarioName;
-        [SerializeField] private bool isNarrationBoxActive;
-        [SerializeField] private string narrationText;
-
-        private GameUIService GameUIService => gameService.GameUIService;
-        private SceneData sceneData;
-
         public override void EnterScene()
         {
+            base.EnterScene();
+
             StartCurrentStartScene();
+
+            GameUIService.OnStartSceneTitleVOClick += PlayScenarioNameVO;
         }
 
         public void StartCurrentStartScene()
@@ -73,8 +67,18 @@ namespace MGEIP.Scenario.Scenes
 
         public override void ExitScene()
         {
+            base.ExitScene();
+
+            GameUIService.OnStartSceneTitleVOClick -= PlayScenarioNameVO;
+
             CompleteStartScene();
             scenario.IncreamentCurrentScene();
+        }
+
+        public void PlayScenarioNameVO()
+        {
+            string scenarioNameClip = $"sn_{scenarioNo}";
+            SoundManagerService.Instance.PlayVoiceOver(scenarioNameClip);
         }
     }
 }

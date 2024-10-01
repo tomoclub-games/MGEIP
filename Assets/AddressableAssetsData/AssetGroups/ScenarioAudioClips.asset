@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: ScenarioAudioClips
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: ScenarioAudioClips
   m_Data:
     m_SerializedData: []
   m_GUID: 4242da613bf31504793ec2ee8b0b26b9
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 988ec637f7ac222438bdab95f9b81d81
+    m_Address: Assets/AudioClips/ScenarioClips/Scenario_1_Clips
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ScenarioAudioClips_1
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 96148842520188444bd7ae55c42aa41a, type: 2}
   m_SchemaSet:

@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using MGIEP;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,24 +9,17 @@ namespace MGEIP.Scenario.Scenes
 {
     public class EndScene : Scene
     {
-        [SerializeField] private int scenarioNo;
-        [SerializeField] private Scenario scenario;
-        [SerializeField] private GameService gameService;
-
-        [SerializeField] private bool isDialogueBoxActive;
-        [SerializeField] private bool isNarrationBoxActive;
-        [SerializeField] private string dialogue;
-        [SerializeField] private string narrationText;
-
         [SerializeField] private GameObject dialogueBox;
         [SerializeField] private TextMeshProUGUI dialogueText;
-
-        private GameUIService GameUIService => gameService.GameUIService;
-        private SceneData sceneData;
+        [SerializeField] private Button dialogueVOButton;
 
         public override void EnterScene()
         {
+            base.EnterScene();
+
             StartCurrentEndScene();
+
+            dialogueVOButton.onClick.AddListener(PlayDialogueVoiceOver);
         }
 
         public void StartCurrentEndScene()
@@ -75,14 +69,31 @@ namespace MGEIP.Scenario.Scenes
 
         public override void ExitScene()
         {
+            base.ExitScene();
+
+            dialogueVOButton.onClick.RemoveAllListeners();
+
             CompleteEndScene();
             scenario.IncreamentCurrentScene();
         }
 
-        public void ExitToPrevScene()
+        public override void ExitToPrevScene()
         {
+            base.ExitToPrevScene();
+
+            dialogueVOButton.onClick.RemoveAllListeners();
+
             CompleteEndScene();
             scenario.DecrementCurrentScene();
+        }
+
+        public void PlayDialogueVoiceOver()
+        {
+            if (isDialogueBoxActive)
+            {
+                string dialogueClipName = $"dt_{scenarioNo}_{sceneData.SceneNo}";
+                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(dialogueClipName);
+            }
         }
     }
 }

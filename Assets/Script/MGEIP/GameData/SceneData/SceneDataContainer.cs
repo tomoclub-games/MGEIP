@@ -30,6 +30,7 @@ namespace MGEIP.GameData.SceneData
         public bool NarrationBox;
         public string DialogueText;
         public string NarrationText;
+        public bool HasCustomVO;
         public string QuestionText;
         public string Option1;
         public string Option2;

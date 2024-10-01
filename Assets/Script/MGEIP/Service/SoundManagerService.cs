@@ -15,11 +15,15 @@ namespace MGIEP
 
         [SerializeField] private AudioSource voiceOverSource;
 
+        private bool isVoiceOverCancelled;
+
         private IList<AudioClip> loadedClips = new List<AudioClip>();
         private Stack<AsyncOperationHandle<IList<AudioClip>>> handles = new();
 
         public UnityAction<string> OnPlayVoiceOver;
         public UnityAction OnStopVoiceOver;
+
+        public bool IsVoiceOverCancelled => isVoiceOverCancelled;
 
         private void Awake()
         {
@@ -43,6 +47,8 @@ namespace MGIEP
 
         public void PlayVoiceOver(string _audioClipName)
         {
+            isVoiceOverCancelled = false;
+
             AudioClip audioClip = FindVoiceOverByName(_audioClipName);
 
             if (audioClip == null)
@@ -59,9 +65,15 @@ namespace MGIEP
             voiceOverSource.Play();
         }
 
+        public bool IsPlayingVoiceOver()
+        {
+            return voiceOverSource.isPlaying;
+        }
+
         private void StopVoiceOver()
         {
             voiceOverSource.Stop();
+            isVoiceOverCancelled = true;
         }
 
         public AudioClip FindVoiceOverByName(string clipName)

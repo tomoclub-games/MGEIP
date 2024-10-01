@@ -36,6 +36,7 @@ namespace MGEIP.Scenario
 
         public int ScenarioNo => scenarioNo;
         public string EmotionKeyword => emotionKeyword;
+        public int EmotionIndex => emotionIndex;
         /*
         public GameObject ScenarioInfo => scenarioInfo; 
         public GameObject ScenarioIndicator => scenarioIndicator;

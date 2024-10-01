@@ -30,6 +30,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While looking for human interest stories for your local newspaper,
         you encounter Mrs. Thompson at the park.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -49,6 +50,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: Mrs. Thompson paces anxiously clutching her bag.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -68,6 +70,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Have you seen my cat, little Whiskers?!
       NarrationText: Mrs. Thompson's voice wavers as she looks around.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -87,6 +90,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I think he got lost in the park...
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -107,6 +111,7 @@ MonoBehaviour:
       DialogueText: Have you seen my little Whiskers? I think he got lost in the
         park.
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Mrs. Thompson is feeling?
       Option1: Mrs. Thompson is feeling distressed.
       Option2: Mrs. Thompson is feeling loving.
@@ -127,7 +132,9 @@ MonoBehaviour:
       DialogueText: Have you seen my little Whiskers? I think he got lost in the
         park.
       NarrationText: 
-      QuestionText: Rate the intensity of <emotion> Mrs Thompson is feeling.
+      HasCustomVO: 1
+      QuestionText: Rate the intensity of <emotion> Mrs Thompson is feeling. 1 represents
+        the lowest intensity and 10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -146,6 +153,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I'm very worried!
       NarrationText: Mrs. Thompson continues searching for Whiskers.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -165,6 +173,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I'm very worried!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Mrs. Thompson? Rate between 'extremely
         calm' and 'extremely stressed'.
       Option1: 
@@ -185,6 +194,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Someone, help me!
       NarrationText: Mrs. Thompson looks around, her hands trembling.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -204,6 +214,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Someone, help me!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You have to be somewhere pronto. What will you do?
       Option1: I will ditch my plans and look for Whiskers immediately.
       Option2: I will give Mrs. Thompson a hug and reassure her that Whiskers will
@@ -227,6 +238,7 @@ MonoBehaviour:
       DialogueText: Wait! I think I heard something!
       NarrationText: Mrs. Thompson suddenly pauses. A faint meow comes from a nearby
         bush. Mrs. Thompson rushes over, and to everyone's relief, Whiskers emerges.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -248,6 +260,7 @@ MonoBehaviour:
       NarrationText: Mrs. Thompson cuddles Whiskers close, tears of joy in her eyes.
         As they turn to leave, you realize this moment captures the essence of your
         town's spirit.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -268,6 +281,7 @@ MonoBehaviour:
       DialogueText: Say cheese!
       NarrationText: You decide to capture this heartwarming moment for your article.
         Click to take a photo of Mrs. Thompson reuniting with Whiskers.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -288,6 +302,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While seeking out diverse stories for your local newspaper,
         you spot a tourist with a map near the movies.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -307,6 +322,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: The tourist looks at their map and around, clearly confused.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -326,6 +342,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think the tourist is feeling?
       Option1: The tourist is feeling worried.
       Option2: The tourist is feeling sad.
@@ -345,6 +362,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
+      HasCustomVO: 1
       QuestionText: Rate the intensity of <emotion> the tourist is feeling. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -366,6 +384,7 @@ MonoBehaviour:
       DialogueText: Ugh!!
       NarrationText: The tourist is looking at everyone who walks past, hoping for
         assistance.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -385,6 +404,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Excuse me, can anyone help?
       NarrationText: The tourist's frustration grows as they struggle to orient themselves.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -404,6 +424,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Ugh, someone help me!!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing the tourist? Rate between 'extremely
         calm' and 'extremely stressed'.
       Option1: 
@@ -424,6 +445,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: The tourist rips the map in frustration.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -443,6 +465,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You are late for a movie. What will you do?
       Option1: I will direct him to the tourist assistance centre nearby.
       Option2: I will ask him to download the new tourist app I have designed.
@@ -463,6 +486,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Is that... yes, I think I see it now!
       NarrationText: The tourist's eyes light up as they spot a familiar landmark.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -484,6 +508,7 @@ MonoBehaviour:
       NarrationText: The tourist's relief is palpable as they finally locate their
         destination. As they walk away with a spring in their step, you realize this
         moment encapsulates the welcoming spirit of your town.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -505,6 +530,7 @@ MonoBehaviour:
       NarrationText: You decide to capture this moment of relief and friendly local
         assistance for your article. Click to take a photo of the tourist with their
         newly deciphered map.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -525,6 +551,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: You're heading to a party when you spot Alexi cleaning the beach.
         A potential story catches your eye.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -544,6 +571,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Every piece of trash gone is a victory!
       NarrationText: Alexi picks up litter, reassuring himself as he works.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -563,6 +591,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Every piece of trash gone is a victory!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Alexi is feeling?
       Option1: Alexi is feeling happy.
       Option2: Alexi is feeling tired.
@@ -582,6 +611,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Every piece of trash gone is a victory!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Alexi is feeling. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -602,6 +632,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Oh no, poor turtle!
       NarrationText: Alexi spots a turtle tangled in plastic waste.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -621,6 +652,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I got you, I got you...
       NarrationText: Alexi promptly moves to help the turle.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -640,6 +672,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: This poor turtle is scared...and hurt!
       NarrationText: Alexi picks up the injured turtle and examines closely.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -659,6 +692,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: This poor turtle is scared...and hurt!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Alexi? Rate between 'extremely happy'
         and 'extremely sad'.
       Option1: 
@@ -679,6 +713,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Someone call a wildlife rescue...
       NarrationText: Alexi looks around, seeking assistance for the turtle.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -698,6 +733,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You have meet at Ahmed's house soon for a birthday party. What
         will you do now?
       Option1: I will spend some time helping Alexi first.
@@ -718,6 +754,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Ah, I will set you free!
       NarrationText: Alexi untangles the turtle.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -738,6 +775,7 @@ MonoBehaviour:
       DialogueText: This is why keeping our beaches clean is so important.
       NarrationText: Alexi beams with joy as the turtle walks to the waters. You
         realize this moment captures the essence of community and environmental care.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -759,6 +797,7 @@ MonoBehaviour:
       NarrationText: You prepare to capture this inspiring moment of environmental
         stewardship. Click to take a photo of Alexi with the cleaner beach in the
         background.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -779,6 +818,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While covering local hiking trails, you encounter a group of
         friends on a challenging path.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -798,6 +838,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Hey, Taylor! We'll meet you at the top.
       NarrationText: A hiker calls out to their friend lagging behind.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -817,6 +858,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: This isn't a race...
       NarrationText: Taylor pants heavily, struggling with the steep incline.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -836,6 +878,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Phew... It is a tough hike!
       NarrationText: Taylor is sweating while catching his breath.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -856,6 +899,7 @@ MonoBehaviour:
       DialogueText: My friends are ahead of me, but that's only because I'm letting
         them take the lead.
       NarrationText: Taylor smirks and prepares to continue the hike.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -876,6 +920,7 @@ MonoBehaviour:
       DialogueText: My friends are ahead of me, but that's only because I'm letting
         them take the lead.
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Taylor is feeling?
       Option1: Taylor is feeling envious.
       Option2: Taylor is feeling excited.
@@ -896,6 +941,7 @@ MonoBehaviour:
       DialogueText: My friends are ahead of me, but that's only because I'm letting
         them take the lead.
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Taylor is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -916,6 +962,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: That was...easy!
       NarrationText: Taylor finally reaches the summit, sweating and breathing heavily.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -935,6 +982,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I am top of the world!
       NarrationText: Taylor screams on the top of his voice.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -954,6 +1002,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I am top of the world!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing everyone celebrating? Rate between
         'extremely indifferent' and 'extremely joyful'.
       Option1: 
@@ -974,6 +1023,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Surprise, everyone! I brought a picnic for us.
       NarrationText: 'Taylor''s searches his backpack for the surprise in his backpack. '
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -995,6 +1045,7 @@ MonoBehaviour:
         water!
       NarrationText: Oh no, I must have dropped the picnic box when I stopped for
         water!
+      HasCustomVO: 0
       QuestionText: You are exhausted from the hike too. What will you do?
       Option1: I will go back down the trail alone to find the picnic while they
         rest.
@@ -1015,6 +1066,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: So silly, but this turned out great after all!
       NarrationText: The group shrugs and enjoys the moment even without the picnic.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1035,6 +1087,7 @@ MonoBehaviour:
       DialogueText: Thanks for being so understanding, guys.
       NarrationText: Taylor smiles, visibly relieved. The group's camaraderie shines
         through, embodying the spirit of friendship and outdoor adventure.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1056,6 +1109,7 @@ MonoBehaviour:
       NarrationText: You prepare to capture this moment of friendship and shared
         accomplishment. Click to take a photo of the group enjoying their summit
         picnic.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1076,6 +1130,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: You're covering a community concert when an unexpected moment
         catches your attention.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1095,6 +1150,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Hustle...respect...love...
       NarrationText: Jacques is performing on stage with intensity.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1114,6 +1170,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Somehow...oh snap!
       NarrationText: Suddenly, a guitar string snaps. The audience murmurs.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1133,6 +1190,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: My bad, I struck the string too hard!
       NarrationText: Jacques speaks into the microphone, his voice shaky.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1152,6 +1210,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: So sorry, I messed up!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Jacques is feeling?
       Option1: Jacques is feeling embarrassed.
       Option2: Jacques is feeling joyful.
@@ -1171,6 +1230,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: So sorry, I messed up!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Jacques is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -1191,6 +1251,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Music is my whole life, let's do this!
       NarrationText: Jacques takes a deep breath and sings without the guitar.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1210,6 +1271,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Hustle...respect...love...somehow...keep me going on...
       NarrationText: The audience begins to clap encouragingly.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1229,6 +1291,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Thank you!
       NarrationText: Jacques finishes his performance to applause.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1248,6 +1311,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I fall, but I'll never give up!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Jacques? Rate between extremely carefree
         and extremely sentimental.
       Option1: 
@@ -1268,6 +1332,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Thank you, everyone for the love!
       NarrationText: The applause continues and a stagehand brings Jacques water.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1288,6 +1353,7 @@ MonoBehaviour:
       DialogueText: Hahaha, ummmm, not again...
       NarrationText: She accidentally trips on wire, spilling water on his shirt.
         Jacques looks shocked.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1307,6 +1373,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You were eargerly waiting to explore the food stalls nearby.
         What will you do?
       Option1: I will give Jacques my jacket to cover up his wet shirt and personally
@@ -1329,6 +1396,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: It's alright, don't worry.
       NarrationText: Jacques cleans up and smiles despite the evening's mishaps.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1349,6 +1417,7 @@ MonoBehaviour:
       DialogueText: Thanks for all your support, everyone.
       NarrationText: Jacques' resilience shines through, embodying the spirit of
         perseverance in the face of setbacks.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1369,6 +1438,7 @@ MonoBehaviour:
       DialogueText: Mind if I get a shot for our local paper's culture section?
       NarrationText: You prepare to capture this moment of artistic resilience. Click
         to take a photo of Jacques smiling after his performance.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1389,6 +1459,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While working on a feature about local residents, you notice
         Mrs. Gowri on her porch.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1408,6 +1479,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Hello, dear.
       NarrationText: Mrs. Gowri sits alone, looking at the empty chair beside her.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1427,6 +1499,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: How I wish...sigh!
       NarrationText: She sighs deeply, her gaze fixed on the distance.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1446,6 +1519,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Good day to have a visitor!
       NarrationText: Mrs. Gowri attempts a smile as she notices you.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1465,6 +1539,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Good day to have a visitor!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Ms. Gowri is feeling?
       Option1: Ms Gowri is feeling lonely.
       Option2: Ms Gowri is feeling calm.
@@ -1484,6 +1559,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Good day to have a visitor!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Ms Gowri is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -1504,6 +1580,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Roger... my late husband and porch partner!
       NarrationText: Mrs. Gowri takes out a photograph from her pocket.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1523,6 +1600,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Oh, Roger...
       NarrationText: Mrs. Gowri's voice is barely above a whisper.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1542,6 +1620,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Oh, Roger...
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Ms. Gowri? Rate between extremely peaceful
         to extremely upset.
       Option1: 
@@ -1562,6 +1641,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: When Roger was around, he took good care of all the plants.
       NarrationText: Mrs. Gowri stands up and picks up a watering can.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1581,6 +1661,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You have some important errands to run soon. What will you do?
       Option1: I will help her water the plants and ask her to rest on her chair
         while we chat.
@@ -1602,6 +1683,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Thank you for keeping me company, dear.
       NarrationText: Mrs. Gowri waters the plants, her movements slow but purposeful.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1622,6 +1704,7 @@ MonoBehaviour:
       DialogueText: Come by again soon!
       NarrationText: Mrs. Gowri's gentle smile reflects the warmth of cherished memories
         and the comfort of companionship.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1642,6 +1725,7 @@ MonoBehaviour:
       DialogueText: Would you mind if I took a photo?
       NarrationText: You prepare to capture this poignant moment. Click to take a
         photo of Mrs. Gowri tending to her plants.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1661,6 +1745,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: While covering a community gardening event, you notice a commotion.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1681,6 +1766,7 @@ MonoBehaviour:
       DialogueText: Ah la la la, gardering day...
       NarrationText: Josefa carries three large potted plants, gleeing at the risky
         adventure.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1700,6 +1786,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Oh no, no, no!
       NarrationText: Suddenly, Josefa loses balance. The pots crash to the ground.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1720,6 +1807,7 @@ MonoBehaviour:
       DialogueText: Why, why did I have to carry three pots!
       NarrationText: Other gardeners seem unbothered, but there are some giggles
         and laughs.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1739,6 +1827,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: So careless, sigh!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Josefa is feeling?
       Option1: Josefa is feeling humiliated.
       Option2: Josefa is feeling excited.
@@ -1758,6 +1847,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: So careless, sigh!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Josefa is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -1778,6 +1868,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: This is a total and absolute disaster!
       NarrationText: Josefa kneels beside the broken pots and spilled soil.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1797,6 +1888,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I don't deserve it.
       NarrationText: Josefa tries to gather the scattered plants with shaking hands.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1816,6 +1908,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I shouldn't be allowed here...ever again!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Josefa? Rate between extremely encouraged
         and extremely discouraged.
       Option1: 
@@ -1836,6 +1929,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Why...I'm a failure!
       NarrationText: Josefa's shoulders slump as she looks at the mess around her.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1855,6 +1949,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You have to run errands. What will you do?
       Option1: I will offer to help clean up the soil immediately.
       Option2: I will assist in cleaning up the soil.
@@ -1874,6 +1969,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Quick... and careful.
       NarrationText: With some dedication, Josefa begins to clean up and replant.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1893,6 +1989,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I guess, we all have our clumsy days.
       NarrationText: Her arrangement of plants is simply beautiful!
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1913,6 +2010,7 @@ MonoBehaviour:
       DialogueText: May I take a photo of our community garden and the gardners?
       NarrationText: You prepare to capture this moment. Click to take a photo of
         Josefa and others working together to restore the garden.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1933,6 +2031,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While covering youth activities, you notice a group of teens
         at the community park.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1953,6 +2052,7 @@ MonoBehaviour:
       DialogueText: Ummm, hear me out...
       NarrationText: Mercedes tries to join the conversation but gets talked over
         by her friends.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1972,6 +2072,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Something very interesting happened...
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -1991,6 +2092,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: Mercedes steps away, crossing her arms. Rakesh takes notice.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2011,6 +2113,7 @@ MonoBehaviour:
       DialogueText: It was a good idea to hang out at the basketball court. Are you
         having fun?
       NarrationText: Rakesh approaches Mercedes with a smile.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2030,6 +2133,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Yeah, I'm having loads of fun...
       NarrationText: Mercedes' tone is flat as she responds to Rakesh.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2049,6 +2153,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: ...not!
       NarrationText: Mercedes turns away from the group, staring at the ground.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2068,6 +2173,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Yeah, I'm having loads of fun...not!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Mercedes is feeling?
       Option1: Mercedes is feeling lonely.
       Option2: Mercedes is feeling worried.
@@ -2087,6 +2193,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Yeah, I'm having loads of fun...not!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Mercedes is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -2107,6 +2214,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: They always do this! It ruins my mood.
       NarrationText: Mercedes mutters under her breath, kicking at a pebble.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2126,6 +2234,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: They always do this! It ruins my mood.
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel on seeing Mercedes? Rate between extremely relaxed
         and extremely upset.
       Option1: 
@@ -2145,7 +2254,8 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: I will go home and read my new novels!
-      NarrationText: Mercedes starts to walk away from the basketball court.
+      NarrationText: Mercedes almost walks away from the basketball court.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2165,6 +2275,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You have your own practice to attend soon. What will you do?
       Option1: I will ditch practice to spend more time till Mercedes feels better.
       Option2: I will comfort Mercedes for a while before heading to practice.
@@ -2184,6 +2295,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Maybe I'm should invite them over, they love books!
       NarrationText: Mercedes thinks on her feet and got an idea.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2203,6 +2315,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: Mercedes invites tthem over to her place to hangout.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2223,6 +2336,7 @@ MonoBehaviour:
       DialogueText: Would you mind if I took a photo for our youth section?
       NarrationText: You prepare to capture this moment of social dynamics. Click
         to take a photo of Mercedes walking away from the group.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2243,6 +2357,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While covering local entertainment, you overhear a discussion
         at the movies.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2262,6 +2377,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: C'mon, guys, this movie is so cool!
       NarrationText: Max gestures excitedly towards a movie poster.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2281,6 +2397,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: It's ok if you haven't seen the previous films.
       NarrationText: Max's friends exchange skeptical glances.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2300,6 +2417,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I'll fill you guys in on the story.
       NarrationText: Max continues to explain, his voice getting louder.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2319,6 +2437,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Sorry, Max. We're going to watch the action movie instead.
       NarrationText: Max's friends start walking away.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2338,6 +2457,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How is Max feeling?
       Option1: Max is feeling disappointed.
       Option2: Max is feeling restful.
@@ -2357,6 +2477,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Max is feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -2377,6 +2498,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I can't believe my friends just left me all alone here!
       NarrationText: Max watches his friends walk away, his hands clenched.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2396,6 +2518,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I'm never watching movies again!
       NarrationText: Max throws his ticket on the ground.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2415,6 +2538,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: I'm never watching movies again!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel seeing Max? Rate between extremely carefree and
         extremely concerned.
       Option1: 
@@ -2436,6 +2560,7 @@ MonoBehaviour:
       DialogueText: Such a bummer...
       NarrationText: Max stands outside the theater, looking between the two movie
         posters.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2455,6 +2580,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: The movie you came to watch is going to start soon. What will
         you do?
       Option1: I will leave the movie with my friends and ask Max to watch the Sci-fi
@@ -2479,6 +2605,7 @@ MonoBehaviour:
       DialogueText: Maybe, I'm over reacting!
       NarrationText: Max takes a deep breath and looks at his friends' retreating
         figures.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2500,6 +2627,7 @@ MonoBehaviour:
         all.
       NarrationText: Max decides to join his friends, choosing companionship over
         his movie preference.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2520,6 +2648,7 @@ MonoBehaviour:
       DialogueText: Mind if I get a quick shot for our entertainment column?
       NarrationText: You prepare to capture this moment of friendship and compromise.
         Click to take a photo of Max rejoining his friends.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2540,6 +2669,7 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: While covering a local art exhibition, you overhear a heated
         discussion.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2559,6 +2689,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Let's keep the display simple and minimalistic!
       NarrationText: Hans gestures at their shared exhibit space.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2579,6 +2710,7 @@ MonoBehaviour:
       DialogueText: No! The setup has to be vibrant and colorful! Not boring and
         drab.
       NarrationText: Jimin counters Hans' suggestion, her voice rising.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2598,6 +2730,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: We discussed this already.
       NarrationText: Jimin and Hans notice you approach, and they begin to whisper.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2617,6 +2750,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you think Jimin was feeling when you approached?
       Option1: Jimin is feeling annoyed.
       Option2: Jimin is feeling exhausted.
@@ -2636,6 +2770,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: Rate the intensity of <emotion> Jimin's feelings. 1 represents
         the lowest intensity and 10 represents the highest intensity.
       Option1: 
@@ -2656,6 +2791,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: Your art isn't even the star of the show!
       NarrationText: Hans' words come out sharply as Jimin steps back.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2675,6 +2811,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: Your art isn't even the star of the show!
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: How do you feel seeing Jimin? Rate between extremely serene and
         extremely tensed.
       Option1: 
@@ -2695,6 +2832,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: How could you say that?
       NarrationText: Jimin's voice wavers as she looks away from Hans.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2714,6 +2852,7 @@ MonoBehaviour:
       NarrationBox: 0
       DialogueText: 
       NarrationText: 
+      HasCustomVO: 0
       QuestionText: You were planning to check out the other exhibitions at the museum,
         but you see Jimin still upset. What will you do?
       Option1: I will drop the exhibition tour and stay with Jimin and offer support.
@@ -2734,6 +2873,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: 
       NarrationText: Hans and Jimin look at their artwork, then at each other.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2753,6 +2893,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: I'm sorry, Jimin. I shouldn't have said that. Your art is amazing.
       NarrationText: Hans reaches out to Jimin, his expression softening.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2773,6 +2914,7 @@ MonoBehaviour:
       DialogueText: I think we've found the perfect compromise. This will look great!
       NarrationText: Jimin and Hans start arranging their artwork together, finding
         a balance between their styles.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 
@@ -2793,6 +2935,7 @@ MonoBehaviour:
       DialogueText: Would you mind if I took a photo for our art section?
       NarrationText: You prepare to capture this moment of artistic collaboration.
         Click to take a photo of Jimin and Hans working together on their display.
+      HasCustomVO: 0
       QuestionText: 
       Option1: 
       Option2: 

@@ -3,29 +3,23 @@ using MGEIP.Service;
 using MGEIP.GameData.SceneData;
 using UnityEngine.UI;
 using TMPro;
+using MGIEP;
 
 namespace MGEIP.Scenario.Scenes
 {
     public class PhotoCaptureScene : Scene
     {
-        [SerializeField] protected int scenarioNo;
-        [SerializeField] protected Scenario scenario;
-        [SerializeField] protected GameService gameService;
-
-        [SerializeField] private bool isDialogueBoxActive;
-        [SerializeField] private bool isNarrationBoxActive;
-        [SerializeField] private string dialogue;
-        [SerializeField] private string narrationText;
-
         [SerializeField] private GameObject dialogueBox;
         [SerializeField] private TextMeshProUGUI dialogueText;
-
-        protected GameUIService GameUIService => gameService.GameUIService;
-        protected SceneData sceneData;
+        [SerializeField] private Button dialogueVOButton;
 
         public override void EnterScene()
         {
+            base.EnterScene();
+
             StartPhotoCaptureScene();
+
+            dialogueVOButton.onClick.AddListener(PlayDialogueVoiceOver);
         }
 
         public void InitializePhotoCaptureScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -78,12 +72,20 @@ namespace MGEIP.Scenario.Scenes
 
         public override void ExitScene()
         {
+            base.ExitScene();
+
+            dialogueVOButton.onClick.RemoveAllListeners();
+
             CompletePhotoCaptureScene();
             scenario.IncreamentCurrentScene();
         }
 
-        public void ExitToPrevScene()
+        public override void ExitToPrevScene()
         {
+            base.ExitToPrevScene();
+
+            dialogueVOButton.onClick.RemoveAllListeners();
+
             CompletePhotoCaptureScene();
             scenario.DecrementCurrentScene();
         }
@@ -91,6 +93,15 @@ namespace MGEIP.Scenario.Scenes
         private void DisableDialogue()
         {
             dialogueBox.SetActive(false);
+        }
+
+        public void PlayDialogueVoiceOver()
+        {
+            if (isDialogueBoxActive)
+            {
+                string dialogueClipName = $"dt_{scenarioNo}_{sceneData.SceneNo}";
+                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(dialogueClipName);
+            }
         }
     }
 }

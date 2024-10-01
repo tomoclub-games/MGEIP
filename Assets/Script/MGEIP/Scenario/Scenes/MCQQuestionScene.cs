@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using MGIEP;
 using MGIEP.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace MGEIP.Scenario.Scenes
         {
             base.EnterScene();
             StartCurrentMCQQuestionScene();
+
+            GameUIService.OnOptionVOClick += PlayOptionVoiceOver;
         }
 
         public void StartCurrentMCQQuestionScene()
@@ -142,6 +145,26 @@ namespace MGEIP.Scenario.Scenes
             multipleChoiceQuestion.SetAnswerSelected();
 
             ExitScene();
+        }
+
+        public override void ExitScene()
+        {
+            base.ExitScene();
+
+            GameUIService.OnOptionVOClick -= PlayOptionVoiceOver;
+        }
+
+        public override void ExitToPrevScene()
+        {
+            base.ExitToPrevScene();
+
+            GameUIService.OnOptionVOClick -= PlayOptionVoiceOver;
+        }
+
+        public void PlayOptionVoiceOver(int _optionNo)
+        {
+            string narrationClipName = $"op_{_optionNo + 1}_{scenarioNo}_{sceneData.SceneNo}";
+            SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(narrationClipName);
         }
     }
 }

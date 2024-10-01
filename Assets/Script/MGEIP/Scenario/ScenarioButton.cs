@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using MGEIP.Service;
+using MGIEP;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,6 +37,7 @@ namespace MGEIP.Scenario
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
+            SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
             scenarioManager.OnClickScenarioButton(scenarioNo);
         }
     }
