@@ -102,6 +102,8 @@ namespace MGEIP.Scenario
 
         public void SetCurrentScenarioComplete(int scenarioIndex)
         {
+            scenarioButtons[scenarioIndex - 1].SetChecked();
+
             completedScenarios++;
 
             if (completedScenarios == scenarios.Count)

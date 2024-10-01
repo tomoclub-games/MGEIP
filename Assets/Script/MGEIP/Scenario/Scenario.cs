@@ -167,14 +167,7 @@ namespace MGEIP.Scenario
 
                 SoundManagerService.Instance.ReleaseAudio();
 
-                // Disabled scenario locking for testing
-                /*
                 isScenarioCompleted = true;
-                scenarioIndicatorImage.sprite = GameUIService.tickSprite;
-                scenarioIndicator.SetActive(true);
-                scenarioInfo.SetActive(false);
-                scenarioButton.enabled = false;
-                */
 
                 scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
 

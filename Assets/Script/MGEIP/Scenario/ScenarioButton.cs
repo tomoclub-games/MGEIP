@@ -11,12 +11,17 @@ namespace MGEIP.Scenario
     {
         [SerializeField] private int scenarioNo;
         [SerializeField] private GameObject onHoverGO;
+        [SerializeField] private GameObject exclamationMark;
+        [SerializeField] private GameObject checkMark;
 
         private ScenarioManager scenarioManager;
+        private bool hasCompleted;
 
         public void Init(ScenarioManager _scenarioManager)
         {
             scenarioManager = _scenarioManager;
+
+            SetUnchecked();
         }
 
         private void OnMouseOver()
@@ -25,20 +30,42 @@ namespace MGEIP.Scenario
                 return;
 
             onHoverGO.SetActive(true);
+
+            exclamationMark.SetActive(false);
+            checkMark.SetActive(false);
         }
 
         private void OnMouseExit()
         {
             onHoverGO.SetActive(false);
+
+            if (hasCompleted)
+                SetChecked();
+            else
+                SetUnchecked();
         }
 
         private void OnMouseDown()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted)
                 return;
 
             SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
             scenarioManager.OnClickScenarioButton(scenarioNo);
+        }
+
+        public void SetUnchecked()
+        {
+            exclamationMark.SetActive(true);
+            checkMark.SetActive(false);
+        }
+
+        public void SetChecked()
+        {
+            hasCompleted = true;
+
+            exclamationMark.SetActive(false);
+            checkMark.SetActive(true);
         }
     }
 }

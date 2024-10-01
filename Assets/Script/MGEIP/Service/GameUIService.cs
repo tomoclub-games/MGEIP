@@ -55,10 +55,8 @@ namespace MGEIP.Service
         [SerializeField] private GameObject photoCaptureSceneUIGameobject;
         [SerializeField] private GameObject cameraUIGameObject;
         [SerializeField] private GameObject postCameraUIGameObject;
-        [SerializeField] private GameObject collageUIGameObject;
         [SerializeField] private Button photoCaptureScenePrevButton;
         [SerializeField] private Button photoCaptureShutterButton;
-        [SerializeField] private Button postCameraNextButton;
         [SerializeField] private Button photoCaptureSceneNextButton;
         [SerializeField] private GameObject photoCaptureSceneNarrationBoxGameobject;
         [SerializeField] private TextMeshProUGUI photoCaptureSceneNarrationText;
@@ -138,7 +136,6 @@ namespace MGEIP.Service
             scenarioInfoStartButton.onClick.AddListener(ScenarioPlayButtonClick);
 
             photoCaptureShutterButton.onClick.AddListener(ShutterButtonClicked);
-            postCameraNextButton.onClick.AddListener(PostCameraNextButtonClicked);
 
             // VO Buttons
 
@@ -178,7 +175,6 @@ namespace MGEIP.Service
             scenarioInfoStartButton.onClick.RemoveAllListeners();
 
             photoCaptureShutterButton.onClick.RemoveAllListeners();
-            postCameraNextButton.onClick.RemoveAllListeners();
 
             // VO Buttons
 
@@ -344,7 +340,6 @@ namespace MGEIP.Service
 
             cameraUIGameObject.SetActive(true);
             postCameraUIGameObject.SetActive(false);
-            collageUIGameObject.SetActive(false);
         }
 
         public void SetPhotoCaptureNarrationBoxActive(bool active)
@@ -362,12 +357,6 @@ namespace MGEIP.Service
             cameraUIGameObject.SetActive(false);
             postCameraUIGameObject.SetActive(true);
             OnPhotoCapture?.Invoke();
-        }
-
-        public void PostCameraNextButtonClicked()
-        {
-            postCameraUIGameObject.SetActive(false);
-            collageUIGameObject.SetActive(true);
         }
 
         #endregion
