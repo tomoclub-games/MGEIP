@@ -16,6 +16,8 @@ namespace MGEIP.Scenario.Scenes
         [SerializeField] protected TextMeshProUGUI dialogueText;
         [SerializeField] private AudioClipButton dialogueVOButton;
 
+        private Coroutine audioSequenceCoroutine;
+
         public override void EnterScene()
         {
             base.EnterScene();
@@ -73,32 +75,46 @@ namespace MGEIP.Scenario.Scenes
 
         public void PlayQuestionVoiceOver()
         {
+            Debug.Log("PlayQuestionVO : Requested!");
+
             if (sceneData.HasCustomVO)
             {
+                Debug.Log("PlayQuestionVO : HAS CUSTOM VO");
+
                 string questionClipName_1 = $"qt_{scenarioNo}_{sceneData.SceneNo}_1";
                 string questionClipName_2 = $"kw_{scenario.EmotionIndex + 1}_{scenarioNo}";
                 string questionClipName_3 = $"qt_{scenarioNo}_{sceneData.SceneNo}_2";
 
-                StartCoroutine(PlayClipsSequentially(questionClipName_1, questionClipName_2, questionClipName_3));
+                if (audioSequenceCoroutine != null)
+                    StopCoroutine(audioSequenceCoroutine);
+
+                audioSequenceCoroutine = StartCoroutine(PlayClipsSequentially(questionClipName_1, questionClipName_2, questionClipName_3));
             }
             else
             {
                 string questionClipName = $"qt_{scenarioNo}_{sceneData.SceneNo}";
-                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(questionClipName);
+                GameUIService.QuestionVOButton.PlayAudioClip(questionClipName);
             }
         }
 
         private IEnumerator PlayClipsSequentially(params string[] clipNames)
         {
+            SoundManagerService.Instance.OnStopVoiceOver += StopSequentialClipsCoroutine;
+
             foreach (var clipName in clipNames)
             {
-                if (SoundManagerService.Instance.IsVoiceOverCancelled)
-                    yield break;
-
-                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(clipName);
+                GameUIService.QuestionVOButton.PlayAudioClip(clipName);
 
                 yield return new WaitWhile(() => SoundManagerService.Instance.IsPlayingVoiceOver());
             }
+        }
+
+        public void StopSequentialClipsCoroutine()
+        {
+            if (audioSequenceCoroutine != null)
+                StopCoroutine(audioSequenceCoroutine);
+
+            SoundManagerService.Instance.OnStopVoiceOver -= StopSequentialClipsCoroutine;
         }
 
         public void PlayDialogueVoiceOver()

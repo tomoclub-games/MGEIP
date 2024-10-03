@@ -23,6 +23,8 @@ namespace MGEIP.Scenario.Scenes
         private string[] shuffledOptions;
         private string[] shuffledKeywordOptions;
 
+        private int VOkeywordIndex;
+
         public override void EnterScene()
         {
             base.EnterScene();
@@ -173,7 +175,9 @@ namespace MGEIP.Scenario.Scenes
 
         public void PlayOptionVoiceOver(int _optionNo)
         {
-            string narrationClipName = $"op_{_optionNo + 1}_{scenarioNo}_{sceneData.SceneNo}";
+            VOkeywordIndex = optionTexts.FindIndex(i => i == shuffledOptions[_optionNo]);
+
+            string narrationClipName = $"op_{VOkeywordIndex + 1}_{scenarioNo}_{sceneData.SceneNo}";
             GameUIService.OptionVOButtons[_optionNo].PlayAudioClip(narrationClipName);
         }
     }
