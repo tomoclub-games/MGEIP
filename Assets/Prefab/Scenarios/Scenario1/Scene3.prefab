@@ -126,10 +126,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3352693453564857077, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
-      propertyPath: dialogueVOButton
-      value: 
-      objectReference: {fileID: 1118184681479431243}
     - target: {fileID: 3476773664374831312, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_fontSize
       value: 0.16
@@ -246,17 +242,6 @@ PrefabInstance:
       addedObject: {fileID: 5538970340756031754}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
---- !u!114 &1118184681479431243 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 931215282679204229, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
-  m_PrefabInstance: {fileID: 245657658401435086}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3116443593579053755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2906814871247875957, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}

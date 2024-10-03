@@ -14,7 +14,7 @@ namespace MGEIP.Scenario.Scenes
 
         [SerializeField] protected GameObject dialogueBox;
         [SerializeField] protected TextMeshProUGUI dialogueText;
-        [SerializeField] private Button dialogueVOButton;
+        [SerializeField] private AudioClipButton dialogueVOButton;
 
         public override void EnterScene()
         {
@@ -22,9 +22,9 @@ namespace MGEIP.Scenario.Scenes
 
             GameUIService.SetQuestionSceneUIActive(true);
 
-            dialogueVOButton.onClick.AddListener(PlayDialogueVoiceOver);
+            dialogueVOButton.Button.onClick.AddListener(PlayDialogueVoiceOver);
 
-            GameUIService.OnQuestionVOClick += PlayQuestionVoiceOver;
+            GameUIService.QuestionVOButton.Button.onClick.AddListener(PlayQuestionVoiceOver);
         }
 
         public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -52,8 +52,9 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitScene();
 
-            dialogueVOButton.onClick.RemoveAllListeners();
-            GameUIService.OnQuestionVOClick -= PlayQuestionVoiceOver;
+            dialogueVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.QuestionVOButton.Button.onClick.RemoveAllListeners();
+
 
             CompleteQuestionScene();
             scenario.IncreamentCurrentScene();
@@ -63,8 +64,8 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitToPrevScene();
 
-            dialogueVOButton.onClick.RemoveAllListeners();
-            GameUIService.OnQuestionVOClick -= PlayQuestionVoiceOver;
+            dialogueVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.QuestionVOButton.Button.onClick.RemoveAllListeners();
 
             CompleteQuestionScene();
             scenario.DecrementCurrentScene();
@@ -105,7 +106,7 @@ namespace MGEIP.Scenario.Scenes
             if (isDialogueBoxActive)
             {
                 string dialogueClipName = $"dt_{scenarioNo}_{sceneData.SceneNo}";
-                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(dialogueClipName);
+                dialogueVOButton.PlayAudioClip(dialogueClipName);
             }
         }
     }

@@ -20,8 +20,11 @@ namespace MGIEP
         private IList<AudioClip> loadedClips = new List<AudioClip>();
         private Stack<AsyncOperationHandle<IList<AudioClip>>> handles = new();
 
+        private Coroutine voiceOverCoroutine;
+
         public UnityAction<string> OnPlayVoiceOver;
         public UnityAction OnStopVoiceOver;
+        public UnityAction OnVoiceOverComplete;
 
         public bool IsVoiceOverCancelled => isVoiceOverCancelled;
 
@@ -56,13 +59,34 @@ namespace MGIEP
                 Debug.LogWarning("Audio clip not found!");
                 return;
             }
-            else
+            else if (audioClip == voiceOverSource.clip)
             {
-                Debug.Log("Playing audio clip : " + audioClip.name);
+                Debug.Log("Already playing!");
+                return;
             }
+
+            Debug.Log("Playing audio clip : " + audioClip.name);
 
             voiceOverSource.clip = audioClip;
             voiceOverSource.Play();
+
+            if (voiceOverCoroutine != null)
+            {
+                StopCoroutine(voiceOverCoroutine);
+                OnVoiceOverComplete?.Invoke();
+            }
+
+            voiceOverCoroutine = StartCoroutine(WaitForVoiceOverToFinish());
+        }
+
+        private IEnumerator WaitForVoiceOverToFinish()
+        {
+            yield return new WaitWhile(() => voiceOverSource.isPlaying);
+
+            voiceOverSource.clip = null;
+            OnVoiceOverComplete?.Invoke();
+
+            voiceOverCoroutine = null;
         }
 
         public bool IsPlayingVoiceOver()
@@ -119,9 +143,12 @@ namespace MGIEP
 
             if (latestHandle.IsValid())
             {
-                foreach (AudioClip audioClip in latestHandle.Result)
+                if (latestHandle.Result != null)
                 {
-                    loadedClips.Remove(audioClip);
+                    foreach (AudioClip audioClip in latestHandle.Result)
+                    {
+                        loadedClips.Remove(audioClip);
+                    }
                 }
 
                 Addressables.Release(latestHandle);

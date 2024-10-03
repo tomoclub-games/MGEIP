@@ -50,12 +50,14 @@ MonoBehaviour:
   scenarioNo: 0
   scenario: {fileID: 0}
   gameService: {fileID: 0}
-  isDialogueBoxActive: 0
   isNarrationBoxActive: 0
-  dialogue: 
   narrationText: 
+  isDialogueBoxActive: 0
+  dialogue: 
+  scenarioName: 
   dialogueBox: {fileID: 6199070565558795867}
   dialogueText: {fileID: 6782021189781378586}
+  dialogueVOButton: {fileID: 7970871224468732437}
 --- !u!1 &624348275874174284
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,5 +679,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7970871224468732437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6143540288944662989, guid: db04105e57d7338478dd5e4344d17b8f, type: 3}
+  m_PrefabInstance: {fileID: 4313327432482395096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7e79c91321f1f469125f1a9cd02ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

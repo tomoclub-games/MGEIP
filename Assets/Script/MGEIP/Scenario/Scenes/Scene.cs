@@ -26,17 +26,29 @@ namespace MGEIP.Scenario.Scenes
 
         public virtual void EnterScene()
         {
-            GameUIService.OnNarrationVOClick += PlayNarrationVoiceOver;
+            GameUIService.StartSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+            GameUIService.StorySceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+            GameUIService.QuestionSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+            GameUIService.EndSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+            GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
         }
 
         public virtual void ExitScene()
         {
-            GameUIService.OnNarrationVOClick -= PlayNarrationVoiceOver;
+            GameUIService.StartSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.StorySceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.QuestionSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.EndSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
         }
 
         public virtual void ExitToPrevScene()
         {
-            GameUIService.OnNarrationVOClick -= PlayNarrationVoiceOver;
+            GameUIService.StartSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.StorySceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.QuestionSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.EndSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+            GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
         }
 
         public void PlayNarrationVoiceOver()
@@ -44,7 +56,11 @@ namespace MGEIP.Scenario.Scenes
             if (isNarrationBoxActive)
             {
                 string narrationClipName = $"nt_{scenarioNo}_{sceneData.SceneNo}";
-                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(narrationClipName);
+                GameUIService.StartSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                GameUIService.StorySceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                GameUIService.EndSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                GameUIService.PhotoCaptureSceneNarrationVOButton.PlayAudioClip(narrationClipName);
             }
         }
     }

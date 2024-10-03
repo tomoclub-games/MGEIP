@@ -168,17 +168,15 @@ MonoBehaviour:
   scenarioNo: 0
   scenario: {fileID: 0}
   gameService: {fileID: 0}
-  isDialogueBoxActive: 0
   isNarrationBoxActive: 0
-  dialogue: 
   narrationText: 
+  isDialogueBoxActive: 0
+  dialogue: 
+  scenarioName: 
   questionText: 
   dialogueBox: {fileID: 7928125821378285647}
   dialogueText: {fileID: 7358686004040677390}
-  optionText1: 
-  optionText2: 
-  optionText3: 
-  optionText4: 
+  dialogueVOButton: {fileID: 6241954575834387457}
 --- !u!1 &3102693265026891398
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +581,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4530638424674823055, guid: db04105e57d7338478dd5e4344d17b8f, type: 3}
   m_PrefabInstance: {fileID: 278622612784119244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6241954575834387457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6143540288944662989, guid: db04105e57d7338478dd5e4344d17b8f, type: 3}
+  m_PrefabInstance: {fileID: 278622612784119244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7e79c91321f1f469125f1a9cd02ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7358686004040677390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7332581629771695554, guid: db04105e57d7338478dd5e4344d17b8f, type: 3}

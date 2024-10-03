@@ -362,10 +362,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5047377518297834929, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
-      propertyPath: dialogueVOButton
-      value: 
-      objectReference: {fileID: 5508513764347261642}
     - target: {fileID: 6589113249246407328, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9238797
@@ -467,17 +463,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8560167573456163703, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
   m_PrefabInstance: {fileID: 8290063800199530222}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5508513764347261642 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4575117429322249252, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
-  m_PrefabInstance: {fileID: 8290063800199530222}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &9202744477246758118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 917201890604538376, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}

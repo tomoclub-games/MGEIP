@@ -28,7 +28,11 @@ namespace MGEIP.Scenario.Scenes
             base.EnterScene();
             StartCurrentMCQQuestionScene();
 
-            GameUIService.OnOptionVOClick += PlayOptionVoiceOver;
+            for (int i = 0; i < 4; i++)
+            {
+                int index = i;
+                GameUIService.OptionVOButtons[i].Button.onClick.AddListener(() => PlayOptionVoiceOver(index));
+            }
         }
 
         public void StartCurrentMCQQuestionScene()
@@ -151,20 +155,26 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitScene();
 
-            GameUIService.OnOptionVOClick -= PlayOptionVoiceOver;
+            for (int i = 0; i < 4; i++)
+            {
+                GameUIService.OptionVOButtons[i].Button.onClick.RemoveAllListeners();
+            }
         }
 
         public override void ExitToPrevScene()
         {
             base.ExitToPrevScene();
 
-            GameUIService.OnOptionVOClick -= PlayOptionVoiceOver;
+            for (int i = 0; i < 4; i++)
+            {
+                GameUIService.OptionVOButtons[i].Button.onClick.RemoveAllListeners();
+            }
         }
 
         public void PlayOptionVoiceOver(int _optionNo)
         {
             string narrationClipName = $"op_{_optionNo + 1}_{scenarioNo}_{sceneData.SceneNo}";
-            SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(narrationClipName);
+            GameUIService.OptionVOButtons[_optionNo].PlayAudioClip(narrationClipName);
         }
     }
 }

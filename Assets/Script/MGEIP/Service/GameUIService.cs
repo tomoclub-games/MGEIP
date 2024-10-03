@@ -84,16 +84,19 @@ namespace MGEIP.Service
         [SerializeField] private Image scenarioInfoLoadingBarFill;
 
         [Header("VO Buttons")]
-        [SerializeField] private Button scenarioNameVOButton;
-        [SerializeField] private Button scenarioDescVOButton;
-        [SerializeField] private Button startSceneTitleVOButton;
-        [SerializeField] private Button startSceneNarrationVOButton;
-        [SerializeField] private Button storySceneNarrationVOButton;
-        [SerializeField] private Button questionSceneNarrationVOButton;
-        [SerializeField] private Button endSceneNarrationVOButton;
-        [SerializeField] private Button photoCaptureSceneNarrationVOButton;
-        [SerializeField] private Button questionVOButton;
-        [SerializeField] private Button[] optionVOButtons;
+        [SerializeField] private AudioClipButton scenarioNameVOButton;
+        [SerializeField] private AudioClipButton scenarioDescVOButton;
+        [SerializeField] private AudioClipButton startSceneTitleVOButton;
+        [SerializeField] private AudioClipButton startSceneNarrationVOButton;
+        [SerializeField] private AudioClipButton storySceneNarrationVOButton;
+        [SerializeField] private AudioClipButton questionSceneNarrationVOButton;
+        [SerializeField] private AudioClipButton endSceneNarrationVOButton;
+        [SerializeField] private AudioClipButton photoCaptureSceneNarrationVOButton;
+        [SerializeField] private AudioClipButton questionVOButton;
+        [SerializeField] private AudioClipButton[] optionVOButtons;
+
+        [Header("BG")]
+        [SerializeField] private CanvasGroup blackBG;
 
         private int currentScenarioInfoIndex = 0;
 
@@ -107,12 +110,16 @@ namespace MGEIP.Service
         public UnityAction OnConfirmButtonClick;
         public UnityAction OnPrevButtonClick;
 
-        public UnityAction OnStartSceneTitleVOClick;
-        public UnityAction OnNarrationVOClick;
-        public UnityAction OnQuestionVOClick;
-        public UnityAction<int> OnOptionVOClick;
-
         #endregion
+
+        public AudioClipButton StartSceneTitleVOButton => startSceneTitleVOButton;
+        public AudioClipButton StartSceneNarrationVOButton => startSceneNarrationVOButton;
+        public AudioClipButton StorySceneNarrationVOButton => storySceneNarrationVOButton;
+        public AudioClipButton QuestionSceneNarrationVOButton => questionSceneNarrationVOButton;
+        public AudioClipButton EndSceneNarrationVOButton => endSceneNarrationVOButton;
+        public AudioClipButton PhotoCaptureSceneNarrationVOButton => photoCaptureSceneNarrationVOButton;
+        public AudioClipButton QuestionVOButton => questionVOButton;
+        public AudioClipButton[] OptionVOButtons => optionVOButtons;
 
         private void Awake()
         {
@@ -139,24 +146,13 @@ namespace MGEIP.Service
 
             // VO Buttons
 
-            scenarioNameVOButton.onClick.AddListener(() => PlayScenarioTitleVO());
-            scenarioDescVOButton.onClick.AddListener(() => PlayScenarioDescVO());
+            if (scenarioNameVOButton == null)
+                Debug.Log("Scenario Name button missing!");
+            if (scenarioDescVOButton == null)
+                Debug.Log("Scenario Desc button missing!");
 
-            startSceneTitleVOButton.onClick.AddListener(() => OnStartSceneTitleVOClick?.Invoke());
-
-            startSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
-            storySceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
-            questionSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
-            endSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
-            photoCaptureSceneNarrationVOButton.onClick.AddListener(() => OnNarrationVOClick?.Invoke());
-
-            questionVOButton.onClick.AddListener(() => OnQuestionVOClick?.Invoke());
-
-            for (int i = 0; i < 4; i++)
-            {
-                int buttonIndex = i;
-                optionVOButtons[i].onClick.AddListener(() => OnOptionVOClick?.Invoke(buttonIndex));
-            }
+            scenarioNameVOButton.Button.onClick.AddListener(PlayScenarioTitleVO);
+            scenarioDescVOButton.Button.onClick.AddListener(PlayScenarioDescVO);
         }
 
         private void OnDestroy()
@@ -177,24 +173,8 @@ namespace MGEIP.Service
             photoCaptureShutterButton.onClick.RemoveAllListeners();
 
             // VO Buttons
-
-            scenarioNameVOButton.onClick.RemoveAllListeners();
-            scenarioDescVOButton.onClick.RemoveAllListeners();
-
-            startSceneTitleVOButton.onClick.RemoveAllListeners();
-
-            startSceneNarrationVOButton.onClick.RemoveAllListeners();
-            storySceneNarrationVOButton.onClick.RemoveAllListeners();
-            questionSceneNarrationVOButton.onClick.RemoveAllListeners();
-            endSceneNarrationVOButton.onClick.RemoveAllListeners();
-            photoCaptureSceneNarrationVOButton.onClick.RemoveAllListeners();
-
-            questionVOButton.onClick.RemoveAllListeners();
-
-            for (int i = 0; i < 4; i++)
-            {
-                optionVOButtons[i].onClick.RemoveAllListeners();
-            }
+            scenarioNameVOButton.Button.onClick.RemoveAllListeners();
+            scenarioDescVOButton.Button.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -419,15 +399,22 @@ namespace MGEIP.Service
         public void PlayScenarioDescVO()
         {
             string scenarioDescClipName = $"sd_{currentScenarioInfoIndex}";
-            SoundManagerService.Instance.PlayVoiceOver(scenarioDescClipName);
+            scenarioDescVOButton.PlayAudioClip(scenarioDescClipName);
         }
 
         public void PlayScenarioTitleVO()
         {
             string scenarioNameClip = $"sn_{currentScenarioInfoIndex}";
-            SoundManagerService.Instance.PlayVoiceOver(scenarioNameClip);
+            scenarioNameVOButton.PlayAudioClip(scenarioNameClip);
         }
 
         #endregion
+
+        public void FadeOut()
+        {
+            blackBG.gameObject.SetActive(true);
+            blackBG.alpha = 0;
+            blackBG.DOFade(1, 0.5f);
+        }
     }
 }

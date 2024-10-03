@@ -11,7 +11,7 @@ namespace MGEIP.Scenario.Scenes
     {
         [SerializeField] private GameObject dialogueBox;
         [SerializeField] private TextMeshProUGUI dialogueText;
-        [SerializeField] private Button dialogueVOButton;
+        [SerializeField] private AudioClipButton dialogueVOButton;
 
         public override void EnterScene()
         {
@@ -19,7 +19,7 @@ namespace MGEIP.Scenario.Scenes
 
             StartCurrentStoryScene();
 
-            dialogueVOButton.onClick.AddListener(PlayDialogueVoiceOver);
+            dialogueVOButton.Button.onClick.AddListener(PlayDialogueVoiceOver);
         }
 
         public void InitializeStoryScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
@@ -71,7 +71,7 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitScene();
 
-            dialogueVOButton.onClick.RemoveAllListeners();
+            dialogueVOButton.Button.onClick.RemoveAllListeners();
 
             CompleteStoryScene();
             scenario.IncreamentCurrentScene();
@@ -81,7 +81,7 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitToPrevScene();
 
-            dialogueVOButton.onClick.RemoveAllListeners();
+            dialogueVOButton.Button.onClick.RemoveAllListeners();
 
             CompleteStoryScene();
             scenario.DecrementCurrentScene();
@@ -92,7 +92,7 @@ namespace MGEIP.Scenario.Scenes
             if (isDialogueBoxActive)
             {
                 string dialogueClipName = $"dt_{scenarioNo}_{sceneData.SceneNo}";
-                SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(dialogueClipName);
+                dialogueVOButton.PlayAudioClip(dialogueClipName);
             }
         }
     }

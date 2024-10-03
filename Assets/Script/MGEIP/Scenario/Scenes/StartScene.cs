@@ -14,7 +14,7 @@ namespace MGEIP.Scenario.Scenes
 
             StartCurrentStartScene();
 
-            GameUIService.OnStartSceneTitleVOClick += PlayScenarioNameVO;
+            GameUIService.StartSceneTitleVOButton.Button.onClick.AddListener(PlayScenarioNameVO);
         }
 
         public void StartCurrentStartScene()
@@ -69,7 +69,7 @@ namespace MGEIP.Scenario.Scenes
         {
             base.ExitScene();
 
-            GameUIService.OnStartSceneTitleVOClick -= PlayScenarioNameVO;
+            GameUIService.StartSceneTitleVOButton.Button.onClick.RemoveAllListeners();
 
             CompleteStartScene();
             scenario.IncreamentCurrentScene();
@@ -78,7 +78,7 @@ namespace MGEIP.Scenario.Scenes
         public void PlayScenarioNameVO()
         {
             string scenarioNameClip = $"sn_{scenarioNo}";
-            SoundManagerService.Instance.PlayVoiceOver(scenarioNameClip);
+            GameUIService.StartSceneTitleVOButton.PlayAudioClip(scenarioNameClip);
         }
     }
 }

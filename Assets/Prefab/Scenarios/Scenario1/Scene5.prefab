@@ -362,10 +362,6 @@ PrefabInstance:
       propertyPath: SceneType
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1779996607549960932, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
-      propertyPath: dialogueVOButton
-      value: 
-      objectReference: {fileID: 8737487917172655483}
     - target: {fileID: 2849655563794143150, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_Name
       value: Scene5
@@ -548,17 +544,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5343428398495630735, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
   m_PrefabInstance: {fileID: 9096715170629525323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8737487917172655483 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 540375570888759856, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
-  m_PrefabInstance: {fileID: 9096715170629525323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9176058334118264138
 PrefabInstance:
   m_ObjectHideFlags: 0
