@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using DG.Tweening;
 using MGIEP;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,29 +11,26 @@ namespace Assets.Script.MGEIP.Service
 {
     public class MainMenuService : MonoBehaviour
     {
+        [SerializeField] private GameObject mainCanvas;
+
         [Header("Start")]
-        [SerializeField] private GameObject beginPanel;
+        [SerializeField] private CanvasGroup beginPanel;
         [SerializeField] private Button startMenuNextButton;
 
         [Header("Disclaimer")]
-        [SerializeField] private GameObject disclaimerPanel;
+        [SerializeField] private CanvasGroup disclaimerPanel;
+        [SerializeField] private GameObject backgroundGO;
         [SerializeField] private Button disclaimerMenuNextButton;
 
-        [Header("Story")]
-        [SerializeField] private GameObject storyPanel;
-        [SerializeField] private Transform storySubPanelParent;
-        [SerializeField] private Button storyEndButton;
-        [SerializeField] private Button storyLeftButton;
-        [SerializeField] private Button storyRightButton;
-        [SerializeField] private Image[] storyPaginationCircles;
-
-        [Header("Tutorial")]
-        [SerializeField] private GameObject tutorialPanel;
-        [SerializeField] private Transform tutorialSubPanelParent;
-        [SerializeField] private Button tutorialEndButton;
-        [SerializeField] private Button tutorialLeftButton;
-        [SerializeField] private Button tutorialRightButton;
-        [SerializeField] private Image[] tutorialPaginationCircles;
+        [Header("StoryTutorial")]
+        [SerializeField] private CanvasGroup storyTutorialPanel;
+        [SerializeField] private CanvasGroup basePanelElements;
+        [SerializeField] private Transform subPanelParent;
+        [SerializeField] private Button leftButton;
+        [SerializeField] private Button rightButton;
+        [SerializeField] private Button endButton;
+        [SerializeField] private Image paginationCirclePrefab;
+        [SerializeField] private CanvasGroup paginationParent;
 
         [Header("Pagination Sprites")]
         [SerializeField] private Sprite notViewedCircle;
@@ -41,9 +38,19 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Sprite alreadyViewedCircle;
 
         [Header("Loading Next Level")]
-        [SerializeField] private GameObject beforeLoadingGO;
-        [SerializeField] private GameObject afterLoadingGO;
+        [SerializeField] private CanvasGroup beforeLoadingGO;
+        [SerializeField] private CanvasGroup afterLoadingGO;
         [SerializeField] private Image loadingBarFill;
+
+        [Header("Tabs")]
+        [SerializeField] private Button storyTabButton;
+        [SerializeField] private Button tutorialTabButton;
+        [SerializeField] private TMP_Text storyTabButtonLabel;
+        [SerializeField] private TMP_Text tutorialTabButtonLabel;
+        [SerializeField] private Sprite selectedButtonSprite;
+        [SerializeField] private Sprite deselectedButtonSprite;
+        [SerializeField] private Vector3 tabButtonSelectedScale;
+        [SerializeField] private Color deselectedButtonTextColor;
 
         [Header("Reveal Animation")]
         [SerializeField] private List<GameObject> leftClouds;
@@ -55,25 +62,37 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private float mapAnimationDuration = 3f;
         [SerializeField] private float buttonScaleDuration = 1f;
 
-        private int currentStoryIndex = 0;
-        private int currentTutorialIndex = 0;
+        [Header("Slide counts")]
+        [SerializeField] private int storySlideCount = 5;
+        [SerializeField] private int tutorialSlideCount = 7;
 
-        private bool[] storySubPanelViewed;
-        private bool[] tutorialSubPanelViewed;
+        private int currentSubPanelIndex = 0;
+        private bool isStoryPanelActive;
+        private bool[] subPanelViewed;
+
+        private Image storyTabImage;
+        private Image tutorialTabImage;
+        private CanvasGroup currentActivePanel;
+        private CanvasGroup currentActiveSubPanel;
+
+        private CanvasGroup[] subPanels;
+        private List<Image> paginationCircles = new();
 
         private void Awake()
         {
-            startMenuNextButton.onClick.AddListener(OnNextButtonClicked);
-            disclaimerMenuNextButton.onClick.AddListener(OnNextButtonClicked);
+            startMenuNextButton.onClick.AddListener(NextButtonClicked);
+            disclaimerMenuNextButton.onClick.AddListener(NextButtonClicked);
 
-            storyEndButton.onClick.AddListener(OnStoryEndButtonClicked);
-            tutorialEndButton.onClick.AddListener(OnTutorialEndButtonClicked);
+            leftButton.onClick.AddListener(LeftButtonClicked);
+            rightButton.onClick.AddListener(RightButtonClicked);
 
-            storyLeftButton.onClick.AddListener(OnStoryPrevButtonClicked);
-            storyRightButton.onClick.AddListener(OnStoryNextButtonClicked);
+            endButton.onClick.AddListener(EndButtonClicked);
 
-            tutorialLeftButton.onClick.AddListener(OnTutorialPrevButtonClicked);
-            tutorialRightButton.onClick.AddListener(OnTutorialNextButtonClicked);
+            storyTabButton.onClick.AddListener(StoryTabButtonClicked);
+            tutorialTabButton.onClick.AddListener(TutorialTabButtonClicked);
+
+            storyTabImage = storyTabButton.GetComponent<Image>();
+            tutorialTabImage = tutorialTabButton.GetComponent<Image>();
         }
 
         private void OnDestroy()
@@ -81,178 +100,259 @@ namespace Assets.Script.MGEIP.Service
             startMenuNextButton.onClick.RemoveAllListeners();
             disclaimerMenuNextButton.onClick.RemoveAllListeners();
 
-            storyEndButton.onClick.RemoveAllListeners();
-            tutorialEndButton.onClick.RemoveAllListeners();
+            leftButton.onClick.RemoveAllListeners();
+            rightButton.onClick.RemoveAllListeners();
 
-            storyLeftButton.onClick.RemoveAllListeners();
-            storyRightButton.onClick.RemoveAllListeners();
+            endButton.onClick.RemoveAllListeners();
 
-            tutorialLeftButton.onClick.RemoveAllListeners();
-            tutorialRightButton.onClick.RemoveAllListeners();
+            storyTabButton.onClick.RemoveAllListeners();
+            tutorialTabButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
         {
             SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
 
-            ShowPanel(beginPanel);
+            currentActivePanel = beginPanel;
             RevealAnimation();
 
-            storySubPanelViewed = new bool[storyPaginationCircles.Length];
-            tutorialSubPanelViewed = new bool[tutorialPaginationCircles.Length];
+            subPanelViewed = new bool[subPanelParent.childCount];
+            for (int i = 0; i < subPanelParent.childCount; i++)
+            {
+                Image paginationCircle = Instantiate<Image>(paginationCirclePrefab);
+                paginationCircle.transform.SetParent(paginationParent.transform);
+                paginationCircles.Add(paginationCircle);
+            }
 
-            UpdateStoryPaginationCircles();
-            UpdateTutorialPaginationCircles();
+            subPanels = subPanelParent.GetComponentsInChildren<CanvasGroup>(true);
+
+            SwitchToStory();
         }
 
         #region Button functions
 
-        public void OnNextButtonClicked()
+        public void NextButtonClicked()
         {
-            if (beginPanel.activeSelf)
+            if (beginPanel.gameObject.activeSelf)
             {
                 ShowPanel(disclaimerPanel);
             }
-            else if (disclaimerPanel.activeSelf)
+            else if (disclaimerPanel.gameObject.activeSelf)
             {
-                ShowPanel(storyPanel);
-                ShowStorySubPanel(currentStoryIndex);
+                ShowPanel(storyTutorialPanel);
+                ShowSubPanel(currentSubPanelIndex);
             }
         }
 
-        public void OnStoryNextButtonClicked()
+        public void RightButtonClicked()
         {
-            currentStoryIndex++;
-            ShowStorySubPanel(currentStoryIndex);
+            currentSubPanelIndex++;
+            ShowSubPanel(currentSubPanelIndex);
         }
 
-        public void OnStoryPrevButtonClicked()
+        public void LeftButtonClicked()
         {
-            currentStoryIndex--;
-            ShowStorySubPanel(currentStoryIndex);
+            currentSubPanelIndex--;
+            ShowSubPanel(currentSubPanelIndex);
         }
 
-        public void OnTutorialNextButtonClicked()
+        public void EndButtonClicked()
         {
-            currentTutorialIndex++;
-            ShowTutorialSubPanel(currentTutorialIndex);
-        }
+            basePanelElements.DOFade(0, 0.25f);
 
-        public void OnTutorialPrevButtonClicked()
-        {
-            currentTutorialIndex--;
-            ShowTutorialSubPanel(currentTutorialIndex);
-        }
+            beforeLoadingGO.DOFade(0, 0.25f).OnComplete(() => beforeLoadingGO.gameObject.SetActive(false));
 
-        public void OnStoryEndButtonClicked()
-        {
-            ShowPanel(tutorialPanel);
-            ShowTutorialSubPanel(currentTutorialIndex);
-        }
+            afterLoadingGO.gameObject.SetActive(true);
+            afterLoadingGO.alpha = 0;
+            afterLoadingGO.DOFade(1, 0.25f);
 
-        public void OnTutorialEndButtonClicked()
-        {
             InitiateLoading();
         }
 
         #endregion
 
-        private void ShowPanel(GameObject panel)
-        {
-            beginPanel.SetActive(false);
-            disclaimerPanel.SetActive(false);
-            storyPanel.SetActive(false);
-            tutorialPanel.SetActive(false);
+        #region Panel
 
-            panel.SetActive(true);
-        }
-
-        private void ShowStorySubPanel(int index)
+        private void ShowPanel(CanvasGroup newPanel)
         {
-            for (int i = 0; i < storySubPanelParent.childCount; i++)
+            currentActivePanel.DOFade(0, 0.25f).OnComplete(() =>
             {
-                storySubPanelParent.GetChild(i).gameObject.SetActive(i == index);
-            }
+                currentActivePanel.gameObject.SetActive(false);
 
-            OnStorySubPanelChanged();
-
-            storyLeftButton.interactable = index > 0;
-            storyRightButton.interactable = index < storySubPanelParent.childCount - 1;
-        }
-
-        private void ShowTutorialSubPanel(int index)
-        {
-            for (int i = 0; i < tutorialSubPanelParent.childCount; i++)
-            {
-                tutorialSubPanelParent.GetChild(i).gameObject.SetActive(i == index);
-            }
-
-            OnTutorialSubPanelChanged();
-
-            tutorialLeftButton.interactable = index > 0;
-            tutorialRightButton.interactable = index < tutorialSubPanelParent.childCount - 1;
-        }
-
-        public void OnStorySubPanelChanged()
-        {
-            storySubPanelViewed[currentStoryIndex] = true;
-
-            UpdateStoryPaginationCircles();
-        }
-
-        public void OnTutorialSubPanelChanged()
-        {
-            tutorialSubPanelViewed[currentTutorialIndex] = true;
-
-            UpdateTutorialPaginationCircles();
-        }
-
-        private void UpdateStoryPaginationCircles()
-        {
-            for (int i = 0; i < storyPaginationCircles.Length; i++)
-            {
-                if (i == currentStoryIndex)
+                if (newPanel == disclaimerPanel)
                 {
-                    storyPaginationCircles[i].sprite = currentlyViewingCircle;
-                }
-                else if (storySubPanelViewed[i])
-                {
-                    storyPaginationCircles[i].sprite = alreadyViewedCircle;
+                    newPanel.gameObject.SetActive(true);
+                    newPanel.alpha = 0;
+                    newPanel.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+
+                    Sequence sequence = DOTween.Sequence();
+                    sequence.Append(newPanel.transform.DOScale(Vector3.one, 0.5f))
+                            .Join(newPanel.DOFade(1, 0.5f));
+                    sequence.AppendCallback(() =>
+                    {
+                        backgroundGO.transform.SetParent(mainCanvas.transform);
+                        backgroundGO.transform.SetAsFirstSibling();
+                    });
                 }
                 else
                 {
-                    storyPaginationCircles[i].sprite = notViewedCircle;
+                    newPanel.gameObject.SetActive(true);
+                    newPanel.alpha = 0;
+                    newPanel.DOFade(1, 0.5f);
+                }
+
+                currentActivePanel = newPanel;
+            });
+        }
+
+        private void ShowSubPanel(int index)
+        {
+            if (index < 0 || index >= subPanelParent.childCount)
+            {
+                Debug.LogError("Sub panel index error : " + index);
+                return;
+            }
+
+            AnimateSubPanelActivation(subPanels[index]);
+
+            subPanelViewed[currentSubPanelIndex] = true;
+            UpdatePaginationCircles();
+
+            if (currentSubPanelIndex > storySlideCount - 1 && isStoryPanelActive)
+                SwitchToTutorial();
+            else if (currentSubPanelIndex <= storySlideCount - 1 && !isStoryPanelActive)
+                SwitchToStory();
+
+            leftButton.interactable = index > 0;
+            rightButton.interactable = index < subPanelParent.childCount - 1;
+        }
+
+        private void AnimateSubPanelActivation(CanvasGroup newPanel)
+        {
+            if (currentActiveSubPanel != null)
+            {
+                currentActiveSubPanel.DOFade(0, 0.25f).OnComplete(() =>
+                {
+                    currentActiveSubPanel.gameObject.SetActive(false);
+
+                    newPanel.gameObject.SetActive(true);
+                    newPanel.alpha = 0;
+                    newPanel.DOFade(1, 0.25f);
+
+                    currentActiveSubPanel = newPanel;
+                });
+            }
+            else
+            {
+                newPanel.gameObject.SetActive(true);
+                newPanel.alpha = 0;
+                newPanel.DOFade(1, 0.25f);
+                currentActiveSubPanel = newPanel;
+            }
+        }
+
+        private void UpdatePaginationCircles()
+        {
+            for (int i = 0; i < paginationCircles.Count; i++)
+            {
+                if (i == currentSubPanelIndex)
+                {
+                    paginationCircles[i].sprite = currentlyViewingCircle;
+                }
+                else if (subPanelViewed[i])
+                {
+                    paginationCircles[i].sprite = alreadyViewedCircle;
+                }
+                else
+                {
+                    paginationCircles[i].sprite = notViewedCircle;
                 }
             }
         }
 
-        private void UpdateTutorialPaginationCircles()
+        private void SwitchToStory()
         {
-            for (int i = 0; i < tutorialPaginationCircles.Length; i++)
+            // Switch button to story
+            ActivateButton(storyTabButton);
+
+            Sequence paginationSequence = DOTween.Sequence();
+
+            paginationSequence.Append(paginationParent.DOFade(0, 0.25f));
+            paginationSequence.AppendCallback(() =>
             {
-                if (i == currentTutorialIndex)
+                for (int i = 0; i < paginationCircles.Count; i++)
                 {
-                    tutorialPaginationCircles[i].sprite = currentlyViewingCircle;
+                    paginationCircles[i].gameObject.SetActive(i <= storySlideCount - 1);
                 }
-                else if (tutorialSubPanelViewed[i])
+            });
+            paginationSequence.Append(paginationParent.DOFade(1, 0.25f));
+
+            isStoryPanelActive = true;
+        }
+
+        private void SwitchToTutorial()
+        {
+            // Switch button to tutorial
+            ActivateButton(tutorialTabButton);
+
+            Sequence paginationSequence = DOTween.Sequence();
+
+            paginationSequence.Append(paginationParent.DOFade(0, 0.25f));
+            paginationSequence.AppendCallback(() =>
+            {
+                for (int i = 0; i < paginationCircles.Count; i++)
                 {
-                    tutorialPaginationCircles[i].sprite = alreadyViewedCircle;
+                    paginationCircles[i].gameObject.SetActive(i > storySlideCount - 1);
                 }
-                else
-                {
-                    tutorialPaginationCircles[i].sprite = notViewedCircle;
-                }
+            });
+            paginationSequence.Append(paginationParent.DOFade(1, 0.25f));
+
+            isStoryPanelActive = false;
+        }
+
+        private void ActivateButton(Button _button)
+        {
+            if (_button == storyTabButton)
+            {
+                AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, Color.white, tabButtonSelectedScale);
+                AnimateButtonTransition(tutorialTabImage, deselectedButtonSprite, tutorialTabButtonLabel, deselectedButtonTextColor, Vector3.one);
             }
+            else
+            {
+                AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, Color.white, tabButtonSelectedScale);
+                AnimateButtonTransition(storyTabImage, deselectedButtonSprite, storyTabButtonLabel, deselectedButtonTextColor, Vector3.one);
+            }
+        }
+
+        private void AnimateButtonTransition(Image buttonImage, Sprite newSprite, TMP_Text buttonLabel, Color newLabelColor, Vector3 newScale)
+        {
+            buttonImage.sprite = newSprite;
+
+            buttonLabel.DOColor(newLabelColor, 0.5f);
+
+            buttonImage.transform.DOScale(newScale, 0.5f);
+        }
+
+        private void StoryTabButtonClicked()
+        {
+            if (isStoryPanelActive)
+                return;
+
+            currentSubPanelIndex = 0;
+            ShowSubPanel(currentSubPanelIndex);
+        }
+
+        private void TutorialTabButtonClicked()
+        {
+            if (!isStoryPanelActive)
+                return;
+
+            currentSubPanelIndex = storySlideCount;
+            ShowSubPanel(currentSubPanelIndex);
         }
 
         private void InitiateLoading()
         {
-            tutorialLeftButton.gameObject.SetActive(false);
-            tutorialRightButton.gameObject.SetActive(false);
-
-            beforeLoadingGO.SetActive(false);
-            afterLoadingGO.SetActive(true);
-
             loadingBarFill.fillAmount = 0f;
             loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
 
@@ -260,6 +360,8 @@ namespace Assets.Script.MGEIP.Service
 
             // StartCoroutine(LoadGameScene());
         }
+
+        #endregion
 
         private void RevealAnimation()
         {
