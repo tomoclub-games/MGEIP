@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using MGEIP;
 using MGIEP;
 using TMPro;
 using UnityEngine;
@@ -125,6 +126,8 @@ namespace Assets.Script.MGEIP.Service
             }
 
             subPanels = subPanelParent.GetComponentsInChildren<CanvasGroup>(true);
+
+            tutorialTabButton.GetComponent<ButtonAnimation>().DisableButton();
 
             SwitchToStory();
         }
@@ -292,6 +295,8 @@ namespace Assets.Script.MGEIP.Service
 
         private void SwitchToTutorial()
         {
+            tutorialTabButton.GetComponent<ButtonAnimation>().EnableButton();
+
             // Switch button to tutorial
             ActivateButton(tutorialTabButton);
 
@@ -315,11 +320,19 @@ namespace Assets.Script.MGEIP.Service
             if (_button == storyTabButton)
             {
                 AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, Color.white, tabButtonSelectedScale);
+
+                if (!tutorialTabButton.interactable)
+                    return;
+
                 AnimateButtonTransition(tutorialTabImage, deselectedButtonSprite, tutorialTabButtonLabel, deselectedButtonTextColor, Vector3.one);
             }
             else
             {
                 AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, Color.white, tabButtonSelectedScale);
+
+                if (!tutorialTabButton.interactable)
+                    return;
+
                 AnimateButtonTransition(storyTabImage, deselectedButtonSprite, storyTabButtonLabel, deselectedButtonTextColor, Vector3.one);
             }
         }
@@ -385,10 +398,11 @@ namespace Assets.Script.MGEIP.Service
 
         private void AnimateStartButton()
         {
+            startMenuNextButton.GetComponent<ButtonAnimation>().enabled = false;
             startMenuNextButton.gameObject.SetActive(true);
-            startMenuNextButton.transform.localScale = Vector3.zero; // Initially scale button to 0
+            startMenuNextButton.transform.localScale = Vector3.zero;
             startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
-                .SetEase(Ease.OutBack);
+                .SetEase(Ease.OutBack).OnComplete(() => startMenuNextButton.GetComponent<ButtonAnimation>().enabled = true);
         }
 
         private IEnumerator LoadGameScene()
