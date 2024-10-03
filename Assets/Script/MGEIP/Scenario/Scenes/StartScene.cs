@@ -77,7 +77,7 @@ namespace MGEIP.Scenario.Scenes
 
         public void PlayScenarioNameVO()
         {
-            string scenarioNameClip = $"sn_{scenarioNo}";
+            string scenarioNameClip = $"GameScene/sn_{scenarioNo}";
             GameUIService.StartSceneTitleVOButton.PlayAudioClip(scenarioNameClip);
         }
     }

@@ -76,8 +76,6 @@ namespace MGEIP.Scenario
 
         public void CreateScene()
         {
-            SoundManagerService.Instance.LoadAudio("ScenarioAudioClips_" + scenarioNo);
-
             List<SceneData> sceneDataList = new List<SceneData>();
             List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
 

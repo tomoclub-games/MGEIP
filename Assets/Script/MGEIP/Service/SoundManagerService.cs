@@ -52,11 +52,12 @@ namespace MGIEP
         {
             isVoiceOverCancelled = false;
 
-            AudioClip audioClip = FindVoiceOverByName(_audioClipName);
+            AudioClip audioClip = FindVoiceOverByName("Audio/VoiceOvers/" + _audioClipName);
 
             if (audioClip == null)
             {
-                Debug.LogWarning("Audio clip not found!");
+                Debug.LogWarning("Audio clip not found! " + _audioClipName);
+                OnVoiceOverComplete?.Invoke();
                 return;
             }
             else if (audioClip == voiceOverSource.clip)
@@ -102,11 +103,16 @@ namespace MGIEP
 
         public AudioClip FindVoiceOverByName(string clipName)
         {
+            AudioClip audioClip = Resources.Load<AudioClip>(clipName);
+            return audioClip;
+
+            /*
             if (loadedClips != null)
             {
                 return loadedClips.FirstOrDefault(clip => clip.name.Equals(clipName, System.StringComparison.OrdinalIgnoreCase));
             }
             return null;
+            */
         }
 
         #endregion
@@ -115,14 +121,17 @@ namespace MGIEP
 
         public void LoadAudio(string addressableGroupLabel)
         {
+            /*
             AsyncOperationHandle<IList<AudioClip>> handle = Addressables.LoadAssetsAsync<AudioClip>(addressableGroupLabel, null);
             handles.Push(handle);
 
             handle.Completed += OnSceneAudioLoaded;
+            */
         }
 
         public void OnSceneAudioLoaded(AsyncOperationHandle<IList<AudioClip>> operationHandle)
         {
+            /*
             if (operationHandle.Status == AsyncOperationStatus.Succeeded)
             {
                 Debug.Log("Loaded new audio clips");
@@ -132,10 +141,12 @@ namespace MGIEP
             {
                 Debug.LogError($"Failed to load Addressable group. Status: {operationHandle.Status}, Error: {operationHandle.OperationException}");
             }
+            */
         }
 
         public void ReleaseAudio()
         {
+            /*
             if (handles.Count < 1)
                 return;
 
@@ -154,6 +165,7 @@ namespace MGIEP
                 Addressables.Release(latestHandle);
                 Debug.Log("Released audio clips");
             }
+            */
         }
 
         #endregion

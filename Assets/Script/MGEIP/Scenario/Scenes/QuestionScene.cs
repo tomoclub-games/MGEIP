@@ -81,9 +81,9 @@ namespace MGEIP.Scenario.Scenes
             {
                 Debug.Log("PlayQuestionVO : HAS CUSTOM VO");
 
-                string questionClipName_1 = $"qt_{scenarioNo}_{sceneData.SceneNo}_1";
-                string questionClipName_2 = $"kw_{scenario.EmotionIndex + 1}_{scenarioNo}";
-                string questionClipName_3 = $"qt_{scenarioNo}_{sceneData.SceneNo}_2";
+                string questionClipName_1 = $"Scenarios/qt_{scenarioNo}_{sceneData.SceneNo}_1";
+                string questionClipName_2 = $"Scenarios/kw_{scenario.EmotionIndex + 1}_{scenarioNo}";
+                string questionClipName_3 = $"Scenarios/qt_{scenarioNo}_{sceneData.SceneNo}_2";
 
                 if (audioSequenceCoroutine != null)
                     StopCoroutine(audioSequenceCoroutine);
@@ -92,7 +92,7 @@ namespace MGEIP.Scenario.Scenes
             }
             else
             {
-                string questionClipName = $"qt_{scenarioNo}_{sceneData.SceneNo}";
+                string questionClipName = $"Scenarios/qt_{scenarioNo}_{sceneData.SceneNo}";
                 GameUIService.QuestionVOButton.PlayAudioClip(questionClipName);
             }
         }
@@ -121,7 +121,7 @@ namespace MGEIP.Scenario.Scenes
         {
             if (isDialogueBoxActive)
             {
-                string dialogueClipName = $"dt_{scenarioNo}_{sceneData.SceneNo}";
+                string dialogueClipName = $"Scenarios/dt_{scenarioNo}_{sceneData.SceneNo}";
                 dialogueVOButton.PlayAudioClip(dialogueClipName);
             }
         }

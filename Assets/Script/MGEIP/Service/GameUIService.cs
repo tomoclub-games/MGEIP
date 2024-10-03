@@ -389,6 +389,8 @@ namespace MGEIP.Service
 
         public void ScenarioPlayButtonClick()
         {
+            SoundManagerService.Instance.LoadAudio("ScenarioAudioClips_" + currentScenarioInfoIndex);
+
             scenarioInfoBeforeGO.SetActive(false);
             scenarioInfoAfterGO.SetActive(true);
 
@@ -398,13 +400,13 @@ namespace MGEIP.Service
 
         public void PlayScenarioDescVO()
         {
-            string scenarioDescClipName = $"sd_{currentScenarioInfoIndex}";
+            string scenarioDescClipName = $"GameScene/sd_{currentScenarioInfoIndex}";
             scenarioDescVOButton.PlayAudioClip(scenarioDescClipName);
         }
 
         public void PlayScenarioTitleVO()
         {
-            string scenarioNameClip = $"sn_{currentScenarioInfoIndex}";
+            string scenarioNameClip = $"GameScene/sn_{currentScenarioInfoIndex}";
             scenarioNameVOButton.PlayAudioClip(scenarioNameClip);
         }
 

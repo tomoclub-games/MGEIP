@@ -18,10 +18,12 @@ public class AudioClipButton : MonoBehaviour
 
     private void Awake()
     {
-        if (audioButtonType == AudioButtonType.PlayClip)
-            button.onClick.AddListener(PlayAudioClip);
+        if (audioButtonType == AudioButtonType.Custom)
+            return;
         else if (audioButtonType == AudioButtonType.StopClip)
             button.onClick.AddListener(StopAudioClip);
+        else
+            button.onClick.AddListener(PlayAudioClip);
     }
 
     private void OnDestroy()
@@ -31,7 +33,17 @@ public class AudioClipButton : MonoBehaviour
 
     private void PlayAudioClip()
     {
-        SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(audioClipName);
+        string clipName = "";
+
+        switch (audioButtonType)
+        {
+            case AudioButtonType.InstructionClip: clipName = "Instructions/"; break;
+            case AudioButtonType.MainMenuClip: clipName = "MainMenu/"; break;
+            case AudioButtonType.GameSceneClip: clipName = "GameScene/"; break;
+            default: break;
+        }
+
+        SoundManagerService.Instance.OnPlayVoiceOver?.Invoke(clipName + audioClipName);
         SoundManagerService.Instance.OnVoiceOverComplete += ResetButton;
 
         button.enabled = false;
@@ -63,7 +75,9 @@ public class AudioClipButton : MonoBehaviour
 
 public enum AudioButtonType
 {
-    PlayClip,
+    InstructionClip,
     StopClip,
-    Custom
+    Custom,
+    MainMenuClip,
+    GameSceneClip,
 }

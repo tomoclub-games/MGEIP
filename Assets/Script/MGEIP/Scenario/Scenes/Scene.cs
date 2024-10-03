@@ -55,7 +55,7 @@ namespace MGEIP.Scenario.Scenes
         {
             if (isNarrationBoxActive)
             {
-                string narrationClipName = $"nt_{scenarioNo}_{sceneData.SceneNo}";
+                string narrationClipName = $"Scenarios/nt_{scenarioNo}_{sceneData.SceneNo}";
                 GameUIService.StartSceneNarrationVOButton.PlayAudioClip(narrationClipName);
                 GameUIService.StorySceneNarrationVOButton.PlayAudioClip(narrationClipName);
                 GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
