@@ -29,7 +29,7 @@ namespace MGEIP
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (animateOnHover)
+            if (animateOnHover && button.interactable)
                 rectTransform.DOScale(hoverScale, 0.25f).SetEase(Ease.OutBack);
         }
 

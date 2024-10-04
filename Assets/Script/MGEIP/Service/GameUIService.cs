@@ -50,6 +50,9 @@ namespace MGEIP.Service
         [SerializeField] private GameObject aeLabelGameobject;
         [SerializeField] private TMP_Text aeLowerLabel;
         [SerializeField] private TMP_Text aeHigherLabel;
+        [SerializeField] private RectTransform sliderArea;
+        [SerializeField] private Vector2 defaultSliderSizeDelta;
+        [SerializeField] private Vector2 normalSliderSizeDelta;
 
         [Header("Photo Capture Scene Components")]
         [SerializeField] private GameObject photoCaptureSceneUIGameobject;
@@ -180,7 +183,7 @@ namespace MGEIP.Service
         private void Start()
         {
             answerSlider.value = 1;
-            UpdateSliderLabelImage((int)answerSlider.value);
+            ResetSlider();
         }
 
         #region Scenario Methods
@@ -264,6 +267,7 @@ namespace MGEIP.Service
         public void SetSliderToDefault()
         {
             answerSlider.value = 1;
+            ResetSlider();
         }
 
         public void SetQuestionText(string question)
@@ -306,6 +310,18 @@ namespace MGEIP.Service
                 else
                     sliderLabels[i].sprite = deselectedSliderLabelSprite;
             }
+
+            sliderArea.sizeDelta = normalSliderSizeDelta;
+        }
+
+        public void ResetSlider()
+        {
+            for (int i = 0; i < sliderLabels.Length; i++)
+            {
+                sliderLabels[i].sprite = deselectedSliderLabelSprite;
+            }
+
+            sliderArea.sizeDelta = defaultSliderSizeDelta;
         }
         #endregion
 
