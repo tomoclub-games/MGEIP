@@ -222,6 +222,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1124797968919162365, guid: 7668b833af3cbef478346e883b1de14b, type: 3}
   m_PrefabInstance: {fileID: 4766337963535559263}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5628372948527719203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2229898381926563968}
+    m_Modifications:
+    - target: {fileID: 1875611957245412936, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_Name
+      value: S6_Strumming
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+--- !u!4 &2935581823211935501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7396801186336977966, guid: 3c2dfcff109fc3648b6596ff68899274, type: 3}
+  m_PrefabInstance: {fileID: 5628372948527719203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7811153670126032304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7b91c45a7617f474db992fab4e8e0c6f, type: 3}
+    - target: {fileID: 5355549097164056991, guid: 6dbcdf6acabc3104aaa3b7449b33462c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5355549097164056991, guid: 6dbcdf6acabc3104aaa3b7449b33462c, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -390,6 +456,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8256499046083614000, guid: 6dbcdf6acabc3104aaa3b7449b33462c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5683279533273184437}
+    - targetCorrespondingSourceObject: {fileID: 8256499046083614000, guid: 6dbcdf6acabc3104aaa3b7449b33462c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2935581823211935501}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dbcdf6acabc3104aaa3b7449b33462c, type: 3}
 --- !u!4 &2229898381926563968 stripped
