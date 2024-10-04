@@ -10,26 +10,36 @@ namespace MGEIP.Scenario
     public class ScenarioButton : MonoBehaviour
     {
         [SerializeField] private int scenarioNo;
-        [SerializeField] private GameObject onHoverGO;
+        [SerializeField] private GameObject[] onHoverGOs;
         [SerializeField] private GameObject exclamationMark;
         [SerializeField] private GameObject checkMark;
+        [SerializeField] private Vector3 hoveredOnScale;
 
         private ScenarioManager scenarioManager;
         private bool hasCompleted;
 
+        private Vector3 originalScale;
+        private Vector3 hoverScale;
+
         public void Init(ScenarioManager _scenarioManager)
         {
             scenarioManager = _scenarioManager;
-
+            originalScale = transform.localScale;
+            hoverScale = originalScale + hoveredOnScale;
             SetUnchecked();
         }
 
         private void OnMouseOver()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted)
                 return;
 
-            onHoverGO.SetActive(true);
+            foreach (GameObject go in onHoverGOs)
+            {
+                go.SetActive(true);
+            }
+
+            // transform.localScale = hoverScale;
 
             exclamationMark.SetActive(false);
             checkMark.SetActive(false);
@@ -37,7 +47,15 @@ namespace MGEIP.Scenario
 
         private void OnMouseExit()
         {
-            onHoverGO.SetActive(false);
+            if (hasCompleted)
+                return;
+
+            foreach (GameObject go in onHoverGOs)
+            {
+                go.SetActive(false);
+            }
+
+            // transform.localScale = originalScale;
 
             if (hasCompleted)
                 SetChecked();
