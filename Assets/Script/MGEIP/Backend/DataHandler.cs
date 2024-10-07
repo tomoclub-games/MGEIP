@@ -15,8 +15,19 @@ namespace MGIEP.Data
         {
             gameService = _gameService;
 
-            string playerName = "Guest" + Random.Range(1, 1000);
-            mgiepData = new MGIEPData(playerName);
+            mgiepData = RealmController.Instance.GetMGIEPData();
+        }
+
+        [ContextMenu("Update MGIEPData")]
+        public void UpdateMGIEPData()
+        {
+            RealmController.Instance.UpdateMGIEPData(mgiepData);
+        }
+
+        [ContextMenu("Update Score")]
+        public void IncrementScore()
+        {
+            RealmController.Instance.IncrementScore();
         }
 
         [ContextMenu("Print Json Object")]
