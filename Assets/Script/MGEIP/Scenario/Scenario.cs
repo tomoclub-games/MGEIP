@@ -167,9 +167,13 @@ namespace MGEIP.Scenario
 
                 isScenarioCompleted = true;
 
-                scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
+                // Disabled temporarily
+                // scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
 
                 gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].PrintScenarioInfo();
+
+                // Close any open scenario infos
+                GameUIService.ScenarioInfoCloseButtonClick();
 
                 GameUIService.MapUI.SetActive(true);
             }
