@@ -9,6 +9,8 @@ namespace MGIEP.Data
 {
     public class DataHandler : MonoBehaviour
     {
+        [SerializeField] private string playerNameToDownload;
+
         private GameService gameService;
         private MGIEPData mgiepData;
 
@@ -58,25 +60,53 @@ namespace MGIEP.Data
             }));
         }
 
-        IEnumerator Download(string id, System.Action<MGIEPData> callback = null)
+        [ContextMenu("Download MGIEP Data")]
+        public void DownloadMGIEPData()
         {
-            using (UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/plummies/" + id))
+            StartCoroutine(Download(playerNameToDownload, result =>
+            {
+                if (result != null && !string.IsNullOrEmpty(result.playerName))
+                {
+                    Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
+
+                    mgiepData = result;
+                }
+                else
+                {
+                    Debug.LogError("Failed to download data or player not found for player: " + playerNameToDownload);
+                }
+            }));
+        }
+
+        IEnumerator Download(string playerName, System.Action<MGIEPData> callback = null)
+        {
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/download?playerName={playerName}";
+
+            using (UnityWebRequest request = UnityWebRequest.Get(url))
             {
                 yield return request.SendWebRequest();
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.Log(request.error);
-                    if (callback != null)
-                    {
-                        callback.Invoke(null);
-                    }
+                    Debug.LogError("Error: " + request.error);
+                    callback?.Invoke(null);
                 }
                 else
                 {
-                    if (callback != null)
+                    string jsonResponse = request.downloadHandler.text;
+                    Debug.Log("Response from server: " + jsonResponse);
+
+                    // Deserialize the response into MGIEPData object
+                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<MGIEPData>>(jsonResponse);
+
+                    if (responseObj.success && responseObj.data != null && !string.IsNullOrEmpty(responseObj.data.playerName))
                     {
-                        callback.Invoke(SetMGIEPData(request.downloadHandler.text));
+                        callback?.Invoke(responseObj.data);
+                    }
+                    else
+                    {
+                        Debug.LogError("Error: " + responseObj.error ?? "Player not found.");
+                        callback?.Invoke(null);
                     }
                 }
             }
@@ -118,5 +148,12 @@ namespace MGIEP.Data
                 }
             }
         }
+    }
+
+    public class ServerResponse<T>
+    {
+        public bool success;
+        public string error;
+        public T data;
     }
 }
