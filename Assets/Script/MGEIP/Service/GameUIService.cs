@@ -14,7 +14,6 @@ namespace MGEIP.Service
         public GameObject MapUI;
         public Sprite tickSprite;
         [SerializeField] private Button gameEndButton;
-        [SerializeField] private Button uploadDataButton;
 
         [Header("Start Scene Components")]
         [SerializeField] private GameObject startSceneUIGameobject;
@@ -124,8 +123,6 @@ namespace MGEIP.Service
         public AudioClipButton PhotoCaptureSceneNarrationVOButton => photoCaptureSceneNarrationVOButton;
         public AudioClipButton QuestionVOButton => questionVOButton;
         public AudioClipButton[] OptionVOButtons => optionVOButtons;
-
-        public Button UploadDataButton => uploadDataButton;
 
         private void Awake()
         {

@@ -3,6 +3,7 @@ using System.Text;
 using MGEIP.Service;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 
 namespace MGIEP.Data
@@ -12,11 +13,12 @@ namespace MGIEP.Data
         public static DataHandler Instance;
 
         [SerializeField] private int attemptNo;
-        [SerializeField] private string playerName;
 
         public MGIEPData mgiepData;
 
         public MGIEPData MGIEPData => mgiepData;
+
+        public UnityAction OnDataReady;
 
         private void Awake()
         {
@@ -28,7 +30,7 @@ namespace MGIEP.Data
         }
 
         [ContextMenu("Get Player Data")]
-        private void GetPlayerData()
+        public void GetPlayerData(string playerName)
         {
             DownloadMGIEPData(playerName);
         }
@@ -73,12 +75,16 @@ namespace MGIEP.Data
                     mgiepData = result;
 
                     CheckForNewAttempt();
+
+                    OnDataReady?.Invoke();
                 }
                 else
                 {
                     Debug.LogError("Failed to download data or player not found for player: " + playerName);
 
                     mgiepData = new MGIEPData(playerName);
+
+                    OnDataReady?.Invoke();
                 }
             }));
         }
@@ -103,7 +109,7 @@ namespace MGIEP.Data
 
             if (isAttemptComplete)
             {
-                MGIEPData newMgiepData = new MGIEPData(playerName);
+                MGIEPData newMgiepData = new MGIEPData(mgiepData.playerName);
                 newMgiepData.attemptNo = mgiepData.attemptNo + 1;
 
                 Debug.Log("New attempt no : " + newMgiepData.attemptNo);

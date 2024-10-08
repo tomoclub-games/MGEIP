@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using MGEIP;
 using MGIEP;
+using MGIEP.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -67,6 +68,12 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private int storySlideCount = 5;
         [SerializeField] private int tutorialSlideCount = 7;
 
+        [Header("Login panel")]
+        [SerializeField] private GameObject loginPanel;
+        [SerializeField] private TMP_InputField playerNameInput;
+        [SerializeField] private Button loginButton;
+        [SerializeField] private TMP_Text logLabel;
+
         private int currentSubPanelIndex = 0;
         private bool isStoryPanelActive;
         private bool[] subPanelViewed;
@@ -92,6 +99,8 @@ namespace Assets.Script.MGEIP.Service
             storyTabButton.onClick.AddListener(StoryTabButtonClicked);
             tutorialTabButton.onClick.AddListener(TutorialTabButtonClicked);
 
+            loginButton.onClick.AddListener(LoginButtonClicked);
+
             storyTabImage = storyTabButton.GetComponent<Image>();
             tutorialTabImage = tutorialTabButton.GetComponent<Image>();
         }
@@ -108,6 +117,8 @@ namespace Assets.Script.MGEIP.Service
 
             storyTabButton.onClick.RemoveAllListeners();
             tutorialTabButton.onClick.RemoveAllListeners();
+
+            loginButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -393,7 +404,7 @@ namespace Assets.Script.MGEIP.Service
             }
 
             mapGO.transform.localScale = Vector3.zero;
-            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(AnimateStartButton);
+            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay);
         }
 
         private void AnimateStartButton()
@@ -421,5 +432,35 @@ namespace Assets.Script.MGEIP.Service
 
             scene.allowSceneActivation = true;
         }
+
+        #region Login panel
+
+        private void LoginButtonClicked()
+        {
+            if (playerNameInput.text == "")
+            {
+                logLabel.gameObject.SetActive(true);
+                logLabel.text = "Please enter a player name!";
+                return;
+            }
+
+            loginButton.gameObject.SetActive(false);
+
+            DataHandler.Instance.GetPlayerData(playerNameInput.text);
+            logLabel.gameObject.SetActive(false);
+
+            DataHandler.Instance.OnDataReady += LoginSuccess;
+        }
+
+        private void LoginSuccess()
+        {
+            DataHandler.Instance.OnDataReady -= LoginSuccess;
+
+            loginPanel.SetActive(false);
+
+            AnimateStartButton();
+        }
+
+        #endregion
     }
 }
