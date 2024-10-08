@@ -21,7 +21,6 @@ namespace MGEIP.Service
 
         private void Start()
         {
-            DataHandler.InitializeDataHandler(this);
             ScenarioManager.InitializeScenarioManager(this);
             // GameUIService.GetGameEndButton.gameObject.SetActive(false);
             GameUIService.GetGameEndButton.onClick.AddListener(OnGameEndButtonClick);

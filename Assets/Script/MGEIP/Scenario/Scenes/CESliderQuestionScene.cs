@@ -28,16 +28,16 @@ namespace MGEIP.Scenario.Scenes
             CESliderQuestionSceneInfo();
         }
 
-        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioInfo scenarioInfo)
         {
-            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService);
+            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService, scenarioInfo);
 
             sliderQuestion = new SliderQuestion();
             sliderQuestion.sceneNo = sceneData.SceneNo;
             sliderQuestion.questionText = sceneData.QuestionText;
 
-            gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Add(sliderQuestion);
-            questionNo = gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count;
+            this.scenarioInfo.questions.Add(sliderQuestion);
+            questionNo = this.scenarioInfo.questions.Count;
         }
 
         public void SetCESliderQuestionSceneInfo()

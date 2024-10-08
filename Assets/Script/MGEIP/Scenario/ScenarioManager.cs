@@ -26,14 +26,14 @@ namespace MGEIP.Scenario
 
             List<ScenarioData> scenarioData = ScenariosDataContainer.ScenarioContent.Scenarios;
 
-            for (int i = 0; i < scenarioData.Count; i++)
-            {
-                CreateScenario(scenarioData[i]);
-            }
-
             for (int i = 0; i < scenarioButtons.Count; i++)
             {
                 scenarioButtons[i].Init(this);
+            }
+
+            for (int i = 0; i < scenarioData.Count; i++)
+            {
+                CreateScenario(scenarioData[i]);
             }
 
             /*
@@ -80,8 +80,8 @@ namespace MGEIP.Scenario
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
 
-            ScenarioInfo scenarioInfo = new ScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName);
-            gameService.DataHandler.MGIEPData.scenarioList.Add(scenarioInfo);
+            if (DataHandler.Instance.MGIEPData.completedScenarios[scenarioData.ScenarioNo - 1])
+                SetScenarioComplete(scenarioData.ScenarioNo);
         }
 
         public void SetCurrentScenario(int scenarioIndex)
@@ -100,7 +100,7 @@ namespace MGEIP.Scenario
             }
         }
 
-        public void SetCurrentScenarioComplete(int scenarioIndex)
+        public void SetScenarioComplete(int scenarioIndex)
         {
             scenarioButtons[scenarioIndex - 1].SetChecked();
 
@@ -109,8 +109,6 @@ namespace MGEIP.Scenario
             if (completedScenarios == scenarios.Count)
             {
                 gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
-                gameService.DataHandler.MGIEPData.PrintMGIEPData();
-                gameService.DataHandler.GetJsonObject();
             }
         }
     }

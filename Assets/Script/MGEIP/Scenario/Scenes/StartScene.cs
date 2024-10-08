@@ -32,9 +32,6 @@ namespace MGEIP.Scenario.Scenes
             this.gameService = gameService;
 
             SetStartSceneInfo();
-
-            if (gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count > 0)
-                gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Clear();
         }
 
         public void SetStartSceneInfo()

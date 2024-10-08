@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MGEIP.Scenario;
 using UnityEngine;
 
 namespace MGIEP.Data
@@ -8,11 +9,15 @@ namespace MGIEP.Data
     public class MGIEPData
     {
         public string playerName;
+        public int attemptNo;
+        public bool[] completedScenarios;
         public List<ScenarioInfo> scenarioList;
 
         public MGIEPData(string _playerName)
         {
             playerName = _playerName;
+            attemptNo = 1;
+            completedScenarios = new bool[10];
             scenarioList = new List<ScenarioInfo>();
         }
 
@@ -32,6 +37,13 @@ namespace MGIEP.Data
         public int scenarioNo;
         public string scenarioTitle;
         public List<Question> questions;
+
+        public ScenarioInfo()
+        {
+            scenarioNo = 0;
+            scenarioTitle = "";
+            questions = new List<Question>();
+        }
 
         public ScenarioInfo(int _scenarioNo, string _scenarioTitle)
         {

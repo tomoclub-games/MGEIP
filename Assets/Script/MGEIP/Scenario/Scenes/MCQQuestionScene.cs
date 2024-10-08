@@ -43,9 +43,9 @@ namespace MGEIP.Scenario.Scenes
             MCQQuestionSceneInfo();
         }
 
-        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioInfo scenarioInfo)
         {
-            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService);
+            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService, scenarioInfo);
 
             multipleChoiceQuestion = new MultipleChoiceQuestion();
 
@@ -57,8 +57,8 @@ namespace MGEIP.Scenario.Scenes
             multipleChoiceQuestion.options.Add(sceneData.Option3);
             multipleChoiceQuestion.options.Add(sceneData.Option4);
 
-            gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Add(multipleChoiceQuestion);
-            questionNo = gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count;
+            this.scenarioInfo.questions.Add(multipleChoiceQuestion);
+            questionNo = this.scenarioInfo.questions.Count;
         }
 
         public void SetMCQQuestionSceneInfo()

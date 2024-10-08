@@ -2,6 +2,7 @@
 using MGEIP.GameData.SceneData;
 using MGEIP.Service;
 using MGIEP;
+using MGIEP.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ namespace MGEIP.Scenario.Scenes
 
         private Coroutine audioSequenceCoroutine;
 
+        protected ScenarioInfo scenarioInfo;
+
         public override void EnterScene()
         {
             base.EnterScene();
@@ -29,12 +32,13 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.QuestionVOButton.Button.onClick.AddListener(PlayQuestionVoiceOver);
         }
 
-        public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioInfo scenarioInfo)
         {
             this.scenarioNo = scenarioNo;
             this.sceneData = sceneData;
             this.scenario = scenario;
             this.gameService = gameService;
+            this.scenarioInfo = scenarioInfo;
         }
 
         public virtual void SetQuestionButton()

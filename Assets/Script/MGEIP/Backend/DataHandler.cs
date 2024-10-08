@@ -9,26 +9,28 @@ namespace MGIEP.Data
 {
     public class DataHandler : MonoBehaviour
     {
-        [SerializeField] private string playerNameToDownload;
+        public static DataHandler Instance;
 
-        private GameService gameService;
-        private MGIEPData mgiepData;
+        [SerializeField] private int attemptNo;
+        [SerializeField] private string playerName;
+
+        public MGIEPData mgiepData;
 
         public MGIEPData MGIEPData => mgiepData;
 
-        public void InitializeDataHandler(GameService _gameService)
+        private void Awake()
         {
-            gameService = _gameService;
-
-            string playerName = "Guest" + Random.Range(1, 1000);
-            mgiepData = new MGIEPData(playerName);
-
-            gameService.GameUIService.UploadDataButton.onClick.AddListener(SendMGIEPData);
+            if (Instance == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                Instance = this;
+            }
         }
 
-        private void OnDestroy()
+        [ContextMenu("Get Player Data")]
+        private void GetPlayerData()
         {
-            gameService.GameUIService.UploadDataButton.onClick.RemoveAllListeners();
+            DownloadMGIEPData(playerName);
         }
 
         [ContextMenu("Print Json Object")]
@@ -60,22 +62,54 @@ namespace MGIEP.Data
             }));
         }
 
-        [ContextMenu("Download MGIEP Data")]
-        public void DownloadMGIEPData()
+        public void DownloadMGIEPData(string playerName)
         {
-            StartCoroutine(Download(playerNameToDownload, result =>
+            StartCoroutine(Download(playerName, result =>
             {
                 if (result != null && !string.IsNullOrEmpty(result.playerName))
                 {
                     Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
 
                     mgiepData = result;
+
+                    CheckForNewAttempt();
                 }
                 else
                 {
-                    Debug.LogError("Failed to download data or player not found for player: " + playerNameToDownload);
+                    Debug.LogError("Failed to download data or player not found for player: " + playerName);
+
+                    mgiepData = new MGIEPData(playerName);
                 }
             }));
+        }
+
+        private void CheckForNewAttempt()
+        {
+            bool isAttemptComplete = false;
+
+            for (int i = 0; i < mgiepData.completedScenarios.Length; i++)
+            {
+                if (mgiepData.completedScenarios[i] == false)
+                {
+                    isAttemptComplete = false;
+                    Debug.Log(false + " break!");
+                    break;
+                }
+
+                isAttemptComplete = true;
+
+                Debug.Log(true);
+            }
+
+            if (isAttemptComplete)
+            {
+                MGIEPData newMgiepData = new MGIEPData(playerName);
+                newMgiepData.attemptNo = mgiepData.attemptNo + 1;
+
+                Debug.Log("New attempt no : " + newMgiepData.attemptNo);
+
+                mgiepData = newMgiepData;
+            }
         }
 
         IEnumerator Download(string playerName, System.Action<MGIEPData> callback = null)
@@ -114,7 +148,7 @@ namespace MGIEP.Data
 
         IEnumerator Upload(string jsonData, System.Action<bool> callback = null)
         {
-            string url = "https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/insert";
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/insert";
 
             using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
             {
