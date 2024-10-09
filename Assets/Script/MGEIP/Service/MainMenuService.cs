@@ -446,7 +446,7 @@ namespace Assets.Script.MGEIP.Service
 
             loginButton.gameObject.SetActive(false);
 
-            DataHandler.Instance.GetPlayerData(playerNameInput.text);
+            DataHandler.Instance.GetMGIEPData(playerNameInput.text);
             logLabel.gameObject.SetActive(false);
 
             DataHandler.Instance.OnDataReady += LoginSuccess;

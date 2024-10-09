@@ -33,7 +33,7 @@ namespace MGEIP.Scenario.Scenes
 
             sliderQuestion = new SliderQuestion();
             sliderQuestion.sceneNo = sceneData.SceneNo;
-            sliderQuestion.questionText = sceneData.QuestionText;
+            sliderQuestion.questionText = UtilityService.RemoveRichTextTags(sceneData.QuestionText);
 
             this.scenarioInfo.questions.Add(sliderQuestion);
             questionNo = this.scenarioInfo.questions.Count;

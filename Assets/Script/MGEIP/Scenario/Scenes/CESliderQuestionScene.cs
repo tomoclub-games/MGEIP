@@ -34,7 +34,7 @@ namespace MGEIP.Scenario.Scenes
 
             sliderQuestion = new SliderQuestion();
             sliderQuestion.sceneNo = sceneData.SceneNo;
-            sliderQuestion.questionText = sceneData.QuestionText;
+            sliderQuestion.questionText = UtilityService.RemoveRichTextTags(sceneData.QuestionText);
 
             this.scenarioInfo.questions.Add(sliderQuestion);
             questionNo = this.scenarioInfo.questions.Count;
@@ -63,7 +63,7 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetQuestionText(questionTextTemp);
             GameUIService.SetSliderToDefault();
 
-            sliderQuestion.questionText = questionTextTemp;
+            sliderQuestion.questionText = UtilityService.RemoveRichTextTags(questionTextTemp);
 
             if (sliderQuestion.AnswerSelected)
                 GameUIService.SetSliderValue(selectedAnswer);

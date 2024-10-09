@@ -50,12 +50,12 @@ namespace MGEIP.Scenario.Scenes
             multipleChoiceQuestion = new MultipleChoiceQuestion();
 
             multipleChoiceQuestion.sceneNo = sceneData.SceneNo;
-            multipleChoiceQuestion.questionText = sceneData.QuestionText;
+            multipleChoiceQuestion.questionText = UtilityService.RemoveRichTextTags(sceneData.QuestionText);
 
-            multipleChoiceQuestion.options.Add(sceneData.Option1);
-            multipleChoiceQuestion.options.Add(sceneData.Option2);
-            multipleChoiceQuestion.options.Add(sceneData.Option3);
-            multipleChoiceQuestion.options.Add(sceneData.Option4);
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option1));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option2));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option3));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option4));
 
             this.scenarioInfo.questions.Add(multipleChoiceQuestion);
             questionNo = this.scenarioInfo.questions.Count;
@@ -140,7 +140,7 @@ namespace MGEIP.Scenario.Scenes
         {
             selectedAnswer = currentAnswer;
 
-            multipleChoiceQuestion.selectedAnswer = shuffledOptions[selectedAnswer];
+            multipleChoiceQuestion.selectedAnswer = UtilityService.RemoveRichTextTags(shuffledOptions[selectedAnswer]);
 
             if (sceneData.UseKeyword)
             {
