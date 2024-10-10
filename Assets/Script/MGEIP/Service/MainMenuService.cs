@@ -58,7 +58,9 @@ namespace Assets.Script.MGEIP.Service
         [Header("Reveal Animation")]
         [SerializeField] private List<GameObject> leftClouds;
         [SerializeField] private List<GameObject> rightClouds;
+        [SerializeField] private GameObject crowsGO;
         [SerializeField] private GameObject mapGO;
+        [SerializeField] private Animator boatAnimator;
         [SerializeField] private float maxCloudDelay = 1f;
         [SerializeField] private float cloudAnimationDuration = 1f;
         [SerializeField] private float mapScaleDelay = 1f;
@@ -396,7 +398,7 @@ namespace Assets.Script.MGEIP.Service
             }
 
             mapGO.transform.localScale = Vector3.zero;
-            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(AnimateStartButton);
+            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { AnimateStartButton(); crowsGO.SetActive(true); });
         }
 
         private void AnimateStartButton()
@@ -408,7 +410,7 @@ namespace Assets.Script.MGEIP.Service
             startInstructionBox.transform.localScale = Vector3.zero;
             startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
                 .SetEase(Ease.OutBack).OnComplete(() => startMenuNextButton.GetComponent<ButtonAnimation>().enabled = true);
-            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack);
+            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack).OnComplete(() => boatAnimator.enabled = true);
         }
 
         private IEnumerator LoadGameScene()
