@@ -14,6 +14,8 @@ public class CrowAnimation : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
 
+    Sequence crowSequence;
+
     private void Start()
     {
         AnimateCrow();
@@ -21,10 +23,19 @@ public class CrowAnimation : MonoBehaviour
         startPosition = transform.localPosition;
     }
 
+    private void OnEnable()
+    {
+        crowSequence = DOTween.Sequence();
+    }
+
+    private void OnDisable()
+    {
+        if (crowSequence.IsActive() || crowSequence.IsPlaying())
+            crowSequence.Kill();
+    }
+
     private void AnimateCrow()
     {
-        Sequence crowSequence = DOTween.Sequence();
-
         crowSequence.AppendInterval(Random.Range(minInterval, maxInterval));
         if (leftToRight)
             crowSequence.Append(transform.DOMoveX(transform.localPosition.x + distance, moveDuration).SetEase(Ease.Linear));

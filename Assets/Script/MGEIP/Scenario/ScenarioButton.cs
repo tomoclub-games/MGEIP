@@ -10,7 +10,6 @@ namespace MGEIP.Scenario
     public class ScenarioButton : MonoBehaviour
     {
         [SerializeField] private int scenarioNo;
-        [SerializeField] private Animator animator;
         [SerializeField] private GameObject[] onHoverGOs;
         [SerializeField] private GameObject exclamationMark;
         [SerializeField] private GameObject checkMark;
@@ -40,8 +39,6 @@ namespace MGEIP.Scenario
                 go.SetActive(true);
             }
 
-            animator.enabled = true;
-
             // transform.localScale = hoverScale;
 
             exclamationMark.SetActive(false);
@@ -57,8 +54,6 @@ namespace MGEIP.Scenario
             {
                 go.SetActive(false);
             }
-
-            animator.enabled = false;
 
             // transform.localScale = originalScale;
 

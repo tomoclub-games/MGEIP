@@ -115,7 +115,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Mrs. Thompson</b></color></size>
         is feeling?
-      Option1: Mrs. Thompson is feeling<br><size=36><b><color=#11314E>distressed.</b></color></size>
+      Option1: Mrs. Thompson is feeling<br><size=36><b><color=#462506>distressed.</b></color></size>
       Option2: "Mrs. Thompson is feeling <br><size=36><b><color=#11314E>loving.</b></color></size>\L"
       Option3: "Mrs. Thompson is feeling<br><size=36><b><color=#11314E>surprised.</b></color></size>\L"
       Option4: "Mrs. Thompson is feeling <br><size=36><b><color=#11314E>annoyed.</b></color></size>\L"
@@ -237,10 +237,11 @@ MonoBehaviour:
     - ScenarioNo: 1
       SceneNo: 11
       SceneType: 2
-      DialogueBox: 0
-      NarrationBox: 0
-      DialogueText: 
-      NarrationText: 
+      DialogueBox: 1
+      NarrationBox: 1
+      DialogueText: Wait! I think I heard something!
+      NarrationText: Mrs. Thompson suddenly pauses. A faint meow comes from a nearby
+        bush. Mrs. Thompson rushes over, and to everyone's relief, Whiskers emerges.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -257,11 +258,10 @@ MonoBehaviour:
     - ScenarioNo: 1
       SceneNo: 12
       SceneType: 2
-      DialogueBox: 1
-      NarrationBox: 1
-      DialogueText: Wait! I think I heard something!
-      NarrationText: Mrs. Thompson suddenly pauses. A faint meow comes from a nearby
-        bush. Mrs. Thompson rushes over, and to everyone's relief, Whiskers emerges.
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -369,7 +369,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>the tourist</b></color></size>
         is feeling?
-      Option1: The tourist is feeling <br><size=36><b><color=#11314E>worried.</b></color></size>
+      Option1: The tourist is feeling <br><size=36><b><color=#462506>worried.</b></color></size>
       Option2: The tourist is feeling<br><size=36><b><color=#11314E>sad.</b></color></size>
       Option3: The tourist is feeling<br><size=36><b><color=#11314E>fulfilled.</b></color></size>
       Option4: The tourist is feeling<br><size=36><b><color=#11314E>enthusiastic.</b></color></size>
@@ -621,7 +621,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Alexi</b></color></size>
         is feeling?
-      Option1: Alexi is feeling<br><size=36><b><color=#11314E>happy.</b></color></size>
+      Option1: Alexi is feeling<br><size=36><b><color=#462506>happy.</b></color></size>
       Option2: Alexi is feeling<br><size=36><b><color=#11314E>tired.</b></color></size>
       Option3: Alexi is feeling<br><size=36><b><color=#11314E>comfortable.</b></color></size>
       Option4: Alexi is feeling<br><size=36><b><color=#11314E>scared.</b></color></size>
@@ -953,7 +953,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Taylor</b></color></size>
         is feeling?
-      Option1: Taylor is feeling<br><size=36><b><color=#11314E>envious.</b></color></size>
+      Option1: Taylor is feeling<br><size=36><b><color=#462506>envious.</b></color></size>
       Option2: Taylor is feeling<br><size=36><b><color=#11314E>excited.</b></color></size>
       Option3: Taylor is feeling<br><size=36><b><color=#11314E>carefree.</b></color></size>
       Option4: Taylor is feeling<br><size=36><b><color=#11314E>troubled.</b></color></size>
@@ -1247,7 +1247,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Jacques</b></color></size>
         is feeling?
-      Option1: "Jacques is feeling<br><size=36><b><color=#11314E>embarrassed.</b></color></size>\L"
+      Option1: "Jacques is feeling<br><size=36><b><color=#462506>embarrassed.</b></color></size>\L"
       Option2: "Jacques is feeling<br><size=36><b><color=#11314E>joyful.</b></color></size>\L"
       Option3: "Jacques is feeling<br><size=36><b><color=#11314E> calm.</b></color></size>\L"
       Option4: "Jacques is feeling<br><size=36><b><color=#11314E>bored.</b></color></size>\L"
@@ -1580,7 +1580,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Ms. Gowri</b></color></size>
         is feeling?
-      Option1: Ms. Gowri is feeling<br><size=36><b><color=#11314E>lonely.</b></color></size>
+      Option1: Ms. Gowri is feeling<br><size=36><b><color=#462506>lonely.</b></color></size>
       Option2: Ms. Gowri is feeling<br><size=36><b><color=#11314E>calm.</b></color></size>
       Option3: Ms. Gowri is feeling<br><size=36><b><color=#11314E>cheerful.</b></color></size>
       Option4: Ms. Gowri is feeling<br><size=36><b><color=#11314E>panicky.</b></color></size>
@@ -1873,7 +1873,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Josefa</b></color></size>
         is feeling?
-      Option1: "Josefa is feeling<br><size=36><b><color=#11314E>humiliated.</b></color></size>\L\L"
+      Option1: "Josefa is feeling<br><size=36><b><color=#462506>humiliated.</b></color></size>\L\L"
       Option2: "Josefa is feeling<br><size=36><b><color=#11314E>excited.</b></color></size>\L\L"
       Option3: "Josefa is feeling<br><size=36><b><color=#11314E>repulsed.</b></color></size>\L\L"
       Option4: "Josefa is feeling<br><size=36><b><color=#11314E>restful.</b></color></size>\L\L"
@@ -2223,7 +2223,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Mercedes</b></color></size>
         is feeling?
-      Option1: "Mercedes is feeling<br><size=36><b><color=#11314E>lonely.</b></color></size>\L\L"
+      Option1: "Mercedes is feeling<br><size=36><b><color=#462506>lonely.</b></color></size>\L\L"
       Option2: "Mercedes is feeling<br><size=36><b><color=#11314E>worried.</b></color></size>\L\L"
       Option3: "Mercedes is feeling<br><size=36><b><color=#11314E>brave.</b></color></size>\L\L"
       Option4: "Mercedes is feeling<br><size=36><b><color=#11314E>lively.</b></color></size>\L\L"
@@ -2510,7 +2510,7 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How is <size=60><b><color=#11314E>Max</b></color></size> feeling?
-      Option1: Max is feeling<br><size=36><b><color=#11314E>disappointed.</b></color></size>
+      Option1: Max is feeling<br><size=36><b><color=#462506>disappointed.</b></color></size>
       Option2: Max is feeling<br><size=36><b><color=#11314E>restful.</b></color></size>
       Option3: Max is feeling<br><size=36><b><color=#11314E>enthusiastic.</b></color></size>
       Option4: Max is feeling<br><size=36><b><color=#11314E>restless.</b></color></size>
@@ -2802,7 +2802,7 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#11314E>Jimin</b></color></size>
         was feeling when you approached?
-      Option1: Jimin is feeling<br><size=36><b><color=#11314E>annoyed.</b></color></size>
+      Option1: Jimin is feeling<br><size=36><b><color=#462506>annoyed.</b></color></size>
       Option2: Jimin is feeling<br><size=36><b><color=#11314E>exhausted.</b></color></size>
       Option3: Jimin is feeling<br><size=36><b><color=#11314E>grateful.</b></color></size>
       Option4: Jimin is feeling<br><size=36><b><color=#11314E>proud.</b></color></size>

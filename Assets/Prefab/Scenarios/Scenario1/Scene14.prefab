@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf Fall
       objectReference: {fileID: 0}
+    - target: {fileID: 6856128591555230589, guid: cdf01346a943db14a80d05924da3a6e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7617703070390440974, guid: cdf01346a943db14a80d05924da3a6e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.2
@@ -284,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf Fall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6856128591555230589, guid: cdf01346a943db14a80d05924da3a6e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7617703070390440974, guid: cdf01346a943db14a80d05924da3a6e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.15
@@ -352,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 496871210057416089, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_Name
-      value: Scene13
+      value: Scene14
       objectReference: {fileID: 0}
     - target: {fileID: 716358712271569031, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_Sprite
