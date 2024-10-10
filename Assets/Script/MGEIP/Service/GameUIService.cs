@@ -34,6 +34,8 @@ namespace MGEIP.Service
         [SerializeField] private TextMeshProUGUI questionSceneNarrationText;
         [SerializeField] private GameObject questionSceneUIGameobject;
         [SerializeField] private TextMeshProUGUI questionText;
+        [SerializeField] private TextMeshProUGUI mcqInstructionText;
+        [SerializeField] private TextMeshProUGUI sliderInstructionText;
         [SerializeField] private Button questionSceneConfirmButton;
         [SerializeField] private Button questionScenePrevButton;
         [SerializeField] private Image[] sliderLabels;
@@ -273,6 +275,16 @@ namespace MGEIP.Service
         public void SetQuestionText(string question)
         {
             questionText.SetText(question);
+        }
+
+        public void SetMCQInstructionSetActive(bool active)
+        {
+            mcqInstructionText.gameObject.SetActive(active);
+        }
+
+        public void SetSliderInstructionSetActive(bool active)
+        {
+            sliderInstructionText.gameObject.SetActive(active);
         }
 
         public void SetQuestionSceneNarrationBoxActive(bool active)

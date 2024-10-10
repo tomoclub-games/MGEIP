@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1144069739
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 745fdb015c29ca14b82c4313ead37aaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky3
       objectReference: {fileID: 0}
+    - target: {fileID: 7025086760377174437, guid: 9d792ef725879b443a25b5d89b6f56ae, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025086760377174437, guid: 9d792ef725879b443a25b5d89b6f56ae, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -198,6 +206,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3917174057873363718, guid: 5fb61bc3031ff2f46aee8f432ab1b5eb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917174057873363718, guid: 5fb61bc3031ff2f46aee8f432ab1b5eb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -256,6 +272,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5840670719744856513, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840670719744856513, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
+      objectReference: {fileID: 0}
     - target: {fileID: 7320789290413087347, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
       propertyPath: m_Name
       value: Sky4
@@ -281,6 +305,14 @@ PrefabInstance:
     - target: {fileID: 1058484487057967264, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
       propertyPath: m_Name
       value: Sky1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271062135433285890, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271062135433285890, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
       objectReference: {fileID: 0}
     - target: {fileID: 4762649278103891776, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -350,11 +382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_Size.x
-      value: 7.19
+      value: 7.69
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_Size.y
-      value: 10.34
+      value: 10.31
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_Sprite
@@ -362,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2d939e4ca8aaa294cae66bbe27bd94ef, type: 3}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayerID
@@ -449,6 +481,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e468ea8ec5c0aa04dbd491619c486d20, type: 3}
     - target: {fileID: 4119980296249885653, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119980296249885653, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1867567671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119980296249885653, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -501,13 +541,42 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4962015460208719093, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       insertIndex: 1
       addedObject: {fileID: 7520488685317462283}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 338117213553419012, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 430230474233126887}
   m_SourcePrefab: {fileID: 100100000, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
 --- !u!4 &1858903737473653682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2906814871247875957, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
   m_PrefabInstance: {fileID: 3574507495215740103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3830883713064228803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 338117213553419012, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+  m_PrefabInstance: {fileID: 3574507495215740103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &430230474233126887
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830883713064228803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a99cb83d9f3b83d4d9e23caf5e36e803, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8450913878056009778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4962015460208719093, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
@@ -528,6 +597,10 @@ PrefabInstance:
     - target: {fileID: 2213645343693681009, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_Name
       value: Paper Fall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213645343693681009, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3832989359686003493, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_LocalScale.x
@@ -583,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597351474160879818, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5597351474160879818, guid: de2316d3a8381e44a8af8dc81e8ca913, type: 3}
       propertyPath: m_SortingLayerID

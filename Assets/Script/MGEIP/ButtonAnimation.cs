@@ -12,7 +12,7 @@ namespace MGEIP
     public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private bool animateOnHover = true;
-        [SerializeField] private Vector3 hoverScale = new(1.2f, 1.2f, 1f);
+        [SerializeField] private Vector3 hoverScale;// = new(1.2f, 1.2f, 1f);
 
         [Header("References")]
         [SerializeField] private Image hoverImage;
@@ -26,6 +26,7 @@ namespace MGEIP
         private void Awake()
         {
             originalScale = rectTransform.localScale;
+            hoverScale = new(originalScale.x + 0.2f, originalScale.y + 0.2f, originalScale.z + 0f);
         }
 
         public void OnPointerEnter(PointerEventData eventData)

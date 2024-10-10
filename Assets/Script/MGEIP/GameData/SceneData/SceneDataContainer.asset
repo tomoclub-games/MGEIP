@@ -237,6 +237,26 @@ MonoBehaviour:
     - ScenarioNo: 1
       SceneNo: 11
       SceneType: 2
+      DialogueBox: 0
+      NarrationBox: 0
+      DialogueText: 
+      NarrationText: 
+      HasCustomVO: 0
+      QuestionText: 
+      Option1: 
+      Option2: 
+      Option3: 
+      Option4: 
+      UseKeyword: 0
+      Option1Keyword: 
+      Option2Keyword: 
+      Option3Keyword: 
+      Option4Keyword: 
+      SliderLabelLower: 
+      SliderLabelHigher: 
+    - ScenarioNo: 1
+      SceneNo: 12
+      SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Wait! I think I heard something!
@@ -256,7 +276,7 @@ MonoBehaviour:
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 1
-      SceneNo: 12
+      SceneNo: 13
       SceneType: 6
       DialogueBox: 1
       NarrationBox: 1
@@ -278,7 +298,7 @@ MonoBehaviour:
       SliderLabelLower: 
       SliderLabelHigher: 
     - ScenarioNo: 1
-      SceneNo: 13
+      SceneNo: 14
       SceneType: 7
       DialogueBox: 1
       NarrationBox: 1
@@ -368,9 +388,9 @@ MonoBehaviour:
       DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion> the
-        tourist</b></color></size> is feeling.<br><size=35>1 represents the lowest
-        intensity and 10 represents the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size><b>the
+        tourist</b> is feeling.<br><size=35>1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -387,7 +407,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Ugh!!
+      DialogueText: Ugh!!!
       NarrationText: The tourist is looking at everyone who walks past, hoping for
         assistance.
       HasCustomVO: 0
@@ -428,7 +448,7 @@ MonoBehaviour:
       SceneType: 5
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Ugh, someone help me!!
+      DialogueText: Ugh, someone help me!!!
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#11314E>you</b></color></size> feel
@@ -620,8 +640,8 @@ MonoBehaviour:
       DialogueText: Every piece of trash gone is a victory!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Alexi</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size><b>Alexi</b>is
+        feeling.<br><size=35>1 represents the lowest intensity and 10 represents
         the highest intensity.
       Option1: 
       Option2: 
@@ -953,9 +973,9 @@ MonoBehaviour:
         them take the lead.
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Taylor</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size>
+        <b>Taylor</b> is feeling.<br><size=35>1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -1162,7 +1182,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Hustle...respect...love...
+      DialogueText: Hustle! Respect! Love!
       NarrationText: Jacques is performing on stage with intensity.
       HasCustomVO: 0
       QuestionText: 
@@ -1182,7 +1202,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Somehow...oh snap!
+      DialogueText: Oh snap!
       NarrationText: Suddenly, a guitar string snaps. The audience murmurs.
       HasCustomVO: 0
       QuestionText: 
@@ -1246,7 +1266,7 @@ MonoBehaviour:
       DialogueText: So sorry, I messed up!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Jacques</b></color></size>
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size><b>Jacques</b>
         is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
         the highest intensity.
       Option1: 
@@ -1285,7 +1305,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Hustle...respect...love...somehow...keep me going on...
+      DialogueText: Hustle...respect...love...they keep me going!
       NarrationText: The audience begins to clap encouragingly.
       HasCustomVO: 0
       QuestionText: 
@@ -1347,7 +1367,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Thank you, everyone for the love!
+      DialogueText: Thank you for all the love!
       NarrationText: The applause continues and a stagehand brings Jacques his favorite
         beverage - orange juice.
       HasCustomVO: 0
@@ -1366,7 +1386,7 @@ MonoBehaviour:
     - ScenarioNo: 5
       SceneNo: 12
       SceneType: 2
-      DialogueBox: 1
+      DialogueBox: 0
       NarrationBox: 1
       DialogueText: Hahaha, ummmm, not again...
       NarrationText: She accidentally trips on a wire, spilling the juice on his
@@ -1579,9 +1599,9 @@ MonoBehaviour:
       DialogueText: Good day to have a visitor!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Ms.
-        Gowri</b></color></size> is feeling.<br><size=35>1 represents the lowest
-        intensity and 10 represents the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E> <emotion></b></color></size><b>Ms.
+        Gowri</b> is feeling.<br><size=35>1 represents the lowest intensity and 10
+        represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -1872,9 +1892,9 @@ MonoBehaviour:
       DialogueText: So careless, sigh!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Josefa</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size>
+        <b>Josefa</b> is feeling.<br><size=35>1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -1952,9 +1972,9 @@ MonoBehaviour:
       SceneNo: 10
       SceneType: 2
       DialogueBox: 1
-      NarrationBox: 1
+      NarrationBox: 0
       DialogueText: Why...I'm a failure!
-      NarrationText: Josefa's shoulders slump as she looks at the mess around her.
+      NarrationText: 
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2222,9 +2242,9 @@ MonoBehaviour:
       DialogueText: Yeah, I'm having loads of fun...not!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Mercedes</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E> <emotion></b></color></size>
+        <b>Mercedes</b> is feeling.<br><size=35>1 represents the lowest intensity
+        and 10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -2509,9 +2529,9 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Max</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size>
+        <b>Max</b> is feeling.<br><size=35>1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -2590,8 +2610,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Such a bummer...
-      NarrationText: Max stands outside the theater, looking between the two movie
-        posters.
+      NarrationText: Max stands outside the theater.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2802,9 +2821,9 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <emotion> <size=60><b><color=#11314E>Jimin</b></color></size>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E><emotion></b></color></size>
+        <b>Jimin</b> is feeling.<br><size=35>1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 

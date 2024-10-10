@@ -24,6 +24,7 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetSliderPanelActive(true);
             GameUIService.AELabelGameobject.SetActive(true);
+            GameUIService.SetSliderInstructionSetActive(true);
             AESliderQuestionSceneInfo();
         }
 
@@ -78,8 +79,9 @@ namespace MGEIP.Scenario.Scenes
         public override void CompleteQuestionScene()
         {
             base.CompleteQuestionScene();
-            GameUIService.SetSliderPanelActive(false);
             GameUIService.AELabelGameobject.SetActive(false);
+            GameUIService.SetSliderPanelActive(false);
+            GameUIService.SetSliderInstructionSetActive(false);
 
             GameUIService.OnSliderAnswerSelect -= SliderSelect;
             GameUIService.OnConfirmButtonClick -= ConfirmAnswer;

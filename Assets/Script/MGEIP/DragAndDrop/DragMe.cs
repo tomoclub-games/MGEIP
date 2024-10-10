@@ -9,6 +9,8 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 {
 	[SerializeField] private int scenarioNo;
 
+	[SerializeField] private Texture2D dragCursorTexture;
+
 	private Canvas canvas;
 	private Image image;
 	private CanvasGroup canvasGroup;
@@ -40,6 +42,8 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 	{
 		canvasGroup.blocksRaycasts = false;
 
+		Cursor.SetCursor(dragCursorTexture, Vector2.zero, CursorMode.Auto);
+
 		SetDraggedPosition(eventData);
 
 		rectTransform.DORotate(Vector3.zero, 0.5f);
@@ -66,7 +70,9 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
-		if (!isPlacementDone)
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        if (!isPlacementDone)
 		{
 			canvasGroup.DOFade(0, 0.5f).OnComplete(ResetDragMePosition);
 		}

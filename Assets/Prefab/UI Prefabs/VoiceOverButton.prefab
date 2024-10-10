@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a084c89c93164047a08951f29b640c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1b55e346b3bc9e48b042bdcaed95b81, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3875399158543564675}
   - component: {fileID: 6058479266166742509}
   - component: {fileID: 6609376810755034184}
+  - component: {fileID: 7894924843618769888}
   m_Layer: 5
   m_Name: VoiceOverButton
   m_TagString: Untagged
@@ -180,7 +181,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 6058479266166742509}
   buttonImage: {fileID: 13564690520708363}
-  enabledSpeaker: {fileID: 21300000, guid: 4a084c89c93164047a08951f29b640c6, type: 3}
-  disabledSpeaker: {fileID: 21300000, guid: 8086ab37ed7aa944f8ac3e6716d4e612, type: 3}
+  enabledSpeaker: {fileID: 21300000, guid: d1b55e346b3bc9e48b042bdcaed95b81, type: 3}
+  disabledSpeaker: {fileID: 21300000, guid: 51d9862aaaecc784a94ebd1f5a541be5, type: 3}
   audioClipName: disclaimerText
   audioButtonType: 0
+--- !u!114 &7894924843618769888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089415084032365288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e460d92901ac742b14cceaff0bec83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateOnHover: 1
+  hoverScale: {x: 1.2, y: 1.2, z: 1}
+  hoverImage: {fileID: 0}
+  button: {fileID: 6058479266166742509}
+  buttonImage: {fileID: 0}
+  buttonLabel: {fileID: 0}
+  rectTransform: {fileID: 663050170531194113}

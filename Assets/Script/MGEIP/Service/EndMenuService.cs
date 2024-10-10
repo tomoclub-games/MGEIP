@@ -18,8 +18,10 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Button nextPageButton;
         [SerializeField] private Button prevPageButton;
         [SerializeField] private CanvasGroup endPanel;
+        [SerializeField] private CanvasGroup instructionBox;
+        [SerializeField] private CanvasGroup pageFlipInstructionBox;
         [SerializeField] private List<DragMe> dragMes;
-        [SerializeField] private List<DropMe> dropMes;
+        [SerializeField] private List<DropMe> dropMes;    
 
         private List<Sprite> newspaperSprites = new();
 
@@ -57,6 +59,8 @@ namespace Assets.Script.MGEIP.Service
             endPanel.gameObject.SetActive(false);
             introPanelGO.gameObject.SetActive(false);
             polaroidPanelGO.gameObject.SetActive(true);
+            instructionBox.gameObject.SetActive(false);
+            pageFlipInstructionBox.gameObject.SetActive(false);
 
             newspaperPanel.gameObject.SetActive(true);
             newspaperPanel.alpha = 0;
@@ -86,6 +90,12 @@ namespace Assets.Script.MGEIP.Service
                 {
                     newsPaperPanelGO.blocksRaycasts = true;
                     polaroidPanelGO.blocksRaycasts = true;
+                });
+                instructionBox.gameObject.SetActive(true);
+                instructionBox.DOFade(0, 0.5f).SetDelay(5f).OnComplete(() =>
+                {
+                    pageFlipInstructionBox.gameObject.SetActive(true);
+                    pageFlipInstructionBox.DOFade(0, 0.5f).SetDelay(5f);
                 });
             });
         }

@@ -29,6 +29,7 @@ namespace MGEIP.Scenario.Scenes
         {
             base.EnterScene();
             StartCurrentMCQQuestionScene();
+            GameUIService.SetMCQInstructionSetActive(true);
 
             for (int i = 0; i < 4; i++)
             {
@@ -120,6 +121,7 @@ namespace MGEIP.Scenario.Scenes
             base.CompleteQuestionScene();
 
             GameUIService.SetOptionPanelActive(false);
+            GameUIService.SetMCQInstructionSetActive(false);
 
             GameUIService.OnMCQOptionSelect -= OptionSelect;
             GameUIService.OnConfirmButtonClick -= ConfirmAnswer;

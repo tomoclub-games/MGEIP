@@ -1,4 +1,5 @@
-﻿using MGEIP.GameData.ScenarioData;
+﻿using DG.Tweening;
+using MGEIP.GameData.ScenarioData;
 using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
@@ -179,6 +180,13 @@ namespace MGEIP.Scenario
             }
             else
             {
+                /*SpriteRenderer spriteRenderer = scenes[currentSceneIndex].gameObject.GetComponent<SpriteRenderer>();
+                spriteRenderer.DOFade(0, 2f).OnComplete(() =>
+                {
+                    scenes[currentSceneIndex].gameObject.SetActive(false);
+                    SetSceneStatus(currentSceneIndex + 1);
+                });*/
+
                 scenes[currentSceneIndex].gameObject.SetActive(false);
                 SetSceneStatus(currentSceneIndex + 1);
             }
@@ -192,6 +200,13 @@ namespace MGEIP.Scenario
             }
             else
             {
+                /*SpriteRenderer spriteRenderer = scenes[currentSceneIndex].gameObject.GetComponent<SpriteRenderer>();
+                spriteRenderer.DOFade(0, 0.5f).OnComplete(() =>
+                {
+                    scenes[currentSceneIndex].gameObject.SetActive(false);
+                    SetSceneStatus(currentSceneIndex - 1);
+                });*/
+
                 scenes[currentSceneIndex].gameObject.SetActive(false);
                 SetSceneStatus(currentSceneIndex - 1);
             }
@@ -203,6 +218,22 @@ namespace MGEIP.Scenario
             SetUIForScene(scenes[currentSceneIndex]);
             scenes[currentSceneIndex].gameObject.SetActive(true);
             scenes[currentSceneIndex].EnterScene();
+
+            /*SpriteRenderer spriteRenderer = scenes[currentSceneIndex].gameObject.GetComponent<SpriteRenderer>();
+            // Make sure the scene is active before starting the fade.
+            scenes[currentSceneIndex].gameObject.SetActive(true);
+
+            // Set the initial alpha of the SpriteRenderer to 0
+            Color spriteColor = spriteRenderer.color;
+            spriteColor.a = 0;
+            spriteRenderer.color = spriteColor;
+
+            // Use DOFade to fade in the sprite
+            spriteRenderer.DOFade(1, 2f).OnComplete(() =>
+            {
+                // Call the EnterScene method after the fade completes
+                scenes[currentSceneIndex].EnterScene();
+            });*/
         }
 
         private void SetUIForScene(Scene scene)

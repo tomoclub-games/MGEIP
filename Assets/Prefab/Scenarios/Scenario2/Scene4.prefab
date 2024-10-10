@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1144069739
-  m_SortingLayer: 1
+  m_SortingLayerID: -764387415
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 745fdb015c29ca14b82c4313ead37aaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +95,14 @@ PrefabInstance:
     - target: {fileID: 1058484487057967264, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
       propertyPath: m_Name
       value: Sky1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271062135433285890, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271062135433285890, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
       objectReference: {fileID: 0}
     - target: {fileID: 4762649278103891776, guid: c00c1ee721422904d93b4f1a776e67bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ec3a203425adb1c4cbc3a1edad993009, type: 3}
     - target: {fileID: 5560159520641972158, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5560159520641972158, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_SortingLayerID
@@ -286,6 +294,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e468ea8ec5c0aa04dbd491619c486d20, type: 3}
+    - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1867567671
+      objectReference: {fileID: 0}
     - target: {fileID: 7511812812220361101, guid: bbdc64c5ce4d2e74fac47fbe3ede3c51, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -400,6 +416,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky3
       objectReference: {fileID: 0}
+    - target: {fileID: 7025086760377174437, guid: 9d792ef725879b443a25b5d89b6f56ae, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025086760377174437, guid: 9d792ef725879b443a25b5d89b6f56ae, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -457,6 +481,14 @@ PrefabInstance:
     - target: {fileID: 1307078773462657326, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840670719744856513, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840670719744856513, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
       objectReference: {fileID: 0}
     - target: {fileID: 7320789290413087347, guid: 672bc4a4d15e6c447bf088bd02ff43a9, type: 3}
       propertyPath: m_Name
@@ -523,6 +555,14 @@ PrefabInstance:
     - target: {fileID: 2163344799312578919, guid: 5fb61bc3031ff2f46aee8f432ab1b5eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917174057873363718, guid: 5fb61bc3031ff2f46aee8f432ab1b5eb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917174057873363718, guid: 5fb61bc3031ff2f46aee8f432ab1b5eb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1144069739
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

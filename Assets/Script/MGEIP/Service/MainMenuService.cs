@@ -17,6 +17,7 @@ namespace Assets.Script.MGEIP.Service
         [Header("Start")]
         [SerializeField] private CanvasGroup beginPanel;
         [SerializeField] private Button startMenuNextButton;
+        [SerializeField] private GameObject startInstructionBox;
 
         [Header("Disclaimer")]
         [SerializeField] private CanvasGroup disclaimerPanel;
@@ -379,6 +380,7 @@ namespace Assets.Script.MGEIP.Service
         private void RevealAnimation()
         {
             startMenuNextButton.gameObject.SetActive(false);
+            startInstructionBox.gameObject.SetActive(false);
 
             foreach (GameObject cloud in leftClouds)
             {
@@ -400,9 +402,12 @@ namespace Assets.Script.MGEIP.Service
         {
             startMenuNextButton.GetComponent<ButtonAnimation>().enabled = false;
             startMenuNextButton.gameObject.SetActive(true);
+            startInstructionBox.gameObject.SetActive(true);
             startMenuNextButton.transform.localScale = Vector3.zero;
+            startInstructionBox.transform.localScale = Vector3.zero;
             startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
                 .SetEase(Ease.OutBack).OnComplete(() => startMenuNextButton.GetComponent<ButtonAnimation>().enabled = true);
+            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack);
         }
 
         private IEnumerator LoadGameScene()
