@@ -46,6 +46,7 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetQuestionSceneNarrationBoxActive(false);
             GameUIService.SetQuestionSceneUIActive(false);
+            GameUIService.QuestionSceneConfirmButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
             GameUIService.OnPrevButtonClick -= ExitToPrevScene;
         }

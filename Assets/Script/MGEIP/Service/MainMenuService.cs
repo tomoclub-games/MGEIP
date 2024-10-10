@@ -52,6 +52,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Sprite selectedButtonSprite;
         [SerializeField] private Sprite deselectedButtonSprite;
         [SerializeField] private Vector3 tabButtonSelectedScale;
+        [SerializeField] private Color selectedButtonTextColor;
         [SerializeField] private Color deselectedButtonTextColor;
 
         [Header("Reveal Animation")]
@@ -320,7 +321,7 @@ namespace Assets.Script.MGEIP.Service
         {
             if (_button == storyTabButton)
             {
-                AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, Color.white, tabButtonSelectedScale);
+                AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, selectedButtonTextColor, tabButtonSelectedScale);
 
                 if (!tutorialTabButton.interactable)
                     return;
@@ -329,7 +330,7 @@ namespace Assets.Script.MGEIP.Service
             }
             else
             {
-                AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, Color.white, tabButtonSelectedScale);
+                AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, selectedButtonTextColor, tabButtonSelectedScale);
 
                 if (!tutorialTabButton.interactable)
                     return;

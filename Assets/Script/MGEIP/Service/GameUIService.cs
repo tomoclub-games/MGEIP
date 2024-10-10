@@ -103,6 +103,8 @@ namespace MGEIP.Service
         [Header("BG")]
         [SerializeField] private CanvasGroup blackBG;
 
+        public Button QuestionSceneConfirmButton => questionSceneConfirmButton;
+
         private int currentScenarioInfoIndex = 0;
 
         public UnityAction<int> OnScenarioStart;

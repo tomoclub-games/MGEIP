@@ -9,12 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.68
+      value: 7.32
       objectReference: {fileID: 0}
     - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2
+      value: -1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 377189486594226263, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 496871210057416089, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_Name
@@ -75,6 +91,18 @@ PrefabInstance:
     - target: {fileID: 6589113249246407328, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782021189781378586, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_text
+      value: May I take a photo of our community garden and the gardners?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782021189781378586, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_fontSize
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782021189781378586, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 8560167573456163703, guid: fb5d6651a45bd4948941559faaec56ff, type: 3}
       propertyPath: m_LocalPosition.x
