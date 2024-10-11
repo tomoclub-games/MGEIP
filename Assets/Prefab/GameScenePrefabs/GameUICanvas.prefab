@@ -9447,6 +9447,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4899158641642062179}
     m_Modifications:
+    - target: {fileID: 162119638974361622, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5202f40d19093ea4086e9b35f7a57d52, type: 3}
     - target: {fileID: 296168929627085182, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_text
       value: Mrs. Thompson is feeling\n<size=36><b><color=#11314E>distressed.</b></color></size>
@@ -9635,6 +9639,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25
       objectReference: {fileID: 0}
+    - target: {fileID: 1323023413568202911, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -21.560003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323023413568202911, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.000002
+      objectReference: {fileID: 0}
     - target: {fileID: 1355583560317798847, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -9666,6 +9678,22 @@ PrefabInstance:
     - target: {fileID: 1585507190100103799, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765589188397885907, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765589188397885907, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765589188397885907, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -452
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765589188397885907, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2580669685477537395, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_IsActive
@@ -9718,6 +9746,10 @@ PrefabInstance:
     - target: {fileID: 3809266502638225003, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836633097242921399, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3944208652113985481, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9842,6 +9874,22 @@ PrefabInstance:
     - target: {fileID: 5237190851781430912, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869759995042332008, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869759995042332008, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869759995042332008, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869759995042332008, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6185081869427045948, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10002,6 +10050,14 @@ PrefabInstance:
     - target: {fileID: 8212392237088640801, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343720125656744064, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343720125656744064, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 8602382823170645233, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
       propertyPath: m_Sprite
