@@ -118,7 +118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.03}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &717119820796319242
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278592838
+  m_fontColor: {r: 0.27450982, g: 0.14509805, b: 0.023529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -243,16 +243,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583673611745961941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3636, y: 0.3636, z: 0.3636}
+  m_LocalScale: {x: 0.26075935, y: 0.26075935, z: 0.26075935}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2978357230913156412}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.391}
+  m_AnchoredPosition: {x: 0, y: -0.374}
   m_SizeDelta: {x: 1.9107, y: 1.9107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5214731682749517191
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b2df2c11bf4e7024e89b613f7a7342be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f54c5b66bec2e924d8156970e363aebb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 595a2d7e4ad18af4fb0a4cff170ad7c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a80b8402cb9b9e943a6a0a512f4dcda2, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 500
+  m_PixelsPerUnitMultiplier: 177
 --- !u!1 &3664390464573602139
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioNo: 0
-  animator: {fileID: 6331032761126197949}
   onHoverGOs:
   - {fileID: 2070774057184755881}
   - {fileID: 129158547932439471}

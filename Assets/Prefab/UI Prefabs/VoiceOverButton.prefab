@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 45, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6395877078171939010
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1b55e346b3bc9e48b042bdcaed95b81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6f761413d9a3ce478215397b7d60b8c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -181,8 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 6058479266166742509}
   buttonImage: {fileID: 13564690520708363}
-  enabledSpeaker: {fileID: 21300000, guid: d1b55e346b3bc9e48b042bdcaed95b81, type: 3}
-  disabledSpeaker: {fileID: 21300000, guid: 51d9862aaaecc784a94ebd1f5a541be5, type: 3}
+  enabledSpeaker: {fileID: 21300000, guid: f6f761413d9a3ce478215397b7d60b8c, type: 3}
+  disabledSpeaker: {fileID: 21300000, guid: 81b74c575667bdb4797e463c6a2019bf, type: 3}
   audioClipName: disclaimerText
   audioButtonType: 0
 --- !u!114 &7894924843618769888

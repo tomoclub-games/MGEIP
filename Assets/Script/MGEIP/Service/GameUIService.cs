@@ -37,6 +37,7 @@ namespace MGEIP.Service
         [SerializeField] private TextMeshProUGUI mcqInstructionText;
         [SerializeField] private TextMeshProUGUI sliderInstructionText;
         [SerializeField] private Button questionSceneConfirmButton;
+        [SerializeField] private Sprite selectedOptionConfirmButtonSprite;
         [SerializeField] private Button questionScenePrevButton;
         [SerializeField] private Image[] sliderLabels;
 
@@ -104,6 +105,7 @@ namespace MGEIP.Service
         [SerializeField] private CanvasGroup blackBG;
 
         public Button QuestionSceneConfirmButton => questionSceneConfirmButton;
+        public Sprite SelectedOptionConfirmButtonSprite => selectedOptionConfirmButtonSprite;
 
         private int currentScenarioInfoIndex = 0;
 

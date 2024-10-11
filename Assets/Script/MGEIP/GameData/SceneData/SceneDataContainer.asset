@@ -116,9 +116,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Mrs. Thompson</b></color></size>
         is feeling?
       Option1: Mrs. Thompson is feeling<br><size=36><b><color=#462506>distressed.</b></color></size>
-      Option2: "Mrs. Thompson is feeling <br><size=36><b><color=#11314E>loving.</b></color></size>\L"
-      Option3: "Mrs. Thompson is feeling<br><size=36><b><color=#11314E>surprised.</b></color></size>\L"
-      Option4: "Mrs. Thompson is feeling <br><size=36><b><color=#11314E>annoyed.</b></color></size>\L"
+      Option2: "Mrs. Thompson is feeling <br><size=36><b><color=#462506>loving.</b></color></size>\L"
+      Option3: "Mrs. Thompson is feeling<br><size=36><b><color=#462506>surprised.</b></color></size>\L"
+      Option4: "Mrs. Thompson is feeling <br><size=36><b><color=#462506>annoyed.</b></color></size>\L"
       UseKeyword: 1
       Option1Keyword: distress
       Option2Keyword: love
@@ -370,9 +370,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>the tourist</b></color></size>
         is feeling?
       Option1: The tourist is feeling <br><size=36><b><color=#462506>worried.</b></color></size>
-      Option2: The tourist is feeling<br><size=36><b><color=#11314E>sad.</b></color></size>
-      Option3: The tourist is feeling<br><size=36><b><color=#11314E>fulfilled.</b></color></size>
-      Option4: The tourist is feeling<br><size=36><b><color=#11314E>enthusiastic.</b></color></size>
+      Option2: The tourist is feeling<br><size=36><b><color=#462506>sad.</b></color></size>
+      Option3: The tourist is feeling<br><size=36><b><color=#462506>fulfilled.</b></color></size>
+      Option4: The tourist is feeling<br><size=36><b><color=#462506>enthusiastic.</b></color></size>
       UseKeyword: 1
       Option1Keyword: worry
       Option2Keyword: sadness
@@ -622,9 +622,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Alexi</b></color></size>
         is feeling?
       Option1: Alexi is feeling<br><size=36><b><color=#462506>happy.</b></color></size>
-      Option2: Alexi is feeling<br><size=36><b><color=#11314E>tired.</b></color></size>
-      Option3: Alexi is feeling<br><size=36><b><color=#11314E>comfortable.</b></color></size>
-      Option4: Alexi is feeling<br><size=36><b><color=#11314E>scared.</b></color></size>
+      Option2: Alexi is feeling<br><size=36><b><color=#462506>tired.</b></color></size>
+      Option3: Alexi is feeling<br><size=36><b><color=#462506>comfortable.</b></color></size>
+      Option4: Alexi is feeling<br><size=36><b><color=#462506>scared.</b></color></size>
       UseKeyword: 1
       Option1Keyword: happiness
       Option2Keyword: tiredness
@@ -764,8 +764,8 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: 
       HasCustomVO: 0
-      QuestionText: <size=60><b><color=#11314E>You have meet at Ahmed's house soon
-        for a birthday party.</b></color></size> What will you do now?
+      QuestionText: <size=60><b><color=#11314E>You have a meet at a friend's house
+        soon for a birthday party.</b></color></size> What will you do now?
       Option1: I will spend some time helping Alexi first.
       Option2: I will suggest Alexi take a break and offer them some water to drink.
       Option3: I will ask Alexi to join me at Ahmed's birthday party.
@@ -954,9 +954,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Taylor</b></color></size>
         is feeling?
       Option1: Taylor is feeling<br><size=36><b><color=#462506>envious.</b></color></size>
-      Option2: Taylor is feeling<br><size=36><b><color=#11314E>excited.</b></color></size>
-      Option3: Taylor is feeling<br><size=36><b><color=#11314E>carefree.</b></color></size>
-      Option4: Taylor is feeling<br><size=36><b><color=#11314E>troubled.</b></color></size>
+      Option2: Taylor is feeling<br><size=36><b><color=#462506>excited.</b></color></size>
+      Option3: Taylor is feeling<br><size=36><b><color=#462506>carefree.</b></color></size>
+      Option4: Taylor is feeling<br><size=36><b><color=#462506>troubled.</b></color></size>
       UseKeyword: 1
       Option1Keyword: envy
       Option2Keyword: excitement
@@ -1248,9 +1248,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Jacques</b></color></size>
         is feeling?
       Option1: "Jacques is feeling<br><size=36><b><color=#462506>embarrassed.</b></color></size>\L"
-      Option2: "Jacques is feeling<br><size=36><b><color=#11314E>joyful.</b></color></size>\L"
-      Option3: "Jacques is feeling<br><size=36><b><color=#11314E> calm.</b></color></size>\L"
-      Option4: "Jacques is feeling<br><size=36><b><color=#11314E>bored.</b></color></size>\L"
+      Option2: "Jacques is feeling<br><size=36><b><color=#462506>joyful.</b></color></size>\L"
+      Option3: "Jacques is feeling<br><size=36><b><color=#462506> calm.</b></color></size>\L"
+      Option4: "Jacques is feeling<br><size=36><b><color=#462506>bored.</b></color></size>\L"
       UseKeyword: 1
       Option1Keyword: embarrassment
       Option2Keyword: joy
@@ -1555,7 +1555,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Good day to have a visitor!
+      DialogueText: Good to have a visitor!
       NarrationText: Mrs. Gowri attempts a smile as she notices you.
       HasCustomVO: 0
       QuestionText: 
@@ -1575,15 +1575,15 @@ MonoBehaviour:
       SceneType: 3
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Good day to have a visitor!
+      DialogueText: Good to have a visitor!
       NarrationText: 
       HasCustomVO: 0
-      QuestionText: How do you think <size=60><b><color=#11314E>Ms. Gowri</b></color></size>
+      QuestionText: How do you think <size=60><b><color=#11314E>Mrs. Gowri</b></color></size>
         is feeling?
-      Option1: Ms. Gowri is feeling<br><size=36><b><color=#462506>lonely.</b></color></size>
-      Option2: Ms. Gowri is feeling<br><size=36><b><color=#11314E>calm.</b></color></size>
-      Option3: Ms. Gowri is feeling<br><size=36><b><color=#11314E>cheerful.</b></color></size>
-      Option4: Ms. Gowri is feeling<br><size=36><b><color=#11314E>panicky.</b></color></size>
+      Option1: Mrs. Gowri is feeling<br><size=36><b><color=#462506>lonely.</b></color></size>
+      Option2: Mrs. Gowri is feeling<br><size=36><b><color=#462506>calm.</b></color></size>
+      Option3: Mrs. Gowri is feeling<br><size=36><b><color=#462506>cheerful.</b></color></size>
+      Option4: Mrs. Gowri is feeling<br><size=36><b><color=#462506>panicky.</b></color></size>
       UseKeyword: 1
       Option1Keyword: loneliness
       Option2Keyword: calmness
@@ -1596,10 +1596,10 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: Good day to have a visitor!
+      DialogueText: Good to have a visitor!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#11314E> <emotion></b></color></size><b>Ms.
+      QuestionText: Rate the intensity of <size=60><b><color=#11314E> <emotion></b></color></size><b>Mrs.
         Gowri</b> is feeling.<br><size=35>1 represents the lowest intensity and 10
         represents the highest intensity.
       Option1: 
@@ -1662,7 +1662,7 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#11314E>you</b></color></size> feel
-        on seeing Ms. Gowri? <br><size=35>Rate between extremely peaceful to extremely
+        on seeing Mrs. Gowri? <br><size=35>Rate between extremely peaceful to extremely
         upset.
       Option1: 
       Option2: 
@@ -1827,8 +1827,8 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Oh no, no, no!
-      NarrationText: Suddenly, Josefa freezes, as the pots fall out her hands and
-        crash onto the ground.
+      NarrationText: Suddenly, Josefa freezes, as the pots fall out of her hands
+        and crash onto the ground.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -1874,9 +1874,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Josefa</b></color></size>
         is feeling?
       Option1: "Josefa is feeling<br><size=36><b><color=#462506>humiliated.</b></color></size>\L\L"
-      Option2: "Josefa is feeling<br><size=36><b><color=#11314E>excited.</b></color></size>\L\L"
-      Option3: "Josefa is feeling<br><size=36><b><color=#11314E>repulsed.</b></color></size>\L\L"
-      Option4: "Josefa is feeling<br><size=36><b><color=#11314E>restful.</b></color></size>\L\L"
+      Option2: "Josefa is feeling<br><size=36><b><color=#462506>excited.</b></color></size>\L\L"
+      Option3: "Josefa is feeling<br><size=36><b><color=#462506>repulsed.</b></color></size>\L\L"
+      Option4: "Josefa is feeling<br><size=36><b><color=#462506>restful.</b></color></size>\L\L"
       UseKeyword: 1
       Option1Keyword: humiliation
       Option2Keyword: excitement
@@ -2224,9 +2224,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Mercedes</b></color></size>
         is feeling?
       Option1: "Mercedes is feeling<br><size=36><b><color=#462506>lonely.</b></color></size>\L\L"
-      Option2: "Mercedes is feeling<br><size=36><b><color=#11314E>worried.</b></color></size>\L\L"
-      Option3: "Mercedes is feeling<br><size=36><b><color=#11314E>brave.</b></color></size>\L\L"
-      Option4: "Mercedes is feeling<br><size=36><b><color=#11314E>lively.</b></color></size>\L\L"
+      Option2: "Mercedes is feeling<br><size=36><b><color=#462506>worried.</b></color></size>\L\L"
+      Option3: "Mercedes is feeling<br><size=36><b><color=#462506>brave.</b></color></size>\L\L"
+      Option4: "Mercedes is feeling<br><size=36><b><color=#462506>lively.</b></color></size>\L\L"
       UseKeyword: 1
       Option1Keyword: loneliness
       Option2Keyword: worry
@@ -2327,7 +2327,7 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: <size=60><b><color=#11314E>You have a friend's basketball match
-        attend soon.</b></color></size> What will you do?
+        to attend soon.</b></color></size> What will you do?
       Option1: I will ditch practice to spend more time till Mercedes feels better.
       Option2: I will comfort Mercedes for a while before heading to practice.
       Option3: I will suggest Mercedes talk to someone else and then go for the practice.
@@ -2344,7 +2344,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Maybe I should invite them over, they love books!
+      DialogueText: Maybe I should invite them over, they love books, just like me!
       NarrationText: Mercedes gets an idea.
       HasCustomVO: 0
       QuestionText: 
@@ -2365,7 +2365,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: Mercedes invites them over to her place to hangout.
+      NarrationText: Mercedes decides to invite them over to her place to hangout.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2511,9 +2511,9 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: How is <size=60><b><color=#11314E>Max</b></color></size> feeling?
       Option1: Max is feeling<br><size=36><b><color=#462506>disappointed.</b></color></size>
-      Option2: Max is feeling<br><size=36><b><color=#11314E>restful.</b></color></size>
-      Option3: Max is feeling<br><size=36><b><color=#11314E>enthusiastic.</b></color></size>
-      Option4: Max is feeling<br><size=36><b><color=#11314E>restless.</b></color></size>
+      Option2: Max is feeling<br><size=36><b><color=#462506>restful.</b></color></size>
+      Option3: Max is feeling<br><size=36><b><color=#462506>enthusiastic.</b></color></size>
+      Option4: Max is feeling<br><size=36><b><color=#462506>restless.</b></color></size>
       UseKeyword: 1
       Option1Keyword: disappointment
       Option2Keyword: restfulness
@@ -2803,9 +2803,9 @@ MonoBehaviour:
       QuestionText: How do you think <size=60><b><color=#11314E>Jimin</b></color></size>
         was feeling when you approached?
       Option1: Jimin is feeling<br><size=36><b><color=#462506>annoyed.</b></color></size>
-      Option2: Jimin is feeling<br><size=36><b><color=#11314E>exhausted.</b></color></size>
-      Option3: Jimin is feeling<br><size=36><b><color=#11314E>grateful.</b></color></size>
-      Option4: Jimin is feeling<br><size=36><b><color=#11314E>proud.</b></color></size>
+      Option2: Jimin is feeling<br><size=36><b><color=#462506>exhausted.</b></color></size>
+      Option3: Jimin is feeling<br><size=36><b><color=#462506>grateful.</b></color></size>
+      Option4: Jimin is feeling<br><size=36><b><color=#462506>proud.</b></color></size>
       UseKeyword: 1
       Option1Keyword: annoyance
       Option2Keyword: exhaustion

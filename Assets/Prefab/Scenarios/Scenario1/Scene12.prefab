@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306495747422250224}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.24443135, w: 0.9696666}
-  m_LocalPosition: {x: 0.64000005, y: 3.47, z: 0}
-  m_LocalScale: {x: -3.2572773, y: 3.2572773, z: 3.2572768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76, y: 3.4, z: 0}
+  m_LocalScale: {x: 1.371104, y: 1.371104, z: 1.371104}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5482709836832495144}
   m_Father: {fileID: 4947340154349808120}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.296}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3497333121765313740
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 425734383
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 168226b535410db428f4a108fbcb39ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,10 +188,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 425734383
-  m_SortingLayer: 3
+  m_SortingLayerID: -589221059
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 711525833, guid: f66ab2c497336b54e8ae81a4fc4ddd41, type: 3}
+  m_Sprite: {fileID: 714330811, guid: 51e91c9cd19c41c40b0ae503aca6cfff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,7 +212,7 @@ Animator:
   m_GameObject: {fileID: 3993836407017642080}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b2488cf5f752fdf48b9558b4c8462e96, type: 2}
+  m_Controller: {fileID: 9100000, guid: 922797ec7c7ab574faef98332a9eeeba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayerID
@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4241266679988682835, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_Name
-      value: Scene11
+      value: Scene12
       objectReference: {fileID: 0}
     - target: {fileID: 4340618083989327182, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SizeDelta.x

@@ -1,0 +1,945 @@
+fileFormatVersion: 2
+guid: 7b018c309b5d0f8499b9f3fc193eef50
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81efd0624bd2403469f52069189504f2
+      internalID: 1717622659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_1
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c75bd48888e8b4abef30a06fb730a8
+      internalID: 692257826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_2
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa1827ed56e46b4789d7165ac865e0f
+      internalID: 1638701927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_3
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b43ab7054dbc94bbf0a30388426a4c
+      internalID: 360840118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_4
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33b30c69c484994d88fd213ea452549
+      internalID: -810081991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_5
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 3775
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbfe70f74c57624e994da95e50918d9
+      internalID: -377086649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14a5f88ad2d4834ba9ee5a5e38a7d51
+      internalID: -1362673361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_7
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adade6b9a3aaa584c93ba72eae73ecd8
+      internalID: -116787346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_8
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec0e4f11c39b464ba2f00f476665226
+      internalID: -720680363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_9
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294ef1c0c1581d14bb57e527d906ac75
+      internalID: -307076196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_10
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7cb835b8c5a8749bdd8dfd138fd101
+      internalID: 17713266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_11
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 3020
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ec78175a0b9ac4ea27ae2a24221042
+      internalID: -505813509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0b8135b964b9f4e887cd40b9c2ec03
+      internalID: -1398167531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_13
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7846eeab5a9a6a34c9527b954baae9ab
+      internalID: 1525307270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_14
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55dbbb3b5db2dd46b5aa6cfe7d89cbf
+      internalID: 181448354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_15
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6e4ac5ba591ef4ebd2b47ae580883e
+      internalID: -140303048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_16
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ec0b5e38d6cf142b91f3646b56dd8b
+      internalID: 968973060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_17
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 2265
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c794d0e6cf2c7e2429e1713704af95d0
+      internalID: 1897554618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6338ea7dfd4305f4389e7197455d9b81
+      internalID: -2072852670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_19
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ff61db0cacf3045a7971b8e11e88fd
+      internalID: 1104944855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_20
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c3db668f54c04459e56580f3494413
+      internalID: -972541068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_21
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe86cfe0bab52c48907411ff4a87de0
+      internalID: 1938969621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_22
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d18d1c39676cd14089743cb6bd7a75e
+      internalID: -238631218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_23
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 1510
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f8ebaf76ab92542a047e5ea66c3184
+      internalID: 552864046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8709d3e2b95021a4cbe4487b38c2f03e
+      internalID: 1115954396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_25
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc18eef16d0a3794aa375f2c2aa18f3d
+      internalID: 1124895847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_26
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563602e66a7096a4fb32a9e84110fead
+      internalID: -477891328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_27
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95d5af330bfbe54291ff5abe23f5bc7
+      internalID: -241540627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_28
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831f327ab74b08543bdf7c1f98d861df
+      internalID: -1858488211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_29
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 755
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fbfe141da322b47a84a41604465720
+      internalID: 1230063521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77ae4817dcf24f428a3abb805597e4e
+      internalID: -1958735721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_31
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff11dd4d9e84b0a4ab98855e7971144f
+      internalID: 1561652191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_32
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071769b5845d652488c97f3f4f5bb89f
+      internalID: -716452316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_33
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b353897a9dc1a6247a6c6f12250db8f2
+      internalID: 270709479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_34
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadac57827782694da572f254a610231
+      internalID: 1287079739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wobble+eyeblink sheet 604X755_35
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 0
+        width: 604
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af94537889b4e942a77e7411a77b4a6
+      internalID: -829900976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      wobble+eyeblink sheet 604X755_0: 1717622659
+      wobble+eyeblink sheet 604X755_1: 692257826
+      wobble+eyeblink sheet 604X755_10: 17713266
+      wobble+eyeblink sheet 604X755_11: -505813509
+      wobble+eyeblink sheet 604X755_12: -1398167531
+      wobble+eyeblink sheet 604X755_13: 1525307270
+      wobble+eyeblink sheet 604X755_14: 181448354
+      wobble+eyeblink sheet 604X755_15: -140303048
+      wobble+eyeblink sheet 604X755_16: 968973060
+      wobble+eyeblink sheet 604X755_17: 1897554618
+      wobble+eyeblink sheet 604X755_18: -2072852670
+      wobble+eyeblink sheet 604X755_19: 1104944855
+      wobble+eyeblink sheet 604X755_2: 1638701927
+      wobble+eyeblink sheet 604X755_20: -972541068
+      wobble+eyeblink sheet 604X755_21: 1938969621
+      wobble+eyeblink sheet 604X755_22: -238631218
+      wobble+eyeblink sheet 604X755_23: 552864046
+      wobble+eyeblink sheet 604X755_24: 1115954396
+      wobble+eyeblink sheet 604X755_25: 1124895847
+      wobble+eyeblink sheet 604X755_26: -477891328
+      wobble+eyeblink sheet 604X755_27: -241540627
+      wobble+eyeblink sheet 604X755_28: -1858488211
+      wobble+eyeblink sheet 604X755_29: 1230063521
+      wobble+eyeblink sheet 604X755_3: 360840118
+      wobble+eyeblink sheet 604X755_30: -1958735721
+      wobble+eyeblink sheet 604X755_31: 1561652191
+      wobble+eyeblink sheet 604X755_32: -716452316
+      wobble+eyeblink sheet 604X755_33: 270709479
+      wobble+eyeblink sheet 604X755_34: 1287079739
+      wobble+eyeblink sheet 604X755_35: -829900976
+      wobble+eyeblink sheet 604X755_4: -810081991
+      wobble+eyeblink sheet 604X755_5: -377086649
+      wobble+eyeblink sheet 604X755_6: -1362673361
+      wobble+eyeblink sheet 604X755_7: -116787346
+      wobble+eyeblink sheet 604X755_8: -720680363
+      wobble+eyeblink sheet 604X755_9: -307076196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
