@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42471e5bec7eb84aa85697ef02f488a, type: 3}
+  m_Name: MainMenuDataContainer
+  m_EditorClassIdentifier: 
+  foldoutImportGUI: 1
+  documentId: 1GS47imhjWOAhQZjBWpA8CjbTpbD2P4P4urbmjwMNUQ4
+  selectedTogglesIds:
+  - TextContents
+  - mainMenuDataList
+  foldoutSerializationGUI: 0
+  serializationOutputPath: ../../Configs
+  serializationFileName: Configs.v0.1
+  serializationFormat: 0
+  mainMenuContent:
+    mainMenuDataList:
+    - TextContent: Welcome to <size=25><b><color=#462506>Harmony Town!</b></color></size>
+    - TextContent: "As The Harmony Herald\u2019s newest junior <size=23><b><color=#462506>photojournalist</b></color></size>,
+        you\u2019re tasked with a special mission: to capture the essence of our
+        town for next week\u2019s edition."
+    - TextContent: "Armed with your <size=23><b><color=#462506>camera</b></color></size>,
+        you\u2019ll explore our streets, parks, and community events, and encounter
+        neighbours. "
+    - TextContent: Each photo you take will be a piece of Harmony Town's <size=23><b><color=#462506>story</b></color></size>.
+    - TextContent: "But your job isn\u2019t done when you lower your lens. <size=23><b><color=#462506>Match
+        your photos on the newspaper</b></color></size>, crafting a unique spread
+        that truly reflects our town\u2019s spirit."
+    - TextContent: "Your neighbours eagerly await the <size=23><b><color=#11314E>special
+        edition</b></color></size> you\u2019ll build with your own hands!"
+    - TextContent: Explore the town and select a location.
+    - TextContent: Meet the people.
+    - TextContent: Listen to them.
+    - TextContent: Choose how the character is feeling from the options and confirm.
+    - TextContent: "Adjust the slider to rate the intensity of the character\u2019s
+        emotions and confirm."
+    - TextContent: Adjust the slider as per your feelings and confirm.
+    - TextContent: Choose what would you do and confirm.
+    - TextContent: "Don\u2019t forget to capture the moment!"
+    - TextContent: Arrange the photos on the newspaper.
+    - TextContent: Click and play the voiceovers as you need.
+    - TextContent: There are no right or wrong choices!
+    - TextContent: Your success depends on being attentive and honest throughout
+        the game.
+    - TextContent: You can replay the tutorial as many times as needed. If unsure,
+        ask your teacher for help.
+    - TextContent: You are now ready to play the game!

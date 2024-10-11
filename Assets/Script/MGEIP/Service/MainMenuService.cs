@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using MGEIP;
+using MGEIP.GameData;
 using MGIEP;
 using TMPro;
 using UnityEngine;
@@ -12,7 +13,10 @@ namespace Assets.Script.MGEIP.Service
 {
     public class MainMenuService : MonoBehaviour
     {
+        public static MainMenuService Instance;
+
         [SerializeField] private GameObject mainCanvas;
+        [SerializeField] private MainMenuDataContainer mainMenuDataContainer;
 
         [Header("Start")]
         [SerializeField] private CanvasGroup beginPanel;
@@ -33,6 +37,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Button endButton;
         [SerializeField] private Image paginationCirclePrefab;
         [SerializeField] private CanvasGroup paginationParent;
+        [SerializeField] private List<TMP_Text> mainMenuTexts = new();
 
         [Header("Pagination Sprites")]
         [SerializeField] private Sprite notViewedCircle;
@@ -75,8 +80,13 @@ namespace Assets.Script.MGEIP.Service
         private CanvasGroup[] subPanels;
         private List<Image> paginationCircles = new();
 
+        public MainMenuDataContainer MainMenuDataContainer => mainMenuDataContainer;
+
         private void Awake()
         {
+            if (Instance == null)
+                Instance = this;
+
             startMenuNextButton.onClick.AddListener(NextButtonClicked);
             disclaimerMenuNextButton.onClick.AddListener(NextButtonClicked);
 
@@ -129,6 +139,8 @@ namespace Assets.Script.MGEIP.Service
             tutorialTabButton.GetComponent<ButtonAnimation>().DisableButton();
 
             SwitchToStory();
+
+            SetupMainMenuTexts();
         }
 
         #region Button functions
@@ -371,6 +383,14 @@ namespace Assets.Script.MGEIP.Service
             SoundManagerService.Instance.ReleaseAudio();
 
             // StartCoroutine(LoadGameScene());
+        }
+
+        private void SetupMainMenuTexts()
+        {
+            for (int i = 0; i < mainMenuTexts.Count; i++)
+            {
+                mainMenuTexts[i].text = mainMenuDataContainer.MainMenuContent.mainMenuDataList[i].TextContent;
+            }
         }
 
         #endregion
