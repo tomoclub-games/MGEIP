@@ -55,16 +55,8 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Color selectedButtonTextColor;
         [SerializeField] private Color deselectedButtonTextColor;
 
-        [Header("Reveal Animation")]
-        [SerializeField] private List<GameObject> leftClouds;
-        [SerializeField] private List<GameObject> rightClouds;
-        [SerializeField] private GameObject crowsGO;
-        [SerializeField] private GameObject mapGO;
-        [SerializeField] private Animator boatAnimator;
-        [SerializeField] private float maxCloudDelay = 1f;
-        [SerializeField] private float cloudAnimationDuration = 1f;
-        [SerializeField] private float mapScaleDelay = 1f;
-        [SerializeField] private float mapAnimationDuration = 3f;
+        [Header("Animation")]
+        [SerializeField] private MainMenuAnimation mainMenuAnimation;
         [SerializeField] private float buttonScaleDuration = 1f;
 
         [Header("Slide counts")]
@@ -119,7 +111,10 @@ namespace Assets.Script.MGEIP.Service
             SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
 
             currentActivePanel = beginPanel;
-            RevealAnimation();
+
+            startMenuNextButton.gameObject.SetActive(false);
+            startInstructionBox.gameObject.SetActive(false);
+            mainMenuAnimation.RevealAnimation();
 
             subPanelViewed = new bool[subPanelParent.childCount];
             for (int i = 0; i < subPanelParent.childCount; i++)
@@ -380,28 +375,7 @@ namespace Assets.Script.MGEIP.Service
 
         #endregion
 
-        private void RevealAnimation()
-        {
-            startMenuNextButton.gameObject.SetActive(false);
-            startInstructionBox.gameObject.SetActive(false);
-
-            foreach (GameObject cloud in leftClouds)
-            {
-                float randomDelay = Random.Range(0f, maxCloudDelay);
-                cloud.transform.DOMoveX(cloud.transform.position.x - 10f, cloudAnimationDuration).SetEase(Ease.InOutQuad).SetDelay(randomDelay);
-            }
-
-            foreach (GameObject cloud in rightClouds)
-            {
-                float randomDelay = Random.Range(0f, maxCloudDelay);
-                cloud.transform.DOMoveX(cloud.transform.position.x + 10f, cloudAnimationDuration).SetEase(Ease.InOutQuad).SetDelay(randomDelay);
-            }
-
-            mapGO.transform.localScale = Vector3.zero;
-            mapGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { AnimateStartButton(); crowsGO.SetActive(true); });
-        }
-
-        private void AnimateStartButton()
+        public void AnimateStartButton()
         {
             startMenuNextButton.GetComponent<ButtonAnimation>().enabled = false;
             startMenuNextButton.gameObject.SetActive(true);
@@ -410,7 +384,7 @@ namespace Assets.Script.MGEIP.Service
             startInstructionBox.transform.localScale = Vector3.zero;
             startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
                 .SetEase(Ease.OutBack).OnComplete(() => startMenuNextButton.GetComponent<ButtonAnimation>().enabled = true);
-            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack).OnComplete(() => boatAnimator.enabled = true);
+            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack).OnComplete(() => mainMenuAnimation.StartBoatAnim());
         }
 
         private IEnumerator LoadGameScene()
