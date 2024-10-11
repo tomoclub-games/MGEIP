@@ -167,7 +167,7 @@ namespace MGEIP.Scenario
                 }
                 scenes.Clear();
 
-                SoundManagerService.Instance.ReleaseAudio();
+                // SoundManagerService.Instance.ReleaseAudio();
 
                 SetScenarioComplete();
 

@@ -25,12 +25,12 @@ namespace MGEIP.Service
             // GameUIService.GetGameEndButton.gameObject.SetActive(false);
             GameUIService.GetGameEndButton.onClick.AddListener(OnGameEndButtonClick);
 
-            SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
+            // SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
         }
 
         private void OnGameEndButtonClick()
         {
-            SoundManagerService.Instance.ReleaseAudio();
+            // SoundManagerService.Instance.ReleaseAudio();
 
             gameUIService.FadeOut();
 

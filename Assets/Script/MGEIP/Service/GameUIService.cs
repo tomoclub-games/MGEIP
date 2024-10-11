@@ -405,7 +405,7 @@ namespace MGEIP.Service
 
         public void ScenarioPlayButtonClick()
         {
-            SoundManagerService.Instance.LoadAudio("ScenarioAudioClips_" + currentScenarioInfoIndex);
+            // SoundManagerService.Instance.LoadAudio("ScenarioAudioClips_" + currentScenarioInfoIndex);
 
             scenarioInfoBeforeGO.SetActive(false);
             scenarioInfoAfterGO.SetActive(true);

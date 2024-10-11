@@ -123,7 +123,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void Start()
         {
-            SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
+            // SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
 
             currentActivePanel = beginPanel;
             RevealAnimation();
@@ -380,7 +380,7 @@ namespace Assets.Script.MGEIP.Service
             loadingBarFill.fillAmount = 0f;
             loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
 
-            SoundManagerService.Instance.ReleaseAudio();
+            // SoundManagerService.Instance.ReleaseAudio();
 
             // StartCoroutine(LoadGameScene());
         }
