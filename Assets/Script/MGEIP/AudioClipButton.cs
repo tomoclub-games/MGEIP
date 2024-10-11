@@ -75,7 +75,7 @@ public class AudioClipButton : MonoBehaviour
 
 public enum AudioButtonType
 {
-    InstructionClip,
+    InstructionClip, // use custom for instructions instead
     StopClip,
     Custom,
     MainMenuClip,

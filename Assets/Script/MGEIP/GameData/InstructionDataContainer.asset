@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e55aa805e2b7e4ca8eff6c8d228edb, type: 3}
+  m_Name: InstructionDataContainer
+  m_EditorClassIdentifier: 
+  foldoutImportGUI: 1
+  documentId: 1GS47imhjWOAhQZjBWpA8CjbTpbD2P4P4urbmjwMNUQ4
+  selectedTogglesIds:
+  - InstructionDataList
+  foldoutSerializationGUI: 0
+  serializationOutputPath: ../../Configs
+  serializationFileName: Configs.v0.1
+  serializationFormat: 0
+  instructionContent:
+    InstructionDataList:
+    - InstructionMessage: Click start to begin.
+    - InstructionMessage: Click continue to proceed.
+    - InstructionMessage: Click the arrows to read all slides.
+    - InstructionMessage: Click continue to play.
+    - InstructionMessage: Hover and select a location.
+    - InstructionMessage: Click start to play.
+    - InstructionMessage: Click the arrow to continue.
+    - InstructionMessage: Select an option and click confirm.
+    - InstructionMessage: Choose the intensity and click confirm.
+    - InstructionMessage: Click the capture button.
+    - InstructionMessage: Click end to complete this scenario.
+    - InstructionMessage: Drag and drop the images into the slots.
+    - InstructionMessage: Click next to go to page 02.
