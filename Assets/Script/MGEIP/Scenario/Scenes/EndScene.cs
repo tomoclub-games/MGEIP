@@ -65,6 +65,9 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetEndSceneNarrationBoxActive(false);
             GameUIService.SetEndStoryUIGameobjectActive(false);
+
+            GameUIService.EndSceneEndButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+            GameUIService.EndScenePrevButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
 
         public override void ExitScene()

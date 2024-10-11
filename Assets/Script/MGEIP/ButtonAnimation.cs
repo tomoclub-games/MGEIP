@@ -26,7 +26,9 @@ namespace MGEIP
         private void Awake()
         {
             originalScale = rectTransform.localScale;
-            hoverScale = new(originalScale.x + 0.2f, originalScale.y + 0.2f, originalScale.z + 0f);
+            hoverScale = new Vector3(originalScale.x + (originalScale.x > 0 ? 0.2f : -0.2f),
+                                     originalScale.y + (originalScale.y > 0 ? 0.2f : -0.2f),
+                                     originalScale.z);
         }
 
         public void OnPointerEnter(PointerEventData eventData)

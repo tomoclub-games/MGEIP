@@ -68,6 +68,8 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetPhotoCaptureUIGameobjectActive(false);
 
             GameUIService.OnPhotoCapture -= DisableDialogue;
+
+            GameUIService.PhotoCaptureSceneNextButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
 
         public override void ExitScene()

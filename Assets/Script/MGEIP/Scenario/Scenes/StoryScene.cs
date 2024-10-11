@@ -65,6 +65,9 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetStorySceneNarrationBoxActive(false);
             GameUIService.SetStartStoryUIGameobjectActive(false);
+
+            GameUIService.StorySceneNextButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+            GameUIService.StoryScenePrevButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
 
         public override void ExitScene()
