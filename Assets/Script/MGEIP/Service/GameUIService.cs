@@ -13,6 +13,7 @@ namespace MGEIP.Service
         public GameObject sceneHolder;
         public GameObject MapUI;
         public Sprite tickSprite;
+        public GameService gameService;
         [SerializeField] private Button gameEndButton;
 
         [Header("Start Scene Components")]
@@ -105,8 +106,9 @@ namespace MGEIP.Service
         [SerializeField] private AudioClipButton questionVOButton;
         [SerializeField] private AudioClipButton[] optionVOButtons;
 
-        [Header("BG")]
-        [SerializeField] private CanvasGroup blackBG;
+        [Header("Load Screen UI")]
+        [SerializeField] private CanvasGroup loadScreenCG;
+        [SerializeField] private Image loadScreenLoadingBarFill;
 
         public Button QuestionSceneConfirmButton => questionSceneConfirmButton;
         public Sprite SelectedOptionConfirmButtonSprite => selectedOptionConfirmButtonSprite;
@@ -166,6 +168,8 @@ namespace MGEIP.Service
 
             scenarioNameVOButton.Button.onClick.AddListener(PlayScenarioTitleVO);
             scenarioDescVOButton.Button.onClick.AddListener(PlayScenarioDescVO);
+
+            gameEndButton.onClick.AddListener(GameEndButtonClicked);
         }
 
         private void OnDestroy()
@@ -188,6 +192,8 @@ namespace MGEIP.Service
             // VO Buttons
             scenarioNameVOButton.Button.onClick.RemoveAllListeners();
             scenarioDescVOButton.Button.onClick.RemoveAllListeners();
+
+            gameEndButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -478,11 +484,18 @@ namespace MGEIP.Service
 
         #endregion
 
-        public void FadeOut()
+        private void GameEndButtonClicked()
         {
-            blackBG.gameObject.SetActive(true);
-            blackBG.alpha = 0;
-            blackBG.DOFade(1, 0.5f);
+            loadScreenCG.gameObject.SetActive(true);
+            loadScreenCG.alpha = 0;
+            loadScreenLoadingBarFill.fillAmount = 0f;
+
+            Sequence endSequence = DOTween.Sequence();
+
+            endSequence.Append(loadScreenCG.DOFade(1, 0.5f));
+            endSequence.Append(loadScreenLoadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad));
+
+            endSequence.OnComplete(gameService.LoadNextScene);
         }
     }
 }

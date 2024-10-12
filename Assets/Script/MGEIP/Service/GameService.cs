@@ -23,22 +23,11 @@ namespace MGEIP.Service
         {
             DataHandler.InitializeDataHandler(this);
             ScenarioManager.InitializeScenarioManager(this);
-            // GameUIService.GetGameEndButton.gameObject.SetActive(false);
-            GameUIService.GetGameEndButton.onClick.AddListener(OnGameEndButtonClick);
 
             SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
         }
 
-        private void OnGameEndButtonClick()
-        {
-            SoundManagerService.Instance.ReleaseAudio();
-
-            gameUIService.FadeOut();
-
-            Invoke(nameof(LoadNextScene), 2);
-        }
-
-        private void LoadNextScene()
+        public void LoadNextScene()
         {
             SceneManager.LoadScene(2);
         }
