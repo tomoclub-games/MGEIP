@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Script.MGEIP.Service
@@ -21,7 +22,8 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private CanvasGroup instructionBox;
         [SerializeField] private CanvasGroup pageFlipInstructionBox;
         [SerializeField] private List<DragMe> dragMes;
-        [SerializeField] private List<DropMe> dropMes;    
+        [SerializeField] private List<DropMe> dropMes;
+        [SerializeField] private Button endButton;
 
         private List<Sprite> newspaperSprites = new();
 
@@ -45,6 +47,8 @@ namespace Assets.Script.MGEIP.Service
 
             Sprite[] sprites = Resources.LoadAll<Sprite>("Art/EndScreen/");
             newspaperSprites.AddRange(sprites);
+
+            endButton.onClick.AddListener(BackToHomeScreen);
         }
 
         private void OnDestroy()
@@ -52,6 +56,8 @@ namespace Assets.Script.MGEIP.Service
             introNextButton.onClick.RemoveAllListeners();
             nextPageButton.onClick.RemoveAllListeners();
             prevPageButton.onClick.RemoveAllListeners();
+
+            endButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -152,6 +158,11 @@ namespace Assets.Script.MGEIP.Service
         public Sprite GetNewspaperSpriteForScenario(int _scenarioNo)
         {
             return newspaperSprites.Find(sprite => sprite.name == $"sn_{_scenarioNo}_newspaper");
+        }
+
+        public void BackToHomeScreen()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

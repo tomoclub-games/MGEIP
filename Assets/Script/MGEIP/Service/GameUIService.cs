@@ -41,6 +41,9 @@ namespace MGEIP.Service
         [SerializeField] private Sprite selectedOptionConfirmButtonSprite;
         [SerializeField] private Button questionScenePrevButton;
         [SerializeField] private Image[] sliderLabels;
+        [SerializeField] private TMP_Text[] sliderLabelTexts;
+        [SerializeField] private Color selectedSliderLabelTextColor;
+        [SerializeField] private Color deselectedSliderLabelTextColor;
 
         [Header("Options Components")]
         [SerializeField] private GameObject optionPanelGameobject;
@@ -332,9 +335,15 @@ namespace MGEIP.Service
             for (int i = 0; i < sliderLabels.Length; i++)
             {
                 if (i == selectedValue - 1)
+                {
                     sliderLabels[i].sprite = selectedSliderLabelSprite;
+                    sliderLabelTexts[i].color = selectedSliderLabelTextColor;
+                }
                 else
+                {
                     sliderLabels[i].sprite = deselectedSliderLabelSprite;
+                    sliderLabelTexts[i].color = deselectedSliderLabelTextColor;
+                }
             }
 
             sliderArea.sizeDelta = normalSliderSizeDelta;
