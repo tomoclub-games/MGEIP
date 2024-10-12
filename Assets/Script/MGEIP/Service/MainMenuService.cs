@@ -20,6 +20,7 @@ namespace Assets.Script.MGEIP.Service
 
         [Header("Start")]
         [SerializeField] private CanvasGroup beginPanel;
+        [SerializeField] private CanvasGroup gameNamePanel;
         [SerializeField] private Button startMenuNextButton;
         [SerializeField] private GameObject startInstructionBox;
 
@@ -122,6 +123,7 @@ namespace Assets.Script.MGEIP.Service
 
             currentActivePanel = beginPanel;
 
+            gameNamePanel.gameObject.SetActive(false);
             startMenuNextButton.gameObject.SetActive(false);
             startInstructionBox.gameObject.SetActive(false);
             mainMenuAnimation.RevealAnimation();
@@ -394,6 +396,13 @@ namespace Assets.Script.MGEIP.Service
         }
 
         #endregion
+
+        public void AnimateGameName()
+        {
+            gameNamePanel.gameObject.SetActive(true);
+            gameNamePanel.alpha = 0;
+            gameNamePanel.DOFade(1, buttonScaleDuration).SetDelay(1f).OnComplete(AnimateStartButton);
+        }
 
         public void AnimateStartButton()
         {

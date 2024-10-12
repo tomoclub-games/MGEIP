@@ -37,7 +37,7 @@ public class MainMenuAnimation : MonoBehaviour
         }
 
         environmentGO.transform.localScale = Vector3.zero;
-        environmentGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { mainMenuService.AnimateStartButton(); crowsGO.SetActive(true); });
+        environmentGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { mainMenuService.AnimateGameName(); crowsGO.SetActive(true); });
     }
 
     public void StartBoatAnim()
