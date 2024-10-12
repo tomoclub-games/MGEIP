@@ -102,7 +102,7 @@ namespace MGEIP.Scenario.Scenes
         {
             if (isDialogueBoxActive)
             {
-                string dialogueClipName = $"Scenarios/dt_{scenarioNo}_{sceneData.SceneNo}";
+                string dialogueClipName = $"Scenarios/sc_{scenarioNo}/dt_{scenarioNo}_{sceneData.SceneNo}";
                 dialogueVOButton.PlayAudioClip(dialogueClipName);
             }
         }

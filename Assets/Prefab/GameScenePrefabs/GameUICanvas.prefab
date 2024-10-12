@@ -746,7 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2665,6 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 127083315112987936}
   buttonImage: {fileID: 0}
@@ -2863,7 +2864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4759,6 +4760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 4633615957060173235}
   buttonImage: {fileID: 0}
@@ -4920,6 +4922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 5558098489944106581}
   buttonImage: {fileID: 0}
@@ -5536,6 +5539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 293860033683071878}
   buttonImage: {fileID: 0}
@@ -5869,6 +5873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 4454687545497708991}
   buttonImage: {fileID: 0}
@@ -6164,6 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 2274074569425188261}
   buttonImage: {fileID: 0}
@@ -6324,6 +6330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 6006109988149476594}
   buttonImage: {fileID: 0}
@@ -6388,7 +6395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7320,6 +7327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 7167549028230038454}
   buttonImage: {fileID: 0}
@@ -8236,6 +8244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animateOnHover: 1
   hoverScale: {x: 1.2, y: 1.2, z: 1}
+  scaleOnEnable: 0
   hoverImage: {fileID: 0}
   button: {fileID: 5249542977952525372}
   buttonImage: {fileID: 0}
@@ -9368,7 +9377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11672,7 +11681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609376810755034184, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: audioClipName
-      value: harmonyTown
+      value: gt_1
       objectReference: {fileID: 0}
     - target: {fileID: 6609376810755034184, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: audioButtonType

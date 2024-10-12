@@ -179,7 +179,7 @@ namespace MGEIP.Scenario.Scenes
         {
             VOkeywordIndex = optionTexts.FindIndex(i => i == shuffledOptions[_optionNo]);
 
-            string narrationClipName = $"Scenarios/op_{VOkeywordIndex + 1}_{scenarioNo}_{sceneData.SceneNo}";
+            string narrationClipName = $"Scenarios/sc_{scenarioNo}/op_{VOkeywordIndex + 1}_{scenarioNo}_{sceneData.SceneNo}";
             GameUIService.OptionVOButtons[_optionNo].PlayAudioClip(narrationClipName);
         }
     }
