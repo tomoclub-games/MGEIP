@@ -52,6 +52,7 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetPhotoCaptureNarrationBoxActive(isNarrationBoxActive);
             GameUIService.SetPhotoCaptureNarrationText(narrationText);
+            GameUIService.SetPolaroidImage(scenarioNo);
 
             dialogueBox.SetActive(isDialogueBoxActive);
             dialogueText.SetText(dialogue);
