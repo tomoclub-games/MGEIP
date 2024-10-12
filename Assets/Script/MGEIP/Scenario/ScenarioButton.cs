@@ -11,9 +11,11 @@ namespace MGEIP.Scenario
     {
         [SerializeField] private int scenarioNo;
         [SerializeField] private GameObject[] onHoverGOs;
+        [SerializeField] private GameObject lockedImage;
         [SerializeField] private GameObject exclamationMark;
         [SerializeField] private GameObject checkMark;
         [SerializeField] private Vector3 hoveredOnScale;
+        [SerializeField] private bool isScenarioLocked;
 
         private ScenarioManager scenarioManager;
         private bool hasCompleted;
@@ -26,12 +28,15 @@ namespace MGEIP.Scenario
             scenarioManager = _scenarioManager;
             originalScale = transform.localScale;
             hoverScale = originalScale + hoveredOnScale;
-            SetUnchecked();
+            if (isScenarioLocked)
+                SetLocked();
+            else
+                SetUnchecked();
         }
 
         private void OnMouseOver()
         {
-            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted)
+            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted || isScenarioLocked)
                 return;
 
             foreach (GameObject go in onHoverGOs)
@@ -47,7 +52,7 @@ namespace MGEIP.Scenario
 
         private void OnMouseExit()
         {
-            if (hasCompleted)
+            if (hasCompleted || isScenarioLocked)
                 return;
 
             foreach (GameObject go in onHoverGOs)
@@ -65,15 +70,23 @@ namespace MGEIP.Scenario
 
         private void OnMouseDown()
         {
-            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted)
+            if (EventSystem.current.IsPointerOverGameObject() || hasCompleted || isScenarioLocked)
                 return;
 
             SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
             scenarioManager.OnClickScenarioButton(scenarioNo);
         }
 
+        public void SetLocked()
+        {
+            lockedImage.SetActive(true);
+            exclamationMark.SetActive(false);
+            checkMark.SetActive(false);
+        }
+
         public void SetUnchecked()
         {
+            lockedImage.SetActive(false);
             exclamationMark.SetActive(true);
             checkMark.SetActive(false);
         }
@@ -82,6 +95,7 @@ namespace MGEIP.Scenario
         {
             hasCompleted = true;
 
+            lockedImage.SetActive(false);
             exclamationMark.SetActive(false);
             checkMark.SetActive(true);
         }
