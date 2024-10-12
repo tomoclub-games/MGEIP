@@ -13,6 +13,7 @@ namespace MGEIP
     {
         [SerializeField] private bool animateOnHover = true;
         [SerializeField] private Vector3 hoverScale;// = new(1.2f, 1.2f, 1f);
+        [SerializeField] private bool scaleOnEnable;
 
         [Header("References")]
         [SerializeField] private Image hoverImage;
@@ -29,6 +30,15 @@ namespace MGEIP
             hoverScale = new Vector3(originalScale.x + (originalScale.x > 0 ? 0.2f : -0.2f),
                                      originalScale.y + (originalScale.y > 0 ? 0.2f : -0.2f),
                                      originalScale.z);
+        }
+
+        private void OnEnable()
+        {
+            if (scaleOnEnable)
+            {
+                transform.localScale = Vector3.zero;
+                transform.DOScale(originalScale, 1f).SetEase(Ease.OutBack);
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)

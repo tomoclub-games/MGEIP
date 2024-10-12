@@ -354,6 +354,7 @@ namespace MGEIP.Service
             for (int i = 0; i < sliderLabels.Length; i++)
             {
                 sliderLabels[i].sprite = deselectedSliderLabelSprite;
+                sliderLabelTexts[i].color = deselectedSliderLabelTextColor;
             }
 
             sliderArea.sizeDelta = defaultSliderSizeDelta;

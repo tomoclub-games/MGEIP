@@ -16,8 +16,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private CanvasGroup newsPaperPanelGO;
         [SerializeField] private CanvasGroup page1Panel;
         [SerializeField] private CanvasGroup page2Panel;
-        [SerializeField] private Button nextPageButton;
-        [SerializeField] private Button prevPageButton;
+        [SerializeField] private CanvasGroup page3Panel;
         [SerializeField] private CanvasGroup endPanel;
         [SerializeField] private CanvasGroup instructionBox;
         [SerializeField] private CanvasGroup pageFlipInstructionBox;
@@ -28,6 +27,10 @@ namespace Assets.Script.MGEIP.Service
         private List<Sprite> newspaperSprites = new();
 
         private int placedPolaroids;
+        private int currentPageNumber = 1;
+        private int minPages = 1;
+        private int maxPages = 3;
+        private CanvasGroup currentPage;
 
         private void Awake()
         {
@@ -42,8 +45,6 @@ namespace Assets.Script.MGEIP.Service
             }
 
             introNextButton.onClick.AddListener(IntroNextButtonClicked);
-            nextPageButton.onClick.AddListener(NextPageButtonClicked);
-            prevPageButton.onClick.AddListener(PrevPageButtonClicked);
 
             Sprite[] sprites = Resources.LoadAll<Sprite>("Art/EndScreen/");
             newspaperSprites.AddRange(sprites);
@@ -54,8 +55,6 @@ namespace Assets.Script.MGEIP.Service
         private void OnDestroy()
         {
             introNextButton.onClick.RemoveAllListeners();
-            nextPageButton.onClick.RemoveAllListeners();
-            prevPageButton.onClick.RemoveAllListeners();
 
             endButton.onClick.RemoveAllListeners();
         }
@@ -82,6 +81,8 @@ namespace Assets.Script.MGEIP.Service
                 introPanelGO.blocksRaycasts = false;
                 introPanelGO.DOFade(1, 0.5f).OnComplete(() => introPanelGO.blocksRaycasts = true);
             });
+
+            currentPage = page1Panel;
         }
 
         private void IntroNextButtonClicked()
@@ -106,29 +107,46 @@ namespace Assets.Script.MGEIP.Service
             });
         }
 
-        private void NextPageButtonClicked()
+        public void NextPageButtonClicked()
         {
-            page1Panel.blocksRaycasts = false;
-            page1Panel.DOFade(0, 0.5f).OnComplete(() =>
-            {
-                page1Panel.gameObject.SetActive(false);
+            if (currentPageNumber == maxPages)
+                return;
 
-                page2Panel.gameObject.SetActive(true);
-                page2Panel.alpha = 0;
-                page2Panel.DOFade(1, 0.5f).OnComplete(() => page2Panel.blocksRaycasts = true);
-            });
+            currentPageNumber++;
+
+            ShowPage(currentPageNumber);
         }
 
-        private void PrevPageButtonClicked()
+        public void PrevPageButtonClicked()
         {
-            page2Panel.blocksRaycasts = false;
-            page2Panel.DOFade(0, 0.5f).OnComplete(() =>
-            {
-                page2Panel.gameObject.SetActive(false);
+            if (currentPageNumber == minPages)
+                return;
 
-                page1Panel.gameObject.SetActive(true);
-                page1Panel.alpha = 0;
-                page1Panel.DOFade(1, 0.5f).OnComplete(() => page1Panel.blocksRaycasts = true);
+            currentPageNumber--;
+
+            ShowPage(currentPageNumber);
+        }
+
+        private void ShowPage(int _pageNumber)
+        {
+            CanvasGroup newPage = null;
+            if (_pageNumber == 1)
+                newPage = page1Panel;
+            else if (_pageNumber == 2)
+                newPage = page2Panel;
+            else if (_pageNumber == 3)
+                newPage = page3Panel;
+
+            currentPage.blocksRaycasts = false;
+            currentPage.DOFade(0, 0.5f).OnComplete(() =>
+            {
+                currentPage.gameObject.SetActive(false);
+
+                newPage.gameObject.SetActive(true);
+                newPage.alpha = 0;
+                newPage.DOFade(1, 0.5f).OnComplete(() => newPage.blocksRaycasts = true);
+
+                currentPage = newPage;
             });
         }
 
