@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -13,6 +12,12 @@ namespace MGIEP
         public static SoundManagerService Instance;
 
         [SerializeField] private AudioSource voiceOverSource;
+        [SerializeField] private AudioSource musicSource;
+        [SerializeField] private AudioSource sceneSoundSource;
+        [SerializeField] private AudioSource sfxSource;
+
+        [Header("SFX Clips")]
+        [SerializeField] private List<SFX> sfxSounds;
 
         private bool isVoiceOverCancelled;
 
@@ -24,6 +29,15 @@ namespace MGIEP
         public UnityAction<string> OnPlayVoiceOver;
         public UnityAction OnStopVoiceOver;
         public UnityAction OnVoiceOverComplete;
+
+        public UnityAction<string> OnPlayMusic;
+        public UnityAction OnStopMusic;
+
+        public UnityAction<string> OnPlaySceneSound;
+        public UnityAction OnStopSceneSound;
+
+        public UnityAction<SFXType> OnPlaySFX;
+        public UnityAction OnStopSFX;
 
         public bool IsVoiceOverCancelled => isVoiceOverCancelled;
 
@@ -37,12 +51,28 @@ namespace MGIEP
 
             OnPlayVoiceOver += PlayVoiceOver;
             OnStopVoiceOver += StopVoiceOver;
+
+            OnPlayMusic += PlayMusic;
+            OnStopMusic += StopMusic;
+
+            OnPlaySceneSound += PlaySceneSound;
+            OnStopSceneSound += StopSceneSound;
+
+            OnPlaySFX += PlaySFX;
         }
 
         private void OnDestroy()
         {
             OnPlayVoiceOver -= PlayVoiceOver;
             OnStopVoiceOver -= StopVoiceOver;
+
+            OnPlayMusic -= PlayMusic;
+            OnStopMusic -= StopMusic;
+
+            OnPlaySceneSound -= PlaySceneSound;
+            OnStopSceneSound -= StopSceneSound;
+
+            OnPlaySFX -= PlaySFX;
         }
 
         #region Voice Over
@@ -51,11 +81,10 @@ namespace MGIEP
         {
             isVoiceOverCancelled = false;
 
-            AudioClip audioClip = FindVoiceOverByName("Audio/VoiceOvers/" + _audioClipName);
+            AudioClip audioClip = FindAudioClipByName("Audio/VoiceOvers/" + _audioClipName);
 
             if (audioClip == null)
             {
-                Debug.LogWarning("Audio clip not found! " + _audioClipName);
                 OnVoiceOverComplete?.Invoke();
                 return;
             }
@@ -98,20 +127,6 @@ namespace MGIEP
         {
             voiceOverSource.Stop();
             isVoiceOverCancelled = true;
-        }
-
-        public AudioClip FindVoiceOverByName(string clipName)
-        {
-            AudioClip audioClip = Resources.Load<AudioClip>(clipName);
-            return audioClip;
-
-            /*
-            if (loadedClips != null)
-            {
-                return loadedClips.FirstOrDefault(clip => clip.name.Equals(clipName, System.StringComparison.OrdinalIgnoreCase));
-            }
-            return null;
-            */
         }
 
         #endregion
@@ -168,5 +183,92 @@ namespace MGIEP
         }
 
         #endregion
+
+        #region Music
+
+        private void PlayMusic(string _musicName)
+        {
+            AudioClip audioClip = FindAudioClipByName("Audio/Music/" + _musicName);
+
+            if (audioClip == null)
+                return;
+
+            musicSource.clip = audioClip;
+            musicSource.Play();
+        }
+
+        private void StopMusic()
+        {
+            musicSource.Stop();
+            musicSource.clip = null;
+        }
+
+        #endregion
+
+        #region SFX
+
+        private void PlaySFX(SFXType sFXType)
+        {
+            AudioClip audioClip = GetAudioForSFXType(sFXType);
+
+            if (audioClip == null)
+                return;
+
+            sfxSource.PlayOneShot(audioClip);
+        }
+
+        #endregion
+
+        #region Scene sound
+
+        private void PlaySceneSound(string _sceneSoundName)
+        {
+            AudioClip audioClip = FindAudioClipByName("Audio/SceneSound/" + _sceneSoundName);
+
+            if (audioClip == null)
+                return;
+
+            sceneSoundSource.clip = audioClip;
+            sceneSoundSource.Play();
+        }
+
+        private void StopSceneSound()
+        {
+            sceneSoundSource.Stop();
+            sceneSoundSource.clip = null;
+        }
+
+        #endregion
+
+        private AudioClip FindAudioClipByName(string clipName)
+        {
+            AudioClip audioClip = Resources.Load<AudioClip>(clipName);
+
+            if (audioClip == null)
+            {
+                Debug.Log("Audio clip not found! : " + clipName);
+                return null;
+            }
+
+            return audioClip;
+        }
+
+        private AudioClip GetAudioForSFXType(SFXType sFXType)
+        {
+            return sfxSounds.Find(id => id.sfxType == sFXType).audioClip;
+        }
+    }
+
+    public enum SFXType
+    {
+        nextButton,
+        endButton
+    }
+
+    [Serializable]
+    public class SFX
+    {
+        public SFXType sfxType;
+        public AudioClip audioClip;
     }
 }
