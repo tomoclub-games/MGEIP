@@ -83,7 +83,7 @@ namespace MGEIP.Scenario.Scenes
                 Debug.Log("PlayQuestionVO : HAS CUSTOM VO");
 
                 string questionClipName_1 = $"Scenarios/sc_{scenarioNo}/qt_{scenarioNo}_{sceneData.SceneNo}_1";
-                string questionClipName_2 = $"Scenarios/sc_{scenarioNo}/kw_{scenario.EmotionIndex + 1}_{scenarioNo}";
+                string questionClipName_2 = $"Scenarios/sc_{scenarioNo}/kw_{scenarioNo}_{scenario.EmotionIndex + 1}";
                 string questionClipName_3 = $"Scenarios/sc_{scenarioNo}/qt_{scenarioNo}_{sceneData.SceneNo}_2";
 
                 if (audioSequenceCoroutine != null)

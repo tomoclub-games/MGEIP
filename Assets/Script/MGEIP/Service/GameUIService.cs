@@ -386,7 +386,7 @@ namespace MGEIP.Service
 
         public void SetPolaroidImage(int scenarioNo)
         {
-            string polaroidPath = $"Art/EndScreen/sn_{scenarioNo}_polaroid";
+            string polaroidPath = $"Art/PhotoCapture/sn_{scenarioNo}_polaroid";
             Sprite polaroid = Resources.Load<Sprite>(polaroidPath);
 
             if (polaroid == null)
