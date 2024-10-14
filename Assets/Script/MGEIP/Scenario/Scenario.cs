@@ -170,8 +170,7 @@ namespace MGEIP.Scenario
 
                 isScenarioCompleted = true;
 
-                // Disabled temporarily
-                // scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
+                scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
 
                 gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].PrintScenarioInfo();
 
@@ -180,6 +179,7 @@ namespace MGEIP.Scenario
 
                 GameUIService.MapUI.SetActive(true);
 
+                SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
                 SoundManagerService.Instance.OnPlayMusic?.Invoke("BGmusic");
             }
             else

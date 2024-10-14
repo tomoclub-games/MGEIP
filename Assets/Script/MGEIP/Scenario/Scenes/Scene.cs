@@ -31,6 +31,8 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.QuestionSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
             GameUIService.EndSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
             GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+
+            SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
         }
 
         public virtual void ExitScene()

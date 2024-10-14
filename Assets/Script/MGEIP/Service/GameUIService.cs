@@ -410,14 +410,14 @@ namespace MGEIP.Service
             polaroidImage.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
             polaroidImage.transform.localRotation = Quaternion.identity;
 
-            shutterSequence.Append(topBlackBar.DOLocalMoveY(270f, 0.5f)).Join(bottomBlackBar.DOLocalMoveY(-270f, 0.5f));
+            shutterSequence.Append(topBlackBar.DOLocalMoveY(270f, 0.25f).SetEase(Ease.Linear)).Join(bottomBlackBar.DOLocalMoveY(-270f, 0.25f).SetEase(Ease.Linear));
             shutterSequence.AppendCallback(() =>
             {
                 cameraUIGameObject.SetActive(false);
                 postCameraUIGameObject.SetActive(true);
                 OnPhotoCapture?.Invoke();
             });
-            shutterSequence.Append(topBlackBar.DOLocalMoveY(850f, 0.5f)).Join(bottomBlackBar.DOLocalMoveY(-850f, 0.5f))
+            shutterSequence.Append(topBlackBar.DOLocalMoveY(850f, 0.25f).SetEase(Ease.Linear)).Join(bottomBlackBar.DOLocalMoveY(-850f, 0.25f).SetEase(Ease.Linear))
             .Join(polaroidImage.transform.DOScale(Vector3.one, 2f)).Join(polaroidImage.transform.DOLocalRotate(customPolaroidRotation, 2f));
         }
 
