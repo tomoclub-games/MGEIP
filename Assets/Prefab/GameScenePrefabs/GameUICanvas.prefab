@@ -9123,9 +9123,9 @@ MonoBehaviour:
   sliderPanelGameobject: {fileID: 7994835549057463044}
   answerSlider: {fileID: 6849112868010265852}
   ceLabelGameobject: {fileID: 4385233693151971926}
-  aeLabelGameobject: {fileID: 651827649284058706}
-  aeLowerLabel: {fileID: 4352978586712438617}
-  aeHigherLabel: {fileID: 6658100553308299848}
+  aeLabelGameobject: {fileID: 6674010132167336157}
+  aeLowerLabel: {fileID: 1058258506175446296}
+  aeHigherLabel: {fileID: 4799580263112254074}
   sliderArea: {fileID: 4995722145772028586}
   defaultSliderSizeDelta: {x: 1655, y: 50}
   normalSliderSizeDelta: {x: 1455, y: 50}
@@ -10764,14 +10764,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &651827649284058706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1585507190100103799, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
-  m_PrefabInstance: {fileID: 2236912051322895397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &778229398123062460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1569443082573715609, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+  m_PrefabInstance: {fileID: 2236912051322895397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1058258506175446296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1271329189856493885, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
   m_PrefabInstance: {fileID: 2236912051322895397}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -10927,17 +10933,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2686670607661251959, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
   m_PrefabInstance: {fileID: 2236912051322895397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4352978586712438617 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2550155998610606972, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
-  m_PrefabInstance: {fileID: 2236912051322895397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4385233693151971926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2580669685477537395, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
@@ -10974,6 +10969,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4799580263112254074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6742050791570021983, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+  m_PrefabInstance: {fileID: 2236912051322895397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4843841486361248731 stripped
@@ -11058,17 +11064,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6658100553308299848 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4858619312864353901, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
+--- !u!1 &6674010132167336157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4870013468206767352, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
   m_PrefabInstance: {fileID: 2236912051322895397}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6849112868010265852 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4613925127429239001, guid: 11f5f80dedb85e149955b5bdad0ab8e2, type: 3}
