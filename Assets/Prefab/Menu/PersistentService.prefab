@@ -181,7 +181,9 @@ MonoBehaviour:
   musicSource: {fileID: 42967422361624546}
   sceneSoundSource: {fileID: 7047913881246634174}
   sfxSource: {fileID: 2860880139756122192}
-  sfxSounds: []
+  sfxSounds:
+  - sfxType: 0
+    audioClip: {fileID: 8300000, guid: 11666782b1b620e4b9c2bf735d35ed9a, type: 3}
 --- !u!114 &3536099346461238289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,9 +497,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

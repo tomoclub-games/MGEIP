@@ -143,6 +143,8 @@ namespace Assets.Script.MGEIP.Service
             SwitchToStory();
 
             SetupMainMenuTexts();
+
+            SoundManagerService.Instance.OnPlayMusic?.Invoke("BGmusic");
         }
 
         #region Button functions

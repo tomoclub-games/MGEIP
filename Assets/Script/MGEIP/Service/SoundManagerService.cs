@@ -261,8 +261,7 @@ namespace MGIEP
 
     public enum SFXType
     {
-        nextButton,
-        endButton
+        shutterButton
     }
 
     [Serializable]

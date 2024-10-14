@@ -77,6 +77,8 @@ namespace MGEIP.Scenario
 
         public void CreateScene()
         {
+            SoundManagerService.Instance.OnStopMusic?.Invoke();
+
             List<SceneData> sceneDataList = new List<SceneData>();
             List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
 
@@ -177,6 +179,8 @@ namespace MGEIP.Scenario
                 GameUIService.ScenarioInfoCloseButtonClick();
 
                 GameUIService.MapUI.SetActive(true);
+
+                SoundManagerService.Instance.OnPlayMusic?.Invoke("BGmusic");
             }
             else
             {

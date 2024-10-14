@@ -28,7 +28,12 @@ public class AudioClipButton : MonoBehaviour
 
     private void OnDestroy()
     {
-        button.onClick.RemoveAllListeners();
+        if (audioButtonType == AudioButtonType.Custom)
+            return;
+        else if (audioButtonType == AudioButtonType.StopClip)
+            button.onClick.RemoveListener(StopAudioClip);
+        else
+            button.onClick.RemoveListener(PlayAudioClip);
     }
 
     private void PlayAudioClip()
