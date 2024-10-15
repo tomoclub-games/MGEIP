@@ -44,22 +44,22 @@ namespace MGEIP.Scenario.Scenes
             MCQQuestionSceneInfo();
         }
 
-        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService)
+        public override void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioInfo scenarioInfo)
         {
-            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService);
+            base.InitializeQuestionScene(scenarioNo, sceneData, scenario, gameService, scenarioInfo);
 
             multipleChoiceQuestion = new MultipleChoiceQuestion();
 
             multipleChoiceQuestion.sceneNo = sceneData.SceneNo;
-            multipleChoiceQuestion.questionText = sceneData.QuestionText;
+            multipleChoiceQuestion.questionText = UtilityService.RemoveRichTextTags(sceneData.QuestionText);
 
-            multipleChoiceQuestion.options.Add(sceneData.Option1);
-            multipleChoiceQuestion.options.Add(sceneData.Option2);
-            multipleChoiceQuestion.options.Add(sceneData.Option3);
-            multipleChoiceQuestion.options.Add(sceneData.Option4);
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option1));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option2));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option3));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option4));
 
-            gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Add(multipleChoiceQuestion);
-            questionNo = gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].questions.Count;
+            this.scenarioInfo.questions.Add(multipleChoiceQuestion);
+            questionNo = this.scenarioInfo.questions.Count;
         }
 
         public void SetMCQQuestionSceneInfo()
@@ -142,7 +142,7 @@ namespace MGEIP.Scenario.Scenes
         {
             selectedAnswer = currentAnswer;
 
-            multipleChoiceQuestion.selectedAnswer = shuffledOptions[selectedAnswer];
+            multipleChoiceQuestion.selectedAnswer = UtilityService.RemoveRichTextTags(shuffledOptions[selectedAnswer]);
 
             if (sceneData.UseKeyword)
             {

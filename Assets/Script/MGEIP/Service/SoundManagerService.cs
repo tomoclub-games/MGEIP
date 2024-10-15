@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.ResourceManagement.AsyncOperations;
+// using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace MGIEP
 {
@@ -21,8 +21,8 @@ namespace MGIEP
 
         private bool isVoiceOverCancelled;
 
-        private IList<AudioClip> loadedClips = new List<AudioClip>();
-        private Stack<AsyncOperationHandle<IList<AudioClip>>> handles = new();
+        // private IList<AudioClip> loadedClips = new List<AudioClip>();
+        // private Stack<AsyncOperationHandle<IList<AudioClip>>> handles = new();
 
         private Coroutine voiceOverCoroutine;
 
@@ -131,21 +131,20 @@ namespace MGIEP
 
         #endregion
 
+        /*
+
         #region Addressables
 
         public void LoadAudio(string addressableGroupLabel)
         {
-            /*
             AsyncOperationHandle<IList<AudioClip>> handle = Addressables.LoadAssetsAsync<AudioClip>(addressableGroupLabel, null);
             handles.Push(handle);
 
             handle.Completed += OnSceneAudioLoaded;
-            */
         }
 
         public void OnSceneAudioLoaded(AsyncOperationHandle<IList<AudioClip>> operationHandle)
         {
-            /*
             if (operationHandle.Status == AsyncOperationStatus.Succeeded)
             {
                 Debug.Log("Loaded new audio clips");
@@ -155,12 +154,10 @@ namespace MGIEP
             {
                 Debug.LogError($"Failed to load Addressable group. Status: {operationHandle.Status}, Error: {operationHandle.OperationException}");
             }
-            */
         }
 
         public void ReleaseAudio()
         {
-            /*
             if (handles.Count < 1)
                 return;
 
@@ -179,10 +176,10 @@ namespace MGIEP
                 Addressables.Release(latestHandle);
                 Debug.Log("Released audio clips");
             }
-            */
         }
 
-        #endregion
+                #endregion
+        */
 
         #region Music
 

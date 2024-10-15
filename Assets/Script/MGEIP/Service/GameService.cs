@@ -21,10 +21,9 @@ namespace MGEIP.Service
 
         private void Start()
         {
-            DataHandler.InitializeDataHandler(this);
             ScenarioManager.InitializeScenarioManager(this);
 
-            SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
+            // SoundManagerService.Instance.LoadAudio("GameSceneAudioClips");
         }
 
         public void LoadNextScene()

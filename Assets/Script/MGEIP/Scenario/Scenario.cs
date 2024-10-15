@@ -4,6 +4,7 @@ using MGEIP.GameData.SceneData;
 using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
 using MGIEP;
+using MGIEP.Data;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,7 @@ namespace MGEIP.Scenario
         [SerializeField] private List<Scene> scenes = new();
 
         private ScenarioManager scenarioManager;
+        private ScenarioInfo scenarioInfo;
 
         private string emotionKeyword;
         private int emotionIndex = -1;
@@ -57,6 +59,8 @@ namespace MGEIP.Scenario
             this.scenarioName = scenarioName;
             this.gameService = gameService;
             this.scenarioManager = scenarioManager;
+
+            scenarioInfo = new ScenarioInfo(scenarioNo, scenarioName);
 
             /*
             scenarioInfo.SetActive(false);
@@ -115,7 +119,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.MCQQuestion)
                         {
                             MCQQuestionScene mcqQuestionScene = scene.GetComponent<MCQQuestionScene>();
-                            mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
                             mcqQuestionScene.SetMCQQuestionSceneInfo();
                             mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(mcqQuestionScene);
@@ -123,7 +127,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.CESliderQuestion)
                         {
                             CESliderQuestionScene ceSliderQuestionScene = scene.GetComponent<CESliderQuestionScene>();
-                            ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
                             ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
                             ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(ceSliderQuestionScene);
@@ -131,7 +135,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.AESliderQuestion)
                         {
                             AESliderQuestionScene aeSliderQuestionScene = scene.GetComponent<AESliderQuestionScene>();
-                            aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService);
+                            aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
                             aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
                             aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(aeSliderQuestionScene);
@@ -166,13 +170,9 @@ namespace MGEIP.Scenario
                 }
                 scenes.Clear();
 
-                SoundManagerService.Instance.ReleaseAudio();
+                // SoundManagerService.Instance.ReleaseAudio();
 
-                isScenarioCompleted = true;
-
-                scenarioManager.SetCurrentScenarioComplete(ScenarioNo);
-
-                gameService.DataHandler.MGIEPData.scenarioList[scenarioNo - 1].PrintScenarioInfo();
+                SetScenarioComplete();
 
                 // Close any open scenario infos
                 GameUIService.ScenarioInfoCloseButtonClick();
@@ -238,6 +238,18 @@ namespace MGEIP.Scenario
                 // Call the EnterScene method after the fade completes
                 scenes[currentSceneIndex].EnterScene();
             });*/
+        }
+
+        public void SetScenarioComplete()
+        {
+            isScenarioCompleted = true;
+
+            scenarioManager.SetScenarioComplete(ScenarioNo);
+
+            DataHandler.Instance.MGIEPData.completedScenarios[scenarioNo - 1] = true;
+            DataHandler.Instance.MGIEPData.scenarioList.Add(scenarioInfo);
+
+            DataHandler.Instance.SendMGIEPData();
         }
 
         private void SetUIForScene(Scene scene)
