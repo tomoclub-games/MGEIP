@@ -137,7 +137,6 @@ namespace Assets.Script.MGEIP.Service
             gameNamePanel.gameObject.SetActive(false);
             startMenuNextButton.gameObject.SetActive(false);
             startInstructionBox.gameObject.SetActive(false);
-            mainMenuAnimation.RevealAnimation();
 
             subPanelViewed = new bool[subPanelParent.childCount];
             for (int i = 0; i < subPanelParent.childCount; i++)
@@ -471,7 +470,7 @@ namespace Assets.Script.MGEIP.Service
 
             loginPanel.SetActive(false);
 
-            AnimateStartButton();
+            mainMenuAnimation.RevealAnimation();
         }
 
         #endregion

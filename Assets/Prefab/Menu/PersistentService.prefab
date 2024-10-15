@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 8115764286539684367}
   - component: {fileID: 1302327412815687624}
   - component: {fileID: 3536099346461238289}
+  - component: {fileID: 6841400944866058986}
   m_Layer: 0
   m_Name: PersistentService
   m_TagString: Untagged
@@ -197,6 +198,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionDataContainer: {fileID: 11400000, guid: 3c162e6f885749a4fa2d95248e670672, type: 2}
+--- !u!114 &6841400944866058986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113791411196690746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c18f7f79c1979148a6124b639ed69ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attemptNo: 0
+  mgiepData:
+    playerName: 
+    attemptNo: 0
+    completedScenarios: 
+    scenarioList: []
 --- !u!1 &6348300558177098461
 GameObject:
   m_ObjectHideFlags: 0
