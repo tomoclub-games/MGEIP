@@ -60,6 +60,8 @@ namespace MGEIP.Service
         [SerializeField] private RectTransform sliderArea;
         [SerializeField] private Vector2 defaultSliderSizeDelta;
         [SerializeField] private Vector2 normalSliderSizeDelta;
+        [SerializeField] private RectTransform sliderHandle;
+        [SerializeField] private Vector3 sliderDefaultAnchoredPosition;
 
         [Header("Photo Capture Scene Components")]
         [SerializeField] private GameObject photoCaptureSceneUIGameobject;
@@ -346,7 +348,7 @@ namespace MGEIP.Service
                 }
             }
 
-            sliderArea.sizeDelta = normalSliderSizeDelta;
+            sliderHandle.anchoredPosition = Vector3.zero;
         }
 
         public void ResetSlider()
@@ -357,7 +359,7 @@ namespace MGEIP.Service
                 sliderLabelTexts[i].color = deselectedSliderLabelTextColor;
             }
 
-            sliderArea.sizeDelta = defaultSliderSizeDelta;
+            sliderHandle.anchoredPosition = sliderDefaultAnchoredPosition;
         }
         #endregion
 
