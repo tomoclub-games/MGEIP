@@ -18,7 +18,7 @@ namespace MGIEP.Data
 
         public MGIEPData MGIEPData => mgiepData;
 
-        public UnityAction OnDataReady;
+        public UnityAction<LoginType> OnPlayerLogin;
         public UnityAction<bool> OnDataUploaded;
 
         private void Awake()
@@ -72,8 +72,6 @@ namespace MGIEP.Data
                     mgiepData = result;
 
                     CheckForNewAttempt();
-
-                    OnDataReady?.Invoke();
                 }
                 else
                 {
@@ -81,7 +79,7 @@ namespace MGIEP.Data
 
                     mgiepData = new MGIEPData(playerName);
 
-                    OnDataReady?.Invoke();
+                    OnPlayerLogin?.Invoke(LoginType.newPlayer);
                 }
             }));
         }
@@ -109,6 +107,12 @@ namespace MGIEP.Data
                 Debug.Log("New attempt no : " + newMgiepData.attemptNo);
 
                 mgiepData = newMgiepData;
+
+                OnPlayerLogin?.Invoke(LoginType.newAttempt);
+            }
+            else
+            {
+                OnPlayerLogin?.Invoke(LoginType.continueAttempt);
             }
         }
 
@@ -189,5 +193,12 @@ namespace MGIEP.Data
         public bool success;
         public string error;
         public T data;
+    }
+
+    public enum LoginType
+    {
+        newPlayer,
+        continueAttempt,
+        newAttempt
     }
 }

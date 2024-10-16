@@ -71,14 +71,26 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private int tutorialSlideCount = 7;
 
         [Header("Login panel")]
-        [SerializeField] private GameObject loginPanel;
+        [SerializeField] private CanvasGroup loginPanel;
         [SerializeField] private TMP_InputField playerNameInput;
         [SerializeField] private Button loginButton;
         [SerializeField] private TMP_Text logLabel;
 
+        [Header("Welcome Back Panel")]
+        [SerializeField] private CanvasGroup welcomeBackPanel;
+        [SerializeField] private TMP_Text welcomeBackLabel;
+        [SerializeField] private Button welcomeBackStartButton;
+        [SerializeField] private Button skipTutorialButton;
+        [SerializeField] private CanvasGroup welcomeBackSubPanel;
+        [SerializeField] private CanvasGroup confirmSubPanel;
+        [SerializeField] private Button confirmYesButton;
+        [SerializeField] private Button confirmNoButton;
+
         private int currentSubPanelIndex = 0;
         private bool isStoryPanelActive;
         private bool[] subPanelViewed;
+
+        private LoginType loginType;
 
         private Image storyTabImage;
         private Image tutorialTabImage;
@@ -110,6 +122,11 @@ namespace Assets.Script.MGEIP.Service
 
             storyTabImage = storyTabButton.GetComponent<Image>();
             tutorialTabImage = tutorialTabButton.GetComponent<Image>();
+
+            welcomeBackStartButton.onClick.AddListener(WelcomeBackStartClicked);
+            skipTutorialButton.onClick.AddListener(SkipTutorialClicked);
+            confirmYesButton.onClick.AddListener(SkipTutorialYes);
+            confirmNoButton.onClick.AddListener(SkipTutorialNo);
         }
 
         private void OnDestroy()
@@ -126,6 +143,11 @@ namespace Assets.Script.MGEIP.Service
             tutorialTabButton.onClick.RemoveAllListeners();
 
             loginButton.onClick.RemoveAllListeners();
+
+            welcomeBackStartButton.onClick.RemoveListener(WelcomeBackStartClicked);
+            skipTutorialButton.onClick.RemoveListener(SkipTutorialClicked);
+            confirmYesButton.onClick.RemoveListener(SkipTutorialYes);
+            confirmNoButton.onClick.RemoveListener(SkipTutorialNo);
         }
 
         private void Start()
@@ -413,7 +435,23 @@ namespace Assets.Script.MGEIP.Service
         {
             gameNamePanel.gameObject.SetActive(true);
             gameNamePanel.alpha = 0;
-            gameNamePanel.DOFade(1, buttonScaleDuration).SetDelay(1f).OnComplete(AnimateStartButton);
+            gameNamePanel.DOFade(1, buttonScaleDuration).SetDelay(1f).OnComplete(CheckForWelcome);
+        }
+
+        private void CheckForWelcome()
+        {
+            if (loginType == LoginType.newPlayer)
+            {
+                AnimateStartButton();
+                return;
+            }
+
+            if (loginType == LoginType.continueAttempt)
+                welcomeBackLabel.text = "Continue where you left off in the previous session";
+            else
+                welcomeBackLabel.text = "Start a new assessment session";
+
+            AnimateWelcomeBackPanel();
         }
 
         public void AnimateStartButton()
@@ -461,16 +499,70 @@ namespace Assets.Script.MGEIP.Service
             DataHandler.Instance.GetMGIEPData(playerNameInput.text);
             logLabel.gameObject.SetActive(false);
 
-            DataHandler.Instance.OnDataReady += LoginSuccess;
+            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
         }
 
-        private void LoginSuccess()
+        private void LoginSuccess(LoginType _loginType)
         {
-            DataHandler.Instance.OnDataReady -= LoginSuccess;
+            loginType = _loginType;
 
-            loginPanel.SetActive(false);
+            DataHandler.Instance.OnPlayerLogin -= LoginSuccess;
+
+            loginPanel.DOFade(0, 0.5f).OnComplete(() => loginPanel.gameObject.SetActive(false));
+            loginPanel.blocksRaycasts = false;
 
             mainMenuAnimation.RevealAnimation();
+        }
+
+        #endregion
+
+        #region Welcome Back
+
+        private void AnimateWelcomeBackPanel()
+        {
+            welcomeBackPanel.gameObject.SetActive(true);
+            welcomeBackPanel.alpha = 0;
+
+            welcomeBackPanel.DOFade(1, 0.5f);
+        }
+
+        private void CloseWelcomeBackPanel()
+        {
+            welcomeBackPanel.DOFade(0, 0.5f).OnComplete(() => welcomeBackPanel.gameObject.SetActive(false));
+        }
+
+        private void WelcomeBackStartClicked()
+        {
+            CloseWelcomeBackPanel();
+
+            NextButtonClicked();
+        }
+
+        private void SkipTutorialClicked()
+        {
+            welcomeBackSubPanel.blocksRaycasts = false;
+            welcomeBackSubPanel.DOFade(0, 0.5f).OnComplete(() => welcomeBackSubPanel.gameObject.SetActive(false));
+
+            confirmSubPanel.gameObject.SetActive(true);
+            confirmSubPanel.alpha = 0;
+            confirmSubPanel.blocksRaycasts = false;
+            confirmSubPanel.DOFade(1, 0.5f).OnComplete(() => confirmSubPanel.blocksRaycasts = true);
+        }
+
+        private void SkipTutorialYes()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        private void SkipTutorialNo()
+        {
+            confirmSubPanel.blocksRaycasts = false;
+            confirmSubPanel.DOFade(0, 0.5f).OnComplete(() => confirmSubPanel.gameObject.SetActive(false));
+
+            welcomeBackSubPanel.gameObject.SetActive(true);
+            welcomeBackSubPanel.alpha = 0;
+            welcomeBackSubPanel.blocksRaycasts = false;
+            welcomeBackSubPanel.DOFade(1, 0.5f).OnComplete(() => welcomeBackSubPanel.blocksRaycasts = true);
         }
 
         #endregion
