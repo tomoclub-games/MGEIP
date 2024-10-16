@@ -250,6 +250,18 @@ namespace MGEIP.Scenario
             DataHandler.Instance.MGIEPData.scenarioList.Add(scenarioInfo);
 
             DataHandler.Instance.SendMGIEPData();
+
+            DataHandler.Instance.OnDataUploaded += DataSentResult;
+        }
+
+        private void DataSentResult(bool dataSent)
+        {
+            if (dataSent)
+                GameUIService.AnimateSaveToast();
+            else
+                GameUIService.AnimateSaveErrorToast();
+
+            DataHandler.Instance.OnDataUploaded -= DataSentResult;
         }
 
         private void SetUIForScene(Scene scene)

@@ -19,6 +19,7 @@ namespace MGIEP.Data
         public MGIEPData MGIEPData => mgiepData;
 
         public UnityAction OnDataReady;
+        public UnityAction<bool> OnDataUploaded;
 
         private void Awake()
         {
@@ -43,10 +44,12 @@ namespace MGIEP.Data
                 if (result)
                 {
                     Debug.Log("Data successfully uploaded.");
+                    OnDataUploaded?.Invoke(true);
                 }
                 else
                 {
                     Debug.LogError("Failed to upload data.");
+                    OnDataUploaded?.Invoke(false);
                 }
             }));
         }

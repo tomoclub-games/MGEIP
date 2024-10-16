@@ -15,6 +15,8 @@ namespace MGEIP.Service
         public Sprite tickSprite;
         public GameService gameService;
         [SerializeField] private Button gameEndButton;
+        [SerializeField] private Transform saveProgressToast;
+        [SerializeField] private Transform saveErrorToast;
 
         [Header("Start Scene Components")]
         [SerializeField] private GameObject startSceneUIGameobject;
@@ -508,6 +510,18 @@ namespace MGEIP.Service
             endSequence.Append(loadScreenLoadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad));
 
             endSequence.OnComplete(gameService.LoadNextScene);
+        }
+
+        public void AnimateSaveToast()
+        {
+            saveProgressToast.DOLocalMoveY(480, 1f);
+            saveProgressToast.DOLocalMoveY(600, 1f).SetDelay(4f);
+        }
+
+        public void AnimateSaveErrorToast()
+        {
+            saveErrorToast.DOLocalMoveY(480, 1f);
+            saveErrorToast.DOLocalMoveY(600, 1f).SetDelay(4f);
         }
     }
 }
