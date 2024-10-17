@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
+using System.Runtime.InteropServices;
 
 namespace MGIEP.Data
 {
@@ -12,22 +13,67 @@ namespace MGIEP.Data
     {
         public static DataHandler Instance;
 
-        [SerializeField] private int attemptNo;
+        [DllImport("__Internal")]
+        private static extern System.IntPtr GetURLParameter(string paramName);
+
+        [DllImport("__Internal")]
+        private static extern void FreeMemory(System.IntPtr ptr);
 
         public MGIEPData mgiepData;
 
         public MGIEPData MGIEPData => mgiepData;
 
+        public UnityAction OnLoginRequested;
         public UnityAction<LoginType> OnPlayerLogin;
         public UnityAction<bool> OnDataUploaded;
 
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;
+                Destroy(gameObject);
             }
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+
+        public void Start()
+        {
+            string loginToken = null;
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            // Get the pointer to the URL parameter
+            System.IntPtr urlParamPtr = GetURLParameter("loginToken");
+
+            // Check if the pointer is valid
+            if (urlParamPtr != System.IntPtr.Zero)
+            {
+                // Convert the pointer to a string
+                loginToken = Marshal.PtrToStringAuto(urlParamPtr);
+                Debug.Log("Login Token: " + loginToken);
+
+                // Free the allocated memory on the JavaScript side
+                FreeMemory(urlParamPtr);
+            }
+            else
+            {
+                Debug.Log("Login token not found in the URL.");
+            }
+#else
+            Debug.Log("Running outside WebGL. No URL parameter.");
+#endif
+
+            if (loginToken == null)
+            {
+                Debug.LogWarning("Error finding parameter 'loginToken'");
+                return;
+            }
+
+            Debug.Log("Trying to login!");
+            GetMGIEPData(loginToken);
         }
 
         [ContextMenu("Get MGIEP Data")]
@@ -113,6 +159,8 @@ namespace MGIEP.Data
             else
             {
                 OnPlayerLogin?.Invoke(LoginType.continueAttempt);
+
+                Debug.Log("Continue attempt!");
             }
         }
 
@@ -132,7 +180,6 @@ namespace MGIEP.Data
                 else
                 {
                     string jsonResponse = request.downloadHandler.text;
-                    Debug.Log("Response from server: " + jsonResponse);
 
                     // Deserialize the response into MGIEPData object
                     var responseObj = JsonConvert.DeserializeObject<ServerResponse<MGIEPData>>(jsonResponse);

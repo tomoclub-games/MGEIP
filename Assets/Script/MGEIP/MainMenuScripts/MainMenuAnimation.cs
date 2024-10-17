@@ -23,6 +23,7 @@ public class MainMenuAnimation : MonoBehaviour
     public void RevealAnimation()
     {
         crowsGO.SetActive(false);
+        boatAnimator.enabled = false;
 
         foreach (GameObject cloud in leftClouds)
         {
@@ -37,11 +38,6 @@ public class MainMenuAnimation : MonoBehaviour
         }
 
         environmentGO.transform.localScale = Vector3.zero;
-        environmentGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { mainMenuService.AnimateGameName(); crowsGO.SetActive(true); });
-    }
-
-    public void StartBoatAnim()
-    {
-        boatAnimator.enabled = true;
+        environmentGO.transform.DOScale(Vector3.one, mapAnimationDuration).SetEase(Ease.OutSine).SetDelay(mapScaleDelay).OnComplete(() => { mainMenuService.AnimateGameName(); crowsGO.SetActive(true); boatAnimator.enabled = true; });
     }
 }

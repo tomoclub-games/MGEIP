@@ -85,6 +85,8 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private CanvasGroup confirmSubPanel;
         [SerializeField] private Button confirmYesButton;
         [SerializeField] private Button confirmNoButton;
+        [SerializeField] private CanvasGroup confirmLoadingSubPanel;
+        [SerializeField] private Image confirmLoadingBarFill;
 
         private int currentSubPanelIndex = 0;
         private bool isStoryPanelActive;
@@ -153,6 +155,9 @@ namespace Assets.Script.MGEIP.Service
         private void Start()
         {
             // SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
+
+            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
+            Debug.Log("Sub to OnPlayerLogin!");
 
             currentActivePanel = beginPanel;
 
@@ -413,12 +418,12 @@ namespace Assets.Script.MGEIP.Service
 
         private void InitiateLoading()
         {
-            loadingBarFill.fillAmount = 0f;
-            loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
+            // loadingBarFill.fillAmount = 0f;
+            // loadingBarFill.DOFillAmount(1f, 3f).SetEase(Ease.InOutQuad).OnComplete(() => SceneManager.LoadSceneAsync(1));
 
             // SoundManagerService.Instance.ReleaseAudio();
 
-            // StartCoroutine(LoadGameScene());
+            StartCoroutine(LoadGameScene());
         }
 
         private void SetupMainMenuTexts()
@@ -463,7 +468,7 @@ namespace Assets.Script.MGEIP.Service
             startInstructionBox.transform.localScale = Vector3.zero;
             startMenuNextButton.transform.DOScale(Vector3.one, buttonScaleDuration)
                 .SetEase(Ease.OutBack).OnComplete(() => startMenuNextButton.GetComponent<ButtonAnimation>().enabled = true);
-            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack).OnComplete(() => mainMenuAnimation.StartBoatAnim());
+            startInstructionBox.transform.DOScale(Vector3.one, buttonScaleDuration).SetEase(Ease.OutBack);
         }
 
         private IEnumerator LoadGameScene()
@@ -472,11 +477,16 @@ namespace Assets.Script.MGEIP.Service
             scene.allowSceneActivation = false;
 
             loadingBarFill.fillAmount = 0f;
+            confirmLoadingBarFill.fillAmount = 0f;
+
+            loadingBarFill.DOFillAmount(1, 8f);
+            confirmLoadingBarFill.DOFillAmount(1, 8f);
 
             while (scene.progress < 0.9f)
             {
                 Debug.Log(scene.progress);
-                loadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
+                // loadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
+                // confirmLoadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
                 yield return null;
             }
 
@@ -495,23 +505,24 @@ namespace Assets.Script.MGEIP.Service
             }
 
             loginButton.gameObject.SetActive(false);
+            playerNameInput.interactable = false;
 
             DataHandler.Instance.GetMGIEPData(playerNameInput.text);
             logLabel.gameObject.SetActive(false);
-
-            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
         }
 
         private void LoginSuccess(LoginType _loginType)
         {
+            Debug.Log("Login success : " + _loginType);
+
             loginType = _loginType;
 
-            DataHandler.Instance.OnPlayerLogin -= LoginSuccess;
-
-            loginPanel.DOFade(0, 0.5f).OnComplete(() => loginPanel.gameObject.SetActive(false));
             loginPanel.blocksRaycasts = false;
+            loginPanel.DOFade(0, 0.5f).OnComplete(() => loginPanel.gameObject.SetActive(false));
 
             mainMenuAnimation.RevealAnimation();
+
+            DataHandler.Instance.OnPlayerLogin -= LoginSuccess;
         }
 
         #endregion
@@ -551,7 +562,17 @@ namespace Assets.Script.MGEIP.Service
 
         private void SkipTutorialYes()
         {
-            SceneManager.LoadScene(1);
+            confirmSubPanel.blocksRaycasts = false;
+            confirmSubPanel.DOFade(0, 0.5f).OnComplete(() => confirmSubPanel.gameObject.SetActive(false));
+
+            confirmLoadingSubPanel.gameObject.SetActive(true);
+            confirmLoadingSubPanel.alpha = 0;
+            confirmLoadingSubPanel.blocksRaycasts = false;
+
+            confirmLoadingSubPanel.DOFade(1, 0.5f).OnComplete(() =>
+            {
+                StartCoroutine(LoadGameScene());
+            });
         }
 
         private void SkipTutorialNo()
