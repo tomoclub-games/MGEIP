@@ -75,6 +75,8 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private TMP_InputField playerNameInput;
         [SerializeField] private Button loginButton;
         [SerializeField] private TMP_Text logLabel;
+        [SerializeField] private CanvasGroup errorPanel;
+        [SerializeField] private Button errorOkayButton;
 
         [Header("Welcome Back Panel")]
         [SerializeField] private CanvasGroup welcomeBackPanel;
@@ -101,6 +103,8 @@ namespace Assets.Script.MGEIP.Service
 
         private CanvasGroup[] subPanels;
         private List<Image> paginationCircles = new();
+
+        private Sequence loadingBarSequence;
 
         public MainMenuDataContainer MainMenuDataContainer => mainMenuDataContainer;
 
@@ -129,6 +133,8 @@ namespace Assets.Script.MGEIP.Service
             skipTutorialButton.onClick.AddListener(SkipTutorialClicked);
             confirmYesButton.onClick.AddListener(SkipTutorialYes);
             confirmNoButton.onClick.AddListener(SkipTutorialNo);
+
+            errorOkayButton.onClick.AddListener(CloseErrorPanel);
         }
 
         private void OnDestroy()
@@ -150,6 +156,14 @@ namespace Assets.Script.MGEIP.Service
             skipTutorialButton.onClick.RemoveListener(SkipTutorialClicked);
             confirmYesButton.onClick.RemoveListener(SkipTutorialYes);
             confirmNoButton.onClick.RemoveListener(SkipTutorialNo);
+
+            errorOkayButton.onClick.RemoveListener(CloseErrorPanel);
+
+            if (loadingBarSequence == null)
+                return;
+
+            if (loadingBarSequence.IsActive() || loadingBarSequence.IsPlaying())
+                loadingBarSequence.Kill();
         }
 
         private void Start()
@@ -479,8 +493,9 @@ namespace Assets.Script.MGEIP.Service
             loadingBarFill.fillAmount = 0f;
             confirmLoadingBarFill.fillAmount = 0f;
 
-            loadingBarFill.DOFillAmount(1, 8f);
-            confirmLoadingBarFill.DOFillAmount(1, 8f);
+            loadingBarSequence = DOTween.Sequence();
+
+            loadingBarSequence.Append(loadingBarFill.DOFillAmount(1, 8f)).Join(confirmLoadingBarFill.DOFillAmount(1, 8f));
 
             while (scene.progress < 0.9f)
             {
@@ -515,6 +530,17 @@ namespace Assets.Script.MGEIP.Service
         {
             Debug.Log("Login success : " + _loginType);
 
+            if (_loginType == LoginType.error)
+            {
+                ErrorConnectingToServer();
+                return;
+            }
+            else
+            {
+                if (errorPanel.gameObject.activeSelf)
+                    CloseErrorPanel();
+            }
+
             loginType = _loginType;
 
             loginPanel.blocksRaycasts = false;
@@ -525,16 +551,39 @@ namespace Assets.Script.MGEIP.Service
             DataHandler.Instance.OnPlayerLogin -= LoginSuccess;
         }
 
+        private void ErrorConnectingToServer()
+        {
+            errorPanel.gameObject.SetActive(true);
+            errorPanel.alpha = 0;
+            errorPanel.DOFade(1, 0.5f);
+        }
+
+        private void CloseErrorPanel()
+        {
+            errorPanel.DOFade(0, 0.5f).OnComplete(() =>
+            {
+                errorPanel.gameObject.SetActive(false);
+            });
+
+            loginButton.gameObject.SetActive(true);
+            playerNameInput.interactable = true;
+        }
+
         #endregion
 
         #region Welcome Back
 
         private void AnimateWelcomeBackPanel()
         {
-            welcomeBackPanel.gameObject.SetActive(true);
-            welcomeBackPanel.alpha = 0;
+            gameNamePanel.DOFade(0, buttonScaleDuration).SetDelay(2f).OnComplete(() =>
+            {
+                gameNamePanel.gameObject.SetActive(false);
 
-            welcomeBackPanel.DOFade(1, 0.5f);
+                welcomeBackPanel.gameObject.SetActive(true);
+                welcomeBackPanel.alpha = 0;
+
+                welcomeBackPanel.DOFade(1, 0.5f);
+            });
         }
 
         private void CloseWelcomeBackPanel()

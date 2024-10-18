@@ -8,14 +8,14 @@ namespace MGIEP.Data
     [Serializable]
     public class MGIEPData
     {
-        public string playerName;
+        public string loginToken;
         public int attemptNo;
         public bool[] completedScenarios;
         public List<ScenarioInfo> scenarioList;
 
-        public MGIEPData(string _playerName)
+        public MGIEPData(string _loginToken)
         {
-            playerName = _playerName;
+            loginToken = _loginToken;
             attemptNo = 1;
             completedScenarios = new bool[10];
             scenarioList = new List<ScenarioInfo>();
@@ -23,7 +23,6 @@ namespace MGIEP.Data
 
         public void PrintMGIEPData()
         {
-            Debug.Log("Player Name : " + playerName);
             foreach (ScenarioInfo scenarioInfo in scenarioList)
             {
                 scenarioInfo.PrintScenarioInfo();

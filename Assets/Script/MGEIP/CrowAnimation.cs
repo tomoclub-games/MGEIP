@@ -16,16 +16,18 @@ public class CrowAnimation : MonoBehaviour
 
     Sequence crowSequence;
 
-    private void Start()
+    private void Awake()
     {
-        AnimateCrow();
-
         startPosition = transform.localPosition;
     }
 
     private void OnEnable()
     {
+        transform.localPosition = startPosition;
+
         crowSequence = DOTween.Sequence();
+
+        AnimateCrow();
     }
 
     private void OnDisable()

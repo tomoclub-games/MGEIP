@@ -77,9 +77,9 @@ namespace MGIEP.Data
         }
 
         [ContextMenu("Get MGIEP Data")]
-        public void GetMGIEPData(string playerName)
+        public void GetMGIEPData(string _loginToken)
         {
-            DownloadMGIEPData(playerName);
+            DownloadMGIEPData(_loginToken);
         }
 
         [ContextMenu("Send MGIEP Data")]
@@ -107,11 +107,11 @@ namespace MGIEP.Data
             return jsonData;
         }
 
-        public void DownloadMGIEPData(string playerName)
+        public void DownloadMGIEPData(string loginToken)
         {
-            StartCoroutine(Download(playerName, result =>
+            StartCoroutine(Download(loginToken, (result, isSuccess) =>
             {
-                if (result != null && !string.IsNullOrEmpty(result.playerName))
+                if (isSuccess && result != null && !string.IsNullOrEmpty(result.loginToken))
                 {
                     Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
 
@@ -119,13 +119,19 @@ namespace MGIEP.Data
 
                     CheckForNewAttempt();
                 }
-                else
+                else if (isSuccess && result == null)
                 {
-                    Debug.Log("Failed to download data or player not found for player: " + playerName + " - Setting up new attempt 1");
+                    Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new attempt 1");
 
-                    mgiepData = new MGIEPData(playerName);
+                    mgiepData = new MGIEPData(loginToken);
 
                     OnPlayerLogin?.Invoke(LoginType.newPlayer);
+                }
+                else
+                {
+                    Debug.Log("Failed to download data for player: " + loginToken + " - Unexpected error occurred");
+
+                    OnPlayerLogin?.Invoke(LoginType.error);
                 }
             }));
         }
@@ -147,7 +153,7 @@ namespace MGIEP.Data
 
             if (isAttemptComplete)
             {
-                MGIEPData newMgiepData = new MGIEPData(mgiepData.playerName);
+                MGIEPData newMgiepData = new MGIEPData(mgiepData.loginToken);
                 newMgiepData.attemptNo = mgiepData.attemptNo + 1;
 
                 Debug.Log("New attempt no : " + newMgiepData.attemptNo);
@@ -164,9 +170,9 @@ namespace MGIEP.Data
             }
         }
 
-        IEnumerator Download(string playerName, System.Action<MGIEPData> callback = null)
+        IEnumerator Download(string loginToken, System.Action<MGIEPData, bool> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadAttemptInfo?playerName={playerName}";
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadAttemptInfo?loginToken={loginToken}";
 
             using (UnityWebRequest request = UnityWebRequest.Get(url))
             {
@@ -175,23 +181,30 @@ namespace MGIEP.Data
                 if (request.result != UnityWebRequest.Result.Success)
                 {
                     Debug.LogError("Error: " + request.error);
-                    callback?.Invoke(null);
+                    callback?.Invoke(null, false);
                 }
                 else
                 {
                     string jsonResponse = request.downloadHandler.text;
 
-                    // Deserialize the response into MGIEPData object
                     var responseObj = JsonConvert.DeserializeObject<ServerResponse<MGIEPData>>(jsonResponse);
 
-                    if (responseObj.success && responseObj.data != null && !string.IsNullOrEmpty(responseObj.data.playerName))
+                    if (responseObj.success)
                     {
-                        callback?.Invoke(responseObj.data);
+                        if (responseObj.playerFound)
+                        {
+                            callback?.Invoke(responseObj.data, true);
+                        }
+                        else
+                        {
+                            Debug.Log("Player not found.");
+                            callback?.Invoke(null, true);
+                        }
                     }
                     else
                     {
-                        Debug.Log("Error: " + responseObj.error ?? "Player not found.");
-                        callback?.Invoke(null);
+                        Debug.LogError("Error: " + responseObj.error);
+                        callback?.Invoke(null, false);
                     }
                 }
             }
@@ -205,15 +218,12 @@ namespace MGIEP.Data
             {
                 request.SetRequestHeader("Content-Type", "application/json");
 
-                // Convert your JSON data to a byte array
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
                 request.uploadHandler = new UploadHandlerRaw(bodyRaw);
                 request.downloadHandler = new DownloadHandlerBuffer();
 
-                // Send the request and wait for the response
                 yield return request.SendWebRequest();
 
-                // Check for any errors
                 if (request.result != UnityWebRequest.Result.Success)
                 {
                     Debug.LogError("Error sending data to MongoDB: " + request.error);
@@ -224,7 +234,6 @@ namespace MGIEP.Data
                 }
                 else
                 {
-                    // If successful, invoke the callback with true
                     Debug.Log("Successfully uploaded data to MongoDB: " + request.downloadHandler.text);
                     if (callback != null)
                     {
@@ -239,6 +248,7 @@ namespace MGIEP.Data
     {
         public bool success;
         public string error;
+        public bool playerFound;
         public T data;
     }
 
@@ -246,6 +256,7 @@ namespace MGIEP.Data
     {
         newPlayer,
         continueAttempt,
-        newAttempt
+        newAttempt,
+        error
     }
 }
