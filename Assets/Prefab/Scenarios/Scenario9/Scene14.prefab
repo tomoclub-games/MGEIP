@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1144069739
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 394079428, guid: b754a3fa9f5fa1c4abca143b05e89d78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -177,14 +177,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 425734383
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 28c2cc94c6714644e8c68013d4264f2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.48, y: 9.12}
+  m_Size: {x: 3.75, y: 8.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -261,14 +261,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 425734383
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fa3f23c1d3fad244b9d4ba44a866402c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.48, y: 9.12}
+  m_Size: {x: 3.66, y: 9.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -346,7 +346,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1144069739
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 394079428, guid: b754a3fa9f5fa1c4abca143b05e89d78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -451,14 +451,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 425734383
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99e0bfe6beb575546ad33a1600f1f5c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.48, y: 9.12}
+  m_Size: {x: 2.84, y: 8.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -536,7 +536,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1144069739
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 394079428, guid: b754a3fa9f5fa1c4abca143b05e89d78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -728,11 +728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Size.x
-      value: 3.48
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Size.y
-      value: 9.28
+      value: 9.36
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_Sprite
@@ -740,7 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 67d390bb09fa4d648b14b433c1181786, type: 3}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7367664785988275219, guid: 513c91e2cc6657d4e96a74ff33ff629a, type: 3}
       propertyPath: m_SortingLayerID
@@ -888,11 +888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1017136381926203520, guid: 5d1281727a58df44e8d8393e51d36d43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.637
+      value: 1.546
       objectReference: {fileID: 0}
     - target: {fileID: 1017136381926203520, guid: 5d1281727a58df44e8d8393e51d36d43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.804
+      value: 0.835
       objectReference: {fileID: 0}
     - target: {fileID: 1017136381926203520, guid: 5d1281727a58df44e8d8393e51d36d43, type: 3}
       propertyPath: m_LocalPosition.z

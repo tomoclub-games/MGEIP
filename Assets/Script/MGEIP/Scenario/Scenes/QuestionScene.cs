@@ -24,7 +24,7 @@ namespace MGEIP.Scenario.Scenes
         public override void EnterScene()
         {
             base.EnterScene();
-
+            GameUIService.QuestionSceneConfirmButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             GameUIService.SetQuestionSceneUIActive(true);
 
             dialogueVOButton.Button.onClick.AddListener(PlayDialogueVoiceOver);
@@ -50,7 +50,7 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetQuestionSceneNarrationBoxActive(false);
             GameUIService.SetQuestionSceneUIActive(false);
-            GameUIService.QuestionSceneConfirmButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            
 
             GameUIService.OnPrevButtonClick -= ExitToPrevScene;
         }

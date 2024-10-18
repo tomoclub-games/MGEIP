@@ -565,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 589432259078695455, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 839c737ebd292eb4781bd6d1591336ef, type: 3}
+      objectReference: {fileID: 21300000, guid: b6269d85a7efddf439ea84c8ba7900d3, type: 3}
     - target: {fileID: 589432259078695455, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 3245443138032071197, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7527b60e42c2ad6458aa4dc660464e97, type: 3}
+      objectReference: {fileID: 21300000, guid: a67b2ca073a27c04aa035115585927fa, type: 3}
     - target: {fileID: 3245443138032071197, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -653,6 +653,10 @@ PrefabInstance:
     - target: {fileID: 4412914583289271875, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.5779675
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951452636306905454, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 102016891
       objectReference: {fileID: 0}
     - target: {fileID: 5343428398495630735, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -686,6 +690,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ca485cfa4a06931409554150abd72f8b, type: 3}
+    - target: {fileID: 6817726906348124791, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817726906348124791, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 102016891
+      objectReference: {fileID: 0}
     - target: {fileID: 6817726906348124791, guid: 6fc71adeb966aaa4cbb1f8da791495f2, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

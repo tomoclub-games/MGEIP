@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0dc11f981e27abe439c9c3802eb4bc14
+guid: d3258cd8ef156a341863cec21b7cec98
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,122 +106,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 735
-        width: 300
-        height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8483e3b7134bc14ebefaba2fa296be3
-      internalID: 1210646753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 735
-        width: 300
-        height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1b233315490c4245905c8f6a50e5bba
-      internalID: 1408192784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_2
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 735
-        width: 300
-        height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37c39c8e3756d5240a4b1209c1d1168f
-      internalID: 2026025208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_3
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 735
-        width: 300
-        height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b29d19d24e4134642a2350e7a937c83f
-      internalID: -496318701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_4
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 735
-        width: 300
-        height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 613c456e1cfc1a84ca5ea63ce29a7b8b
-      internalID: -1697744931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_5
+      name: hand rise with eye blink2 405X775_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 735
+        width: 405
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0202201671578e46a8d7afd1000e57b
-      internalID: 760597546
+      spriteID: 527e652aef8a53843a54fb5f5dd72109
+      internalID: 1028552869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_6
+      name: hand rise with eye blink2 405X775_1
       rect:
         serializedVersion: 2
-        x: 300
+        x: 405
         y: 0
-        width: 300
-        height: 735
+        width: 405
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b0fdb989b278c04683b996e159aa1a3
-      internalID: 2088552129
+      spriteID: 52f467a85f398fb4aa1be288b9313b36
+      internalID: 2101739469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_7
+      name: hand rise with eye blink2 405X775_2
       rect:
         serializedVersion: 2
-        x: 600
+        x: 810
         y: 0
-        width: 300
-        height: 735
+        width: 405
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4d375e1497d2874db29bc25328dc059
-      internalID: -801532238
+      spriteID: f0c2179bee5fea7498f1776d5f51b56b
+      internalID: -144908491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_8
+      name: hand rise with eye blink2 405X775_3
       rect:
         serializedVersion: 2
-        x: 900
+        x: 1215
         y: 0
-        width: 300
-        height: 735
+        width: 405
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9975740baee1adb4794ff29ad58d76c3
-      internalID: -2020206791
+      spriteID: 0d3b990e95931cc4d9fe1c3cfeedc763
+      internalID: 505514215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 300X735_9
+      name: hand rise with eye blink2 405X775_4
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1620
         y: 0
-        width: 300
-        height: 735
+        width: 405
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +234,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638a2f0ddb54ef740bf09dce6af169e9
-      internalID: -343540979
+      spriteID: 71f72b6c59e9ef244a886013743b4d38
+      internalID: -975422755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand rise with eye blink2 405X775_5
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 0
+        width: 405
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c177e02bc1217bf40a0afb756875423e
+      internalID: 1079808598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand rise with eye blink2 405X775_6
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 0
+        width: 405
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bfe8ebead3ec245bcec53d0c7f3751
+      internalID: 2053199780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand rise with eye blink2 405X775_7
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 0
+        width: 405
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d42c69eea3c764488ccef92c5ba668
+      internalID: 800065743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand rise with eye blink2 405X775_8
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 405
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b573cf3945082664d9e77ca38cc9ddad
+      internalID: -306826398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand rise with eye blink2 405X775_9
+      rect:
+        serializedVersion: 2
+        x: 3645
+        y: 0
+        width: 405
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860eaec6fd9335148a396cfdea284f79
+      internalID: -115807607
       vertices: []
       indices: 
       edges: []
@@ -330,16 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hand rise with eye blink2 300X735_0: 1210646753
-      hand rise with eye blink2 300X735_1: 1408192784
-      hand rise with eye blink2 300X735_2: 2026025208
-      hand rise with eye blink2 300X735_3: -496318701
-      hand rise with eye blink2 300X735_4: -1697744931
-      hand rise with eye blink2 300X735_5: 760597546
-      hand rise with eye blink2 300X735_6: 2088552129
-      hand rise with eye blink2 300X735_7: -801532238
-      hand rise with eye blink2 300X735_8: -2020206791
-      hand rise with eye blink2 300X735_9: -343540979
+      hand rise with eye blink2 405X775_0: 1028552869
+      hand rise with eye blink2 405X775_1: 2101739469
+      hand rise with eye blink2 405X775_2: -144908491
+      hand rise with eye blink2 405X775_3: 505514215
+      hand rise with eye blink2 405X775_4: -975422755
+      hand rise with eye blink2 405X775_5: 1079808598
+      hand rise with eye blink2 405X775_6: 2053199780
+      hand rise with eye blink2 405X775_7: 800065743
+      hand rise with eye blink2 405X775_8: -306826398
+      hand rise with eye blink2 405X775_9: -115807607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
