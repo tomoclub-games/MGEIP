@@ -11,9 +11,9 @@ namespace MGEIP.Scenario.Scenes
         public override void EnterScene()
         {
             base.EnterScene();
-
             StartCurrentStartScene();
 
+            GameUIService.StartScenePlayButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
             GameUIService.StartSceneTitleVOButton.Button.onClick.AddListener(PlayScenarioNameVO);
         }
 
@@ -61,7 +61,7 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetStartSceneNarrationBoxActive(false);
             GameUIService.SetStartSceneUIGameobjectActive(false);
 
-            GameUIService.StartScenePlayButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+            
         }
 
         public override void ExitScene()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3258cd8ef156a341863cec21b7cec98
+guid: 8ccb79a64dfdb5f48bf821fa127f2b4b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_0
+      name: eye blink 90x54_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 527e652aef8a53843a54fb5f5dd72109
-      internalID: 1028552869
+      spriteID: 52e0a4c589bafb9449991d2c5a8a7875
+      internalID: -944529960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_1
+      name: eye blink 90x54_1
       rect:
         serializedVersion: 2
-        x: 405
+        x: 90
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52f467a85f398fb4aa1be288b9313b36
-      internalID: 2101739469
+      spriteID: f3a4ca857f80fae4eb25035430db11df
+      internalID: -1503967679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_2
+      name: eye blink 90x54_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac61dbf2f41ec704bbc4fea0ab4f9804
+      internalID: 644455632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b036ff89eac13f4d897db75ea9a00d1
+      internalID: 18294003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886aaa77b43ceff45bfd4e47f9c8a8db
+      internalID: -1066143659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_5
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85454a95b1822b845bc3156f0a66d6bd
+      internalID: -285684694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_6
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf240deb04aa54b4d8e73dfa844dd718
+      internalID: 1917310357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf613e59c03df7c4192eac1cfb2bec16
+      internalID: 580876913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa439f1f2bf8c6b499980e2c67e8ff1d
+      internalID: -930243517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eye blink 90x54_9
       rect:
         serializedVersion: 2
         x: 810
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0c2179bee5fea7498f1776d5f51b56b
-      internalID: -144908491
+      spriteID: 71de2ad9fd401694db21778ee5044fcb
+      internalID: 103178075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_3
+      name: eye blink 90x54_10
       rect:
         serializedVersion: 2
-        x: 1215
+        x: 900
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3b990e95931cc4d9fe1c3cfeedc763
-      internalID: 505514215
+      spriteID: 13f3cb5f0cce01544a5b62037857f3f1
+      internalID: 201376286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_4
+      name: eye blink 90x54_11
       rect:
         serializedVersion: 2
-        x: 1620
+        x: 990
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +381,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71f72b6c59e9ef244a886013743b4d38
-      internalID: -975422755
+      spriteID: 17de2d417bcb43443a5f857dab6fe4df
+      internalID: -1765139945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_5
+      name: eye blink 90x54_12
       rect:
         serializedVersion: 2
-        x: 2025
+        x: 1080
         y: 0
-        width: 405
-        height: 775
+        width: 90
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,92 +402,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c177e02bc1217bf40a0afb756875423e
-      internalID: 1079808598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_6
-      rect:
-        serializedVersion: 2
-        x: 2430
-        y: 0
-        width: 405
-        height: 775
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79bfe8ebead3ec245bcec53d0c7f3751
-      internalID: 2053199780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_7
-      rect:
-        serializedVersion: 2
-        x: 2835
-        y: 0
-        width: 405
-        height: 775
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35d42c69eea3c764488ccef92c5ba668
-      internalID: 800065743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_8
-      rect:
-        serializedVersion: 2
-        x: 3240
-        y: 0
-        width: 405
-        height: 775
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b573cf3945082664d9e77ca38cc9ddad
-      internalID: -306826398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand rise with eye blink2 405X775_9
-      rect:
-        serializedVersion: 2
-        x: 3645
-        y: 0
-        width: 405
-        height: 775
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 860eaec6fd9335148a396cfdea284f79
-      internalID: -115807607
+      spriteID: 6bb303ca2c0267845b76d0bbcbd5d0a7
+      internalID: -928314855
       vertices: []
       indices: 
       edges: []
@@ -356,16 +419,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hand rise with eye blink2 405X775_0: 1028552869
-      hand rise with eye blink2 405X775_1: 2101739469
-      hand rise with eye blink2 405X775_2: -144908491
-      hand rise with eye blink2 405X775_3: 505514215
-      hand rise with eye blink2 405X775_4: -975422755
-      hand rise with eye blink2 405X775_5: 1079808598
-      hand rise with eye blink2 405X775_6: 2053199780
-      hand rise with eye blink2 405X775_7: 800065743
-      hand rise with eye blink2 405X775_8: -306826398
-      hand rise with eye blink2 405X775_9: -115807607
+      eye blink 90x54_0: -944529960
+      eye blink 90x54_1: -1503967679
+      eye blink 90x54_10: 201376286
+      eye blink 90x54_11: -1765139945
+      eye blink 90x54_12: -928314855
+      eye blink 90x54_2: 644455632
+      eye blink 90x54_3: 18294003
+      eye blink 90x54_4: -1066143659
+      eye blink 90x54_5: -285684694
+      eye blink 90x54_6: 1917310357
+      eye blink 90x54_7: 580876913
+      eye blink 90x54_8: -930243517
+      eye blink 90x54_9: 103178075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

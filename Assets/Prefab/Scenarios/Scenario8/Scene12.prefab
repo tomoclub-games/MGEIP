@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4383585738982420259
 Transform:
   m_ObjectHideFlags: 0
@@ -112,8 +112,8 @@ Transform:
   m_GameObject: {fileID: 4624205735303698197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -1.79, z: 0}
-  m_LocalScale: {x: 0.8198082, y: 0.8198082, z: 0.8198082}
+  m_LocalPosition: {x: -4.42, y: -1.72, z: 0}
+  m_LocalScale: {x: 0.863258, y: 0.863258, z: 0.863258}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1490721220765734570}
@@ -280,7 +280,7 @@ MonoBehaviour:
   autoPlay: 1
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 4.42, y: 0, z: 0}
+  endValueV3: {x: 4.42, y: -1.72, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -314,7 +314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7717429269626281448
 Transform:
   m_ObjectHideFlags: 0
@@ -573,6 +573,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0fe46ec4e0b662f4797a578cd931765f, type: 3}
     - target: {fileID: 3933454950161078547, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933454950161078547, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
@@ -598,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940167557570676214, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.25
+      value: 4.47
       objectReference: {fileID: 0}
     - target: {fileID: 3940167557570676214, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -615,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 4119980296249885653, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0b662540ec0fa974aa71eddca833a771, type: 3}
+      objectReference: {fileID: 21300000, guid: 184dba04d7aa2b14bafa126a7de5b114, type: 3}
     - target: {fileID: 4119980296249885653, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

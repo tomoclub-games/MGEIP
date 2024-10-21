@@ -16,9 +16,10 @@ namespace MGEIP.Scenario.Scenes
         public override void EnterScene()
         {
             base.EnterScene();
-
             StartCurrentStoryScene();
 
+            GameUIService.StorySceneNextButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+            GameUIService.StoryScenePrevButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             dialogueVOButton.Button.onClick.AddListener(PlayDialogueVoiceOver);
         }
 
@@ -65,9 +66,6 @@ namespace MGEIP.Scenario.Scenes
         {
             GameUIService.SetStorySceneNarrationBoxActive(false);
             GameUIService.SetStartStoryUIGameobjectActive(false);
-
-            GameUIService.StorySceneNextButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
-            GameUIService.StoryScenePrevButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
 
         public override void ExitScene()
