@@ -80,7 +80,7 @@ namespace MGEIP.Scenario
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
 
-            if (DataHandler.Instance.MGIEPData.completedScenarios[scenarioData.ScenarioNo - 1])
+            if (DataHandler.Instance.AttemptInfo.completedScenarios[scenarioData.ScenarioNo - 1])
                 SetScenarioComplete(scenarioData.ScenarioNo);
         }
 

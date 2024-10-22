@@ -5,6 +5,7 @@ using MGEIP.Scenario.Scenes;
 using MGEIP.Service;
 using MGIEP;
 using MGIEP.Data;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ namespace MGEIP.Scenario
 
         private ScenarioManager scenarioManager;
         private ScenarioInfo scenarioInfo;
+
+        private DateTime scenarioStartTime;
 
         private string emotionKeyword;
         private int emotionIndex = -1;
@@ -82,6 +85,8 @@ namespace MGEIP.Scenario
         public void CreateScene()
         {
             SoundManagerService.Instance.OnStopMusic?.Invoke();
+
+            scenarioStartTime = DateTime.UtcNow;
 
             List<SceneData> sceneDataList = new List<SceneData>();
             List<ScenePrefab> scenePrefabList = new List<ScenePrefab>();
@@ -244,12 +249,12 @@ namespace MGEIP.Scenario
         {
             isScenarioCompleted = true;
 
+            TimeSpan scenarioTimeSpan = DateTime.UtcNow - scenarioStartTime;
+            scenarioInfo.scenarioDuration = scenarioTimeSpan.TotalSeconds;
+
             scenarioManager.SetScenarioComplete(ScenarioNo);
 
-            DataHandler.Instance.MGIEPData.completedScenarios[scenarioNo - 1] = true;
-            DataHandler.Instance.MGIEPData.scenarioList.Add(scenarioInfo);
-
-            DataHandler.Instance.SendMGIEPData();
+            DataHandler.Instance.AddCompletedScenario(scenarioInfo);
 
             DataHandler.Instance.OnDataUploaded += DataSentResult;
         }

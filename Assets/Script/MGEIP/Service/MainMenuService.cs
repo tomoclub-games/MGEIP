@@ -135,6 +135,9 @@ namespace Assets.Script.MGEIP.Service
             confirmNoButton.onClick.AddListener(SkipTutorialNo);
 
             errorOkayButton.onClick.AddListener(CloseErrorPanel);
+
+            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
+            Debug.Log("Sub to OnPlayerLogin!");
         }
 
         private void OnDestroy()
@@ -168,10 +171,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void Start()
         {
-            // SoundManagerService.Instance.LoadAudio("MainMenuAudioClips");
-
-            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
-            Debug.Log("Sub to OnPlayerLogin!");
+            DataHandler.Instance.LoginPlayer();
 
             currentActivePanel = beginPanel;
 
@@ -522,7 +522,7 @@ namespace Assets.Script.MGEIP.Service
             loginButton.gameObject.SetActive(false);
             playerNameInput.interactable = false;
 
-            DataHandler.Instance.GetMGIEPData(playerNameInput.text);
+            DataHandler.Instance.LoginPlayer(playerNameInput.text);
             logLabel.gameObject.SetActive(false);
         }
 

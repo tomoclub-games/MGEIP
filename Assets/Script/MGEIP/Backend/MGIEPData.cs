@@ -5,15 +5,49 @@ using UnityEngine;
 
 namespace MGIEP.Data
 {
+    [SerializeField]
+    public class SessionInfo
+    {
+        public string loginToken;
+        public int sessionNo;
+        public DateTime sessionStartTime;
+        public DateTime sessionEndTime;
+        public double sessionDuration;
+        public List<Attempt> attempts;
+
+        public SessionInfo(string _loginToken, int _sessionNo)
+        {
+            Debug.Log("Initializing sessionInfo : " + _sessionNo);
+
+            loginToken = _loginToken;
+            sessionNo = _sessionNo;
+            sessionStartTime = DateTime.UtcNow;
+            attempts = new List<Attempt>();
+        }
+    }
+
     [Serializable]
-    public class MGIEPData
+    public class Attempt
+    {
+        public int attemptNo;
+        public List<int> completedScenarios;
+
+        public Attempt(int _attemptNo)
+        {
+            attemptNo = _attemptNo;
+            completedScenarios = new List<int>();
+        }
+    }
+
+    [Serializable]
+    public class AttemptInfo
     {
         public string loginToken;
         public int attemptNo;
         public bool[] completedScenarios;
         public List<ScenarioInfo> scenarioList;
 
-        public MGIEPData(string _loginToken)
+        public AttemptInfo(string _loginToken)
         {
             loginToken = _loginToken;
             attemptNo = 1;
@@ -21,7 +55,7 @@ namespace MGIEP.Data
             scenarioList = new List<ScenarioInfo>();
         }
 
-        public void PrintMGIEPData()
+        public void PrintAttemptInfo()
         {
             foreach (ScenarioInfo scenarioInfo in scenarioList)
             {
@@ -35,6 +69,7 @@ namespace MGIEP.Data
     {
         public int scenarioNo;
         public string scenarioTitle;
+        public double scenarioDuration;
         public List<Question> questions;
 
         public ScenarioInfo()
