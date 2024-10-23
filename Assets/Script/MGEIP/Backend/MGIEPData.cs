@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using MGEIP.Scenario;
 using UnityEngine;
 
 namespace MGIEP.Data
@@ -15,7 +14,7 @@ namespace MGIEP.Data
         public double sessionDuration;
         public List<Attempt> attempts;
 
-        public SessionInfo(string _loginToken, int _sessionNo)
+        public SessionInfo(string _loginToken, int _sessionNo, int _attemptNo)
         {
             Debug.Log("Initializing sessionInfo : " + _sessionNo);
 
@@ -23,6 +22,9 @@ namespace MGIEP.Data
             sessionNo = _sessionNo;
             sessionStartTime = DateTime.UtcNow;
             attempts = new List<Attempt>();
+
+            Attempt newAttempt = new Attempt(_attemptNo);
+            attempts.Add(newAttempt);
         }
     }
 

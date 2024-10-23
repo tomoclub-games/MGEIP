@@ -135,9 +135,6 @@ namespace Assets.Script.MGEIP.Service
             confirmNoButton.onClick.AddListener(SkipTutorialNo);
 
             errorOkayButton.onClick.AddListener(CloseErrorPanel);
-
-            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
-            Debug.Log("Sub to OnPlayerLogin!");
         }
 
         private void OnDestroy()
@@ -171,6 +168,9 @@ namespace Assets.Script.MGEIP.Service
 
         private void Start()
         {
+            DataHandler.Instance.OnPlayerLogin += LoginSuccess;
+            Debug.Log("Sub to OnPlayerLogin!");
+
             DataHandler.Instance.LoginPlayer();
 
             currentActivePanel = beginPanel;

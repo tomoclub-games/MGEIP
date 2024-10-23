@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Text;
-using MGEIP.Service;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 using System.Runtime.InteropServices;
-using Unity.VisualScripting;
 using System;
 
 namespace MGIEP.Data
@@ -59,6 +57,8 @@ namespace MGIEP.Data
 
         public void LoginPlayer()
         {
+            Debug.Log("Trying to login!");
+
             if (loginToken == null)
             {
                 Debug.LogWarning("Error finding parameter 'loginToken'");
@@ -256,6 +256,7 @@ namespace MGIEP.Data
             }
         }
 
+        // Player Data is SessionInfo + AttemptInfo
         IEnumerator UploadPlayerData(string jsonData, System.Action<bool> callback = null)
         {
             string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadPlayerData";
@@ -301,7 +302,7 @@ namespace MGIEP.Data
                 return;
             }
 
-            sessionInfo = new SessionInfo(loginToken, sessionNo + 1);
+            sessionInfo = new SessionInfo(loginToken, sessionNo + 1, attemptInfo.attemptNo);
 
             Debug.Log("Session Info set here!");
 
@@ -360,17 +361,17 @@ namespace MGIEP.Data
 
         private void UpdateSessionInfoOnQuit()
         {
+            Debug.Log("UpdateSessionInfoOnQuit called!");
+
             if (sessionInfo == null)
                 return;
 
             DateTime sessionEndTime = DateTime.UtcNow;
             TimeSpan sessionDuration = sessionEndTime - sessionInfo.sessionStartTime;
 
-            // Update the sessionInfo with the new values
-            sessionInfo.sessionEndTime = sessionEndTime; // ISO 8601 format
-            sessionInfo.sessionDuration = sessionDuration.TotalSeconds; // Store duration in seconds
+            sessionInfo.sessionEndTime = sessionEndTime;
+            sessionInfo.sessionDuration = sessionDuration.TotalSeconds;
 
-            // Upload the updated session info to the server
             StartCoroutine(UploadSessionInfo(JsonConvert.SerializeObject(sessionInfo), result =>
             {
                 if (result)
