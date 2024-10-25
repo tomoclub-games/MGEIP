@@ -185,6 +185,10 @@ MonoBehaviour:
   sfxSounds:
   - sfxType: 0
     audioClip: {fileID: 8300000, guid: 11666782b1b620e4b9c2bf735d35ed9a, type: 3}
+  - sfxType: 1
+    audioClip: {fileID: 8300000, guid: 03c6cdf5db431a94ba6214290c97b4b1, type: 3}
+  - sfxType: 2
+    audioClip: {fileID: 8300000, guid: 4bf119a82980c604882928787671a0e4, type: 3}
 --- !u!114 &3536099346461238289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,12 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c18f7f79c1979148a6124b639ed69ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attemptNo: 0
-  mgiepData:
-    playerName: 
-    attemptNo: 0
-    completedScenarios: 
-    scenarioList: []
 --- !u!1 &6348300558177098461
 GameObject:
   m_ObjectHideFlags: 0
