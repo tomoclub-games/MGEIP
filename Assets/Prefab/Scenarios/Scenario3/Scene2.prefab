@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2020946737028354110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1820762470535362001}
+    m_Modifications:
+    - target: {fileID: 1130673038240719998, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_Name
+      value: SceneSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975446623379807213, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+      propertyPath: sceneSoundName
+      value: oceanwaves
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+--- !u!4 &3972783029688186901 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3110282293995694123, guid: d46af543a804e5d4ea61f5c2f40e4967, type: 3}
+  m_PrefabInstance: {fileID: 2020946737028354110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2264588841848217689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,6 +198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1118830986870812413, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1362253349736548804, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SizeDelta.y
       value: -0.2232
@@ -158,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f27dbd029a435d040a01d95a88520a03, type: 3}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1857502500114771793, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       propertyPath: m_SortingLayerID
@@ -355,6 +425,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2906814871247875957, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       insertIndex: 3
       addedObject: {fileID: 101560994515003710}
+    - targetCorrespondingSourceObject: {fileID: 2906814871247875957, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3972783029688186901}
     - targetCorrespondingSourceObject: {fileID: 8817057460153346641, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6003639788804487053}
