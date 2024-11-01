@@ -19,6 +19,20 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private GameObject mainCanvas;
         [SerializeField] private MainMenuDataContainer mainMenuDataContainer;
 
+        [Header("Form Panel")]
+        [SerializeField] private CanvasGroup formPanel;
+        [SerializeField] private TMP_InputField playerNameInput;
+        [SerializeField] private TMP_InputField playerEmailInput;
+        [SerializeField] private TMP_InputField playerDOBDayInput;
+        [SerializeField] private TMP_InputField playerDOBMonthInput;
+        [SerializeField] private TMP_InputField playerDOBYearInput;
+        [SerializeField] private TMP_Dropdown playerGenderInput;
+        [SerializeField] private TMP_Text playerNameErrorLabel;
+        [SerializeField] private TMP_Text playerEmailErrorLabel;
+        [SerializeField] private TMP_Text playerDOBErrorLabel;
+        [SerializeField] private TMP_Text playerGenderErrorLabel;
+        [SerializeField] private Button formSubmitButton;
+
         [Header("Start")]
         [SerializeField] private CanvasGroup beginPanel;
         [SerializeField] private CanvasGroup gameNamePanel;
@@ -72,7 +86,7 @@ namespace Assets.Script.MGEIP.Service
 
         [Header("Login panel")]
         [SerializeField] private CanvasGroup loginPanel;
-        [SerializeField] private TMP_InputField playerNameInput;
+        [SerializeField] private TMP_InputField playerLoginNameInput;
         [SerializeField] private Button loginButton;
         [SerializeField] private TMP_Text logLabel;
         [SerializeField] private CanvasGroup errorPanel;
@@ -512,7 +526,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void LoginButtonClicked()
         {
-            if (playerNameInput.text == "")
+            if (playerLoginNameInput.text == "")
             {
                 logLabel.gameObject.SetActive(true);
                 logLabel.text = "Please enter a player name!";
@@ -520,9 +534,9 @@ namespace Assets.Script.MGEIP.Service
             }
 
             loginButton.gameObject.SetActive(false);
-            playerNameInput.interactable = false;
+            playerLoginNameInput.interactable = false;
 
-            DataHandler.Instance.LoginPlayer(playerNameInput.text);
+            DataHandler.Instance.LoginPlayer(playerLoginNameInput.text);
             logLabel.gameObject.SetActive(false);
         }
 
@@ -566,7 +580,7 @@ namespace Assets.Script.MGEIP.Service
             });
 
             loginButton.gameObject.SetActive(true);
-            playerNameInput.interactable = true;
+            playerLoginNameInput.interactable = true;
         }
 
         #endregion

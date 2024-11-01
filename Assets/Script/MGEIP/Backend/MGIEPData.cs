@@ -121,7 +121,6 @@ namespace MGIEP.Data
     public class MultipleChoiceQuestion : Question
     {
         public List<string> options;
-        public string correctAnswer;
         public string selectedAnswer;
 
         public MultipleChoiceQuestion()
@@ -138,7 +137,6 @@ namespace MGIEP.Data
             {
                 Debug.Log(option);
             }
-            Debug.Log("Correct Answer : " + correctAnswer);
             Debug.Log("Selected Answer : " + selectedAnswer);
         }
     }
