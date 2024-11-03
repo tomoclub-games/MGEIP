@@ -4,37 +4,52 @@ using UnityEngine;
 
 namespace MGIEP.Data
 {
-    [SerializeField]
-    public class SessionInfo
+    [Serializable]
+    public class PlayerData
+    {
+        public string loginToken;
+        public string playerName;
+        public string playerEmail;
+
+        public PlayerData(string _loginToken, string _playerName, string _playerEmail)
+        {
+            loginToken = _loginToken;
+            playerName = _playerName;
+            playerEmail = _playerEmail;
+        }
+    }
+
+    [Serializable]
+    public class SessionData
     {
         public string loginToken;
         public int sessionNo;
         public DateTime sessionStartTime;
         public DateTime sessionEndTime;
         public double sessionDuration;
-        public List<Attempt> attempts;
+        public List<SessionAttempt> attempts;
 
-        public SessionInfo(string _loginToken, int _sessionNo, int _attemptNo)
+        public SessionData(string _loginToken, int _sessionNo, int _attemptNo)
         {
             Debug.Log("Initializing sessionInfo : " + _sessionNo);
 
             loginToken = _loginToken;
             sessionNo = _sessionNo;
             sessionStartTime = DateTime.UtcNow;
-            attempts = new List<Attempt>();
+            attempts = new List<SessionAttempt>();
 
-            Attempt newAttempt = new Attempt(_attemptNo);
+            SessionAttempt newAttempt = new SessionAttempt(_attemptNo);
             attempts.Add(newAttempt);
         }
     }
 
     [Serializable]
-    public class Attempt
+    public class SessionAttempt
     {
         public int attemptNo;
         public List<int> completedScenarios;
 
-        public Attempt(int _attemptNo)
+        public SessionAttempt(int _attemptNo)
         {
             attemptNo = _attemptNo;
             completedScenarios = new List<int>();
@@ -42,24 +57,24 @@ namespace MGIEP.Data
     }
 
     [Serializable]
-    public class AttemptInfo
+    public class AttemptData
     {
         public string loginToken;
         public int attemptNo;
         public bool[] completedScenarios;
-        public List<ScenarioInfo> scenarioList;
+        public List<ScenarioData> scenarioList;
 
-        public AttemptInfo(string _loginToken)
+        public AttemptData(string _loginToken)
         {
             loginToken = _loginToken;
             attemptNo = 1;
             completedScenarios = new bool[10];
-            scenarioList = new List<ScenarioInfo>();
+            scenarioList = new List<ScenarioData>();
         }
 
         public void PrintAttemptInfo()
         {
-            foreach (ScenarioInfo scenarioInfo in scenarioList)
+            foreach (ScenarioData scenarioInfo in scenarioList)
             {
                 scenarioInfo.PrintScenarioInfo();
             }
@@ -67,21 +82,21 @@ namespace MGIEP.Data
     }
 
     [Serializable]
-    public class ScenarioInfo
+    public class ScenarioData
     {
         public int scenarioNo;
         public string scenarioTitle;
         public double scenarioDuration;
         public List<Question> questions;
 
-        public ScenarioInfo()
+        public ScenarioData()
         {
             scenarioNo = 0;
             scenarioTitle = "";
             questions = new List<Question>();
         }
 
-        public ScenarioInfo(int _scenarioNo, string _scenarioTitle)
+        public ScenarioData(int _scenarioNo, string _scenarioTitle)
         {
             scenarioNo = _scenarioNo;
             scenarioTitle = _scenarioTitle;

@@ -17,11 +17,11 @@ namespace MGEIP.GameData.ScenarioData
     public class ScenarioContent
     {
         [SpreadsheetPage("Scenarios Dump")]
-        public List<ScenarioData> Scenarios;
+        public List<ScenarioInfo> Scenarios;
     }
 
     [Serializable]
-    public class ScenarioData
+    public class ScenarioInfo
     {
         public int ScenarioNo;
         public string ScenarioName;

@@ -24,16 +24,16 @@ namespace MGEIP.Scenario
         {
             this.gameService = gameService;
 
-            List<ScenarioData> scenarioData = ScenariosDataContainer.ScenarioContent.Scenarios;
+            List<ScenarioInfo> scenarioInfoList = ScenariosDataContainer.ScenarioContent.Scenarios;
 
             for (int i = 0; i < scenarioButtons.Count; i++)
             {
                 scenarioButtons[i].Init(this);
             }
 
-            for (int i = 0; i < scenarioData.Count; i++)
+            for (int i = 0; i < scenarioInfoList.Count; i++)
             {
-                CreateScenario(scenarioData[i]);
+                CreateScenario(scenarioInfoList[i]);
             }
 
             /*
@@ -57,7 +57,7 @@ namespace MGEIP.Scenario
             }
 
             scenarios[index].ScenarioIndicator.SetActive(false);
-            scenarios[index].ScenarioInfo.SetActive(true);
+            scenarios[index].ScenarioData.SetActive(true);
 
             selectedScenarioIndex = index;
             */
@@ -72,16 +72,16 @@ namespace MGEIP.Scenario
             SetCurrentScenario(_index - 1);
         }
 
-        private void CreateScenario(ScenarioData scenarioData)
+        private void CreateScenario(ScenarioInfo scenarioInfo)
         {
             Scenario scenario = Instantiate<Scenario>(scenarioPrefab);
-            scenario.gameObject.name = "Scenario" + scenarioData.ScenarioNo;
-            scenario.SetScenarioInfo(scenarioData.ScenarioNo, scenarioData.ScenarioName, gameService, this);
+            scenario.gameObject.name = "Scenario" + scenarioInfo.ScenarioNo;
+            scenario.SetScenarioInfo(scenarioInfo.ScenarioNo, scenarioInfo.ScenarioName, gameService, this);
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
 
-            if (DataHandler.Instance.AttemptInfo.completedScenarios[scenarioData.ScenarioNo - 1])
-                SetScenarioComplete(scenarioData.ScenarioNo);
+            if (DataHandler.Instance.AttemptData.completedScenarios[scenarioInfo.ScenarioNo - 1])
+                SetScenarioComplete(scenarioInfo.ScenarioNo);
         }
 
         public void SetCurrentScenario(int scenarioIndex)

@@ -19,7 +19,7 @@ namespace MGEIP.Scenario.Scenes
 
         private Coroutine audioSequenceCoroutine;
 
-        protected ScenarioInfo scenarioInfo;
+        protected ScenarioData scenarioData;
 
         public override void EnterScene()
         {
@@ -32,13 +32,13 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.QuestionVOButton.Button.onClick.AddListener(PlayQuestionVoiceOver);
         }
 
-        public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioInfo scenarioInfo)
+        public virtual void InitializeQuestionScene(int scenarioNo, SceneData sceneData, Scenario scenario, GameService gameService, ScenarioData scenarioData)
         {
             this.scenarioNo = scenarioNo;
             this.sceneData = sceneData;
             this.scenario = scenario;
             this.gameService = gameService;
-            this.scenarioInfo = scenarioInfo;
+            this.scenarioData = scenarioData;
         }
 
         public virtual void SetQuestionButton()

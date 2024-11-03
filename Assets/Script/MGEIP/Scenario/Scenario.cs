@@ -20,7 +20,7 @@ namespace MGEIP.Scenario
 
         /*
                 [SerializeField] private RectTransform scenarioAnchor;
-                [SerializeField] private GameObject scenarioInfo;
+                [SerializeField] private GameObject scenarioData;
                 [SerializeField] private GameObject scenarioIndicator;
                 [SerializeField] private Image scenarioIndicatorImage;
                 [SerializeField] private TextMeshProUGUI scenarioNameText;
@@ -31,7 +31,7 @@ namespace MGEIP.Scenario
         [SerializeField] private List<Scene> scenes = new();
 
         private ScenarioManager scenarioManager;
-        private ScenarioInfo scenarioInfo;
+        private ScenarioData scenarioData;
 
         private DateTime scenarioStartTime;
 
@@ -44,7 +44,7 @@ namespace MGEIP.Scenario
         public string EmotionKeyword => emotionKeyword;
         public int EmotionIndex => emotionIndex;
         /*
-        public GameObject ScenarioInfo => scenarioInfo; 
+        public GameObject ScenarioData => scenarioData; 
         public GameObject ScenarioIndicator => scenarioIndicator;
         public Image ScenarioIndicatorImage => scenarioIndicatorImage;
         public Button ScenarioButton => scenarioButton;
@@ -63,10 +63,10 @@ namespace MGEIP.Scenario
             this.gameService = gameService;
             this.scenarioManager = scenarioManager;
 
-            scenarioInfo = new ScenarioInfo(scenarioNo, scenarioName);
+            scenarioData = new ScenarioData(scenarioNo, scenarioName);
 
             /*
-            scenarioInfo.SetActive(false);
+            scenarioData.SetActive(false);
             scenarioIndicator.SetActive(true);
             scenarioNameText.SetText(scenarioName);
 
@@ -124,7 +124,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.MCQQuestion)
                         {
                             MCQQuestionScene mcqQuestionScene = scene.GetComponent<MCQQuestionScene>();
-                            mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
+                            mcqQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioData);
                             mcqQuestionScene.SetMCQQuestionSceneInfo();
                             mcqQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(mcqQuestionScene);
@@ -132,7 +132,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.CESliderQuestion)
                         {
                             CESliderQuestionScene ceSliderQuestionScene = scene.GetComponent<CESliderQuestionScene>();
-                            ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
+                            ceSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioData);
                             ceSliderQuestionScene.SetCESliderQuestionSceneInfo();
                             ceSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(ceSliderQuestionScene);
@@ -140,7 +140,7 @@ namespace MGEIP.Scenario
                         else if (sceneData.SceneType == SceneType.AESliderQuestion)
                         {
                             AESliderQuestionScene aeSliderQuestionScene = scene.GetComponent<AESliderQuestionScene>();
-                            aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioInfo);
+                            aeSliderQuestionScene.InitializeQuestionScene(scenarioNo, sceneData, this, gameService, scenarioData);
                             aeSliderQuestionScene.SetAESliderQuestionSceneInfo();
                             aeSliderQuestionScene.transform.SetParent(GameUIService.sceneHolder.transform, false);
                             scenes.Add(aeSliderQuestionScene);
@@ -250,11 +250,11 @@ namespace MGEIP.Scenario
             isScenarioCompleted = true;
 
             TimeSpan scenarioTimeSpan = DateTime.UtcNow - scenarioStartTime;
-            scenarioInfo.scenarioDuration = scenarioTimeSpan.TotalSeconds;
+            scenarioData.scenarioDuration = scenarioTimeSpan.TotalSeconds;
 
             scenarioManager.SetScenarioComplete(ScenarioNo);
 
-            DataHandler.Instance.AddCompletedScenario(scenarioInfo);
+            DataHandler.Instance.AddCompletedScenario(scenarioData);
 
             DataHandler.Instance.OnDataUploaded += DataSentResult;
         }

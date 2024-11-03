@@ -149,6 +149,8 @@ namespace Assets.Script.MGEIP.Service
             confirmNoButton.onClick.AddListener(SkipTutorialNo);
 
             errorOkayButton.onClick.AddListener(CloseErrorPanel);
+
+            formSubmitButton.onClick.AddListener(FormUISubmitClicked);
         }
 
         private void OnDestroy()
@@ -172,6 +174,8 @@ namespace Assets.Script.MGEIP.Service
             confirmNoButton.onClick.RemoveListener(SkipTutorialNo);
 
             errorOkayButton.onClick.RemoveListener(CloseErrorPanel);
+
+            formSubmitButton.onClick.RemoveListener(FormUISubmitClicked);
 
             if (loadingBarSequence == null)
                 return;
@@ -468,23 +472,28 @@ namespace Assets.Script.MGEIP.Service
         {
             gameNamePanel.gameObject.SetActive(true);
             gameNamePanel.alpha = 0;
-            gameNamePanel.DOFade(1, buttonScaleDuration).SetDelay(1f).OnComplete(CheckForWelcome);
+            gameNamePanel.DOFade(1, buttonScaleDuration).SetDelay(1f).OnComplete(CheckForLoginType);
         }
 
-        private void CheckForWelcome()
+        private void CheckForLoginType()
         {
-            if (loginType == LoginType.newPlayer)
+            switch (loginType)
             {
-                AnimateStartButton();
-                return;
+                case LoginType.newPlayer:
+                    AnimateFormUIPanel();
+                    break;
+                case LoginType.newAttempt:
+                    AnimateStartButton();
+                    break;
+                case LoginType.continueAttempt:
+                    welcomeBackLabel.text = "Continue where you left off in the previous session";
+                    AnimateWelcomeBackPanel();
+                    break;
+                case LoginType.repeatAttempt:
+                    welcomeBackLabel.text = "Start a new assessment session";
+                    AnimateWelcomeBackPanel();
+                    break;
             }
-
-            if (loginType == LoginType.continueAttempt)
-                welcomeBackLabel.text = "Continue where you left off in the previous session";
-            else
-                welcomeBackLabel.text = "Start a new assessment session";
-
-            AnimateWelcomeBackPanel();
         }
 
         public void AnimateStartButton()
@@ -581,6 +590,44 @@ namespace Assets.Script.MGEIP.Service
 
             loginButton.gameObject.SetActive(true);
             playerLoginNameInput.interactable = true;
+        }
+
+        #endregion
+
+        #region Form UI
+
+        private void AnimateFormUIPanel()
+        {
+            gameNamePanel.DOFade(0, buttonScaleDuration).SetDelay(2f).OnComplete(() =>
+            {
+                gameNamePanel.gameObject.SetActive(false);
+
+                formPanel.gameObject.SetActive(true);
+                formPanel.alpha = 0;
+
+                formPanel.DOFade(1, 0.5f);
+            });
+        }
+
+        private void CloseFormUIPanel()
+        {
+            formPanel.DOFade(0, 0.5f).OnComplete(() =>
+            {
+                formPanel.gameObject.SetActive(false);
+                AnimateStartButton();
+            });
+        }
+
+        private void FormUISubmitClicked()
+        {
+            // Check if values are right
+
+            string playerName = playerNameInput.text;
+            string playerEmail = playerEmailInput.text;
+
+            DataHandler.Instance.UploadPlayerData(playerName, playerEmail);
+
+            CloseFormUIPanel();
         }
 
         #endregion

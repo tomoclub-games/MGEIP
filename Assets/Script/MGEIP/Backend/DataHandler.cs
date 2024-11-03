@@ -22,11 +22,12 @@ namespace MGIEP.Data
         private string loginToken;
         private int sessionNo;
 
-        private AttemptInfo attemptInfo;
-        private SessionInfo sessionInfo;
+        private PlayerData playerData;
+        private AttemptData attemptData;
+        private SessionData sessionData;
 
-        public AttemptInfo AttemptInfo => attemptInfo;
-        public SessionInfo SessionInfo => sessionInfo;
+        public AttemptData AttemptData => attemptData;
+        public SessionData SessionData => sessionData;
 
         public UnityAction OnLoginRequested;
         public UnityAction<LoginType> OnPlayerLogin;
@@ -65,62 +66,79 @@ namespace MGIEP.Data
                 return;
             }
 
-            GetPlayerData(loginToken);
+            StartGameDataDownload(loginToken);
         }
 
         private void OnApplicationQuit()
         {
-            UpdateSessionInfoOnQuit();
+            UpdateSessionDataOnQuit();
         }
 
-        // Sets up the AttemptInfo and SessionInfo from DB
-        public void GetPlayerData(string loginToken)
+        // Sets up the attemptData and sessionData from DB
+        public void StartGameDataDownload(string loginToken)
         {
-            StartCoroutine(DownloadPlayerData(loginToken, (result, isSuccess) =>
+            StartCoroutine(DownloadGameData(loginToken, (result) =>
             {
-                if (isSuccess && result != null && !string.IsNullOrEmpty(result.data.loginToken))
-                {
-                    Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
-
-                    attemptInfo = result.data;
-
-                    if (sessionInfo == null)
-                        sessionNo = result.sessionNo;
-
-                    CheckForNewAttempt();
-                }
-                else if (isSuccess && result == null)
-                {
-                    Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new attempt 1");
-
-                    attemptInfo = new AttemptInfo(loginToken);
-                    sessionNo = 0;
-
-                    OnPlayerLogin?.Invoke(LoginType.newPlayer);
-                }
-                else
+                if (result == null)
                 {
                     Debug.Log("Failed to download data for player: " + loginToken + " - Unexpected error occurred");
 
-                    attemptInfo = null;
+                    attemptData = null;
                     sessionNo = 0;
 
                     OnPlayerLogin?.Invoke(LoginType.error);
+
+                    return;
                 }
 
-                Debug.Log("Session no : " + sessionNo);
+                if (result.playerFound)
+                {
+                    Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
 
-                InitializeSessionInfo();
+                    if (result.data == null)
+                    {
+                        // playerData exists, but attempt data doesnt -> New Attempt
+                        attemptData = new AttemptData(loginToken);
+
+                        if (sessionData == null)
+                            sessionNo = result.sessionNo;
+
+                        OnPlayerLogin?.Invoke(LoginType.newAttempt);
+                    }
+                    else
+                    {
+                        // playerData exists, attempt data exists -> Check For Repeat Attempt
+                        attemptData = result.data;
+
+                        if (sessionData == null)
+                            sessionNo = result.sessionNo;
+
+                        CheckForRepeatAttempt();
+                    }
+
+                    InitializeSessionData();
+                }
+                else
+                {
+                    Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new sessionAttempt 1");
+
+                    attemptData = new AttemptData(loginToken);
+
+                    if (sessionData == null)
+                        sessionNo = result.sessionNo;
+
+                    OnPlayerLogin?.Invoke(LoginType.newPlayer);
+                }
             }));
         }
 
-        private void CheckForNewAttempt()
+        private void CheckForRepeatAttempt()
         {
             bool isAttemptComplete = false;
 
-            for (int i = 0; i < attemptInfo.completedScenarios.Length; i++)
+            for (int i = 0; i < attemptData.completedScenarios.Length; i++)
             {
-                if (attemptInfo.completedScenarios[i] == false)
+                if (attemptData.completedScenarios[i] == false)
                 {
                     isAttemptComplete = false;
                     break;
@@ -131,20 +149,20 @@ namespace MGIEP.Data
 
             if (isAttemptComplete)
             {
-                AttemptInfo newattemptInfo = new AttemptInfo(attemptInfo.loginToken);
-                newattemptInfo.attemptNo = attemptInfo.attemptNo + 1;
+                AttemptData repeatAttemptData = new AttemptData(attemptData.loginToken);
+                repeatAttemptData.attemptNo = attemptData.attemptNo + 1;
 
-                Debug.Log("New attempt no : " + newattemptInfo.attemptNo);
+                Debug.Log("New sessionAttempt no : " + repeatAttemptData.attemptNo);
 
-                attemptInfo = newattemptInfo;
+                attemptData = repeatAttemptData;
 
-                OnPlayerLogin?.Invoke(LoginType.newAttempt);
+                OnPlayerLogin?.Invoke(LoginType.repeatAttempt);
             }
             else
             {
-                OnPlayerLogin?.Invoke(LoginType.continueAttempt);
+                Debug.Log("Continue sessionAttempt!");
 
-                Debug.Log("Continue attempt!");
+                OnPlayerLogin?.Invoke(LoginType.continueAttempt);
             }
         }
 
@@ -173,30 +191,30 @@ namespace MGIEP.Data
 #endif
         }
 
-        public void AddCompletedScenario(ScenarioInfo _scenarioInfo)
+        public void AddCompletedScenario(ScenarioData _scenarioData)
         {
-            attemptInfo.completedScenarios[_scenarioInfo.scenarioNo - 1] = true;
-            attemptInfo.scenarioList.Add(_scenarioInfo);
+            attemptData.completedScenarios[_scenarioData.scenarioNo - 1] = true;
+            attemptData.scenarioList.Add(_scenarioData);
 
-            Attempt attempt = sessionInfo.attempts.Find(id => id.attemptNo == attemptInfo.attemptNo);
+            SessionAttempt sessionAttempt = sessionData.attempts.Find(id => id.attemptNo == attemptData.attemptNo);
 
-            if (attempt == null)
+            if (sessionAttempt == null)
             {
-                attempt = new Attempt(attemptInfo.attemptNo);
-                sessionInfo.attempts.Add(attempt);
+                sessionAttempt = new SessionAttempt(attemptData.attemptNo);
+                sessionData.attempts.Add(sessionAttempt);
             }
 
-            attempt.completedScenarios.Add(_scenarioInfo.scenarioNo);
+            sessionAttempt.completedScenarios.Add(_scenarioData.scenarioNo);
 
-            // Upload AttemptInfo and SessionInfo
-            SetPlayerData();
+            // Upload attemptData and sessionData
+            StartGameDataUpload();
         }
 
-        public void SetPlayerData()
+        public void StartGameDataUpload()
         {
-            PlayerData playerData = new PlayerData(sessionInfo, attemptInfo);
+            GameData playerData = new GameData(sessionData, attemptData);
 
-            StartCoroutine(UploadPlayerData(JsonConvert.SerializeObject(playerData), result =>
+            StartCoroutine(UploadGameData(JsonConvert.SerializeObject(playerData), result =>
             {
                 if (result)
                 {
@@ -213,10 +231,10 @@ namespace MGIEP.Data
 
         #region Database access
 
-        // Player Data is sessionNo + Latest AttemptInfo
-        IEnumerator DownloadPlayerData(string loginToken, System.Action<ServerResponse<AttemptInfo>, bool> callback = null)
+        // GameData is sessionNo + Latest attemptData
+        IEnumerator DownloadGameData(string loginToken, System.Action<ServerResponse<AttemptData>> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadPlayerData?loginToken={loginToken}";
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadGameData?loginToken={loginToken}";
 
             using (UnityWebRequest request = UnityWebRequest.Get(url))
             {
@@ -225,7 +243,7 @@ namespace MGIEP.Data
                 if (request.result != UnityWebRequest.Result.Success)
                 {
                     Debug.LogError("Error: " + request.error);
-                    callback?.Invoke(null, false);
+                    callback?.Invoke(null);
                 }
                 else
                 {
@@ -233,33 +251,17 @@ namespace MGIEP.Data
 
                     Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + jsonResponse);
 
-                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptInfo>>(jsonResponse);
+                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(jsonResponse);
 
-                    if (responseObj.success)
-                    {
-                        if (responseObj.playerFound)
-                        {
-                            callback?.Invoke(responseObj, true);
-                        }
-                        else
-                        {
-                            Debug.Log("Player not found.");
-                            callback?.Invoke(null, true);
-                        }
-                    }
-                    else
-                    {
-                        Debug.LogError("Error: " + responseObj.error);
-                        callback?.Invoke(null, false);
-                    }
+                    callback?.Invoke(responseObj);
                 }
             }
         }
 
-        // Player Data is SessionInfo + AttemptInfo
-        IEnumerator UploadPlayerData(string jsonData, System.Action<bool> callback = null)
+        // Game Data is sessionData + attemptData
+        IEnumerator UploadGameData(string jsonData, System.Action<bool> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadPlayerData";
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadGameData";
 
             using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
             {
@@ -294,24 +296,26 @@ namespace MGIEP.Data
 
         #region Session Data
 
-        private void InitializeSessionInfo()
+        private void InitializeSessionData()
         {
-            if (sessionInfo != null)
+            if (sessionData != null)
             {
                 Debug.Log("Continue session!");
                 return;
             }
 
-            sessionInfo = new SessionInfo(loginToken, sessionNo + 1, attemptInfo.attemptNo);
+            sessionData = new SessionData(loginToken, sessionNo + 1, attemptData.attemptNo);
 
             Debug.Log("Session Info set here!");
 
-            UpdateSessionInfo();
+            StartPlayerSessionDataUpload();
         }
 
-        private void UpdateSessionInfo()
+        private void StartPlayerSessionDataUpload()
         {
-            StartCoroutine(UploadSessionInfo(JsonConvert.SerializeObject(sessionInfo), result =>
+            PlayerSessionData playerSessionData = new PlayerSessionData(playerData, sessionData);
+
+            StartCoroutine(UploadPlayerSessionData(JsonConvert.SerializeObject(playerSessionData), result =>
             {
                 if (result)
                 {
@@ -326,9 +330,10 @@ namespace MGIEP.Data
             }));
         }
 
-        IEnumerator UploadSessionInfo(string jsonData, System.Action<bool> callback = null)
+        // Player Session Data = sessionData + playerData
+        IEnumerator UploadPlayerSessionData(string jsonData, System.Action<bool> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadSessionInfo";
+            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadPlayerSessionData";
 
             using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
             {
@@ -359,20 +364,22 @@ namespace MGIEP.Data
             }
         }
 
-        private void UpdateSessionInfoOnQuit()
+        private void UpdateSessionDataOnQuit()
         {
-            Debug.Log("UpdateSessionInfoOnQuit called!");
+            Debug.Log("UpdateSessionDataOnQuit called!");
 
-            if (sessionInfo == null)
+            if (sessionData == null)
                 return;
 
             DateTime sessionEndTime = DateTime.UtcNow;
-            TimeSpan sessionDuration = sessionEndTime - sessionInfo.sessionStartTime;
+            TimeSpan sessionDuration = sessionEndTime - sessionData.sessionStartTime;
 
-            sessionInfo.sessionEndTime = sessionEndTime;
-            sessionInfo.sessionDuration = sessionDuration.TotalSeconds;
+            sessionData.sessionEndTime = sessionEndTime;
+            sessionData.sessionDuration = sessionDuration.TotalSeconds;
 
-            StartCoroutine(UploadSessionInfo(JsonConvert.SerializeObject(sessionInfo), result =>
+            PlayerSessionData playerSessionData = new PlayerSessionData(null, sessionData);
+
+            StartCoroutine(UploadPlayerSessionData(JsonConvert.SerializeObject(playerSessionData), result =>
             {
                 if (result)
                 {
@@ -386,34 +393,63 @@ namespace MGIEP.Data
         }
 
         #endregion
+
+        #region Player Data
+
+        public void UploadPlayerData(string _playerName, string _playerEmail)
+        {
+            if (loginToken == null || _playerName == null || _playerEmail == null)
+            {
+                Debug.LogError("Null in one of the arguments for PlayerData object!");
+                return;
+            }
+
+            playerData = new PlayerData(loginToken, _playerName, _playerEmail);
+
+            InitializeSessionData();
+        }
+
+        #endregion
     }
 
     public class ServerResponse<T>
     {
-        public bool success;
         public bool playerFound;
         public int sessionNo;
         public string error;
         public T data;
     }
 
-    public class PlayerData
+    public class GameData
     {
-        public SessionInfo sessionInfo;
-        public AttemptInfo attemptInfo;
+        public SessionData sessionData;
+        public AttemptData attemptData;
 
-        public PlayerData(SessionInfo _sessionInfo, AttemptInfo _attemptInfo)
+        public GameData(SessionData _sessionData, AttemptData _attemptData)
         {
-            sessionInfo = _sessionInfo;
-            attemptInfo = _attemptInfo;
+            sessionData = _sessionData;
+            attemptData = _attemptData;
+        }
+    }
+
+    public class PlayerSessionData
+    {
+        public PlayerData playerData;
+        public SessionData sessionData;
+
+        public PlayerSessionData(PlayerData _playerData, SessionData _sessionData)
+        {
+            playerData = _playerData;
+            sessionData = _sessionData;
         }
     }
 
     public enum LoginType
     {
         newPlayer,
-        continueAttempt,
         newAttempt,
+        continueAttempt,
+        repeatAttempt,
         error
     }
 }
