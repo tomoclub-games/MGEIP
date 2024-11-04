@@ -396,15 +396,15 @@ namespace MGIEP.Data
 
         #region Player Data
 
-        public void UploadPlayerData(string _playerName, string _playerEmail)
+        public void UploadPlayerData(string _playerName, string _playerEmail, DateTime? _playerDOB, string _playerGender)
         {
-            if (loginToken == null || _playerName == null || _playerEmail == null)
+            if (loginToken == null || _playerName == null || _playerEmail == null || _playerDOB == null || _playerGender == null)
             {
                 Debug.LogError("Null in one of the arguments for PlayerData object!");
                 return;
             }
 
-            playerData = new PlayerData(loginToken, _playerName, _playerEmail);
+            playerData = new PlayerData(loginToken, _playerName, _playerEmail, _playerDOB, _playerGender);
 
             InitializeSessionData();
         }

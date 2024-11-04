@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using MGEIP;
@@ -27,10 +28,10 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private TMP_InputField playerDOBMonthInput;
         [SerializeField] private TMP_InputField playerDOBYearInput;
         [SerializeField] private TMP_Dropdown playerGenderInput;
-        [SerializeField] private TMP_Text playerNameErrorLabel;
-        [SerializeField] private TMP_Text playerEmailErrorLabel;
-        [SerializeField] private TMP_Text playerDOBErrorLabel;
-        [SerializeField] private TMP_Text playerGenderErrorLabel;
+        [SerializeField] private GameObject playerNameErrorLabel;
+        [SerializeField] private GameObject playerEmailErrorLabel;
+        [SerializeField] private GameObject playerDOBErrorLabel;
+        [SerializeField] private GameObject playerGenderErrorLabel;
         [SerializeField] private Button formSubmitButton;
 
         [Header("Start")]
@@ -620,12 +621,74 @@ namespace Assets.Script.MGEIP.Service
 
         private void FormUISubmitClicked()
         {
-            // Check if values are right
+            bool isValidated = true;
 
-            string playerName = playerNameInput.text;
-            string playerEmail = playerEmailInput.text;
+            string playerName;
+            string playerEmail;
+            DateTime? playerDOB = null;
+            string playerGender;
 
-            DataHandler.Instance.UploadPlayerData(playerName, playerEmail);
+            playerNameErrorLabel.SetActive(false);
+            playerEmailErrorLabel.SetActive(false);
+            playerDOBErrorLabel.SetActive(false);
+            playerGenderErrorLabel.SetActive(false);
+
+            if (playerNameInput.text == null)
+            {
+                playerNameErrorLabel.SetActive(true);
+                isValidated = false;
+            }
+
+            if (playerEmailInput.text == null)
+            {
+                playerEmailErrorLabel.SetActive(true);
+                isValidated = false;
+            }
+
+            if (playerDOBDayInput.text == null || playerDOBMonthInput.text == null || playerDOBYearInput.text == null)
+            {
+                playerDOBErrorLabel.SetActive(true);
+                isValidated = false;
+            }
+            else
+            {
+                if (int.TryParse(playerDOBDayInput.text, out int day) &&
+            int.TryParse(playerDOBMonthInput.text, out int month) &&
+            int.TryParse(playerDOBYearInput.text, out int year))
+                {
+                    try
+                    {
+                        // Create a DateTime object with the input values
+                        playerDOB = new DateTime(year, month, day);
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        playerDOBErrorLabel.SetActive(true);
+                        isValidated = false;
+                    }
+                }
+                else
+                {
+                    // Handle non-integer input
+                    playerDOBErrorLabel.SetActive(true);
+                    isValidated = false;
+                }
+            }
+
+            if (playerGenderInput.value == -1)
+            {
+                playerGenderErrorLabel.SetActive(true);
+                isValidated = false;
+            }
+
+            if (!isValidated)
+                return;
+
+            playerName = playerNameInput.text;
+            playerEmail = playerEmailInput.text;
+            playerGender = playerGenderInput.itemText.text;
+
+            DataHandler.Instance.UploadPlayerData(playerName, playerEmail, playerDOB.HasValue?(DateTime)playerDOB:null, playerGender);
 
             CloseFormUIPanel();
         }

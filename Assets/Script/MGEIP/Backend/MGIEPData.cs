@@ -10,12 +10,16 @@ namespace MGIEP.Data
         public string loginToken;
         public string playerName;
         public string playerEmail;
+        public DateTime playerDOB;
+        public string playerGender;
 
-        public PlayerData(string _loginToken, string _playerName, string _playerEmail)
+        public PlayerData(string _loginToken, string _playerName, string _playerEmail, DateTime? _playerDOB, string _playerGender)
         {
             loginToken = _loginToken;
             playerName = _playerName;
             playerEmail = _playerEmail;
+            playerDOB = (DateTime)_playerDOB;
+            playerGender = _playerGender;
         }
     }
 
