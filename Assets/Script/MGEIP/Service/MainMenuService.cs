@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using DG.Tweening;
 using MGEIP;
 using MGEIP.GameData;
@@ -27,7 +28,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private TMP_InputField playerDOBDayInput;
         [SerializeField] private TMP_InputField playerDOBMonthInput;
         [SerializeField] private TMP_InputField playerDOBYearInput;
-        [SerializeField] private TMP_Dropdown playerGenderInput;
+        [SerializeField] private GenderDropdownHandler playerGenderInput;
         [SerializeField] private GameObject playerNameErrorLabel;
         [SerializeField] private GameObject playerEmailErrorLabel;
         [SerializeField] private GameObject playerDOBErrorLabel;
@@ -633,21 +634,26 @@ namespace Assets.Script.MGEIP.Service
             playerDOBErrorLabel.SetActive(false);
             playerGenderErrorLabel.SetActive(false);
 
-            if (playerNameInput.text == null)
+            if (playerNameInput.text == null || playerNameInput.text == "")
             {
                 playerNameErrorLabel.SetActive(true);
+                playerNameInput.text = "";
                 isValidated = false;
             }
 
-            if (playerEmailInput.text == null)
+            if (playerEmailInput.text == null || playerEmailInput.text == "" || !IsValidEmail(playerEmailInput.text))
             {
                 playerEmailErrorLabel.SetActive(true);
+                playerEmailInput.text = "";
                 isValidated = false;
             }
 
             if (playerDOBDayInput.text == null || playerDOBMonthInput.text == null || playerDOBYearInput.text == null)
             {
                 playerDOBErrorLabel.SetActive(true);
+                playerDOBDayInput.text = "";
+                playerDOBMonthInput.text = "";
+                playerDOBYearInput.text = "";
                 isValidated = false;
             }
             else
@@ -658,12 +664,43 @@ namespace Assets.Script.MGEIP.Service
                 {
                     try
                     {
-                        // Create a DateTime object with the input values
+                        // Try to create a DateTime object with the input values
                         playerDOB = new DateTime(year, month, day);
+
+                        // Additional validation after successful DateTime creation
+                        int minYear = 1900;
+                        int maxYear = DateTime.Today.Year;
+
+                        // Check year range
+                        if (year < minYear || year > maxYear)
+                        {
+                            playerDOBErrorLabel.SetActive(true);
+                            playerDOBDayInput.text = "";
+                            playerDOBMonthInput.text = "";
+                            playerDOBYearInput.text = "";
+                            isValidated = false;
+                        }
+                        // Check if date is in the future
+                        else if (playerDOB > DateTime.Today)
+                        {
+                            playerDOBErrorLabel.SetActive(true);
+                            playerDOBDayInput.text = "";
+                            playerDOBMonthInput.text = "";
+                            playerDOBYearInput.text = "";
+                            isValidated = false;
+                        }
+                        else
+                        {
+                            // Date is valid
+                            playerDOBErrorLabel.SetActive(false);
+                        }
                     }
                     catch (ArgumentOutOfRangeException)
                     {
                         playerDOBErrorLabel.SetActive(true);
+                        playerDOBDayInput.text = "";
+                        playerDOBMonthInput.text = "";
+                        playerDOBYearInput.text = "";
                         isValidated = false;
                     }
                 }
@@ -675,7 +712,7 @@ namespace Assets.Script.MGEIP.Service
                 }
             }
 
-            if (playerGenderInput.value == -1)
+            if (playerGenderInput.CurrentSelection == -1)
             {
                 playerGenderErrorLabel.SetActive(true);
                 isValidated = false;
@@ -686,11 +723,58 @@ namespace Assets.Script.MGEIP.Service
 
             playerName = playerNameInput.text;
             playerEmail = playerEmailInput.text;
-            playerGender = playerGenderInput.itemText.text;
+            playerGender = playerGenderInput.CurrentSelectionText;
 
             DataHandler.Instance.UploadPlayerData(playerName, playerEmail, playerDOB.HasValue?(DateTime)playerDOB:null, playerGender);
 
             CloseFormUIPanel();
+        }
+
+        private bool IsValidDate(int day, int month, int year)
+        {
+            int minYear = 1900;
+            int maxYear = DateTime.Today.Year; // Set maximum year to the current year
+
+            // Check if the year is within the range
+            if (year < minYear || year > maxYear)
+            {
+                Debug.LogError($"Year must be between {minYear} and {maxYear}.");
+                return false;
+            }
+
+            // Attempt to parse the date
+            string dateString = $"{day}/{month}/{year}";
+            bool isValidDate = DateTime.TryParseExact(dateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime parsedDate);
+
+            if (!isValidDate)
+            {
+                Debug.LogError("Invalid date format!");
+                return false;
+            }
+
+            // Check if the parsed date is greater than today
+            if (parsedDate > DateTime.Today)
+            {
+                Debug.LogError("Date cannot be in the future.");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return false; // Empty check to handle any cases where email might be null or empty
+            }
+
+            // Define a regex pattern for validating email
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            Regex regex = new Regex(emailPattern);
+
+            // Return true if the email matches the pattern, false otherwise
+            return regex.IsMatch(email);
         }
 
         #endregion
