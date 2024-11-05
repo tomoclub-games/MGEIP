@@ -187,7 +187,7 @@ namespace MGIEP
         {
             AudioClip audioClip = FindAudioClipByName("Audio/Music/" + _musicName);
 
-            if (audioClip == null)
+            if (audioClip == null || musicSource.clip == audioClip)
                 return;
 
             musicSource.clip = audioClip;

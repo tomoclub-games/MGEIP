@@ -92,6 +92,8 @@ namespace MGEIP.Service
 
         [Header("Scenario Info Panel")]
         [SerializeField] private GameObject scenarioInfoPanel;
+        [SerializeField] private RectTransform scenarioInfoParent;
+        [SerializeField] private RectTransform scenarioDescParent;
         [SerializeField] private TMP_Text scenarioInfoName;
         [SerializeField] private TMP_Text scenarioInfoDesc;
         [SerializeField] private GameObject[] scenarioInfoImages;
