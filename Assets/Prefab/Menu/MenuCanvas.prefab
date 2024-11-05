@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "But your job isn\u2019t done when you lower your lens. <size=23><b><color=#462506>Match
+  m_text: "Your job isn\u2019t done when you lower your lens. <size=23><b><color=#462506>Match
     your photos on the newspaper</b></color></size>, crafting a unique spread that
     truly reflects our town\u2019s spirit."
   m_isRightToLeft: 0
@@ -483,10 +483,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8012625280511941694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 127.20489, y: -15}
-  m_SizeDelta: {x: 156.39021, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &442404106219069481
 CanvasRenderer:
@@ -4105,7 +4105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Each photo you take will be a piece of Harmony Town's <size=23><b><color=#462506>story</b></color></size>.
+  m_text: Each photo you take will be a piece of Harmony Town's <size=23><b><color=#462506>story</b></color></size>!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5191f215126063d419015c58557279a2, type: 2}
   m_sharedMaterial: {fileID: 2500956899353229297, guid: 5191f215126063d419015c58557279a2, type: 2}
@@ -5597,7 +5597,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: -20, y: 0, z: 0, w: -10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7737,7 +7737,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: -20, y: 0, z: 0, w: -10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8382,10 +8382,10 @@ RectTransform:
   - {fileID: 3456493809293405224}
   m_Father: {fileID: 6262539475649873787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.27205, y: -56.25}
-  m_SizeDelta: {x: 154.5441, y: 37.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3471745722264792076
 MonoBehaviour:
@@ -11184,7 +11184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 64.25781}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 572.4811, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7875817940589587259
 CanvasRenderer:
@@ -11214,9 +11214,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "As The Harmony Herald\u2019s newest junior <size=23><b><color=#462506>photojournalist</b></color></size>,
-    you\u2019re tasked with a special mission: to capture the essence of our town
-    for next week\u2019s edition."
+  m_text: "You're a <size=23><b><color=#462506>photojournalist</b></color></size>
+    at The Harmony Herald, and are tasked with a special mission: to capture the
+    essence of our town for next week\u2019s edition."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5191f215126063d419015c58557279a2, type: 2}
   m_sharedMaterial: {fileID: 2500956899353229297, guid: 5191f215126063d419015c58557279a2, type: 2}
@@ -12857,10 +12857,10 @@ RectTransform:
   - {fileID: 3249786105264349409}
   m_Father: {fileID: 6262539475649873787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.27205, y: -93.75}
-  m_SizeDelta: {x: 154.5441, y: 37.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2426565792344439806
 MonoBehaviour:
@@ -15107,7 +15107,6 @@ MonoBehaviour:
   - Others
   - Prefer not to say
   selectedTextColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  deselectedTextColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5019608}
 --- !u!114 &897541350755482026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15641,10 +15640,10 @@ RectTransform:
   - {fileID: 2905569015329697752}
   m_Father: {fileID: 6262539475649873787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.27205, y: -18.75}
-  m_SizeDelta: {x: 154.5441, y: 37.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5493911130418880791
 MonoBehaviour:
@@ -17492,7 +17491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8278470266649575958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17565,10 +17564,10 @@ RectTransform:
   - {fileID: 7212324420694738664}
   m_Father: {fileID: 6262539475649873787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.27205, y: -131.25}
-  m_SizeDelta: {x: 154.5441, y: 37.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887640781738063452
 MonoBehaviour:
@@ -21767,7 +21766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1571776744992190373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22357,10 +22356,10 @@ RectTransform:
   - {fileID: 269053495903568617}
   m_Father: {fileID: 8012625280511941694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.50489, y: -15}
-  m_SizeDelta: {x: 49.00978, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5303913741821162351
 CanvasRenderer:
@@ -28919,7 +28918,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Armed with your <size=23><b><color=#462506>camera</b></color></size>,
-    you\u2019ll explore our streets, parks, and community events, and encounter neighbours. "
+    you\u2019ll explore the streets, parks, and community events, and meet neighbours. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5191f215126063d419015c58557279a2, type: 2}
   m_sharedMaterial: {fileID: 2500956899353229297, guid: 5191f215126063d419015c58557279a2, type: 2}
@@ -30982,7 +30981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -258.4
+      value: -283.5953
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -31623,7 +31622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 97.71875
+      value: 84.828125
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35022,6 +35021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6387388098686970310, guid: 2bda4f8db18147c4db6e947a46924aac, type: 3}
+      propertyPath: m_text
+      value: Loading...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36746,11 +36749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -217.40625
+      value: -282.83594
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 91.15625
+      value: 88.9
       objectReference: {fileID: 0}
     - target: {fileID: 663050170531194113, guid: 55c5a5c51ae9de946a2d215c7ebeaa13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
