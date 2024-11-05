@@ -23,6 +23,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private CanvasGroup pageFlipInstructionBox;
         [SerializeField] private List<DragMe> dragMes;
         [SerializeField] private List<DropMe> dropMes;
+        [SerializeField] private Button newspaperNextButton;
         [SerializeField] private Button endButton;
 
         private List<Sprite> newspaperSprites = new();
@@ -32,6 +33,7 @@ namespace Assets.Script.MGEIP.Service
         private int minPages = 1;
         private int maxPages = 3;
         private CanvasGroup currentPage;
+        private CanvasGroup newspaperNextButtonCG;
 
         private void Awake()
         {
@@ -45,12 +47,15 @@ namespace Assets.Script.MGEIP.Service
                 dropMe.Init(this);
             }
 
+            newspaperNextButtonCG = newspaperNextButton.GetComponent<CanvasGroup>();
+
             introNextButton.onClick.AddListener(IntroNextButtonClicked);
 
             Sprite[] sprites = Resources.LoadAll<Sprite>("Art/EndScreen/");
             newspaperSprites.AddRange(sprites);
 
             endButton.onClick.AddListener(BackToHomeScreen);
+            newspaperNextButton.onClick.AddListener(ShowEndScreen);
         }
 
         private void OnDestroy()
@@ -58,6 +63,7 @@ namespace Assets.Script.MGEIP.Service
             introNextButton.onClick.RemoveAllListeners();
 
             endButton.onClick.RemoveAllListeners();
+            newspaperNextButton.onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -108,7 +114,7 @@ namespace Assets.Script.MGEIP.Service
             });
         }
 
-        public void NextPageButtonClicked()
+        private void NextPageButtonClicked()
         {
             if (currentPageNumber == maxPages)
                 return;
@@ -118,7 +124,7 @@ namespace Assets.Script.MGEIP.Service
             ShowPage(currentPageNumber);
         }
 
-        public void PrevPageButtonClicked()
+        private void PrevPageButtonClicked()
         {
             if (currentPageNumber == minPages)
                 return;
@@ -156,21 +162,27 @@ namespace Assets.Script.MGEIP.Service
             placedPolaroids++;
 
             if (placedPolaroids == 10)
-                ShowEndScreen();
+                EnableNextButton();
         }
 
-        public void ShowEndScreen()
+        private void EnableNextButton()
         {
-            endPanel.alpha = 0;
+            newspaperNextButton.gameObject.SetActive(true);
+        }
+
+        private void ShowEndScreen()
+        {
+            newspaperNextButtonCG.blocksRaycasts = false;
 
             Sequence endScreenSequence = DOTween.Sequence();
 
-            endScreenSequence.AppendInterval(1f);
-            endScreenSequence.Append(newsPaperPanelGO.DOFade(0, 0.5f));
-            endScreenSequence.AppendInterval(1f);
             endScreenSequence.Append(newspaperPanel.DOFade(0, 0.5f));
-            endScreenSequence.AppendCallback(() => newspaperPanel.gameObject.SetActive(false));
-            endScreenSequence.AppendCallback(() => endPanel.gameObject.SetActive(true));
+            endScreenSequence.AppendCallback(() =>
+            {
+                newspaperPanel.gameObject.SetActive(false);
+                endPanel.gameObject.SetActive(true);
+                endPanel.alpha = 0;
+            });
             endScreenSequence.Append(endPanel.DOFade(1, 0.5f));
         }
 
@@ -179,7 +191,7 @@ namespace Assets.Script.MGEIP.Service
             return newspaperSprites.Find(sprite => sprite.name == $"sn_{_scenarioNo}_newspaper");
         }
 
-        public void BackToHomeScreen()
+        private void BackToHomeScreen()
         {
             SceneManager.LoadScene(0);
         }

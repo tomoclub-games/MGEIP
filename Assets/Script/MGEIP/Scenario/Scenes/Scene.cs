@@ -26,11 +26,11 @@ namespace MGEIP.Scenario.Scenes
 
         public virtual void EnterScene()
         {
-            GameUIService.StartSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
-            GameUIService.StorySceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
-            GameUIService.QuestionSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
-            GameUIService.EndSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
-            GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.AddListener(PlayNarrationVoiceOver);
+            GameUIService.StartSceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.StartScene));
+            GameUIService.StorySceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.StoryScene));
+            GameUIService.QuestionSceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.AESliderQuestion));
+            GameUIService.EndSceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.EndScene));
+            GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.PhotoCapture));
 
             SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
         }
@@ -53,16 +53,36 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
         }
 
-        public void PlayNarrationVoiceOver()
+        public void PlayNarrationVoiceOver(SceneType _sceneType)
         {
-            if (isNarrationBoxActive)
+            if (!isNarrationBoxActive)
+                return;
+
+            string narrationClipName = $"Scenarios/sc_{scenarioNo}/nt_{scenarioNo}_{sceneData.SceneNo}";
+
+            switch (_sceneType)
             {
-                string narrationClipName = $"Scenarios/sc_{scenarioNo}/nt_{scenarioNo}_{sceneData.SceneNo}";
-                GameUIService.StartSceneNarrationVOButton.PlayAudioClip(narrationClipName);
-                GameUIService.StorySceneNarrationVOButton.PlayAudioClip(narrationClipName);
-                GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
-                GameUIService.EndSceneNarrationVOButton.PlayAudioClip(narrationClipName);
-                GameUIService.PhotoCaptureSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                case SceneType.StartScene:
+                    GameUIService.StartSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.StoryScene:
+                    GameUIService.StorySceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.MCQQuestion:
+                    GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.CESliderQuestion:
+                    GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.AESliderQuestion:
+                    GameUIService.QuestionSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.EndScene:
+                    GameUIService.EndSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
+                case SceneType.PhotoCapture:
+                    GameUIService.PhotoCaptureSceneNarrationVOButton.PlayAudioClip(narrationClipName);
+                    break;
             }
         }
     }

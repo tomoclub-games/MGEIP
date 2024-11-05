@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Text;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -9,45 +11,51 @@ public class TypeWritterEffect : MonoBehaviour
     public float typingSpeed = 0.05f;       // Delay between each character reveal
 
     private int currentIndex = 0;           // Current index of the active text
+    public float timeAfterText = 1f;
 
-    void Start()
+    private TMP_Text tutorialText;
+    private string fullText;
+    private StringBuilder currentText;
+
+    private void Start()
     {
-        // Start the first typewriter effect
-        if (textMeshPros.Length > 0)
-        {
-            StartTypewriterEffect(textMeshPros[currentIndex]);
-        }
+        tutorialText = textMeshPros[0];
+        fullText = tutorialText.text; // Store the full text
+        currentText = new StringBuilder("<color=#00000000>" + fullText + "</color>");
+        StartCoroutine(DisplayText());
     }
 
-    void StartTypewriterEffect(TextMeshProUGUI tmp)
+    private IEnumerator DisplayText()
     {
-        tmp.maxVisibleCharacters = 0;  // Hide all characters initially
+        int revealedChars = 0;
 
-        // Start the typewriter effect
-        DOTween.To(() => tmp.maxVisibleCharacters,
-                   x => tmp.maxVisibleCharacters = x,
-                   tmp.text.Length, typingSpeed * tmp.text.Length)
-               .OnComplete(OnTextComplete);  // Once the text completes, trigger next action
+        // Loop through each character in the text
+        while (revealedChars < fullText.Length)
+        {
+            // Update the color tag to reveal one more character
+            currentText.Clear();
+            currentText.Append(fullText.Substring(0, revealedChars + 1)); // Revealed part
+            currentText.Append("<color=#00000000>");
+            currentText.Append(fullText.Substring(revealedChars + 1)); // Hidden part
+            currentText.Append("</color>");
+
+            tutorialText.text = currentText.ToString();
+            revealedChars++;
+
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        // Wait after displaying the full text
+        yield return new WaitForSeconds(timeAfterText);
+
+        OnTextComplete();
     }
 
-    void OnTextComplete()
+    private void OnTextComplete()
     {
-        // Activate the corresponding GameObject, if any
-        if (gameObjectsToActivate.Length > currentIndex)
+        foreach (GameObject gameObject in gameObjectsToActivate)
         {
-            gameObjectsToActivate[currentIndex].SetActive(true);
-        }
-
-        currentIndex++;  // Move to the next text
-        if (currentIndex < textMeshPros.Length)
-        {
-            // Start the typewriter effect on the next TextMeshProUGUI
-            StartTypewriterEffect(textMeshPros[currentIndex]);
-        }
-        else
-        {
-            // All texts have been typed, handle the end of the sequence here if needed
-            Debug.Log("All texts completed!");
+            gameObject.SetActive(true);
         }
     }
 }
