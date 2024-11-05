@@ -136,8 +136,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 1
       QuestionText: Rate the intensity of <size=65><b><color=#FF7A00><emotion></b></color></size>
-        Mrs. Thompson is feeling.<br><size=35>1 represents the lowest intensity and
-        10 represents the highest intensity.
+        Mrs. Thompson is feeling.<br><size=35> 1 represents the lowest intensity
+        and 10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -240,8 +240,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Wait! I think I heard something!
-      NarrationText: Mrs. Thompson suddenly pauses. A faint meow comes from a nearby
-        bush. Mrs. Thompson rushes over, and to everyone's relief, Whiskers emerges.
+      NarrationText: 'A faint meow comes from a nearby bush. '
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -259,9 +258,9 @@ MonoBehaviour:
       SceneNo: 12
       SceneType: 2
       DialogueBox: 0
-      NarrationBox: 0
+      NarrationBox: 1
       DialogueText: 
-      NarrationText: 
+      NarrationText: To everyone's relief, Whiskers emerges.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -388,9 +387,9 @@ MonoBehaviour:
       DialogueText: This can't be right. Nothing looks familiar...
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>the
-        tourist</b> is feeling.<br><size=35>1 represents the lowest intensity and
-        10 represents the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        the tourist</b> is feeling.<br><size=35> 1 represents the lowest intensity
+        and 10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -640,9 +639,9 @@ MonoBehaviour:
       DialogueText: Every piece of trash gone is a victory!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>Alexi</b>is
-        feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        Alexi </b>is feeling.<br><size=35> 1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -1266,9 +1265,9 @@ MonoBehaviour:
       DialogueText: So sorry, I messed up!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>Jacques</b>
-        is feeling.<br><size=35>1 represents the lowest intensity and 10 represents
-        the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        Jacques</b> is feeling.<br><size=35> 1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -1600,7 +1599,7 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 1
       QuestionText: Rate the intensity of<size=60><b><color=#FF7A00> <emotion></b></color></size><b>
-        Mrs. Gowri</b> is feeling.<br><size=35>1 represents the lowest intensity
+        Mrs. Gowri</b> is feeling.<br><size=35> 1 represents the lowest intensity
         and 10 represents the highest intensity.
       Option1: 
       Option2: 
@@ -1805,7 +1804,7 @@ MonoBehaviour:
       SceneType: 2
       DialogueBox: 1
       NarrationBox: 1
-      DialogueText: Ah la la la, gardening day...
+      DialogueText: What a lovely day to garden...
       NarrationText: 'Josefa carries three large potted plants, excited to plant
         them. '
       HasCustomVO: 0
@@ -1868,7 +1867,7 @@ MonoBehaviour:
       SceneType: 3
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: So careless, sigh!
+      DialogueText: So careless!
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do you think <size=60><b><color=#FF7A00>Josefa</b></color></size>
@@ -1889,11 +1888,11 @@ MonoBehaviour:
       SceneType: 4
       DialogueBox: 1
       NarrationBox: 0
-      DialogueText: So careless, sigh!
+      DialogueText: So careless!
       NarrationText: 
       HasCustomVO: 1
       QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size>
-        <b> Josefa</b> is feeling.<br><size=35>1 represents the lowest intensity
+        <b> Josefa</b> is feeling.<br><size=35> 1 represents the lowest intensity
         and 10 represents the highest intensity.
       Option1: 
       Option2: 
@@ -2242,9 +2241,9 @@ MonoBehaviour:
       DialogueText: Yeah, I'm having loads of fun...not!
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00> <emotion></b></color></size>
-        <b>Mercedes</b> is feeling.<br><size=35>1 represents the lowest intensity
-        and 10 represents the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        Mercedes</b> is feeling.<br><size=35> 1 represents the lowest intensity and
+        10 represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -2365,7 +2364,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: Mercedes decides to invite them over to her place to hangout.
+      NarrationText: Mercedes invites them over to her place to hangout.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2529,9 +2528,9 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size>
-        <b>Max</b> is feeling.<br><size=35>1 represents the lowest intensity and
-        10 represents the highest intensity.
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        Max</b> is feeling.<br><size=35> 1 represents the lowest intensity and 10
+        represents the highest intensity.
       Option1: 
       Option2: 
       Option3: 
@@ -2737,7 +2736,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Let's keep the display simple and minimalistic!
-      NarrationText: Hans gestures at their shared exhibit space.
+      NarrationText: The artists gesture at their shared exhibit space.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2758,7 +2757,7 @@ MonoBehaviour:
       NarrationBox: 1
       DialogueText: No! The setup has to be vibrant and colorful! Not boring and
         drab.
-      NarrationText: Jimin counters Hans' suggestion, her voice rising.
+      NarrationText: Hans counters Jimin's suggestion, his voice rising.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -2821,8 +2820,8 @@ MonoBehaviour:
       DialogueText: 
       NarrationText: 
       HasCustomVO: 1
-      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size>
-        <b>Jimin</b> is feeling.<br><size=35>1 represents the lowest intensity and
+      QuestionText: Rate the intensity of <size=60><b><color=#FF7A00><emotion></b></color></size><b>
+        Jimin</b> is feeling.<br><size=35> 1 represents the lowest intensity and
         10 represents the highest intensity.
       Option1: 
       Option2: 
@@ -2882,7 +2881,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: How could you say that?
-      NarrationText: Jimin's voice wavers as she looks away from Hans.
+      NarrationText: Jimin's voice wavers as he looks away from Hans.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
