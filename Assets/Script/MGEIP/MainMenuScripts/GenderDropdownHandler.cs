@@ -16,7 +16,6 @@ public class GenderDropdownHandler : MonoBehaviour
     [SerializeField] private string[] optionTexts;
 
     [SerializeField] private Color selectedTextColor;
-    [SerializeField] private Color deselectedTextColor;
 
     private int currentSelection;
 
@@ -52,7 +51,7 @@ public class GenderDropdownHandler : MonoBehaviour
         dropdownPanel.gameObject.SetActive(true);
         dropdownPanel.alpha = 0;
 
-        dropdownPanel.DOFade(1, 0.2f);
+        dropdownPanel.DOFade(1, 0.1f);
 
         dropdownArrow.localScale = new Vector3(1, 1, 1);
     }
@@ -67,7 +66,7 @@ public class GenderDropdownHandler : MonoBehaviour
 
     private void CloseDropdown()
     {
-        dropdownPanel.DOFade(0, 0.2f).OnComplete(() =>
+        dropdownPanel.DOFade(0, 0.1f).OnComplete(() =>
         {
             dropdownPanel.gameObject.SetActive(false);
         });

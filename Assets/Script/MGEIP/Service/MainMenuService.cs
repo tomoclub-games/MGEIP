@@ -622,94 +622,50 @@ namespace Assets.Script.MGEIP.Service
 
         private void FormUISubmitClicked()
         {
-            bool isValidated = true;
+            if (!IsValidInput())
+                return;
 
-            string playerName;
-            string playerEmail;
-            DateTime? playerDOB = null;
-            string playerGender;
+            int.TryParse(playerDOBDayInput.text, out int day);
+            int.TryParse(playerDOBMonthInput.text, out int month);
+            int.TryParse(playerDOBYearInput.text, out int year);
+
+            DateTime playerDOB = new DateTime(year, month, day);
+
+            DataHandler.Instance.UploadPlayerData(playerNameInput.text, playerEmailInput.text, playerDOB, playerGenderInput.CurrentSelectionText);
+
+            CloseFormUIPanel();
+        }
+
+        private bool IsValidInput()
+        {
+            bool isValidated = true;
 
             playerNameErrorLabel.SetActive(false);
             playerEmailErrorLabel.SetActive(false);
             playerDOBErrorLabel.SetActive(false);
             playerGenderErrorLabel.SetActive(false);
 
-            if (playerNameInput.text == null || playerNameInput.text == "")
+            if (string.IsNullOrEmpty(playerNameInput.text))
             {
                 playerNameErrorLabel.SetActive(true);
                 playerNameInput.text = "";
                 isValidated = false;
             }
 
-            if (playerEmailInput.text == null || playerEmailInput.text == "" || !IsValidEmail(playerEmailInput.text))
+            if (string.IsNullOrEmpty(playerEmailInput.text) || !IsValidEmail(playerEmailInput.text))
             {
                 playerEmailErrorLabel.SetActive(true);
                 playerEmailInput.text = "";
                 isValidated = false;
             }
 
-            if (playerDOBDayInput.text == null || playerDOBMonthInput.text == null || playerDOBYearInput.text == null)
+            if (!IsValidDate(playerDOBDayInput.text, playerDOBMonthInput.text, playerDOBYearInput.text))
             {
                 playerDOBErrorLabel.SetActive(true);
                 playerDOBDayInput.text = "";
                 playerDOBMonthInput.text = "";
                 playerDOBYearInput.text = "";
                 isValidated = false;
-            }
-            else
-            {
-                if (int.TryParse(playerDOBDayInput.text, out int day) &&
-            int.TryParse(playerDOBMonthInput.text, out int month) &&
-            int.TryParse(playerDOBYearInput.text, out int year))
-                {
-                    try
-                    {
-                        // Try to create a DateTime object with the input values
-                        playerDOB = new DateTime(year, month, day);
-
-                        // Additional validation after successful DateTime creation
-                        int minYear = 1900;
-                        int maxYear = DateTime.Today.Year;
-
-                        // Check year range
-                        if (year < minYear || year > maxYear)
-                        {
-                            playerDOBErrorLabel.SetActive(true);
-                            playerDOBDayInput.text = "";
-                            playerDOBMonthInput.text = "";
-                            playerDOBYearInput.text = "";
-                            isValidated = false;
-                        }
-                        // Check if date is in the future
-                        else if (playerDOB > DateTime.Today)
-                        {
-                            playerDOBErrorLabel.SetActive(true);
-                            playerDOBDayInput.text = "";
-                            playerDOBMonthInput.text = "";
-                            playerDOBYearInput.text = "";
-                            isValidated = false;
-                        }
-                        else
-                        {
-                            // Date is valid
-                            playerDOBErrorLabel.SetActive(false);
-                        }
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        playerDOBErrorLabel.SetActive(true);
-                        playerDOBDayInput.text = "";
-                        playerDOBMonthInput.text = "";
-                        playerDOBYearInput.text = "";
-                        isValidated = false;
-                    }
-                }
-                else
-                {
-                    // Handle non-integer input
-                    playerDOBErrorLabel.SetActive(true);
-                    isValidated = false;
-                }
             }
 
             if (playerGenderInput.CurrentSelection == -1)
@@ -718,62 +674,53 @@ namespace Assets.Script.MGEIP.Service
                 isValidated = false;
             }
 
-            if (!isValidated)
-                return;
-
-            playerName = playerNameInput.text;
-            playerEmail = playerEmailInput.text;
-            playerGender = playerGenderInput.CurrentSelectionText;
-
-            DataHandler.Instance.UploadPlayerData(playerName, playerEmail, playerDOB.HasValue?(DateTime)playerDOB:null, playerGender);
-
-            CloseFormUIPanel();
+            return isValidated;
         }
 
-        private bool IsValidDate(int day, int month, int year)
+        private bool IsValidDate(string _day, string _month, string _year)
         {
-            int minYear = 1900;
-            int maxYear = DateTime.Today.Year; // Set maximum year to the current year
+            if (string.IsNullOrEmpty(_day) || string.IsNullOrEmpty(_month) || string.IsNullOrEmpty(_year))
+                return false;
 
-            // Check if the year is within the range
-            if (year < minYear || year > maxYear)
+            if (int.TryParse(_day, out int day) &&
+            int.TryParse(_month, out int month) &&
+            int.TryParse(_year, out int year))
             {
-                Debug.LogError($"Year must be between {minYear} and {maxYear}.");
+                try
+                {
+                    DateTime playerDOB = new DateTime(year, month, day);
+
+                    int minYear = 1900;
+                    int maxYear = DateTime.Today.Year;
+
+                    if (year < minYear || year > maxYear)
+                        return false;
+                    else if (playerDOB > DateTime.Today)
+                        return false;
+                    else
+                        return true;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    return false;
+                }
+            }
+            else
+            {
                 return false;
             }
-
-            // Attempt to parse the date
-            string dateString = $"{day}/{month}/{year}";
-            bool isValidDate = DateTime.TryParseExact(dateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime parsedDate);
-
-            if (!isValidDate)
-            {
-                Debug.LogError("Invalid date format!");
-                return false;
-            }
-
-            // Check if the parsed date is greater than today
-            if (parsedDate > DateTime.Today)
-            {
-                Debug.LogError("Date cannot be in the future.");
-                return false;
-            }
-
-            return true;
         }
 
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
             {
-                return false; // Empty check to handle any cases where email might be null or empty
+                return false;
             }
 
-            // Define a regex pattern for validating email
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             Regex regex = new Regex(emailPattern);
 
-            // Return true if the email matches the pattern, false otherwise
             return regex.IsMatch(email);
         }
 
