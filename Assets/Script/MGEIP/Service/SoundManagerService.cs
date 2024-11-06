@@ -11,6 +11,9 @@ namespace MGIEP
     {
         public static SoundManagerService Instance;
 
+        [SerializeField] private PersistentUIService persistentUIService;
+
+        [Header("Audio Sources")]
         [SerializeField] private AudioSource voiceOverSource;
         [SerializeField] private AudioSource musicSource;
         [SerializeField] private AudioSource sceneSoundSource;
@@ -29,15 +32,18 @@ namespace MGIEP
         public UnityAction<string> OnPlayVoiceOver;
         public UnityAction OnStopVoiceOver;
         public UnityAction OnVoiceOverComplete;
+        public UnityAction<float> OnSetVoiceOverVolume;
 
         public UnityAction<string> OnPlayMusic;
         public UnityAction OnStopMusic;
+        public UnityAction<float> OnSetMusicVolume;
 
         public UnityAction<string> OnPlaySceneSound;
         public UnityAction OnStopSceneSound;
 
         public UnityAction<SFXType> OnPlaySFX;
         public UnityAction OnStopSFX;
+        public UnityAction<float> OnSetSFXVolume;
 
         public bool IsVoiceOverCancelled => isVoiceOverCancelled;
 
@@ -51,28 +57,39 @@ namespace MGIEP
 
             OnPlayVoiceOver += PlayVoiceOver;
             OnStopVoiceOver += StopVoiceOver;
+            OnSetVoiceOverVolume += SetVoiceOverVolume;
 
             OnPlayMusic += PlayMusic;
             OnStopMusic += StopMusic;
+            OnSetMusicVolume += SetMusicVolume;
 
             OnPlaySceneSound += PlaySceneSound;
             OnStopSceneSound += StopSceneSound;
+            OnSetMusicVolume += SetSceneSoundVolume;
+            // Music slider -> Both Music source and Scene Sound source
 
             OnPlaySFX += PlaySFX;
+            OnSetSFXVolume += SetSFXVolume;
+
+            persistentUIService.Init();
         }
 
         private void OnDestroy()
         {
             OnPlayVoiceOver -= PlayVoiceOver;
             OnStopVoiceOver -= StopVoiceOver;
+            OnSetVoiceOverVolume -= SetVoiceOverVolume;
 
             OnPlayMusic -= PlayMusic;
             OnStopMusic -= StopMusic;
+            OnSetMusicVolume -= SetMusicVolume;
 
             OnPlaySceneSound -= PlaySceneSound;
             OnStopSceneSound -= StopSceneSound;
+            OnSetMusicVolume -= SetSceneSoundVolume;
 
             OnPlaySFX -= PlaySFX;
+            OnSetSFXVolume -= SetSFXVolume;
         }
 
         #region Voice Over
@@ -127,6 +144,11 @@ namespace MGIEP
         {
             voiceOverSource.Stop();
             isVoiceOverCancelled = true;
+        }
+
+        private void SetVoiceOverVolume(float _volume)
+        {
+            voiceOverSource.volume = _volume;
         }
 
         #endregion
@@ -200,6 +222,11 @@ namespace MGIEP
             musicSource.clip = null;
         }
 
+        private void SetMusicVolume(float _volume)
+        {
+            musicSource.volume = _volume;
+        }
+
         #endregion
 
         #region SFX
@@ -212,6 +239,11 @@ namespace MGIEP
                 return;
 
             sfxSource.PlayOneShot(audioClip);
+        }
+
+        private void SetSFXVolume(float _volume)
+        {
+            sfxSource.volume = _volume;
         }
 
         #endregion
@@ -233,6 +265,11 @@ namespace MGIEP
         {
             sceneSoundSource.Stop();
             sceneSoundSource.clip = null;
+        }
+
+        private void SetSceneSoundVolume(float _volume)
+        {
+            sceneSoundSource.volume = _volume;
         }
 
         #endregion
