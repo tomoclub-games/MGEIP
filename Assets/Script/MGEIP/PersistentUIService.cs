@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using MGIEP;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PersistentUIService : MonoBehaviour
@@ -12,6 +15,9 @@ public class PersistentUIService : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider voSlider;
+    [SerializeField] private TMP_Text musicSliderLabel;
+    [SerializeField] private TMP_Text sfxSliderLabel;
+    [SerializeField] private TMP_Text voSliderLabel;
     [SerializeField] private Button closeVolumeButton;
 
     public void Init()
@@ -19,6 +25,10 @@ public class PersistentUIService : MonoBehaviour
         musicSlider.onValueChanged.AddListener(SoundManagerService.Instance.OnSetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SoundManagerService.Instance.OnSetSFXVolume);
         voSlider.onValueChanged.AddListener(SoundManagerService.Instance.OnSetVoiceOverVolume);
+
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        voSlider.onValueChanged.AddListener(SetVOVolume);
 
         settingsButton.onClick.AddListener(EnableVolumePanel);
         closeVolumeButton.onClick.AddListener(DisableVolumePanel);
@@ -36,6 +46,10 @@ public class PersistentUIService : MonoBehaviour
 
     private void Start()
     {
+        musicSlider.value = 0.5f;
+        sfxSlider.value = 0.5f;
+        voSlider.value = 0.5f;
+
         volumePanel.gameObject.SetActive(false);
     }
 
@@ -49,9 +63,24 @@ public class PersistentUIService : MonoBehaviour
 
     private void DisableVolumePanel()
     {
-        volumePanel.DOFade(0, 0.5f).OnComplete(() =>
+        volumePanel.DOFade(0, 0.2f).OnComplete(() =>
         {
             volumePanel.gameObject.SetActive(false);
         });
+    }
+
+    private void SetMusicVolume(float _volume)
+    {
+        musicSliderLabel.text = Mathf.Round(_volume * 100).ToString();
+    }
+
+    private void SetSFXVolume(float _volume)
+    {
+        sfxSliderLabel.text = Mathf.Round(_volume * 100).ToString();
+    }
+
+    private void SetVOVolume(float _volume)
+    {
+        voSliderLabel.text = Mathf.Round(_volume * 100).ToString();
     }
 }

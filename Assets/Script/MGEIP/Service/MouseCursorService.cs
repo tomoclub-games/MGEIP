@@ -8,7 +8,7 @@ namespace MGEIP.Service
 
         [SerializeField] private Texture2D pressedState;
 
-        private Vector2 hotspot = Vector2.zero;
+        [SerializeField] private Vector2 hotspot = Vector2.zero;
         [SerializeField] private CursorMode cursorMode = CursorMode.Auto;
 
         private void Awake()
