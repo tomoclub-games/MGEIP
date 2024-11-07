@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Crosstales.BWF.Manager;
 using DG.Tweening;
 using MGEIP;
 using MGEIP.GameData;
@@ -645,14 +646,14 @@ namespace Assets.Script.MGEIP.Service
             playerDOBErrorLabel.SetActive(false);
             playerGenderErrorLabel.SetActive(false);
 
-            if (string.IsNullOrEmpty(playerNameInput.text))
+            if (!IsValidName(playerNameInput.text))
             {
                 playerNameErrorLabel.SetActive(true);
                 playerNameInput.text = "";
                 isValidated = false;
             }
 
-            if (string.IsNullOrEmpty(playerEmailInput.text) || !IsValidEmail(playerEmailInput.text))
+            if (!IsValidEmail(playerEmailInput.text))
             {
                 playerEmailErrorLabel.SetActive(true);
                 playerEmailInput.text = "";
@@ -675,6 +676,31 @@ namespace Assets.Script.MGEIP.Service
             }
 
             return isValidated;
+        }
+
+        private bool IsValidName(string name)
+        {
+            if (BadWordManager.Contains(name, "english"))
+            {
+                Debug.Log("name contains bad word!");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            if (BadWordManager.Contains(email, "english"))
+            {
+                Debug.Log("email contains bad word!");
+                return false;
+            }
+
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            Regex regex = new Regex(emailPattern);
+
+            return regex.IsMatch(email);
         }
 
         private bool IsValidDate(string _day, string _month, string _year)
@@ -709,19 +735,6 @@ namespace Assets.Script.MGEIP.Service
             {
                 return false;
             }
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-            {
-                return false;
-            }
-
-            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            Regex regex = new Regex(emailPattern);
-
-            return regex.IsMatch(email);
         }
 
         #endregion
