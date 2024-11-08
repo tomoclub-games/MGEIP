@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 2906814871247875957}
   - component: {fileID: 3352693453564857077}
   - component: {fileID: 3602398597573271762}
+  - component: {fileID: 4288711417573609858}
   m_Layer: 0
   m_Name: StoryScene
   m_TagString: Untagged
@@ -276,6 +277,7 @@ MonoBehaviour:
   isDialogueBoxActive: 0
   dialogue: 
   scenarioName: 
+  sceneSoundPlayer: {fileID: 4288711417573609858}
   dialogueBox: {fileID: 7319976154885456890}
   dialogueText: {fileID: 7893919562190973883}
   dialogueVOButton: {fileID: 6704869699855206324}
@@ -331,6 +333,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4288711417573609858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241266679988682835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f6a840eea098b4d94b02500caebce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneSoundName: 
+  musicSoundName: 
+  stopMusicOnSceneEnter: 0
 --- !u!1 &4547414416826868287
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,8 @@ namespace MGEIP.Scenario.Scenes
             isNarrationBoxActive = sceneData.NarrationBox;
             narrationText = sceneData.NarrationText;
             questionText = sceneData.QuestionText;
+
+            sceneSoundPlayer.SetSound(sceneData.BGSound, sceneData.SceneSound);
         }
 
         public void CESliderQuestionSceneInfo()

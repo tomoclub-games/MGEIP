@@ -38,6 +38,8 @@ namespace MGEIP.Scenario.Scenes
         {
             isNarrationBoxActive = sceneData.NarrationBox;
             narrationText = sceneData.NarrationText;
+
+            sceneSoundPlayer.SetSound(sceneData.BGSound, sceneData.SceneSound);
         }
 
         public void StartSceneInfo()

@@ -21,6 +21,8 @@ namespace MGEIP.Scenario.Scenes
 
         [SerializeField] protected string scenarioName;
 
+        [SerializeField] protected SceneSoundPlayer sceneSoundPlayer;
+
         protected GameUIService GameUIService => gameService.GameUIService;
         protected SceneData sceneData;
 
@@ -33,6 +35,8 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.AddListener(() => PlayNarrationVoiceOver(SceneType.PhotoCapture));
 
             SoundManagerService.Instance.OnStopVoiceOver?.Invoke();
+
+            sceneSoundPlayer.SceneEnter();
         }
 
         public virtual void ExitScene()
@@ -42,6 +46,8 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.QuestionSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
             GameUIService.EndSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
             GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+
+            sceneSoundPlayer.SceneExit();
         }
 
         public virtual void ExitToPrevScene()
@@ -51,6 +57,8 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.QuestionSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
             GameUIService.EndSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
             GameUIService.PhotoCaptureSceneNarrationVOButton.Button.onClick.RemoveAllListeners();
+
+            sceneSoundPlayer.SceneExit();
         }
 
         public void PlayNarrationVoiceOver(SceneType _sceneType)

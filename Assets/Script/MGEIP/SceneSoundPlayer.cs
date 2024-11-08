@@ -6,21 +6,24 @@ using UnityEngine;
 
 public class SceneSoundPlayer : MonoBehaviour
 {
-    [SerializeField] private string sceneSoundName;
-    [SerializeField] private string musicSoundName;
+    private string sceneSoundName;
+    private string musicSoundName;
+    private string outroSoundName;
 
-    [SerializeField] private bool stopMusicOnSceneEnter;
-
-    private void OnEnable()
+    public void SetSound(string _bgSound, string _sceneSound, string _outroSound = "")
     {
-        if (stopMusicOnSceneEnter)
-            SoundManagerService.Instance.OnStopMusic?.Invoke();
+        musicSoundName = _bgSound;
+        sceneSoundName = _sceneSound;
+        outroSoundName = _outroSound;
+    }
 
+    public void SceneEnter()
+    {
         PlaySceneSound();
         PlayMusicSound();
     }
 
-    private void OnDisable()
+    public void SceneExit()
     {
         StopSceneSound();
     }
@@ -28,21 +31,30 @@ public class SceneSoundPlayer : MonoBehaviour
     private void PlaySceneSound()
     {
         if (String.IsNullOrEmpty(sceneSoundName))
-            return;
-
-        SoundManagerService.Instance.OnPlaySceneSound?.Invoke(sceneSoundName);
+            SoundManagerService.Instance.OnStopSceneSound?.Invoke();
+        else
+            SoundManagerService.Instance.OnPlaySceneSound?.Invoke(sceneSoundName);
     }
 
     private void PlayMusicSound()
     {
         if (String.IsNullOrEmpty(musicSoundName))
-            return;
-
-        SoundManagerService.Instance.OnPlayMusic?.Invoke(musicSoundName);
+            SoundManagerService.Instance.OnStopMusic?.Invoke();
+        else
+            SoundManagerService.Instance.OnPlayMusic?.Invoke(musicSoundName);
     }
 
     private void StopSceneSound()
     {
         SoundManagerService.Instance.OnStopSceneSound?.Invoke();
+    }
+
+    public void PlayOutroSound()
+    {
+        if (string.IsNullOrEmpty(outroSoundName))
+            return;
+
+        SoundManagerService.Instance.OnStopMusic?.Invoke();
+        SoundManagerService.Instance.OnPlaySceneSound?.Invoke(outroSoundName);
     }
 }

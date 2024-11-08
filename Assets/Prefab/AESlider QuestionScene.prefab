@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 7654728626768142825}
   - component: {fileID: 2284242583893770798}
   - component: {fileID: 2454385987351064286}
+  - component: {fileID: 8704795429762769468}
   m_Layer: 0
   m_Name: AESlider QuestionScene
   m_TagString: Untagged
@@ -477,6 +478,7 @@ MonoBehaviour:
   isDialogueBoxActive: 0
   dialogue: 
   scenarioName: 
+  sceneSoundPlayer: {fileID: 8704795429762769468}
   questionText: 
   dialogueBox: {fileID: 9195014854778536707}
   dialogueText: {fileID: 8611534258384841538}
@@ -533,6 +535,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8704795429762769468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825347838758699374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f6a840eea098b4d94b02500caebce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneSoundName: 
+  musicSoundName: 
+  stopMusicOnSceneEnter: 0
 --- !u!1001 &1315263214178168448
 PrefabInstance:
   m_ObjectHideFlags: 0

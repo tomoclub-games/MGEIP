@@ -341,10 +341,22 @@ MonoBehaviour:
   isDialogueBoxActive: 0
   dialogue: 
   scenarioName: 
+  sceneSoundPlayer: {fileID: 8766479863733351189}
   questionText: 
   dialogueBox: {fileID: 2862491889676116333}
   dialogueText: {fileID: 3431897629656975660}
   dialogueVOButton: {fileID: 2242829745932051747}
+--- !u!114 &8766479863733351189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4288711417573609858, guid: 8756a3fd8c0544b4897d594c53fbb724, type: 3}
+  m_PrefabInstance: {fileID: 4768285828391887511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8714565478648832708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f6a840eea098b4d94b02500caebce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5912029724261666011
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,6 +26,8 @@ namespace MGEIP.GameData.SceneData
         public int ScenarioNo;
         public int SceneNo;
         public SceneType SceneType;
+        public string BGSound;
+        public string SceneSound;
         public bool DialogueBox;
         public bool NarrationBox;
         public string DialogueText;

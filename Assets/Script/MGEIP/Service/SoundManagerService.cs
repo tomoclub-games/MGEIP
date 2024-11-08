@@ -252,7 +252,8 @@ namespace MGIEP
 
         private void PlaySceneSound(string _sceneSoundName)
         {
-            AudioClip audioClip = FindAudioClipByName("Audio/SceneSound/" + _sceneSoundName);
+            // Temporarily set to /Music/
+            AudioClip audioClip = FindAudioClipByName("Audio/Music/" + _sceneSoundName);
 
             if (audioClip == null)
                 return;

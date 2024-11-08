@@ -88,6 +88,8 @@ namespace MGEIP.Scenario.Scenes
 
             shuffledOptions = indices.Select(i => stringOptions[i]).ToArray();
             shuffledKeywordOptions = indices.Select(i => stringKeywordOptions[i]).ToArray();
+
+            sceneSoundPlayer.SetSound(sceneData.BGSound, sceneData.SceneSound);
         }
 
         public void MCQQuestionSceneInfo()

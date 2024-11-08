@@ -102,6 +102,8 @@ namespace MGEIP.Scenario
 
         public void SetScenarioComplete(int scenarioIndex)
         {
+            // Disabled for review
+            /*
             scenarioButtons[scenarioIndex - 1].SetChecked();
 
             completedScenarios++;
@@ -110,6 +112,7 @@ namespace MGEIP.Scenario
             {
                 gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
             }
+            */
         }
     }
 }

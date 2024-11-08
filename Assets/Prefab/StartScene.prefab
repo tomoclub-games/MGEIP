@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 8256499046083614000}
   - component: {fileID: 6007956582578030587}
   - component: {fileID: 4270917762030457919}
+  - component: {fileID: 506706044878178116}
   m_Layer: 0
   m_Name: StartScene
   m_TagString: Untagged
@@ -225,6 +226,7 @@ MonoBehaviour:
   isDialogueBoxActive: 0
   dialogue: 
   scenarioName: 
+  sceneSoundPlayer: {fileID: 506706044878178116}
 --- !u!212 &4270917762030457919
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -277,6 +279,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &506706044878178116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560683139505379497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f6a840eea098b4d94b02500caebce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneSoundName: 
+  musicSoundName: 
+  stopMusicOnSceneEnter: 0
 --- !u!1 &5550587819292303682
 GameObject:
   m_ObjectHideFlags: 0

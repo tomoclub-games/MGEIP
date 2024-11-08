@@ -32,6 +32,7 @@ namespace MGEIP.Scenario.Scenes
             SetPhotoCaptureSceneInfo();
 
             GameUIService.OnPhotoCapture += DisableDialogue;
+            GameUIService.OnPhotoCapture += PlayOutroMusic;
         }
 
         private void StartPhotoCaptureScene()
@@ -46,6 +47,8 @@ namespace MGEIP.Scenario.Scenes
             isNarrationBoxActive = sceneData.NarrationBox;
             dialogue = sceneData.DialogueText;
             narrationText = sceneData.NarrationText;
+
+            sceneSoundPlayer.SetSound(sceneData.BGSound, "", sceneData.SceneSound);
         }
 
         private void PhotoCaptureSceneInfo()
@@ -69,8 +72,14 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetPhotoCaptureUIGameobjectActive(false);
 
             GameUIService.OnPhotoCapture -= DisableDialogue;
+            GameUIService.OnPhotoCapture -= PlayOutroMusic;
 
             GameUIService.PhotoCaptureSceneNextButton.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        }
+
+        private void PlayOutroMusic()
+        {
+            sceneSoundPlayer.PlayOutroSound();
         }
 
         public override void ExitScene()
