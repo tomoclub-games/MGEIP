@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mrs. Thompson suddenly pauses. A faint meow comes from a nearby bush. Mrs.
-    Thompson rushes over, and to everyone's relief, Whiskers emerges.
+  m_text: You prepare to capture this inspiring moment of environmental stewardship.
+    Click to take a photo of Alexi with the cleaner beach in the background.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5191f215126063d419015c58557279a2, type: 2}
   m_sharedMaterial: {fileID: 2500956899353229297, guid: 5191f215126063d419015c58557279a2, type: 2}
@@ -166,7 +166,6 @@ GameObject:
   m_Component:
   - component: {fileID: 770326550658072176}
   - component: {fileID: 5250718852990307988}
-  - component: {fileID: 2319260813605631015}
   m_Layer: 5
   m_Name: Narration Parent
   m_TagString: Untagged
@@ -190,9 +189,9 @@ RectTransform:
   - {fileID: 5397674632339489902}
   m_Father: {fileID: 7967502012224351361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20.000015}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5250718852990307988
@@ -213,7 +212,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -221,20 +220,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2319260813605631015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859022899283844456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
 --- !u!1 &2089742407965628167
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -35.23755}
-  m_SizeDelta: {x: 2203.71, y: 264.4}
+  m_AnchoredPosition: {x: 0, y: -17.7506}
+  m_SizeDelta: {x: 2203.71, y: 299.3741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &935696371830249491
 CanvasRenderer:
@@ -334,7 +319,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2887450107846400923}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -391,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -35.23755}
-  m_SizeDelta: {x: 2203.71, y: 264.4}
+  m_AnchoredPosition: {x: 0, y: -17.7506}
+  m_SizeDelta: {x: 2203.71, y: 299.3741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2043046134487633580
 CanvasRenderer:

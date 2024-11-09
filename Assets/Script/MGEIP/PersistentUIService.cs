@@ -46,11 +46,19 @@ public class PersistentUIService : MonoBehaviour
 
     private void Start()
     {
-        musicSlider.value = 0.5f;
-        sfxSlider.value = 0.5f;
-        voSlider.value = 0.5f;
-
         volumePanel.gameObject.SetActive(false);
+    }
+
+    public void SetInitialVolumes(float _musicVolume, float _sfxVolume, float _voiceOverVolume)
+    {
+        musicSlider.value = _musicVolume;
+        SetMusicVolume(_musicVolume);
+
+        sfxSlider.value = _sfxVolume;
+        SetSFXVolume(_sfxVolume);
+
+        voSlider.value = _voiceOverVolume;
+        SetVOVolume(_voiceOverVolume);
     }
 
     private void EnableVolumePanel()

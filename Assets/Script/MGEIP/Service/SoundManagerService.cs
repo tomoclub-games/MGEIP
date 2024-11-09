@@ -22,6 +22,15 @@ namespace MGIEP
         [Header("SFX Clips")]
         [SerializeField] private List<SFX> sfxSounds;
 
+        [Header("Volume info")]
+        [SerializeField] private float defaultSfxVolume = 0.5f;
+        [SerializeField] private float defaultVoVolume = 0.5f;
+        [SerializeField] private float defaultMusicVolume = 0.5f;
+
+        private const string SfxVolumeKey = "SfxVolume";
+        private const string VoVolumeKey = "VoVolume";
+        private const string MusicVolumeKey = "MusicVolume";
+
         private bool isVoiceOverCancelled;
 
         // private IList<AudioClip> loadedClips = new List<AudioClip>();
@@ -66,7 +75,7 @@ namespace MGIEP
             OnPlaySceneSound += PlaySceneSound;
             OnStopSceneSound += StopSceneSound;
             OnSetMusicVolume += SetSceneSoundVolume;
-            // Music slider -> Both Music source and Scene Sound source
+            // Music slider -> Volume for both Music source and Scene Sound source
 
             OnPlaySFX += PlaySFX;
             OnSetSFXVolume += SetSFXVolume;
@@ -90,6 +99,15 @@ namespace MGIEP
 
             OnPlaySFX -= PlaySFX;
             OnSetSFXVolume -= SetSFXVolume;
+        }
+
+        private void Start()
+        {
+            musicSource.volume = PlayerPrefs.GetFloat(MusicVolumeKey, defaultMusicVolume);
+            sfxSource.volume = PlayerPrefs.GetFloat(SfxVolumeKey, defaultSfxVolume);
+            voiceOverSource.volume = PlayerPrefs.GetFloat(VoVolumeKey, defaultVoVolume);
+
+            persistentUIService.SetInitialVolumes(musicSource.volume, sfxSource.volume, voiceOverSource.volume);
         }
 
         #region Voice Over
@@ -149,6 +167,8 @@ namespace MGIEP
         private void SetVoiceOverVolume(float _volume)
         {
             voiceOverSource.volume = _volume;
+
+            PlayerPrefs.SetFloat(VoVolumeKey, _volume);
         }
 
         #endregion
@@ -225,6 +245,8 @@ namespace MGIEP
         private void SetMusicVolume(float _volume)
         {
             musicSource.volume = _volume;
+
+            PlayerPrefs.SetFloat(MusicVolumeKey, _volume);
         }
 
         #endregion
@@ -244,6 +266,8 @@ namespace MGIEP
         private void SetSFXVolume(float _volume)
         {
             sfxSource.volume = _volume;
+
+            PlayerPrefs.SetFloat(SfxVolumeKey, _volume);
         }
 
         #endregion
