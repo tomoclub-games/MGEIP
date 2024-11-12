@@ -105,9 +105,15 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetOptionText(shuffledOptions);
 
             if (multipleChoiceQuestion.AnswerSelected)
+            {
                 GameUIService.SetOptionSelected(selectedAnswer);
-
-            GameUIService.OnMCQOptionSelect += OptionSelect;
+                GameUIService.LockOptions();
+            }
+            else
+            {
+                GameUIService.UnlockOptions();
+                GameUIService.OnMCQOptionSelect += OptionSelect;
+            }
 
             if (multipleChoiceQuestion.AnswerSelected)
             {

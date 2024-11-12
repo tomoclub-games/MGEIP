@@ -69,11 +69,16 @@ namespace MGEIP.Scenario.Scenes
             sliderQuestion.questionText = UtilityService.RemoveRichTextTags(questionTextTemp);
 
             if (sliderQuestion.AnswerSelected)
+            {
                 GameUIService.SetSliderValue(selectedAnswer);
+                GameUIService.LockSlider();
+            }
             else
+            {
+                GameUIService.UnlockSlider();
                 GameUIService.SetSliderToDefault();
-
-            GameUIService.OnSliderAnswerSelect += SliderSelect;
+                GameUIService.OnSliderAnswerSelect += SliderSelect;
+            }
 
             if (sliderQuestion.AnswerSelected)
             {

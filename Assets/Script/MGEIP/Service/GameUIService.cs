@@ -49,7 +49,7 @@ namespace MGEIP.Service
 
         [Header("Options Components")]
         [SerializeField] private GameObject optionPanelGameobject;
-        [SerializeField] private Button[] optionButtons;
+        [SerializeField] private OptionButton[] optionButtonList;
         [SerializeField] private TextMeshProUGUI[] optionButtonText;
 
         [Header("Slider Components")]
@@ -150,7 +150,7 @@ namespace MGEIP.Service
             for (int i = 0; i < 4; i++)
             {
                 int buttonIndex = i;
-                optionButtons[i].onClick.AddListener(() => OnMCQOptionSelect?.Invoke(buttonIndex));
+                optionButtonList[i].Init(buttonIndex, this);
             }
 
             questionSceneConfirmButton.onClick.AddListener(() => OnConfirmButtonClick?.Invoke());
@@ -183,11 +183,6 @@ namespace MGEIP.Service
 
         private void OnDestroy()
         {
-            for (int i = 0; i < 4; i++)
-            {
-                optionButtons[i].onClick.RemoveAllListeners();
-            }
-
             questionSceneConfirmButton.onClick.RemoveAllListeners();
             questionScenePrevButton.onClick.RemoveAllListeners();
 
@@ -295,6 +290,16 @@ namespace MGEIP.Service
             ResetSlider();
         }
 
+        public void LockSlider()
+        {
+            answerSlider.interactable = false;
+        }
+
+        public void UnlockSlider()
+        {
+            answerSlider.interactable = true;
+        }
+
         public void SetQuestionText(string question)
         {
             questionText.SetText(question);
@@ -326,14 +331,38 @@ namespace MGEIP.Service
             aeHigherLabel.text = "Extremely " + _higher;
         }
 
+        public void DeselectAllOptions()
+        {
+            foreach (OptionButton button in optionButtonList)
+            {
+                button.DeselectOption();
+            }
+        }
+
         public void SetOptionSelected(int _optionNo)
         {
-            optionButtons[_optionNo].Select();
+            optionButtonList[_optionNo].SetOptionSelected();
         }
 
         public void SetSliderValue(int _sliderVal)
         {
             answerSlider.value = _sliderVal;
+        }
+
+        public void LockOptions()
+        {
+            foreach (OptionButton button in optionButtonList)
+            {
+                button.LockButton();
+            }
+        }
+
+        public void UnlockOptions()
+        {
+            foreach (OptionButton button in optionButtonList)
+            {
+                button.UnlockButton();
+            }
         }
 
         public void UpdateSliderLabelImage(int selectedValue)

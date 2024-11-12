@@ -63,11 +63,16 @@ namespace MGEIP.Scenario.Scenes
             GameUIService.SetSliderHigherLowerLabels(sceneData.SliderLabelLower, sceneData.SliderLabelHigher);
 
             if (sliderQuestion.AnswerSelected)
+            {
                 GameUIService.SetSliderValue(selectedAnswer);
+                GameUIService.LockSlider();
+            }
             else
+            {
+                GameUIService.UnlockSlider();
                 GameUIService.SetSliderToDefault();
-
-            GameUIService.OnSliderAnswerSelect += SliderSelect;
+                GameUIService.OnSliderAnswerSelect += SliderSelect;
+            }
 
             if (sliderQuestion.AnswerSelected)
             {
