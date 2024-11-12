@@ -194,8 +194,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Mrs. Thompson? <br><size=35>Rate between 'extremely calm' and 'extremely
-        stressed'.
+        on seeing Mrs. Thompson? <br><size=35>Rate between 'extremely negative' and
+        'extremely positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -205,8 +205,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Calm
-      SliderLabelHigher: Stressed
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 1
       SceneNo: 9
       SceneType: 2
@@ -262,7 +262,7 @@ MonoBehaviour:
       DialogueBox: 1
       NarrationBox: 1
       DialogueText: Wait! I think I heard something!
-      NarrationText: 'A faint meow comes from a nearby bush. '
+      NarrationText: 'A faint meow comes from a nearby bush... '
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -284,7 +284,7 @@ MonoBehaviour:
       DialogueBox: 0
       NarrationBox: 1
       DialogueText: 
-      NarrationText: To everyone's relief, Whiskers emerges.
+      NarrationText: ...and to everyone's relief, Whiskers emerges.
       HasCustomVO: 0
       QuestionText: 
       Option1: 
@@ -493,8 +493,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing the tourist? <br><size=35>Rate between 'extremely calm' and 'extremely
-        alarmed'.
+        on seeing the tourist? <br><size=35>Rate between 'extremely negative' and
+        'extremely positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -504,8 +504,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Calm
-      SliderLabelHigher: Alarmed
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 2
       SceneNo: 8
       SceneType: 2
@@ -790,8 +790,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Alexi? <br><size=35>Rate between 'extremely happy' and 'extremely
-        sad'.
+        on seeing Alexi? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -801,8 +801,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Happy
-      SliderLabelHigher: Sad
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 3
       SceneNo: 9
       SceneType: 2
@@ -1133,8 +1133,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing everyone celebrating? <br><size=35>Rate between 'extremely indifferent'
-        and 'extremely joyful'.
+        on seeing everyone celebrating? <br><size=35>Rate between 'extremely negative'
+        and 'extremely positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -1144,8 +1144,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Indifferent
-      SliderLabelHigher: Joyful
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 4
       SceneNo: 11
       SceneType: 2
@@ -1476,8 +1476,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Jacques? <br><size=35>Rate between extremely carefree and extremely
-        sentimental.
+        on seeing Jacques? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -1487,8 +1487,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Carefree
-      SliderLabelHigher: Sentimental
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 5
       SceneNo: 11
       SceneType: 2
@@ -1819,8 +1819,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Mrs. Gowri? <br><size=35>Rate between extremely peaceful to extremely
-        upset.
+        on seeing Mrs. Gowri? <br><size=35>Rate between 'extremely negative' and
+        'extremely positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -1830,8 +1830,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Peaceful
-      SliderLabelHigher: Upset
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 6
       SceneNo: 10
       SceneType: 2
@@ -1868,9 +1868,9 @@ MonoBehaviour:
         run soon.</b></color></size> What will you do?
       Option1: I will help her water the plants and ask her to rest on her chair
         while we chat.
-      Option2: I will offer to water some of the plants while chatting with her.
-      Option3: I will offer to water the plants if she could make some warm tea for
-        me in return.
+      Option2: I will offer to water her plants with her later in the week.
+      Option3: I will offer to water the plants if she could make some tea for me
+        in return.
       Option4: I will appreciate her healthy plants and continue on my way.
       UseKeyword: 0
       Option1Keyword: 
@@ -2140,8 +2140,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Josefa? <br><size=35>Rate between extremely encouraged and extremely
-        discouraged.
+        on seeing Josefa? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -2151,8 +2151,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Encouraged
-      SliderLabelHigher: Discouraged
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 7
       SceneNo: 10
       SceneType: 2
@@ -2187,10 +2187,10 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: <size=60><b><color=#FF7A00>You have to go grocery shopping before
         the store closes.</b></color></size> What will you do?
-      Option1: I will offer to help clean up the soil immediately.
-      Option2: I will assist in cleaning up the soil.
-      Option3: I will suggest they be more careful and offer some help.
-      Option4: I will let them handle it and continue with my task.
+      Option1: I will immediately start cleaning up the soil by myself.
+      Option2: I will ask if Josefa needs help cleaning up the soil.
+      Option3: I will suggest Josefa join my gardening club.
+      Option4: I will let Josefa handle it and continue with my task.
       UseKeyword: 0
       Option1Keyword: 
       Option2Keyword: 
@@ -2502,8 +2502,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        on seeing Mercedes? <br><size=35>Rate between extremely happy and extremely
-        sad.
+        on seeing Mercedes? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -2513,8 +2513,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Happy
-      SliderLabelHigher: Sad
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 8
       SceneNo: 12
       SceneType: 2
@@ -2549,9 +2549,9 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: <size=60><b><color=#FF7A00>You have a friend's basketball match
         to attend soon.</b></color></size> What will you do?
-      Option1: I will ditch practice to spend more time till Mercedes feels better.
-      Option2: I will comfort Mercedes for a while before heading to practice.
-      Option3: I will suggest Mercedes talk to someone else and then go for the practice.
+      Option1: I will ditch practice to spend time with Mercedes.
+      Option2: I will stay and comfort Mercedes for a while before heading to practice.
+      Option3: I will suggest Mercedes come and practice with my group.
       Option4: I will leave Mercedes to handle it and go for the practice.
       UseKeyword: 0
       Option1Keyword: 
@@ -2839,7 +2839,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        seeing Max? <br><size=35>Rate between extremely happy and extremely sad.
+        seeing Max? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -2849,8 +2850,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Happy
-      SliderLabelHigher: Sad
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 9
       SceneNo: 11
       SceneType: 2
@@ -2885,11 +2886,10 @@ MonoBehaviour:
       HasCustomVO: 0
       QuestionText: <size=60><b><color=#FF7A00>The movie you came to watch is going
         to start soon.</b></color></size> What will you do?
-      Option1: I will console Max and make him feel better even if I am late for
-        my movie.
-      Option2: I will invite Max to join me and my friends.
-      Option3: I will suggest Max watch the movie with someone else.
-      Option4: "I will leave Max and go for my movie as it\u2019s starting"
+      Option1: "I will go watch Max\u2019s movie with him instead of mine."
+      Option2: I will help Max calm down before heading back to my movie.
+      Option3: I will suggest Max come watch the movie I am watching.
+      Option4: I will leave Max and hurry back to my movie.
       UseKeyword: 0
       Option1Keyword: 
       Option2Keyword: 
@@ -3137,7 +3137,8 @@ MonoBehaviour:
       NarrationText: 
       HasCustomVO: 0
       QuestionText: How do <size=60><b><color=#FF7A00>you</b></color></size> feel
-        seeing Jimin? <br><size=35>Rate between extremely serene and extremely tense.
+        seeing Jimin? <br><size=35>Rate between 'extremely negative' and 'extremely
+        positive'.
       Option1: 
       Option2: 
       Option3: 
@@ -3147,8 +3148,8 @@ MonoBehaviour:
       Option2Keyword: 
       Option3Keyword: 
       Option4Keyword: 
-      SliderLabelLower: Serene
-      SliderLabelHigher: Tense
+      SliderLabelLower: Negative
+      SliderLabelHigher: Positive
     - ScenarioNo: 10
       SceneNo: 9
       SceneType: 2
