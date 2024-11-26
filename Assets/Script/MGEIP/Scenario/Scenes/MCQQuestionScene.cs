@@ -53,11 +53,6 @@ namespace MGEIP.Scenario.Scenes
             multipleChoiceQuestion.sceneNo = sceneData.SceneNo;
             multipleChoiceQuestion.questionText = UtilityService.RemoveRichTextTags(sceneData.QuestionText);
 
-            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option1));
-            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option2));
-            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option3));
-            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(sceneData.Option4));
-
             this.scenarioData.questions.Add(multipleChoiceQuestion);
             questionNo = this.scenarioData.questions.Count;
         }
@@ -88,6 +83,11 @@ namespace MGEIP.Scenario.Scenes
 
             shuffledOptions = indices.Select(i => stringOptions[i]).ToArray();
             shuffledKeywordOptions = indices.Select(i => stringKeywordOptions[i]).ToArray();
+
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(shuffledOptions[0]));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(shuffledOptions[1]));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(shuffledOptions[2]));
+            multipleChoiceQuestion.options.Add(UtilityService.RemoveRichTextTags(shuffledOptions[3]));
 
             sceneSoundPlayer.SetSound(sceneData.BGSound, sceneData.SceneSound);
         }

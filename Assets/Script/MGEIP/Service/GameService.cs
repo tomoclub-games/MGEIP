@@ -12,12 +12,10 @@ namespace MGEIP.Service
         [SerializeField] private GameDataContainer gameDataContainer;
         [SerializeField] private ScenarioManager scenarioManager;
         [SerializeField] private GameUIService gameUIService;
-        [SerializeField] private DataHandler dataHandler;
 
         public GameDataContainer GameDataContainer => gameDataContainer;
         public ScenarioManager ScenarioManager => scenarioManager;
         public GameUIService GameUIService => gameUIService;
-        public DataHandler DataHandler => dataHandler;
 
         private void Start()
         {

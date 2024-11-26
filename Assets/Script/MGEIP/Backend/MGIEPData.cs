@@ -8,14 +8,16 @@ namespace MGIEP.Data
     public class PlayerData
     {
         public string loginToken;
+        public string metadata;
         public string playerName;
         public string playerEmail;
         public DateTime playerDOB;
         public string playerGender;
 
-        public PlayerData(string _loginToken, string _playerName, string _playerEmail, DateTime? _playerDOB, string _playerGender)
+        public PlayerData(string _loginToken, string _metadata, string _playerName, string _playerEmail, DateTime? _playerDOB, string _playerGender)
         {
             loginToken = _loginToken;
+            metadata = _metadata;
             playerName = _playerName;
             playerEmail = _playerEmail;
             playerDOB = (DateTime)_playerDOB;

@@ -20,6 +20,7 @@ namespace MGIEP.Data
         private static extern void FreeMemory(System.IntPtr ptr);
 
         private string loginToken;
+        private string metadata = "[SampleMetadata]";
         private int sessionNo;
 
         private PlayerData playerData;
@@ -168,6 +169,7 @@ namespace MGIEP.Data
 
         private void GetLoginTokenFromQuery()
         {
+            // populate metadata here
 #if UNITY_WEBGL && !UNITY_EDITOR
             // Get the pointer to the URL parameter
             System.IntPtr urlParamPtr = GetURLParameter("loginToken");
@@ -404,7 +406,7 @@ namespace MGIEP.Data
                 return;
             }
 
-            playerData = new PlayerData(loginToken, _playerName, _playerEmail, _playerDOB, _playerGender);
+            playerData = new PlayerData(loginToken, metadata, _playerName, _playerEmail, _playerDOB, _playerGender);
 
             InitializeSessionData();
         }
