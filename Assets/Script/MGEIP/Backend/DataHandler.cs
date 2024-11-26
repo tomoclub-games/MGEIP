@@ -28,7 +28,6 @@ namespace MGIEP.Data
         private SessionData sessionData;
 
         public AttemptData AttemptData => attemptData;
-        public SessionData SessionData => sessionData;
 
         public UnityAction OnLoginRequested;
         public UnityAction<LoginType> OnPlayerLogin;
@@ -101,7 +100,7 @@ namespace MGIEP.Data
                         // playerData exists, but attempt data doesnt -> New Attempt
                         attemptData = new AttemptData(loginToken);
 
-                        if (sessionData == null)
+                        if (string.IsNullOrEmpty(sessionData.loginToken))
                             sessionNo = result.sessionNo;
 
                         OnPlayerLogin?.Invoke(LoginType.newAttempt);
@@ -111,7 +110,7 @@ namespace MGIEP.Data
                         // playerData exists, attempt data exists -> Check For Repeat Attempt
                         attemptData = result.data;
 
-                        if (sessionData == null)
+                        if (string.IsNullOrEmpty(sessionData.loginToken))
                             sessionNo = result.sessionNo;
 
                         CheckForRepeatAttempt();
@@ -300,7 +299,7 @@ namespace MGIEP.Data
 
         private void InitializeSessionData()
         {
-            if (sessionData != null)
+            if (!String.IsNullOrEmpty(sessionData.loginToken))
             {
                 Debug.Log("Continue session!");
                 return;
