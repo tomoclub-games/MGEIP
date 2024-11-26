@@ -215,7 +215,9 @@ namespace MGIEP.Data
         {
             GameData playerData = new GameData(sessionData, attemptData);
 
-            StartCoroutine(UploadGameData(JsonConvert.SerializeObject(playerData), result =>
+            string jsonData = JsonConvert.SerializeObject(playerData, GetPolymorphicSettings());
+
+            StartCoroutine(UploadGameData(jsonData, result =>
             {
                 if (result)
                 {
@@ -252,7 +254,7 @@ namespace MGIEP.Data
 
                     Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + jsonResponse);
 
-                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(jsonResponse);
+                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(jsonResponse, GetPolymorphicSettings());
 
                     callback?.Invoke(responseObj);
                 }
@@ -294,6 +296,15 @@ namespace MGIEP.Data
         }
 
         #endregion
+
+        private JsonSerializerSettings GetPolymorphicSettings()
+        {
+            return new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Auto, // Enables reading the $type field
+                Formatting = Formatting.Indented
+            };
+        }
 
         #region Session Data
 

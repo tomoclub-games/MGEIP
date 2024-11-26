@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace MGIEP.Data
@@ -118,7 +119,7 @@ namespace MGIEP.Data
         }
     }
 
-    [Serializable]
+    [Serializable, JsonObject]
     public class Question
     {
         public int sceneNo;
@@ -138,7 +139,7 @@ namespace MGIEP.Data
         }
     }
 
-    [Serializable]
+    [Serializable, JsonObject]
     public class MultipleChoiceQuestion : Question
     {
         public List<string> options;
@@ -162,7 +163,7 @@ namespace MGIEP.Data
         }
     }
 
-    [Serializable]
+    [Serializable, JsonObject]
     public class SliderQuestion : Question
     {
         public int selectedAnswer;
