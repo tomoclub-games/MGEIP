@@ -6,12 +6,15 @@ using UnityEngine.Events;
 using UnityEngine.Networking;
 using System.Runtime.InteropServices;
 using System;
+using MGEIP.GameData;
 
 namespace MGIEP.Data
 {
     public class DataHandler : MonoBehaviour
     {
         public static DataHandler Instance;
+
+        [SerializeField] private DatabaseAPIContainer databaseAPIContainer;
 
         [DllImport("__Internal")]
         private static extern System.IntPtr GetURLParameter(string paramName);
@@ -22,6 +25,10 @@ namespace MGIEP.Data
         private string loginToken;
         private string metadata = "[SampleMetadata]";
         private int sessionNo;
+
+        private string downloadGameDataURL;
+        private string uploadGameDataURL;
+        private string uploadPlayerSessionDataURL;
 
         private PlayerData playerData;
         private AttemptData attemptData;
@@ -46,7 +53,15 @@ namespace MGIEP.Data
                 DontDestroyOnLoad(gameObject);
             }
 
+            UpdateDatabaseAPI();
             GetLoginTokenFromQuery();
+        }
+
+        public void UpdateDatabaseAPI()
+        {
+            downloadGameDataURL = databaseAPIContainer.DownloadGameDataURL;
+            uploadGameDataURL = databaseAPIContainer.UploadGameDataURL;
+            uploadPlayerSessionDataURL = databaseAPIContainer.UploadPlayerSessionDataURL;
         }
 
         public void LoginPlayer(string _loginToken)
@@ -77,6 +92,13 @@ namespace MGIEP.Data
         // Sets up the attemptData and sessionData from DB
         public void StartGameDataDownload(string loginToken)
         {
+            if (string.IsNullOrEmpty(downloadGameDataURL) || string.IsNullOrEmpty(uploadGameDataURL) || string.IsNullOrEmpty(uploadPlayerSessionDataURL))
+            {
+                OnPlayerLogin?.Invoke(LoginType.error);
+                Debug.LogError("Invoke URL missing!");
+                return;
+            }
+
             StartCoroutine(DownloadGameData(loginToken, (result) =>
             {
                 if (result == null)
@@ -100,7 +122,7 @@ namespace MGIEP.Data
                         // playerData exists, but attempt data doesnt -> New Attempt
                         attemptData = new AttemptData(loginToken);
 
-                        if (string.IsNullOrEmpty(sessionData.loginToken))
+                        if (sessionData == null || string.IsNullOrEmpty(sessionData.loginToken))
                             sessionNo = result.sessionNo;
 
                         OnPlayerLogin?.Invoke(LoginType.newAttempt);
@@ -110,7 +132,7 @@ namespace MGIEP.Data
                         // playerData exists, attempt data exists -> Check For Repeat Attempt
                         attemptData = result.data;
 
-                        if (string.IsNullOrEmpty(sessionData.loginToken))
+                        if (sessionData == null || string.IsNullOrEmpty(sessionData.loginToken))
                             sessionNo = result.sessionNo;
 
                         CheckForRepeatAttempt();
@@ -168,24 +190,39 @@ namespace MGIEP.Data
 
         private void GetLoginTokenFromQuery()
         {
-            // populate metadata here
 #if UNITY_WEBGL && !UNITY_EDITOR
             // Get the pointer to the URL parameter
-            System.IntPtr urlParamPtr = GetURLParameter("loginToken");
+            System.IntPtr urlParamPtr1 = GetURLParameter("loginToken");
+            System.IntPtr urlParamPtr2 = GetURLParameter("metadata");
 
             // Check if the pointer is valid
-            if (urlParamPtr != System.IntPtr.Zero)
+            if (urlParamPtr1 != System.IntPtr.Zero)
             {
                 // Convert the pointer to a string
-                loginToken = Marshal.PtrToStringAuto(urlParamPtr);
+                loginToken = Marshal.PtrToStringAuto(urlParamPtr1);
                 Debug.Log("Login Token: " + loginToken);
 
                 // Free the allocated memory on the JavaScript side
-                FreeMemory(urlParamPtr);
+                FreeMemory(urlParamPtr1);
             }
             else
             {
                 Debug.Log("Login token not found in the URL.");
+            }
+
+            // Check if the pointer is valid
+            if (urlParamPtr2 != System.IntPtr.Zero)
+            {
+                // Convert the pointer to a string
+                metadata = Marshal.PtrToStringAuto(urlParamPtr2);
+                Debug.Log("Meta Data: " + metadata);
+
+                // Free the allocated memory on the JavaScript side
+                FreeMemory(urlParamPtr2);
+            }
+            else
+            {
+                Debug.Log("Metadata not found in the URL.");
             }
 #else
             Debug.Log("Running outside WebGL. No URL parameter.");
@@ -237,7 +274,7 @@ namespace MGIEP.Data
         // GameData is sessionNo + Latest attemptData
         IEnumerator DownloadGameData(string loginToken, System.Action<ServerResponse<AttemptData>> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadGameData?loginToken={loginToken}";
+            string url = downloadGameDataURL + $"?loginToken={loginToken}";
 
             using (UnityWebRequest request = UnityWebRequest.Get(url))
             {
@@ -264,9 +301,7 @@ namespace MGIEP.Data
         // Game Data is sessionData + attemptData
         IEnumerator UploadGameData(string jsonData, System.Action<bool> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadGameData";
-
-            using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+            using (UnityWebRequest request = new UnityWebRequest(uploadGameDataURL, "POST"))
             {
                 request.SetRequestHeader("Content-Type", "application/json");
 
@@ -310,7 +345,7 @@ namespace MGIEP.Data
 
         private void InitializeSessionData()
         {
-            if (!String.IsNullOrEmpty(sessionData.loginToken))
+            if (sessionData != null && !String.IsNullOrEmpty(sessionData.loginToken))
             {
                 Debug.Log("Continue session!");
                 return;
@@ -345,9 +380,7 @@ namespace MGIEP.Data
         // Player Session Data = sessionData + playerData
         IEnumerator UploadPlayerSessionData(string jsonData, System.Action<bool> callback = null)
         {
-            string url = $"https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadPlayerSessionData";
-
-            using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+            using (UnityWebRequest request = new UnityWebRequest(uploadPlayerSessionDataURL, "POST"))
             {
                 request.SetRequestHeader("Content-Type", "application/json");
 

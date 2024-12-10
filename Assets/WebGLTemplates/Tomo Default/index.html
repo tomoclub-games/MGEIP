@@ -55,8 +55,8 @@
     window.addEventListener('beforeunload', function (e) {
 
       if (unityInstance != null) {
-        console.log("Calling OnClose from Browser!");
-        unityInstance.SendMessage("PersistentService", "UpdateSessionInfoOnQuit"); // Call the Unity method
+        console.log("Calling OnApplicationQuit from Browser!");
+        unityInstance.SendMessage("PersistentService", "OnApplicationQuit"); // Call the Unity method
       }
 
       var confirmationMessage = 'Are you sure you want to leave this game?';
