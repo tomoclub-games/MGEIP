@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd1cd15dbd7dc8419337e04111e1421, type: 3}
   m_Name: DatabaseAPIContainer
   m_EditorClassIdentifier: 
-  downloadGameDataURL: https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/downloadGameData
-  uploadGameDataURL: https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadGameData
-  uploadPlayerSessionDataURL: https://ap-south-1.aws.data.mongodb-api.com/app/mgiepdevs-uzdhqga/endpoint/uploadPlayerSessionData
+  downloadGameDataURL: https://staging-be.framerspace.com/api/game/tomoclub/v1/downloadGameData
+  uploadGameDataURL: https://staging-be.framerspace.com/api/game/tomoclub/v1/uploadGameData
+  uploadPlayerSessionDataURL: https://staging-be.framerspace.com/api/game/tomoclub/v1/uploadPlayerSessionData

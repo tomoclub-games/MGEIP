@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 using System.Runtime.InteropServices;
 using System;
 using MGEIP.GameData;
+using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace MGIEP.Data
 {
@@ -46,6 +48,7 @@ namespace MGIEP.Data
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
             else
             {
@@ -289,9 +292,11 @@ namespace MGIEP.Data
                 {
                     string jsonResponse = request.downloadHandler.text;
 
-                    Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + jsonResponse);
+                    string fixedJson = FixTypeOrderInJson(jsonResponse);
 
-                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(jsonResponse, GetPolymorphicSettings());
+                    Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + fixedJson);
+
+                    var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(fixedJson, GetPolymorphicSettings());
 
                     callback?.Invoke(responseObj);
                 }
@@ -301,6 +306,9 @@ namespace MGIEP.Data
         // Game Data is sessionData + attemptData
         IEnumerator UploadGameData(string jsonData, System.Action<bool> callback = null)
         {
+            Debug.Log("UploadGameData : ");
+            Debug.Log(jsonData);
+
             using (UnityWebRequest request = new UnityWebRequest(uploadGameDataURL, "POST"))
             {
                 request.SetRequestHeader("Content-Type", "application/json");
@@ -310,6 +318,8 @@ namespace MGIEP.Data
                 request.downloadHandler = new DownloadHandlerBuffer();
 
                 yield return request.SendWebRequest();
+
+                Debug.Log("Response: " + request.downloadHandler.text);
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
@@ -337,6 +347,7 @@ namespace MGIEP.Data
             return new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Auto, // Enables reading the $type field
+                TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple,
                 Formatting = Formatting.Indented
             };
         }
@@ -380,6 +391,9 @@ namespace MGIEP.Data
         // Player Session Data = sessionData + playerData
         IEnumerator UploadPlayerSessionData(string jsonData, System.Action<bool> callback = null)
         {
+            Debug.Log("UploadPlayerSessionData : ");
+            Debug.Log(jsonData);
+
             using (UnityWebRequest request = new UnityWebRequest(uploadPlayerSessionDataURL, "POST"))
             {
                 request.SetRequestHeader("Content-Type", "application/json");
@@ -455,6 +469,56 @@ namespace MGIEP.Data
         }
 
         #endregion
+
+        public static string FixTypeOrderInJson(string jsonResponse)
+        {
+            // Parse the JSON response into a JObject
+            var root = JObject.Parse(jsonResponse);
+
+            // Fix all objects recursively
+            FixTypeOrder(root);
+
+            // Convert the modified JSON back to a string
+            return root.ToString();
+        }
+
+        private static void FixTypeOrder(JToken token)
+        {
+            if (token is JObject obj)
+            {
+                // Check if the object contains a $type property
+                if (obj.ContainsKey("$type"))
+                {
+                    // Get the $type property
+                    var typeProperty = obj["$type"];
+                    // Remove it and re-add it to make it the first property
+                    obj.Remove("$type");
+                    var reorderedObj = new JObject { ["$type"] = typeProperty };
+                    foreach (var property in obj.Properties())
+                    {
+                        reorderedObj.Add(property.Name, property.Value);
+                    }
+
+                    // Replace the original object with the reordered one
+                    obj.Replace(reorderedObj);
+                }
+
+                // Process nested objects
+                foreach (var child in obj.Properties())
+                {
+                    FixTypeOrder(child.Value);
+                }
+            }
+            else if (token is JArray array)
+            {
+                // Copy the items to a temporary list to avoid modifying the collection during iteration
+                var items = array.ToList();
+                foreach (var item in items)
+                {
+                    FixTypeOrder(item);
+                }
+            }
+        }
     }
 
     public class ServerResponse<T>

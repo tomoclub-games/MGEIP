@@ -15,7 +15,6 @@ namespace MGEIP.Scenario
 
         [SerializeField] private int currentScenarioIndex;
 
-        private int selectedScenarioIndex = -1;
         private int completedScenarios;
         private GameService gameService;
         public ScenarioDataContainer ScenariosDataContainer => gameService.GameDataContainer.ScenarioDataContainer;
@@ -30,6 +29,8 @@ namespace MGEIP.Scenario
             {
                 scenarioButtons[i].Init(this);
             }
+
+            completedScenarios = 0;
 
             for (int i = 0; i < scenarioInfoList.Count; i++)
             {
@@ -102,17 +103,14 @@ namespace MGEIP.Scenario
 
         public void SetScenarioComplete(int scenarioIndex)
         {
-            // Disabled for review
-            /*
             scenarioButtons[scenarioIndex - 1].SetChecked();
 
             completedScenarios++;
 
-            if (completedScenarios == scenarios.Count)
+            if (completedScenarios == ScenariosDataContainer.ScenarioContent.Scenarios.Count)
             {
                 gameService.GameUIService.GetGameEndButton.gameObject.SetActive(true);
             }
-            */
         }
     }
 }
