@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using MGIEP;
 using MGIEP.Data;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace MGEIP.Scenario.Scenes
         private SliderQuestion sliderQuestion;
 
         private int questionNo;
-        private int selectedAnswer;
+        private int currentAnswer;
 
         private bool hasSliderMoved;
 
@@ -64,14 +65,16 @@ namespace MGEIP.Scenario.Scenes
 
             if (sliderQuestion.AnswerSelected)
             {
-                GameUIService.SetSliderValue(selectedAnswer);
+                GameUIService.SetSliderValue(currentAnswer);
                 GameUIService.LockSlider();
+                GameUIService.EnableConfirmButton();
             }
             else
             {
                 GameUIService.UnlockSlider();
                 GameUIService.SetSliderToDefault();
                 GameUIService.OnSliderAnswerSelect += SliderSelect;
+                GameUIService.DisableConfirmButton();
             }
 
             if (sliderQuestion.AnswerSelected)
@@ -96,10 +99,14 @@ namespace MGEIP.Scenario.Scenes
 
         private void SliderSelect(int _selectedAnswer)
         {
-            selectedAnswer = _selectedAnswer;
+            if (currentAnswer != _selectedAnswer)
+                SoundManagerService.Instance.OnPlaySFX?.Invoke(SFXType.optionButton);
+
+            currentAnswer = _selectedAnswer;
 
             if (!hasSliderMoved)
             {
+                GameUIService.EnableConfirmButton();
                 GameUIService.OnConfirmButtonClick += ConfirmAnswer;
                 hasSliderMoved = true;
             }
@@ -107,7 +114,7 @@ namespace MGEIP.Scenario.Scenes
 
         private void ConfirmAnswer()
         {
-            sliderQuestion.selectedAnswer = selectedAnswer;
+            sliderQuestion.selectedAnswer = currentAnswer;
             sliderQuestion.SetAnswerSelected();
 
             ExitScene();

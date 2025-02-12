@@ -63,7 +63,7 @@ public class OptionButton : MonoBehaviour
     {
         gameUIService.DeselectAllOptions();
         buttonImage.sprite = selectedSprite;
-        buttonImage.pixelsPerUnitMultiplier = 4;
+        buttonImage.pixelsPerUnitMultiplier = 2;
     }
 
     public void DeselectOption()

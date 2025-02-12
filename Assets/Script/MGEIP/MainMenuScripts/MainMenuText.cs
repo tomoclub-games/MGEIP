@@ -17,6 +17,6 @@ public class MainMenuText : MonoBehaviour
 
     private void Start()
     {
-        textLabel.text = MainMenuService.Instance.MainMenuDataContainer.MainMenuContent.mainMenuDataList[textID - 1].TextContent;
+        // textLabel.text = MainMenuService.Instance.MainMenuDataContainer.MainMenuContent.mainMenuDataList[textID - 1].TextContent;
     }
 }

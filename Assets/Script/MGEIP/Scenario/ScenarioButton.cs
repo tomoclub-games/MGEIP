@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MGEIP.Service;
 using MGIEP;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +12,7 @@ namespace MGEIP.Scenario
     {
         [SerializeField] private int scenarioNo;
         [SerializeField] private GameObject[] onHoverGOs;
+        [SerializeField] private TMP_Text scenarioName;
         [SerializeField] private GameObject lockedImage;
         [SerializeField] private GameObject exclamationMark;
         [SerializeField] private GameObject checkMark;
@@ -32,6 +34,8 @@ namespace MGEIP.Scenario
                 SetLocked();
             else
                 SetUnchecked();
+
+            scenarioName.text = _scenarioManager.ScenariosDataContainer.ScenarioContent.Scenarios[scenarioNo - 1].ScenarioName;
         }
 
         private void OnMouseOver()

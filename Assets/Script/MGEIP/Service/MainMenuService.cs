@@ -10,6 +10,7 @@ using MGIEP;
 using MGIEP.Data;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,7 +21,7 @@ namespace Assets.Script.MGEIP.Service
         public static MainMenuService Instance;
 
         [SerializeField] private GameObject mainCanvas;
-        [SerializeField] private MainMenuDataContainer mainMenuDataContainer;
+        // [SerializeField] private MainMenuDataContainer mainMenuDataContainer;
 
         [Header("Form Panel")]
         [SerializeField] private CanvasGroup formPanel;
@@ -56,7 +57,7 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private Button endButton;
         [SerializeField] private Image paginationCirclePrefab;
         [SerializeField] private CanvasGroup paginationParent;
-        [SerializeField] private List<TMP_Text> mainMenuTexts = new();
+        // [SerializeField] private List<TMP_Text> mainMenuTexts = new();
 
         [Header("Pagination Sprites")]
         [SerializeField] private Sprite notViewedCircle;
@@ -84,8 +85,8 @@ namespace Assets.Script.MGEIP.Service
         [SerializeField] private float buttonScaleDuration = 1f;
 
         [Header("Slide counts")]
-        [SerializeField] private int storySlideCount = 5;
         [SerializeField] private int tutorialSlideCount = 7;
+        [SerializeField] private int storySlideCount = 5;
 
         [Header("Login panel")]
         [SerializeField] private CanvasGroup loginPanel;
@@ -110,6 +111,7 @@ namespace Assets.Script.MGEIP.Service
         private int currentSubPanelIndex = 0;
         private bool isStoryPanelActive;
         private bool[] subPanelViewed;
+        private bool inPlayerInfoForm;
 
         private LoginType loginType;
 
@@ -123,7 +125,7 @@ namespace Assets.Script.MGEIP.Service
 
         private Sequence loadingBarSequence;
 
-        public MainMenuDataContainer MainMenuDataContainer => mainMenuDataContainer;
+        // public MainMenuDataContainer MainMenuDataContainer => mainMenuDataContainer;
 
         private void Awake()
         {
@@ -190,7 +192,6 @@ namespace Assets.Script.MGEIP.Service
         private void Start()
         {
             DataHandler.Instance.OnPlayerLogin += LoginSuccess;
-            Debug.Log("Sub to OnPlayerLogin!");
 
             DataHandler.Instance.LoginPlayer();
 
@@ -210,11 +211,11 @@ namespace Assets.Script.MGEIP.Service
 
             subPanels = subPanelParent.GetComponentsInChildren<CanvasGroup>(true);
 
-            tutorialTabButton.GetComponent<ButtonAnimation>().DisableButton();
+            storyTabButton.GetComponent<ButtonAnimation>().DisableButton();
 
-            SwitchToStory();
+            SwitchToTutorial();
 
-            SetupMainMenuTexts();
+            // SetupMainMenuTexts();
 
             SoundManagerService.Instance.OnPlayMusic?.Invoke("BGmusic");
         }
@@ -308,13 +309,15 @@ namespace Assets.Script.MGEIP.Service
             subPanelViewed[currentSubPanelIndex] = true;
             UpdatePaginationCircles();
 
-            if (currentSubPanelIndex > storySlideCount - 1 && isStoryPanelActive)
-                SwitchToTutorial();
-            else if (currentSubPanelIndex <= storySlideCount - 1 && !isStoryPanelActive)
-                SwitchToStory();
+            // tutorial // Story
 
-            leftButton.interactable = index > 0;
-            rightButton.interactable = index < subPanelParent.childCount - 1;
+            if (currentSubPanelIndex > tutorialSlideCount - 1 && !isStoryPanelActive)
+                SwitchToStory();
+            else if (currentSubPanelIndex <= tutorialSlideCount - 1 && isStoryPanelActive)
+                SwitchToTutorial();
+
+            leftButton.gameObject.SetActive(index > 0);
+            rightButton.gameObject.SetActive(index < subPanelParent.childCount - 1);
         }
 
         private void AnimateSubPanelActivation(CanvasGroup newPanel)
@@ -362,6 +365,8 @@ namespace Assets.Script.MGEIP.Service
 
         private void SwitchToStory()
         {
+            storyTabButton.GetComponent<ButtonAnimation>().EnableButton();
+
             // Switch button to story
             ActivateButton(storyTabButton);
 
@@ -372,7 +377,7 @@ namespace Assets.Script.MGEIP.Service
             {
                 for (int i = 0; i < paginationCircles.Count; i++)
                 {
-                    paginationCircles[i].gameObject.SetActive(i <= storySlideCount - 1);
+                    paginationCircles[i].gameObject.SetActive(i > tutorialSlideCount - 1);
                 }
             });
             paginationSequence.Append(paginationParent.DOFade(1, 0.25f));
@@ -382,8 +387,6 @@ namespace Assets.Script.MGEIP.Service
 
         private void SwitchToTutorial()
         {
-            tutorialTabButton.GetComponent<ButtonAnimation>().EnableButton();
-
             // Switch button to tutorial
             ActivateButton(tutorialTabButton);
 
@@ -394,7 +397,7 @@ namespace Assets.Script.MGEIP.Service
             {
                 for (int i = 0; i < paginationCircles.Count; i++)
                 {
-                    paginationCircles[i].gameObject.SetActive(i > storySlideCount - 1);
+                    paginationCircles[i].gameObject.SetActive(i <= tutorialSlideCount - 1);
                 }
             });
             paginationSequence.Append(paginationParent.DOFade(1, 0.25f));
@@ -404,23 +407,23 @@ namespace Assets.Script.MGEIP.Service
 
         private void ActivateButton(Button _button)
         {
-            if (_button == storyTabButton)
+            if (_button == tutorialTabButton)
             {
-                AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, selectedButtonTextColor, tabButtonSelectedScale);
+                AnimateButtonTransition(tutorialTabImage, deselectedButtonSprite, tutorialTabButtonLabel, deselectedButtonTextColor, tabButtonSelectedScale);
 
-                if (!tutorialTabButton.interactable)
+                if (!storyTabButton.interactable)
                     return;
 
-                AnimateButtonTransition(tutorialTabImage, deselectedButtonSprite, tutorialTabButtonLabel, deselectedButtonTextColor, Vector3.one);
+                AnimateButtonTransition(storyTabImage, selectedButtonSprite, storyTabButtonLabel, selectedButtonTextColor, Vector3.one);
             }
             else
             {
-                AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, selectedButtonTextColor, tabButtonSelectedScale);
+                AnimateButtonTransition(storyTabImage, deselectedButtonSprite, storyTabButtonLabel, deselectedButtonTextColor, tabButtonSelectedScale);
 
                 if (!tutorialTabButton.interactable)
                     return;
 
-                AnimateButtonTransition(storyTabImage, deselectedButtonSprite, storyTabButtonLabel, deselectedButtonTextColor, Vector3.one);
+                AnimateButtonTransition(tutorialTabImage, selectedButtonSprite, tutorialTabButtonLabel, selectedButtonTextColor, Vector3.one);
             }
         }
 
@@ -435,19 +438,13 @@ namespace Assets.Script.MGEIP.Service
 
         private void StoryTabButtonClicked()
         {
-            if (isStoryPanelActive)
-                return;
-
-            currentSubPanelIndex = 0;
+            currentSubPanelIndex = tutorialSlideCount;
             ShowSubPanel(currentSubPanelIndex);
         }
 
         private void TutorialTabButtonClicked()
         {
-            if (!isStoryPanelActive)
-                return;
-
-            currentSubPanelIndex = storySlideCount;
+            currentSubPanelIndex = 0;
             ShowSubPanel(currentSubPanelIndex);
         }
 
@@ -461,6 +458,7 @@ namespace Assets.Script.MGEIP.Service
             StartCoroutine(LoadGameScene());
         }
 
+        /*
         private void SetupMainMenuTexts()
         {
             for (int i = 0; i < mainMenuTexts.Count; i++)
@@ -468,6 +466,7 @@ namespace Assets.Script.MGEIP.Service
                 mainMenuTexts[i].text = mainMenuDataContainer.MainMenuContent.mainMenuDataList[i].TextContent;
             }
         }
+        */
 
         #endregion
 
@@ -599,6 +598,75 @@ namespace Assets.Script.MGEIP.Service
 
         #region Form UI
 
+        private void SelectFirstInputField()
+        {
+            EventSystem.current.SetSelectedGameObject(playerNameInput.gameObject);
+        }
+
+        private void SelectNextInputField()
+        {
+            GameObject current = EventSystem.current.currentSelectedGameObject;
+
+            GameObject nextField = null;
+
+            if (current == playerNameInput.gameObject)
+                nextField = playerEmailInput.gameObject;
+            else if (current == playerEmailInput.gameObject)
+                nextField = playerDOBDayInput.gameObject;
+            else if (current == playerDOBDayInput.gameObject)
+                nextField = playerDOBMonthInput.gameObject;
+            else if (current == playerDOBMonthInput.gameObject)
+                nextField = playerDOBYearInput.gameObject;
+            else if (current == playerDOBYearInput.gameObject)
+                nextField = playerGenderInput.gameObject;
+            else if (current == playerGenderInput.gameObject)
+                nextField = playerNameInput.gameObject;
+
+            TMP_InputField currentInput = current.GetComponent<TMP_InputField>();
+            TMP_InputField nextFieldInput = nextField?.GetComponent<TMP_InputField>();
+
+            if (nextFieldInput != null && nextFieldInput.text != string.Empty)
+                nextFieldInput.Select();
+
+            if (currentInput != null)
+            {
+                currentInput.stringPosition = 0;  // Move cursor to the start
+                currentInput.caretPosition = 0;   // Reset caret to the start
+                currentInput.selectionAnchorPosition = 0;  // Ensure selection start is reset
+                currentInput.selectionFocusPosition = 0;   // Ensure selection end is reset
+                currentInput.ForceLabelUpdate(); // Force text UI to refresh
+
+                //Reset ScrollRect position if available
+                if (currentInput.textComponent != null && currentInput.textComponent.rectTransform != null)
+                {
+                    currentInput.textComponent.rectTransform.anchoredPosition = Vector2.zero;
+                }
+            }
+
+            if (nextField != null)
+            {
+                EventSystem.current.SetSelectedGameObject(nextField);
+                StartCoroutine(SelectAllText(nextField));
+            }
+        }
+
+        private IEnumerator SelectAllText(GameObject inputFieldObject)
+        {
+            yield return new WaitForEndOfFrame(); // Wait for UI update
+
+            TMP_InputField inputField = inputFieldObject?.GetComponent<TMP_InputField>();
+            if (inputField != null)
+            {
+                inputField.Select();  // Focus on the input field
+                inputField.caretPosition = inputField.text.Length;  // Set caret at end
+                inputField.stringPosition = inputField.text.Length; // Ensure string position is at the end
+                inputField.selectionAnchorPosition = 0;  // Selection start
+                inputField.selectionFocusPosition = inputField.text.Length; // Selection end (select all)
+                inputField.ForceLabelUpdate();
+                inputField.textComponent.rectTransform.anchoredPosition = Vector2.zero;
+            }
+        }
+
         private void AnimateFormUIPanel()
         {
             gameNamePanel.DOFade(0, buttonScaleDuration).SetDelay(2f).OnComplete(() =>
@@ -609,6 +677,9 @@ namespace Assets.Script.MGEIP.Service
                 formPanel.alpha = 0;
 
                 formPanel.DOFade(1, 0.5f);
+
+                SelectFirstInputField();
+                inPlayerInfoForm = true;
             });
         }
 
@@ -619,6 +690,8 @@ namespace Assets.Script.MGEIP.Service
                 formPanel.gameObject.SetActive(false);
                 AnimateStartButton();
             });
+
+            inPlayerInfoForm = false;
         }
 
         private void FormUISubmitClicked()
@@ -804,5 +877,14 @@ namespace Assets.Script.MGEIP.Service
         }
 
         #endregion
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (inPlayerInfoForm)
+                    SelectNextInputField();
+            }
+        }
     }
 }

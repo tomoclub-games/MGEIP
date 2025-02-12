@@ -39,6 +39,8 @@ namespace MGEIP
                 transform.localScale = Vector3.zero;
                 transform.DOScale(originalScale, 1f).SetEase(Ease.OutBack);
             }
+            else
+                transform.localScale = Vector3.one;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

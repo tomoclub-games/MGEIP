@@ -17,7 +17,7 @@ namespace MGEIP.GameData.ScenarioData
     [Serializable]
     public class InstructionContent
     {
-        [SpreadsheetPage("Instructions Dump")]
+        [SpreadsheetPage("All Instructions Text")]
         public List<InstructionData> InstructionDataList;
     }
 

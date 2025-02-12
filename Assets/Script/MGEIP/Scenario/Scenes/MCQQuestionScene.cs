@@ -108,11 +108,14 @@ namespace MGEIP.Scenario.Scenes
             {
                 GameUIService.SetOptionSelected(selectedAnswer);
                 GameUIService.LockOptions();
+                GameUIService.EnableConfirmButton();
             }
             else
             {
+                GameUIService.DeselectAllOptions();
                 GameUIService.UnlockOptions();
                 GameUIService.OnMCQOptionSelect += OptionSelect;
+                GameUIService.DisableConfirmButton();
             }
 
             if (multipleChoiceQuestion.AnswerSelected)
@@ -141,6 +144,7 @@ namespace MGEIP.Scenario.Scenes
 
             if (!hasOptionBeenSelected)
             {
+                GameUIService.EnableConfirmButton();
                 GameUIService.OnConfirmButtonClick += ConfirmAnswer;
                 hasOptionBeenSelected = true;
             }

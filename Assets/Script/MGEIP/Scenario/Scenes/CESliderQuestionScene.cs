@@ -1,5 +1,6 @@
 ﻿using MGEIP.GameData.SceneData;
 using MGEIP.Service;
+using MGIEP;
 using MGIEP.Data;
 using UnityEngine;
 
@@ -72,12 +73,14 @@ namespace MGEIP.Scenario.Scenes
             {
                 GameUIService.SetSliderValue(selectedAnswer);
                 GameUIService.LockSlider();
+                GameUIService.EnableConfirmButton();
             }
             else
             {
                 GameUIService.UnlockSlider();
                 GameUIService.SetSliderToDefault();
                 GameUIService.OnSliderAnswerSelect += SliderSelect;
+                GameUIService.DisableConfirmButton();
             }
 
             if (sliderQuestion.AnswerSelected)
@@ -102,10 +105,14 @@ namespace MGEIP.Scenario.Scenes
 
         private void SliderSelect(int _selectedAnswer)
         {
+            if (currentAnswer != _selectedAnswer)
+                SoundManagerService.Instance.OnPlaySFX?.Invoke(SFXType.optionButton);
+
             currentAnswer = _selectedAnswer;
 
             if (!hasSliderMoved)
             {
+                GameUIService.EnableConfirmButton();
                 GameUIService.OnConfirmButtonClick += ConfirmAnswer;
                 hasSliderMoved = true;
             }

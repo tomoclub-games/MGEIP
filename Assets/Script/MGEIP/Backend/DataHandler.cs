@@ -118,7 +118,7 @@ namespace MGIEP.Data
 
                 if (result.playerFound)
                 {
-                    Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
+                    // Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
 
                     if (result.data == null)
                     {
@@ -294,7 +294,7 @@ namespace MGIEP.Data
 
                     string fixedJson = FixTypeOrderInJson(jsonResponse);
 
-                    Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + fixedJson);
+                    // Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + fixedJson);
 
                     var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(fixedJson, GetPolymorphicSettings());
 
@@ -306,8 +306,8 @@ namespace MGIEP.Data
         // Game Data is sessionData + attemptData
         IEnumerator UploadGameData(string jsonData, System.Action<bool> callback = null)
         {
-            Debug.Log("UploadGameData : ");
-            Debug.Log(jsonData);
+            // Debug.Log("UploadGameData : ");
+            // Debug.Log(jsonData);
 
             using (UnityWebRequest request = new UnityWebRequest(uploadGameDataURL, "POST"))
             {
@@ -319,7 +319,7 @@ namespace MGIEP.Data
 
                 yield return request.SendWebRequest();
 
-                Debug.Log("Response: " + request.downloadHandler.text);
+                // Debug.Log("Response: " + request.downloadHandler.text);
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
@@ -364,7 +364,7 @@ namespace MGIEP.Data
 
             sessionData = new SessionData(loginToken, sessionNo + 1, attemptData.attemptNo);
 
-            Debug.Log("Session Info set here!");
+            // Debug.Log("Session Info set here!");
 
             StartPlayerSessionDataUpload();
         }
@@ -391,8 +391,8 @@ namespace MGIEP.Data
         // Player Session Data = sessionData + playerData
         IEnumerator UploadPlayerSessionData(string jsonData, System.Action<bool> callback = null)
         {
-            Debug.Log("UploadPlayerSessionData : ");
-            Debug.Log(jsonData);
+            // Debug.Log("UploadPlayerSessionData JSONData : ");
+            // Debug.Log(jsonData);
 
             using (UnityWebRequest request = new UnityWebRequest(uploadPlayerSessionDataURL, "POST"))
             {
@@ -425,7 +425,7 @@ namespace MGIEP.Data
 
         private void UpdateSessionDataOnQuit()
         {
-            Debug.Log("UpdateSessionDataOnQuit called!");
+            // Debug.Log("UpdateSessionDataOnQuit called!");
 
             if (sessionData == null)
                 return;

@@ -394,6 +394,17 @@ namespace MGEIP.Service
 
             sliderHandle.anchoredPosition = sliderDefaultAnchoredPosition;
         }
+
+        public void EnableConfirmButton()
+        {
+            QuestionSceneConfirmButton.gameObject.SetActive(true);
+        }
+
+        public void DisableConfirmButton()
+        {
+            QuestionSceneConfirmButton.gameObject.SetActive(false);
+        }
+
         #endregion
 
         #region Photo Capture Scene Methods
