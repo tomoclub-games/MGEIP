@@ -125,11 +125,11 @@ namespace MGIEP
             }
             else if (audioClip == voiceOverSource.clip)
             {
-                Debug.Log("Already playing!");
+                //Debug.Log("Already playing!");
                 return;
             }
 
-            Debug.Log("Playing audio clip : " + audioClip.name);
+            //Debug.Log("Playing audio clip : " + audioClip.name);
 
             voiceOverSource.clip = audioClip;
             voiceOverSource.Play();
@@ -189,7 +189,7 @@ namespace MGIEP
         {
             if (operationHandle.Status == AsyncOperationStatus.Succeeded)
             {
-                Debug.Log("Loaded new audio clips");
+                //Debug.Log("Loaded new audio clips");
                 loadedClips.AddRange(operationHandle.Result);
             }
             else
@@ -216,7 +216,7 @@ namespace MGIEP
                 }
 
                 Addressables.Release(latestHandle);
-                Debug.Log("Released audio clips");
+                //Debug.Log("Released audio clips");
             }
         }
 
@@ -305,7 +305,7 @@ namespace MGIEP
 
             if (audioClip == null)
             {
-                Debug.Log("Audio clip not found! : " + clipName);
+                //Debug.Log("Audio clip not found! : " + clipName);
                 return null;
             }
 

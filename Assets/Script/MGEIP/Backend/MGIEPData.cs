@@ -38,7 +38,7 @@ namespace MGIEP.Data
 
         public SessionData(string _loginToken, int _sessionNo, int _attemptNo)
         {
-            Debug.Log("Initializing sessionInfo : " + _sessionNo);
+            //Debug.Log("Initializing sessionInfo : " + _sessionNo);
 
             loginToken = _loginToken;
             sessionNo = _sessionNo;

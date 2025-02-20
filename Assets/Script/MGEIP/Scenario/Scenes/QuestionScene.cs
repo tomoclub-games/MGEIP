@@ -80,11 +80,11 @@ namespace MGEIP.Scenario.Scenes
 
         public void PlayQuestionVoiceOver()
         {
-            Debug.Log("PlayQuestionVO : Requested!");
+            //Debug.Log("PlayQuestionVO : Requested!");
 
             if (sceneData.HasCustomVO)
             {
-                Debug.Log("PlayQuestionVO : HAS CUSTOM VO");
+                //Debug.Log("PlayQuestionVO : HAS CUSTOM VO");
 
                 string questionClipName_1 = $"Scenarios/sc_{scenarioNo}/qt_{scenarioNo}_{sceneData.SceneNo}_1";
                 string questionClipName_2 = $"Scenarios/sc_{scenarioNo}/kw_{scenarioNo}_{scenario.EmotionIndex + 1}";

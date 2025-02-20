@@ -15,7 +15,7 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	[SerializeField] private CanvasGroup redHighlightOverlay;
 	[SerializeField] private CanvasGroup hoverOverlay;
 	[SerializeField] private float blinkDuration = 0.2f;
-	[SerializeField] private float displayDuration = 5f;
+	// [SerializeField] private float displayDuration = 5f;
 
 	private EndMenuService endMenuService;
 

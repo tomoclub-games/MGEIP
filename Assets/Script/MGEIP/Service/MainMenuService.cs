@@ -86,7 +86,7 @@ namespace Assets.Script.MGEIP.Service
 
         [Header("Slide counts")]
         [SerializeField] private int tutorialSlideCount = 7;
-        [SerializeField] private int storySlideCount = 5;
+        // [SerializeField] private int storySlideCount = 5;
 
         [Header("Login panel")]
         [SerializeField] private CanvasGroup loginPanel;
@@ -524,7 +524,7 @@ namespace Assets.Script.MGEIP.Service
 
             while (scene.progress < 0.9f)
             {
-                Debug.Log(scene.progress);
+                //Debug.Log(scene.progress);
                 // loadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
                 // confirmLoadingBarFill.fillAmount = Mathf.Clamp01(scene.progress / 0.9f);
                 yield return null;
@@ -553,7 +553,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void LoginSuccess(LoginType _loginType)
         {
-            Debug.Log("Login success : " + _loginType);
+            //Debug.Log("Login success : " + _loginType);
 
             if (_loginType == LoginType.error)
             {
@@ -755,7 +755,7 @@ namespace Assets.Script.MGEIP.Service
         {
             if (BadWordManager.Contains(name, "english"))
             {
-                Debug.Log("name contains bad word!");
+                //Debug.Log("name contains bad word!");
                 return false;
             }
 
@@ -766,7 +766,7 @@ namespace Assets.Script.MGEIP.Service
         {
             if (BadWordManager.Contains(email, "english"))
             {
-                Debug.Log("email contains bad word!");
+                //Debug.Log("email contains bad word!");
                 return false;
             }
 

@@ -76,7 +76,7 @@ namespace MGIEP.Data
 
         public void LoginPlayer()
         {
-            Debug.Log("Trying to login!");
+            //Debug.Log("Trying to login!");
 
             if (loginToken == null)
             {
@@ -106,7 +106,7 @@ namespace MGIEP.Data
             {
                 if (result == null)
                 {
-                    Debug.Log("Failed to download data for player: " + loginToken + " - Unexpected error occurred");
+                    //Debug.Log("Failed to download data for player: " + loginToken + " - Unexpected error occurred");
 
                     attemptData = null;
                     sessionNo = 0;
@@ -118,7 +118,7 @@ namespace MGIEP.Data
 
                 if (result.playerFound)
                 {
-                    // Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
+                    //Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
 
                     if (result.data == null)
                     {
@@ -145,7 +145,7 @@ namespace MGIEP.Data
                 }
                 else
                 {
-                    Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new sessionAttempt 1");
+                    //Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new sessionAttempt 1");
 
                     attemptData = new AttemptData(loginToken);
 
@@ -177,7 +177,7 @@ namespace MGIEP.Data
                 AttemptData repeatAttemptData = new AttemptData(attemptData.loginToken);
                 repeatAttemptData.attemptNo = attemptData.attemptNo + 1;
 
-                Debug.Log("New sessionAttempt no : " + repeatAttemptData.attemptNo);
+                //Debug.Log("New sessionAttempt no : " + repeatAttemptData.attemptNo);
 
                 attemptData = repeatAttemptData;
 
@@ -185,7 +185,7 @@ namespace MGIEP.Data
             }
             else
             {
-                Debug.Log("Continue sessionAttempt!");
+                //Debug.Log("Continue sessionAttempt!");
 
                 OnPlayerLogin?.Invoke(LoginType.continueAttempt);
             }
@@ -203,14 +203,14 @@ namespace MGIEP.Data
             {
                 // Convert the pointer to a string
                 loginToken = Marshal.PtrToStringAuto(urlParamPtr1);
-                Debug.Log("Login Token: " + loginToken);
+                //Debug.Log("Login Token: " + loginToken);
 
                 // Free the allocated memory on the JavaScript side
                 FreeMemory(urlParamPtr1);
             }
             else
             {
-                Debug.Log("Login token not found in the URL.");
+                Debug.LogWarning("Login token not found in the URL.");
             }
 
             // Check if the pointer is valid
@@ -218,17 +218,17 @@ namespace MGIEP.Data
             {
                 // Convert the pointer to a string
                 metadata = Marshal.PtrToStringAuto(urlParamPtr2);
-                Debug.Log("Meta Data: " + metadata);
+                //Debug.Log("Meta Data: " + metadata);
 
                 // Free the allocated memory on the JavaScript side
                 FreeMemory(urlParamPtr2);
             }
             else
             {
-                Debug.Log("Metadata not found in the URL.");
+                Debug.LogWarning("Metadata not found in the URL.");
             }
 #else
-            Debug.Log("Running outside WebGL. No URL parameter.");
+            Debug.LogWarning("Running outside WebGL. No URL parameter.");
 #endif
         }
 
@@ -261,7 +261,7 @@ namespace MGIEP.Data
             {
                 if (result)
                 {
-                    Debug.Log("Data successfully uploaded.");
+                    //Debug.Log("Data successfully uploaded.");
                     OnDataUploaded?.Invoke(true);
                 }
                 else
@@ -294,7 +294,7 @@ namespace MGIEP.Data
 
                     string fixedJson = FixTypeOrderInJson(jsonResponse);
 
-                    // Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + fixedJson);
+                    // //Debug.Log("JSON Response DOWNLOAD PLAYER DATA: \n" + fixedJson);
 
                     var responseObj = JsonConvert.DeserializeObject<ServerResponse<AttemptData>>(fixedJson, GetPolymorphicSettings());
 
@@ -306,8 +306,8 @@ namespace MGIEP.Data
         // Game Data is sessionData + attemptData
         IEnumerator UploadGameData(string jsonData, System.Action<bool> callback = null)
         {
-            // Debug.Log("UploadGameData : ");
-            // Debug.Log(jsonData);
+            // //Debug.Log("UploadGameData : ");
+            // //Debug.Log(jsonData);
 
             using (UnityWebRequest request = new UnityWebRequest(uploadGameDataURL, "POST"))
             {
@@ -319,7 +319,7 @@ namespace MGIEP.Data
 
                 yield return request.SendWebRequest();
 
-                // Debug.Log("Response: " + request.downloadHandler.text);
+                // //Debug.Log("Response: " + request.downloadHandler.text);
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
@@ -331,7 +331,7 @@ namespace MGIEP.Data
                 }
                 else
                 {
-                    Debug.Log("Successfully uploaded data to MongoDB: " + request.downloadHandler.text);
+                    //Debug.Log("Successfully uploaded data to MongoDB: " + request.downloadHandler.text);
                     if (callback != null)
                     {
                         callback.Invoke(true);
@@ -358,13 +358,13 @@ namespace MGIEP.Data
         {
             if (sessionData != null && !String.IsNullOrEmpty(sessionData.loginToken))
             {
-                Debug.Log("Continue session!");
+                //Debug.Log("Continue session!");
                 return;
             }
 
             sessionData = new SessionData(loginToken, sessionNo + 1, attemptData.attemptNo);
 
-            // Debug.Log("Session Info set here!");
+            // //Debug.Log("Session Info set here!");
 
             StartPlayerSessionDataUpload();
         }
@@ -377,12 +377,12 @@ namespace MGIEP.Data
             {
                 if (result)
                 {
-                    Debug.Log("Session Data successfully uploaded.");
+                    //Debug.Log("Session Data successfully uploaded.");
                     OnSessionDataUploaded?.Invoke(true);
                 }
                 else
                 {
-                    Debug.LogError("Session Failed to upload data.");
+                    Debug.LogWarning("Session Failed to upload data.");
                     OnSessionDataUploaded?.Invoke(false);
                 }
             }));
@@ -391,8 +391,8 @@ namespace MGIEP.Data
         // Player Session Data = sessionData + playerData
         IEnumerator UploadPlayerSessionData(string jsonData, System.Action<bool> callback = null)
         {
-            // Debug.Log("UploadPlayerSessionData JSONData : ");
-            // Debug.Log(jsonData);
+            // //Debug.Log("UploadPlayerSessionData JSONData : ");
+            // //Debug.Log(jsonData);
 
             using (UnityWebRequest request = new UnityWebRequest(uploadPlayerSessionDataURL, "POST"))
             {
@@ -414,7 +414,7 @@ namespace MGIEP.Data
                 }
                 else
                 {
-                    Debug.Log("Successfully uploaded session data to MongoDB: " + request.downloadHandler.text);
+                    //Debug.Log("Successfully uploaded session data to MongoDB: " + request.downloadHandler.text);
                     if (callback != null)
                     {
                         callback.Invoke(true);
@@ -425,7 +425,7 @@ namespace MGIEP.Data
 
         private void UpdateSessionDataOnQuit()
         {
-            // Debug.Log("UpdateSessionDataOnQuit called!");
+            // //Debug.Log("UpdateSessionDataOnQuit called!");
 
             if (sessionData == null)
                 return;
@@ -442,7 +442,7 @@ namespace MGIEP.Data
             {
                 if (result)
                 {
-                    Debug.Log("Session end data successfully uploaded.");
+                    //Debug.Log("Session end data successfully uploaded.");
                 }
                 else
                 {
@@ -459,7 +459,7 @@ namespace MGIEP.Data
         {
             if (loginToken == null || _playerName == null || _playerEmail == null || _playerDOB == null || _playerGender == null)
             {
-                Debug.LogError("Null in one of the arguments for PlayerData object!");
+                Debug.LogWarning("Null in one of the arguments for PlayerData object!");
                 return;
             }
 

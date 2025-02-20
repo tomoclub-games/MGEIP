@@ -170,13 +170,10 @@ namespace MGEIP.Service
 
             // VO Buttons
 
-            if (scenarioNameVOButton == null)
-                Debug.Log("Scenario Name button missing!");
-            if (scenarioDescVOButton == null)
-                Debug.Log("Scenario Desc button missing!");
-
-            scenarioNameVOButton.Button.onClick.AddListener(PlayScenarioTitleVO);
-            scenarioDescVOButton.Button.onClick.AddListener(PlayScenarioDescVO);
+            if (scenarioNameVOButton != null)
+                scenarioNameVOButton.Button.onClick.AddListener(PlayScenarioTitleVO);
+            if (scenarioDescVOButton != null)
+                scenarioDescVOButton.Button.onClick.AddListener(PlayScenarioDescVO);
 
             gameEndButton.onClick.AddListener(GameEndButtonClicked);
         }
@@ -194,8 +191,10 @@ namespace MGEIP.Service
             photoCaptureShutterButton.onClick.RemoveAllListeners();
 
             // VO Buttons
-            scenarioNameVOButton.Button.onClick.RemoveAllListeners();
-            scenarioDescVOButton.Button.onClick.RemoveAllListeners();
+            if (scenarioNameVOButton != null)
+                scenarioNameVOButton.Button.onClick.RemoveAllListeners();
+            if (scenarioDescVOButton != null)
+                scenarioDescVOButton.Button.onClick.RemoveAllListeners();
 
             gameEndButton.onClick.RemoveAllListeners();
         }
@@ -437,7 +436,7 @@ namespace MGEIP.Service
 
             if (polaroid == null)
             {
-                Debug.Log("Error loading polaroid : " + polaroidPath);
+                Debug.LogError("Error loading polaroid : " + polaroidPath);
                 return;
             }
 

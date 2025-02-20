@@ -10,7 +10,7 @@ public class TypeWritterEffect : MonoBehaviour
     public GameObject[] gameObjectsToActivate; // Array of GameObjects to activate after text
     public float typingSpeed = 0.05f;       // Delay between each character reveal
 
-    private int currentIndex = 0;           // Current index of the active text
+    // private int currentIndex = 0;           // Current index of the active text
     public float timeAfterText = 1f;
 
     private TMP_Text tutorialText;
