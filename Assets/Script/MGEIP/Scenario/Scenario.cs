@@ -254,9 +254,9 @@ namespace MGEIP.Scenario
 
             scenarioManager.SetScenarioComplete(ScenarioNo);
 
-            DataHandler.Instance.AddCompletedScenario(scenarioData);
+            // DataHandler.Instance.AddCompletedScenario(scenarioData);
 
-            DataHandler.Instance.OnDataUploaded += DataSentResult;
+            // DataHandler.Instance.OnDataUploaded += DataSentResult;
         }
 
         private void DataSentResult(bool dataSent)
@@ -266,7 +266,7 @@ namespace MGEIP.Scenario
             else
                 GameUIService.AnimateSaveErrorToast();
 
-            DataHandler.Instance.OnDataUploaded -= DataSentResult;
+            // DataHandler.Instance.OnDataUploaded -= DataSentResult;
         }
 
         private void SetUIForScene(Scene scene)

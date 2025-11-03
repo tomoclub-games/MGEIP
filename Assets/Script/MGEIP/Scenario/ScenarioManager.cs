@@ -81,8 +81,8 @@ namespace MGEIP.Scenario
             scenarios.Add(scenario);
             scenario.transform.SetParent(scenarioHolder.transform, false);
 
-            if (DataHandler.Instance.AttemptData.completedScenarios[scenarioInfo.ScenarioNo - 1])
-                SetScenarioComplete(scenarioInfo.ScenarioNo);
+            // if (DataHandler.Instance.AttemptData.completedScenarios[scenarioInfo.ScenarioNo - 1])
+            //     SetScenarioComplete(scenarioInfo.ScenarioNo);
         }
 
         public void SetCurrentScenario(int scenarioIndex)

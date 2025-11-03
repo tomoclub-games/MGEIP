@@ -95,66 +95,12 @@ namespace MGIEP.Data
         // Sets up the attemptData and sessionData from DB
         public void StartGameDataDownload(string loginToken)
         {
-            if (string.IsNullOrEmpty(downloadGameDataURL) || string.IsNullOrEmpty(uploadGameDataURL) || string.IsNullOrEmpty(uploadPlayerSessionDataURL))
-            {
-                OnPlayerLogin?.Invoke(LoginType.error);
-                Debug.LogError("Invoke URL missing!");
-                return;
-            }
+            attemptData = new AttemptData(loginToken);
 
-            StartCoroutine(DownloadGameData(loginToken, (result) =>
-            {
-                if (result == null)
-                {
-                    //Debug.Log("Failed to download data for player: " + loginToken + " - Unexpected error occurred");
+            if (sessionData == null)
+                sessionNo = 1;
 
-                    attemptData = null;
-                    sessionNo = 0;
-
-                    OnPlayerLogin?.Invoke(LoginType.error);
-
-                    return;
-                }
-
-                if (result.playerFound)
-                {
-                    //Debug.Log("Data successfully downloaded: " + JsonConvert.SerializeObject(result));
-
-                    if (result.data == null)
-                    {
-                        // playerData exists, but attempt data doesnt -> New Attempt
-                        attemptData = new AttemptData(loginToken);
-
-                        if (sessionData == null || string.IsNullOrEmpty(sessionData.loginToken))
-                            sessionNo = result.sessionNo;
-
-                        OnPlayerLogin?.Invoke(LoginType.newAttempt);
-                    }
-                    else
-                    {
-                        // playerData exists, attempt data exists -> Check For Repeat Attempt
-                        attemptData = result.data;
-
-                        if (sessionData == null || string.IsNullOrEmpty(sessionData.loginToken))
-                            sessionNo = result.sessionNo;
-
-                        CheckForRepeatAttempt();
-                    }
-
-                    InitializeSessionData();
-                }
-                else
-                {
-                    //Debug.Log("Failed to download data or player not found for player: " + loginToken + " - Setting up new sessionAttempt 1");
-
-                    attemptData = new AttemptData(loginToken);
-
-                    if (sessionData == null)
-                        sessionNo = result.sessionNo;
-
-                    OnPlayerLogin?.Invoke(LoginType.newPlayer);
-                }
-            }));
+            OnPlayerLogin?.Invoke(LoginType.newPlayer);
         }
 
         private void CheckForRepeatAttempt()
@@ -248,7 +194,7 @@ namespace MGIEP.Data
             sessionAttempt.completedScenarios.Add(_scenarioData.scenarioNo);
 
             // Upload attemptData and sessionData
-            StartGameDataUpload();
+            // StartGameDataUpload();
         }
 
         public void StartGameDataUpload()

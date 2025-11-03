@@ -479,6 +479,7 @@ namespace Assets.Script.MGEIP.Service
 
         private void CheckForLoginType()
         {
+            /*
             switch (loginType)
             {
                 case LoginType.newPlayer:
@@ -496,6 +497,9 @@ namespace Assets.Script.MGEIP.Service
                     AnimateWelcomeBackPanel();
                     break;
             }
+            */
+
+            AnimateStartButton();
         }
 
         public void AnimateStartButton()
